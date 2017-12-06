@@ -1,0 +1,10 @@
+<ul id="primary-menu">
+  {% for link in site.data.navigation %}
+    {% if link.url contains 'http' %}
+        {% assign domain = '' %}
+        {% else %}
+        {% assign domain = site.url %}
+    {% endif %}
+    <li class="{% if link.url == page.url %}current-menu-item{% endif %}"><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %} title="{{ link.title }}"><span>{{ link.title }}</span></a>
+  {% endfor %}
+</ul>

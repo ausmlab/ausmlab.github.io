@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--
+                                   _       _
+								  | |     | |
+  Designed and Coded By           | | __ _| |__
+ / _ \ \ /\ / /\ \ /\ / /\ \ /\ / / |/ _` | '_ \
+| (_) \ V  V /  \ V  V /  \ V  V /| | (_| | |_) |
+ \___/ \_/\_/    \_/\_/    \_/\_/ |_|\__,_|_.__/
+
+http://themeforest.net/user/owwwlab/
+
+-->
+<html lang="en" dir="ltr" itemscope itemtype="http://schema.org/WebPage">
+  <!-- #####Begin head-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- globalise scripting and styling content language-->
+    <meta name="Content-Type-Script" content="text/javascript">
+    <meta name="Content-Type-Style" content="text/css">
+    <!-- author of this doc-->
+    <meta name="author" content="owwwlab.com">
+    <!-- ################################-->
+    <!-- #### add SEO metadata here-->
+    <!-- ################################-->
+    <!-- #####Begin styles-->
+    <!-- stylesheets	-->
+    <link href="assets/css/vendors/vendors.css" rel="stylesheet" type="text/css">
+    <!-- Load extra page specific css-->
+    <!-- Overwrite vendors-->
+    <link href="assets/css/vendors/vendors-overwrites.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/demo4.css" rel="stylesheet" type="text/css">
+    <!-- #####End styles-->
+    <!-- #####Begin JS-->
+    <!-- add your scripts to the end of the page for sake of page load speed-->
+    <!-- scripts that need to be at head section-->
+    <script src="assets/js/vendors/jquery.min.js"></script>
+    <!-- #####End JS-->
+    <!-- #####Begin load google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Play:400,700&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Sintony:400,700&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:400,200,300,400italic,500,700,900&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
+    <!-- #####End load google fonts-->
+    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+  </head>
+  <!-- #####End head-->
+  <body class="fullwidth sticky-header">
+    <div id="wrapper" class="regular-layout">
+      <!-- #####Begin Header-->
+      <header id="header" class="">
+        <div class="head-main">
+          <div class="container">
+            <!-- logo-->
+            <!-- #####Begin logo wrapper-->
+            <div class="logo-wrapper">
+              <!-- standard Logo--><a href="index.html"><img src="assets/img/logo/logo-light.png" alt="CHAOS HTML Template" class="logo-light ol-retina"><img src="assets/img/logo/logo-dark.png" alt="CHAOS HTML Template" class="logo-dark ol-retina"></a>
+            </div>
+            <!-- #####End logo wrapper-->
+            <!-- primary navigation-->
+            {% include navigation.html %}
+            <div class="header-icons">
+              <!-- #####Begin trigger for search-->
+              <div class="search ol-search-trigger simple"><a href="#"><i class="oli oli-search"></i></a>
+                <div class="search-area">
+                  <div class="search-bar-wrapper">
+                    <form role="form">
+                      <input id="searchq" type="search" name="searchq" placeholder="Search..." class="form-control">
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- #####End trigger for search-->
+              <!-- #####Begin mobile menu trigger-->
+              <div class="ol-mobile-trigger hamburger hamburger--elastic">
+                <div class="hamburger-box">
+                  <div class="hamburger-inner"></div>
+                </div>
+              </div>
+              <!-- #####End mobile menu trigger-->
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- #####End Header-->
+      <!-- #####Begin contents-->
+      <section id="contents">
+        <!-- #####Begin page head-->
+        <div class="page-head h-500 parallax-layer center-it dark ov-blue-alpha-50" data-img-src="assets/img/bg/010.jpg" data-parallax-mode="mode-title">
+          <div class="container">
+            <div class="tb-vcenter-wrapper">
+              <div class="title-wrapper vcenter">
+                <h4 class="head">PEAR REVIEWED</h4>
+                <h1 class="title">Publications</h1>
+              </div>
+              <div class="breadcrumb-wrapper vcenter">
+                <ul class="breadcrumb">
+                  <li><a href="#"><i class="oli oli-home"></i></a></li>
+                  <li><a href="#">publication</a></li>
+                  <li><a href="#">publication type</a></li>
+                  <li>learning environment</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- #####End page head
+        -->
+        <section class="page-contents">
+          <!-- #####Begin main area-->
+          <section id="main-area">
+            <section class="p-bottom-100 slim-container">
+
+              <div class="container">
+                <div class="sp-blank-50"></div>
+
+                <h4 class="with-underline">PUBLISHED PEER-REVIEWED JOURNAL PAPERS</h4>
+
+                <div class="pubs-wrapper">
+                  {% for publication in site.data.publications.journal %}
+                  <div class="pub-item with-icon">
+                    <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
+                    <div class="content-wrapper">
+                      <h3 class="title">{{ publication.title }}</h3>
+                      <div class="description">
+                        <div class="citation">
+                          {{ publication.conference }}
+                          <br>{{ publication.citation }}
+                        </div><a href="{{ publication.link }}" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                <div class="sp-blank-70"></div>
+              </div>
+
+              <h4 class="with-underline">PUBLISHED PEER-REVIEWED CONFERENCE PAPERS</h4>
+              <div class="pubs-wrapper">
+                {% for publication in site.data.publications.conference %}
+                <div class="pub-item with-icon">
+                  <div class="elem-wrapper"><i class="oli oli-bookmark"></i></div>
+                  <div class="content-wrapper">
+                    <h3 class="title">{{ publication.title }}</h3>
+                    <div class="description">
+                      <div class="citation">
+                        {{ publication.conference }}
+                        <br>{{ publication.citation }}
+                      </div><a href="{{ publication.link }}" class="link-with-icon"> <i class="fa fa-external-link"></i>Publisher's website</a>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              <div class="sp-blank-70"></div>
+            </div>
+
+            </section>
+          </section>
+          <!-- #####End main area
+          -->
+          <div class="clearfix"></div>
+        </section>
+      </section>
+      <!-- #####End contents-->
+      {% include footer.html %}
+    </div>
+    <!-- #####Begin scripts-->
+    <script src="assets/js/vendors/vendors.js"></script>
+    <!-- Local Revolution tools-->
+    <!-- Only for local and can be removed on server-->
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="assets/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <!-- #####End scripts-->
+  </body>
+</html>

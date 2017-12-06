@@ -1,0 +1,74 @@
+
+journal:
+  - title: Evolutionary optimization for robust epipolar-geometry estimation and outlier detection.
+    conference: Algorithms 2017, 10(3), 87 (doi:10.3390/a10030087)
+    citation: Shahbazi, M., Sohn, G. and Ménard, P., 2017.
+    cover: assets/img/publications/06.jpg
+    link: http://www.mdpi.com/1999-4893/10/3/87
+
+  - title: "Robust structure-from-motion computation: application to open-pit mine surveying from unmanned aerial images."
+    conference: Journal of Unmanned Vehicle Systems (doi:10.1139/juvs-2016-0027)
+    citation: Shahbazi, M., Sohn, G., Théau, J. and Ménard, P., 2017.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: Implicit regularization for reconstructing 3D building rooftop models using airborne LiDAR data.
+    conference: Sensors, 17(621) (doi:10.3390/s17030621)
+    citation: Jung, J., Jwa, Y. and Sohn, G., 2017.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: 'Wind adaptive modeling of transmission lines using minimum description length.'
+    conference: 'ISPRS Journal of Photogrammetry and Remote Sensing, 125:193-206 (doi: 10.1016/j.isprsjprs.2017.01.013)'
+    citation: Jwa, Y. and Sohn, G., 2017.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: 'Multi-range Conditional Random Field For Classifying Railway Electrification System Objects Using Mobile Laser Scanning Data.'
+    conference: 'Remote Sensing, 8(12):1008 (doi: 10.3390/rs8121008)'
+    citation: Jung, J. & Chen, L., Sohn, G., Luo, C. and Won, J.W., 2016
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: Matching aerial images to 3D building models using context-based geometric hashing.
+    conference: 'Sensors, 16(6):932 (doi: 10.3390/s16060932).'
+    citation: Jung, J., Sohn, G., Bang, K.I., Wichmann, A., Armenakis, C. and Kada, M., 2016.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: Maximizing the diversity of ensemble random forests for tree genera classification using high density LiDAR data.
+    conference: 'Remote Sensing, 8(8):646 (doi: 10.3390/rs8080646)'
+    citation: Ko, C., Sohn, G., Remmel, T. and Miller, J.R., 2016.
+    cover: assets/img/publications/06.jpg
+    link:
+
+conference:
+  - title: Revisiting intrinsic curves for efficient dense stereo matching.
+    conference: 'ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., III-3, 123-130 (doi:10.5194/isprs-annals-III-3-123-2016, 2016).'
+    citation: Shahbazi, M., Sohn, G., Théau, J. and Ménard P., 2016.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: BIM-GIS integrated geospatial information model using semantic web and RDF graphs.
+    conference: 'ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., III-4, 73-79 (doi:10.5194/isprs-annals-III-4-73-2016, 2016).'
+    citation: Hor, A-H., Jadidi, A. and Sohn, G., 2016.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: Matching aerial images to 3D building models based on context-based geometric hashing.
+    conference: ISPRS Ann. Photogramm. Remote Sens. Spatial Inf. Sci., III-1, 17-23 (doi:10.5194/isprs-annals-III-1-17-2016, 2016).
+    citation: Jung, J., Bang, K., Sohn, G. and Armenakis C., 2016.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: Geometric context and orientation map combination for indoor corridor modeling using a single image. Int. Arch. Photogramm.
+    conference: Remote Sens. Spatial Inf. Sci., XLI-B4, 295-302 (doi:10.5194/isprs-archives-XLI-B4-295-2016, 2016).
+    citation: Jahromi, A.B. and Sohn, G., 2016.
+    cover: assets/img/publications/06.jpg
+    link:
+
+  - title: Towards object driven floor plan extraction from laser point cloud.
+    conference: nt. Arch. Photogramm. Remote Sens. Spatial Inf. Sci., XLI-B3, 3-10 (doi:10.5194/isprs-archives-XLI-B3-3-2016, 2016).
+    citation: Babacan, K., Jung, J., Wichmann, W., Jahromi, B.A., Shahbazi, M., Sohn, G. and Kada, M., 2016.
+    cover: assets/img/publications/06.jpg
+    link:

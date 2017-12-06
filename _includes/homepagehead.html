@@ -1,0 +1,21 @@
+<div class="page-head auto-height">
+  <div id="rev_slider_24_1_wrapper" class="rev_slider_wrapper fullscreen-container">
+    <div id="rev_slider_24_1" class="rev_slider fullscreenbanner ol-theme">
+      <ul>
+
+        {% for slide in site.data.homepageslider %}
+        <li data-transition="fade" data-masterspeed="500">
+          <!-- MAIN IMAGE--><img src="{{ slide.image }}" alt="" data-lazyload="{{ slider.image }}" data-bgposition="center center" data-kenburns="on" data-duration="10000" data-ease="Power1.easeOut" data-scalestart="120" data-scaleend="100" class="rev-slidebg">
+          <h2 data-x="center" data-y="middle" data-voffset="-120" data-transform_in="y:[100%];s:1500;e:Power3.easeInOut;" data-transform_out="opacity:0;s:1000;" data-mask_in="x:0px;y:0px;" data-start="500" style="z-index: 5; white-space: nowrap;" class="tp-caption ol-title tp-resizeme">{{ slide.title }}</h2>
+          <h3 data-x="center" data-y="middle" data-voffset="-60" data-transform_in="y:[-100%];s:1500;e:Power3.easeInOut;" data-transform_out="opacity:0;s:1000;" data-mask_in="x:0px;y:0px;" data-start="700" data-responsive_offset="on" style="z-index: 6; white-space: nowrap; line-height: 40px;" class="tp-caption ol-subtitle tp-resizeme">{{ slide.subtitle }}</h3><a href="#" data-x="center" data-y="center" data-voffset='["180","180","50","50"]' data-transform_in="y:10px;opacity:0;s:1000;e:Power3.easeInOut;" data-transform_out="auto:auto;s:1000;" data-start="1300" data-basealign="slide" data-responsive_offset="off" data-responsive="off" style="z-index: 8; white-space: nowrap;" class="tp-caption btn btn-medium btn-wide btn-trans btn-skin-white btn-circle">Explore the Lab</a>
+          <div data-x="center" data-y="bottom" data-voffset="77" data-width="35" data-height="55" data-style_hover="cursor:pointer;" data-transform_in="y:50px;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="y:50px;opacity:0;s:1000;" data-start="1500" data-basealign="slide" data-responsive_offset="off" data-responsive="off" class="tp-caption rev-scroll-btn"><span></span></div>
+        </li>
+
+        {% endfor %}
+
+        <div style="visibility: hidden !important;" class="tp-bannertimer tp-bottom"></div>
+      </ul>
+      <!-- END REVOLUTION SLIDER-->
+    </div>
+  </div>
+</div>
