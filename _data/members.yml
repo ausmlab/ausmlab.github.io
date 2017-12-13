@@ -1,10 +1,11 @@
-current:
+director:
   - name:  Gunho Sohn
     position: Lab Director
     homepage:
     bio:
     pic: /assets/img/people/GSohn.jpg
-
+    
+current:
   - name: Bruce (Jaewook) Jung
     position: Post Doctoral Research Fellow
     homepage:

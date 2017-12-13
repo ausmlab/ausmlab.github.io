@@ -110,12 +110,42 @@ http://themeforest.net/user/owwwlab/
           <section class="section bg-gray">
             <div class="container">
 
+              <div class="heading-with-sub text-center heading-margin-top">
+                <h2 class="title">Lab Director</h2>
+              </div>
+
               <!-- #####Begin row with multiple columns-->
-              <div class="row multi-columns-row col-margin-bottom-40 pull-up-180">
+              <div class="row multi-columns-row col-margin-bottom-40">
+
+                {% for member in site.data.members.director %}
+
+                <div class="col-md-3 col-sm-4 col-xs-6 center-block">
+                  <!-- #####Begin person card-->
+                  <div class="vc-card boxed hoverable-links center-block"><a href="#">
+                    <img class="cover" src="{{ member.pic }}" alt="people"></a>
+                    <div class="vc-card-wrapper vc-card-min-height"><a href="#" class="title">{{ member.name }}</a>
+                      <div class="subtitle">{{ member.position }}</div>
+                    </div>
+                    <div class="links"><a href="{{ member.homepage }}"><i class="oli oli-external_link"></i><span>homepage</span></a><a href="{{ member.bio }}"><i class="oli oli-user_male_circle"></i><span>bio</span></a>
+                    </div>
+                  </div>
+                  <!-- #####End person card-->
+                </div>
+
+                {% endfor %}
+
+              </div>
+
+              <div class="heading-with-sub text-center heading-margin-top">
+                <h2 class="title">Current</h2>
+              </div>
+
+              <!-- #####Begin row with multiple columns-->
+              <div class="row multi-columns-row col-margin-bottom-40">
 
                 {% for member in site.data.members.current %}
 
-                <div class="col-md-3 col-sm-4 col-xs-6">
+                <div class="col-md-3 col-sm-6 col-xs-8">
                   <!-- #####Begin person card-->
                   <div class="vc-card boxed hoverable-links"><a href="#"> <img class="cover" src="{{ member.pic }}" alt="people"></a>
                     <div class="vc-card-wrapper vc-card-min-height"><a href="#" class="title">{{ member.name }}</a>
