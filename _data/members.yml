@@ -17,12 +17,12 @@ current:
     homepage:
     bio:
     pic: /assets/img/people/BJung.png
-
+  
   - name: Jungwon Kang
     position: Post Doctoral Research Fellow
     homepage:
     bio:
-    pic:
+    pic: 
     
   - name: Ali Baligh
     position: PHD Candidate
@@ -208,7 +208,7 @@ alumni:
     bio:
     pic: /assets/img/people/person.png
     
-  visiting scholars:
+ visiting scholars:
   - name: Dr. Ruiju Zhang
     position: Visiting Scholar Beijing University of Civil Engineering And Architecture China
     homepage:
