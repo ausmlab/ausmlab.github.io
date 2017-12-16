@@ -66,18 +66,6 @@ current:
     bio:
     pic: /assets/img/people/person.png
 
-  - name: Kartiketa Bhargava
-    position: Undergraduate Student
-    homepage:
-    bio:
-    pic: /assets/img/people/person.png
-
-  - name: Dr. Ruiju Zhang
-    position: Visiting Scholar Beijing University of Civil Engineering And Architecture China
-    homepage:
-    bio:
-    pic: /assets/img/people/person.png
-
   - name: Dr. Jong-un Won
     position: Visiting Scholar, Korea Railway Research Institute, South Korea
     homepage:
@@ -95,8 +83,20 @@ current:
     homepage:
     bio:
     pic: /assets/img/people/kunwoo.jpg
+    
+  - name: Mohammd Ishfaq
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: 
 
 alumni:
+  - name: Kartiketa Bhargava
+    position: Undergraduate Student
+    homepage:
+    bio:
+    pic: /assets/img/people/person.png
+  
   - name: Dr. Ki-in Bang
     position: PDF
     location: North West Geomatics, Calgary, Canada
@@ -198,6 +198,13 @@ alumni:
   - name: Ima Ituen
     position: MSc
     location:
+    homepage:
+    bio:
+    pic: /assets/img/people/person.png
+    
+  visiting scholars:
+  - name: Dr. Ruiju Zhang
+    position: Visiting Scholar Beijing University of Civil Engineering And Architecture China
     homepage:
     bio:
     pic: /assets/img/people/person.png
