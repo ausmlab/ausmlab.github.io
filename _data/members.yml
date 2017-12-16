@@ -11,3 +11,81 @@ current:
     homepage:
     bio:
     pic: /assets/img/people/BJung.png
+    
+  - name: Jungwon Kang
+    position: Post Doctoral Research Fellow
+    homepage:
+    bio:
+    pic: 
+    
+  - name: Ali Baligh
+    position: PHD Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/BAli.png
+
+  - name: Kivanc Babacan
+    position: PHD Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/KBabacan.png
+
+  - name: Hadi Hor
+    position: PHD Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/HHor.png
+
+  - name: Andreas Wichman
+    position: PHD Candidate; Co-Supervised by Martic Kada, TU Berlin
+    homepage:
+    bio:
+    pic: /assets/img/people/Andreas-Wichmann.jpg
+
+  - name: Eros Gulo
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/Eros-Gulo.jpg
+
+  - name: Phillip Robbins
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/Phillip-Robbins.jpg
+
+  - name: Leihan Chen
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/leihan.jpg
+
+  - name: Zhao Kang
+    position: Undergraduate Student, Wuhan University, China
+    homepage:
+    bio:
+    pic: /assets/img/people/person.png
+
+  - name: Dr. Jong-un Won
+    position: Visiting Scholar, Korea Railway Research Institute, South Korea
+    homepage:
+    bio:
+    pic: /assets/img/people/person.png
+
+  - name: Afnan Ahmad
+    position: MSc Candidate
+    homepage: https://www.afnanahmad.com
+    bio:
+    pic: /assets/img/people/Afnan.jpg
+
+  - name: Kunwoo Park
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/kunwoo.jpg
+    
+  - name: Mohammd Ishfaq
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: 
