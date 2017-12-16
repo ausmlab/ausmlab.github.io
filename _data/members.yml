@@ -16,7 +16,7 @@ current:
     position: Post Doctoral Research Fellow
     homepage:
     bio:
-    pic: /assets/img/people/BJung.png   
+    pic: /assets/img/people/Jungwon-Kang.png   
 
   - name: Ali Baligh
     position: PHD Candidate
@@ -60,17 +60,17 @@ current:
     bio:
     pic: /assets/img/people/leihan.jpg
 
-  - name: Zhao Kang
+  - name: Kang Zhao
     position: Undergraduate Student, Wuhan University, China
     homepage:
     bio:
-    pic: /assets/img/people/person.png
+    pic: /assets/img/people/Kang-Zhao.png
 
   - name: Dr. Jong-un Won
     position: Visiting Scholar, Korea Railway Research Institute, South Korea
     homepage:
     bio:
-    pic: /assets/img/people/person.png
+    pic: /assets/img/people/Jong-Un Won.png
 
   - name: Afnan Ahmad
     position: MSc Candidate
@@ -88,5 +88,5 @@ current:
     position: MSc Candidate
     homepage:
     bio:
-    pic: 
+    pic: /assets/img/people/Mohammd-Ishfaq.jpg
     
