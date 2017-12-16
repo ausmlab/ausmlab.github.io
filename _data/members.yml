@@ -61,10 +61,10 @@ current:
     pic: /assets/img/people/leihan.jpg
 
   - name: Kang Zhao
-    position: Undergraduate Student, Wuhan University, China
+    position: MSc Student
     homepage:
     bio:
-    pic: /assets/img/people/Kang-Zhao.png
+    pic: /assets/img/people/Kang-Zhao.PNG
 
   - name: Dr. Jong-Un Won
     position: Visiting Scholar, Korea Railway Research Institute, South Korea
@@ -73,19 +73,19 @@ current:
     pic: /assets/img/people/Jong-Un Won.png
 
   - name: Afnan Ahmad
-    position: MSc Candidate
+    position: MSc Student
     homepage: https://www.afnanahmad.com
     bio:
     pic: /assets/img/people/Afnan.jpg
 
   - name: Kunwoo Park
-    position: MSc Candidate
+    position: MSc Student
     homepage:
     bio:
     pic: /assets/img/people/kunwoo.jpg
     
   - name: Mohammd Ishfaq
-    position: MSc Candidate
+    position: MSc Student (Part-time)
     homepage:
     bio:
     pic: /assets/img/people/Mohammd Ishfaq.jpg
