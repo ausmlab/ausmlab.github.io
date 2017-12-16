@@ -5,7 +5,7 @@ director:
     bio:
     pic: /assets/img/people/GSohn.jpg  
 
- current:
+current:
   - name: Bruce (Jaewook) Jung
     position: Post Doctoral Research Fellow
     homepage:
