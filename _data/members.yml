@@ -6,18 +6,24 @@ director:
     pic: /assets/img/people/GSohn.jpg
     
 current:
-  - name: Bruce (Jaewook) Jung
-    position: Post Doctoral Research Fellow
+  - name: Dr. Pio Claudio
+    position: Post Doctoral Research Fellow (Co-supervised with Drs. James Elder & Petros Faloutsos)
     homepage:
-    bio:
-    pic: /assets/img/people/BJung.png
+    bio:  
+    pic: /assets/img/people/Pio-Claudio.png
     
-  - name: Jungwon Kang
+  - name: Dr. Jungwon Kang
     position: Post Doctoral Research Fellow
     homepage:
     bio:
     pic: /assets/img/people/Jungwon-Kang.PNG   
 
+  - name: Dr. Bruce (Jaewook) Jung
+    position: Post Doctoral Research Fellow
+    homepage:
+    bio:  
+    pic: /assets/img/people/BJung.png
+    
   - name: Ali Baligh
     position: PHD Candidate
     homepage:
@@ -30,8 +36,8 @@ current:
     bio:
     pic: /assets/img/people/KBabacan.png
 
-  - name: Hadi Hor
-    position: PHD Candidate
+  - name: Abdel-Hadi Hor
+    position: PHD Candidate (Part-time)
     homepage:
     bio:
     pic: /assets/img/people/HHor.png
@@ -39,7 +45,7 @@ current:
   - name: Andreas Wichman
     position: PHD Candidate; Co-Supervised by Martic Kada, TU Berlin
     homepage:
-    bio:
+    bio: 
     pic: /assets/img/people/Andreas-Wichmann.jpg
 
   - name: Eros Gulo
@@ -90,3 +96,140 @@ current:
     bio:
     pic: /assets/img/people/Mohammd-Ishfaq.PNG
     
+ -  name: Ario Hadian
+    position: Undergraduate Student
+    homepage:
+    bio:
+    pic: /assets/img/people/Ario-Hadian.PNG
+    
+alumni:
+ - name: Jahyuck Koo
+   position: Visiting Scholar
+   homepage:
+   bio:
+   pic: /assets/img/people/person.PNG
+   
+ - name: Dr. Ruiju Zhang
+   position: 
+   homepage:
+   bio:
+   pic: /assets/img/people/person.PNG
+ 
+ - name: Krystel Reyes
+   position: Undergraduate Student
+   homepage:
+   bio:
+   pic: /assets/img/people/Krystel-Reyes.PNG
+    
+ - name: Kartiketa Bhargava
+   position: Undergraduate Student
+   homepage:
+   bio:
+   pic: /assets/img/people/Kartiketa-Bhargava.PNG
+  
+ - name: Dr. Ki-in Bang
+   position: PDF
+   location: North West Geomatics, Calgary, Canada
+   homepage:
+   bio:
+   pic: /assets/img/people/Ki-in-Bang.PNG
+
+ - name: Dr. Mojgan Jadidi
+   position: PDF
+   location: Lecturer, York University, Canada
+   homepage:
+   bio:
+   pic: /assets/img/people/Mojgan-Jadidi.PNG
+
+ - name: Dr. Mozhdeh Shahbazi
+   position: PhD, Co-supervised with Dr. Jerome Theau, University of Sherbrook
+   location: Assistant Professor, Univ. of Calgary
+   homepage:
+   bio:
+   pic: /assets/img/people/Mozhdeh-Shahbazi.PNG
+
+ - name: Dr. Chao Luo
+   position: PhD
+   location: Video game company, Shanghai, China
+   homepage:
+   bio:
+   pic: /assets/img/people/Chao-Luo.PNG
+
+ - name: Dr. Junjie Zhang
+   position: PhD
+   location: PDF, University of Toronto/Sunnybrook Health Sciences Centre
+   homepage:
+   bio:
+   pic: /assets/img/people/Junjie-Zhang.PNG
+
+ - name: Dr. Brian (Heungsik) Kim
+   position: PhD, PDF
+   location: Industrial SkyWorks, Toronto
+   homepage:
+   bio:
+   pic: /assets/img/people/Brian-Kim.PNG
+
+ - name: Dr. Connie Ko
+   position: PhD, Co-supervised with Dr. Tarmo Remmel, York University
+   location: York University
+   homepage:
+   bio:
+   pic: /assets/img/people/Connie-Ko.PNG
+
+ - name: Dr. Yoonseok Jwa
+   position: PhD, PDF
+   location: Industrial SkyWorks, Toronto
+   homepage:
+   bio:
+   pic: /assets/img/people/Yoonseok-Jwa.PNG
+
+ - name: Larry Wang
+   position: PhD (Incomplete)
+   location: Weather Network, Mississauga
+   homepage:
+   bio: 
+   pic: /assets/img/people/Larry-Wang.PNG
+
+ - name: Solomon Chan
+   position: MSc
+   location: RDP Associate Inc., Toronto
+   homepage:
+   bio:
+   pic: /assets/img/people/Solomon-Chan.PNG
+
+ - name: Ravi Persad
+   position: MSc, Co-supervised with Dr. Costas Armenakis, York University
+   location: PhD student, York University
+   homepage:
+   bio:
+   pic: /assets/img/people/person.PNG
+
+ - name: Yu Gao
+   position: MSc, Co-supervised with Dr. Costas Armenakis, York University
+   location: Teledyine-Optech, Toronto
+   homepage:
+   bio:
+   pic: /assets/img/people/Yu-Gao.PNG
+
+ - name: Dr. Inian Moorthy
+   position: PDF, Co-supervised with Dr. John Miller, York University
+   location: International Institute for Applied Systems Analysis (IIASA), Austria
+   homepage:
+   bio:
+   pic: /assets/img/people/Inian-Moorthy.PNG
+
+ - name: Ramu Narayanan
+   position: MSc
+   location: Microdea Inc.
+   homepage:
+   bio:
+   pic: /assets/img/people/Ramu-Narayanan.PNG
+
+ - name: Ima Ituen
+   position: MSc
+   location:
+   homepage:
+   bio: 
+   pic: /assets/img/people/person.PNG
+   
+
