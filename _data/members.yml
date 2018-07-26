@@ -1,29 +1,30 @@
+---
 director:
   - name: Dr. Gunho Sohn
     position: Lab Director
     homepage:
     bio:
     pic: /assets/img/people/GSohn.jpg
-    
+
 current:
   - name: Dr. Pio Claudio
-    position: Post Doctoral Research Fellow (Co-supervised with Drs. James Elder and Petros Faloutsos)
+    position: PDF, Co-supervised with Drs. James Elder and Petros Faloutsos
     homepage:
-    bio:  
+    bio:
     pic: /assets/img/people/Pio-Claudio.PNG
-    
+
   - name: Dr. Jungwon Kang
     position: Postdoctoral Research Fellow
     homepage:
     bio:
-    pic: /assets/img/people/Jungwon-Kang.PNG   
+    pic: /assets/img/people/Jungwon-Kang.PNG
 
   - name: Dr. Bruce (Jaewook) Jung
     position: Postdoctoral Research Fellow
     homepage:
-    bio:  
+    bio:
     pic: /assets/img/people/BJung.png
-    
+
   - name: Ali Baligh
     position: PHD Candidate
     homepage:
@@ -45,7 +46,7 @@ current:
   - name: Andreas Wichman
     position: PHD Candidate; Co-Supervised by Martic Kada, TU Berlin
     homepage:
-    bio: 
+    bio:
     pic: /assets/img/people/Andreas-Wichmann.jpg
 
   - name: Eros Gulo
@@ -89,44 +90,44 @@ current:
     homepage:
     bio:
     pic: /assets/img/people/kunwoo.jpg
-    
+
   - name: Mohammd Ishfaq
     position: MSc Student (Part-time)
     homepage:
     bio:
     pic: /assets/img/people/Mohammd-Ishfaq.PNG
-    
- -  name: Ario Hadian
+
+  - name: Ario Hadian
     position: Undergraduate Student
     homepage:
     bio:
     pic: /assets/img/people/Ario-Hadian.PNG
-    
+
 alumni:
  - name: Jahyuck Koo
    position: Visiting Scholar
    homepage:
    bio:
    pic: /assets/img/people/person.PNG
-   
+
  - name: Dr. Ruiju Zhang
-   position: 
+   position:
    homepage:
    bio:
    pic: /assets/img/people/person.PNG
- 
+
  - name: Krystel Reyes
    position: Undergraduate Student
    homepage:
    bio:
    pic: /assets/img/people/Krystel-Reyes.PNG
-    
+
  - name: Kartiketa Bhargava
    position: Undergraduate Student
    homepage:
    bio:
    pic: /assets/img/people/Kartiketa-Bhargava.PNG
-  
+
  - name: Dr. Ki-in Bang
    position: PDF
    location: North West Geomatics, Calgary, Canada
@@ -187,7 +188,7 @@ alumni:
    position: PhD (Incomplete)
    location: Weather Network, Mississauga
    homepage:
-   bio: 
+   bio:
    pic: /assets/img/people/Larry-Wang.PNG
 
  - name: Solomon Chan
@@ -229,7 +230,5 @@ alumni:
    position: MSc
    location:
    homepage:
-   bio: 
+   bio:
    pic: /assets/img/people/person.PNG
-   
-

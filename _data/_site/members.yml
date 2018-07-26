@@ -1,0 +1,105 @@
+---
+director:
+  - name: Dr. Gunho Sohn
+    position: Lab Director
+    homepage:
+    bio:
+    pic: /assets/img/people/GSohn.jpg
+
+current:
+  - name: Dr. Pio Claudio
+    co-supervision: (Co-supervised with Drs. James Elder and Petros Faloutsos)
+    position: Post Doctoral Research Fellow
+    homepage:
+    bio:
+    pic: /assets/img/people/Pio-Claudio.PNG
+
+  - name: Dr. Jungwon Kang
+    position: Postdoctoral Research Fellow
+    homepage:
+    bio:
+    pic: /assets/img/people/Jungwon-Kang.PNG
+
+  - name: Dr. Bruce (Jaewook) Jung
+    position: Postdoctoral Research Fellow
+    homepage:
+    bio:
+    pic: /assets/img/people/BJung.png
+
+  - name: Ali Baligh
+    position: PHD Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/BAli.png
+
+  - name: Kivanc Babacan
+    position: PHD Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/KBabacan.png
+
+  - name: Abdel-Hadi Hor
+    position: PHD Candidate (Part-time)
+    homepage:
+    bio:
+    pic: /assets/img/people/HHor.png
+
+  - name: Andreas Wichman
+    position: PHD Candidate; Co-Supervised by Martic Kada, TU Berlin
+    homepage:
+    bio:
+    pic: /assets/img/people/Andreas-Wichmann.jpg
+
+  - name: Eros Gulo
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/Eros-Gulo.jpg
+
+  - name: Phillip Robbins
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/Phillip-Robbins.jpg
+
+  - name: Leihan Chen
+    position: MSc Candidate
+    homepage:
+    bio:
+    pic: /assets/img/people/leihan.jpg
+
+  - name: Kang Zhao
+    position: MSc Student
+    homepage:
+    bio:
+    pic: /assets/img/people/Kang-Zhao.PNG
+
+  - name: Dr. Jong-Un Won
+    position: Visiting Scholar, Korea Railway Research Institute, South Korea
+    homepage:
+    bio:
+    pic: /assets/img/people/Jong-Un Won.PNG
+
+  - name: Afnan Ahmad
+    position: MSc Student
+    homepage: https://www.afnanahmad.com
+    bio:
+    pic: /assets/img/people/Afnan.jpg
+
+  - name: Kunwoo Park
+    position: MSc Student
+    homepage:
+    bio:
+    pic: /assets/img/people/kunwoo.jpg
+
+  - name: Mohammd Ishfaq
+    position: MSc Student (Part-time)
+    homepage:
+    bio:
+    pic: /assets/img/people/Mohammd-Ishfaq.PNG
+
+  - name: Ario Hadian
+    position: Undergraduate Student
+    homepage:
+    bio:
+    pic: /assets/img/people/Ario-Hadian.PNG

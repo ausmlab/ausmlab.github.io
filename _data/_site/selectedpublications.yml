@@ -1,0 +1,17 @@
+- title: Evolutionary optimization for robust epipolar-geometry estimation and outlier detection.
+  conference: Algorithms 2017, 10(3), 87 (doi:10.3390/a10030087)
+  citation: Shahbazi, M., Sohn, G. and Ménard, P., 2017.
+  cover: assets/img/publications/06.jpg
+  link: http://www.mdpi.com/1999-4893/10/3/87
+
+- title: "Robust structure-from-motion computation: application to open-pit mine surveying from unmanned aerial images."
+  conference: Journal of Unmanned Vehicle Systems (doi:10.1139/juvs-2016-0027)
+  citation: Shahbazi, M., Sohn, G., Théau, J. and Ménard, P., 2017.
+  cover: assets/img/publications/06.jpg
+  link:
+
+- title: Implicit regularization for reconstructing 3D building rooftop models using airborne LiDAR data.
+  conference: Sensors, 17(621) (doi:10.3390/s17030621)
+  citation: Jung, J., Jwa, Y. and Sohn, G., 2017.
+  cover: assets/img/publications/06.jpg
+  link:
