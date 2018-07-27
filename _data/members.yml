@@ -1,3 +1,4 @@
+
 ---
 director:
   - name: Dr. Gunho Sohn
@@ -82,7 +83,7 @@ current:
   - name: Afnan Ahmad
     position: MSc Student
     homepage: https://www.afnanahmad.com
-    bio:
+    bio: afnan
     pic: /assets/img/people/Afnan.jpg
 
   - name: Kunwoo Park
@@ -101,20 +102,20 @@ current:
     position: Undergraduate Student
     homepage:
     bio:
-    pic: /assets/img/people/Ario-Hadian.PNG
+    pic: /assets/img/people/person.png
 
 alumni:
  - name: Jahyuck Koo
    position: Visiting Scholar
    homepage:
    bio:
-   pic: /assets/img/people/person.PNG
+   pic: /assets/img/people/person.png
 
  - name: Dr. Ruiju Zhang
    position:
    homepage:
    bio:
-   pic: /assets/img/people/person.PNG
+   pic: /assets/img/people/person.png
 
  - name: Krystel Reyes
    position: Undergraduate Student
@@ -133,7 +134,7 @@ alumni:
    location: North West Geomatics, Calgary, Canada
    homepage:
    bio:
-   pic: /assets/img/people/Ki-in-Bang.PNG
+   pic: /assets/img/people/person.png
 
  - name: Dr. Mojgan Jadidi
    position: PDF
@@ -203,7 +204,7 @@ alumni:
    location: PhD student, York University
    homepage:
    bio:
-   pic: /assets/img/people/person.PNG
+   pic: /assets/img/people/person.png
 
  - name: Yu Gao
    position: MSc, Co-supervised with Dr. Costas Armenakis, York University
@@ -231,4 +232,4 @@ alumni:
    location:
    homepage:
    bio:
-   pic: /assets/img/people/person.PNG
+   pic: /assets/img/people/person.png
