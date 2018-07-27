@@ -2,19 +2,19 @@
   url: /
 
 - title: News
-  url:
+  url: /news
 
 - title: Members
-  url: /members.html
+  url: /members
 
 - title: Projects
-  url:
+  url: /projects
 
 - title: Publications
-  url: /publications.html
+  url: /publications
 
 - title: Recruitment
-  url:
+  url: /recruitment
 
 - title: Contact
-  url: /contact.html
+  url: /contact
