@@ -3,24 +3,16 @@ title: Augmented Urban Space Modeling Lab @ York University
 timezone: America/New_York
 collections:
   members:
-    title: Members
     output: true
-    permalink: pretty
-    name: Augmented Urban Space Modeling Lab
-    location: York University, Toronto, Canada
   posts:
-    title: Posts
     output: true
   projects:
-    title: Projects
     output: true
     permalink: "/projects/:year/:title/"
   recruitment:
-    title: Recruitment
     output: true
     permalink: "/recruitment/:year/:month/:day/:title/"
   uploads:
-    title: Uploads
     output: true
 name: Augmented Urban Space Modeling Lab
 institute: York University

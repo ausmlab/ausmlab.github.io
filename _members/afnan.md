@@ -1,6 +1,6 @@
 ---
 title: Afnan
-position: 0
+position: Masters Candidate
 layout: memberbio
 full-name: Afnan Ahmad
 first-name: Afnan
@@ -31,20 +31,20 @@ awards:
   year: 2012
 research:
 - title: Analysis of Algorithm
-  url: 
-  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+  url:
+  cover: ../../assets/img/featured-items/06.jpg
 - title: Analysis of Algorithm
-  url: 
-  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+  url:
+  cover: ../../assets/img/featured-items/06.jpg
 - title: Analysis of Algorithm
-  url: 
-  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+  url:
+  cover: ../../assets/img/featured-items/06.jpg
 - title: Analysis of Algorithm
-  url: 
-  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+  url:
+  cover: ../../assets/img/featured-items/06.jpg
 - title: Analysis of Algorithm
-  url: 
-  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+  url:
+  cover: ../../assets/img/featured-items/06.jpg
 facebook: afnan.ahmad
 twitter: rockafnan
 googleplus: '117533368899354291255'
