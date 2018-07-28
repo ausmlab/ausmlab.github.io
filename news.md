@@ -1,4 +1,4 @@
 ---
-title:
 layout: news
 ---
+
