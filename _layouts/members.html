@@ -84,7 +84,7 @@ http://themeforest.net/user/owwwlab/
     <!-- #####Begin contents-->
     <section id="contents">
       <!-- #####Begin page head-->
-      <div class="page-head h-400 particles center-it parallax-layer ov-blue-alpha-50 dark" data-img-src="{{ site.url }}/assets/img/bg/010.jpg">
+      <div class="page-head h-400 particles center-it parallax-layer ov-blue-alpha-90 dark" data-img-src="{{ site.url }}/assets/img/bg/lab-group.jpg">
         <div class="container">
           <div class="tb-vcenter-wrapper">
             <div class="title-wrapper vcenter parallax-layer" data-parallax-mode="mode-header-content">
@@ -110,8 +110,8 @@ http://themeforest.net/user/owwwlab/
           <section class="section bg-gray">
             <div class="container">
 
-              <div class="heading-with-sub text-center heading-margin-top">
-                <h2 class="title">Lab Director</h2>
+              <div class="heading-with-sub text-center">
+                <h1 class="title">Lab Director</h1>
               </div>
 
               <!-- #####Begin row with multiple columns-->
@@ -119,14 +119,15 @@ http://themeforest.net/user/owwwlab/
 
                 {% for member in site.data.members.director %}
 
-                <div class="col-md-3 col-sm-4 col-xs-6 center-block">
+                <div class="row multi-columns-row col-margin-bottom-40">
                   <!-- #####Begin person card-->
-                  <div class="vc-card boxed hoverable-links center-block"><a href="#">
-                    <img class="cover" src="{{ member.pic }}" alt="people"></a>
-                    <div class="vc-card-wrapper vc-card-min-height"><a href="#" class="title">{{ member.name }}</a>
-                      <div class="subtitle">{{ member.position }}</div>
-                    </div>
-                    <div class="links"><a href="{{ member.homepage }}"><i class="oli oli-external_link"></i><span>homepage</span></a><a href="{{ member.bio }}"><i class="oli oli-user_male_circle"></i><span>bio</span></a>
+
+                  <div class="col-xs-12 col-md-12">
+                    <div class="vc-card boxed"><a href="#"><img src="{{ member.pic }}" alt="people"></a>
+                      <div class="vc-card-wrapper"><a href="#" class="title">{{ member.name }}</a>
+                        <div class="subtitle">{{ member.position }}</div>
+                      </div>
+                      <div class="links"><a href="{{ member.homepage }}" data-toggle="tooltip" data-original-title="homepage"><i class="fa fa-external-link"></i></a><a href="{{ member.bio }}" data-toggle="tooltip" data-original-title="Biography"><i class="oli oli-user_male_circle"></i></a></div>
                     </div>
                   </div>
                   <!-- #####End person card-->
@@ -136,8 +137,10 @@ http://themeforest.net/user/owwwlab/
 
               </div>
 
-              <div class="heading-with-sub text-center heading-margin-top">
-                <h2 class="title">Current</h2>
+              <div class="sp-line-75 m-top-50"></div>
+
+              <div class="heading-with-sub text-center m-bottom-50">
+                <h1 class="title">Current</h1>
               </div>
 
               <!-- #####Begin row with multiple columns-->
@@ -145,40 +148,36 @@ http://themeforest.net/user/owwwlab/
 
                 {% for member in site.data.members.current %}
 
-                <div class="col-md-3 col-sm-6 col-xs-8">
-                  <!-- #####Begin person card-->
-                  <div class="vc-card boxed hoverable-links"><a href="#"> <img class="cover" src="{{ member.pic }}" alt="people"></a>
-                    <div class="vc-card-wrapper vc-card-min-height"><a href="#" class="title">{{ member.name }}</a>
+                <div class="col-xs-12 col-md-3">
+                  <div class="vc-card boxed"><a href="#"><img src="{{ member.pic }}" alt="people"></a>
+                    <div class="vc-card-wrapper"><a href="#" class="title">{{ member.name }}</a>
                       <div class="subtitle">{{ member.position }}</div>
                     </div>
-                    <div class="links"><a href="{{ member.homepage }}"><i class="oli oli-external_link"></i><span>homepage</span></a><a href="{{ member.bio }}"><i class="oli oli-user_male_circle"></i><span>bio</span></a>
-                    </div>
+                    <div class="links"><a href="{{ member.homepage }}" data-toggle="tooltip" data-original-title="homepage"><i class="fa fa-external-link"></i></a><a href="{{ member.bio }}" data-toggle="tooltip" data-original-title="Biography"><i class="oli oli-user_male_circle"></i></a></div>
                   </div>
-                  <!-- #####End person card-->
                 </div>
 
                 {% endfor %}
 
               </div>
 
-              <div class="heading-with-sub text-center heading-margin-top">
-                <h2 class="title">Alumni</h2>
+              <div class="sp-line-75 m-top-50"></div>
+
+              <div class="heading-with-sub text-center m-bottom-50">
+                <h1 class="title">Alumni</h1>
               </div>
 
               <div class="row multi-columns-row col-margin-bottom-40">
 
                 {% for member in site.data.members.alumni %}
 
-                <div class="col-md-3 col-sm-4 col-xs-6">
-                  <!-- #####Begin person card-->
-                  <div class="vc-card boxed hoverable-links"><a href="#"> <img class="cover" src="{{ member.pic }}" alt="people"></a>
-                    <div class="vc-card-wrapper vc-card-min-height"><a href="#" class="title">{{ member.name }}</a>
-                      <div class="subtitle">{{ member.position }}<br> {{ member.location }}</div>
+                <div class="col-xs-12 col-md-3">
+                  <div class="vc-card boxed"><a href="#"><img src="{{ member.pic }}" alt="people"></a>
+                    <div class="vc-card-wrapper"><a href="#" class="title">{{ member.name }}</a>
+                      <div class="subtitle">{{ member.position }}</div>
                     </div>
-                    <div class="links"><a href="{{ member.homepage }}"><i class="oli oli-external_link"></i><span>homepage</span></a><a href="{{ member.bio }}"><i class="oli oli-user_male_circle"></i><span>bio</span></a>
-                    </div>
+                    <div class="links"><a href="{{ member.homepage }}" data-toggle="tooltip" data-original-title="homepage"><i class="fa fa-external-link"></i></a><a href="{{ member.bio }}" data-toggle="tooltip" data-original-title="Biography"><i class="oli oli-user_male_circle"></i></a></div>
                   </div>
-                  <!-- #####End person card-->
                 </div>
 
                 {% endfor %}
