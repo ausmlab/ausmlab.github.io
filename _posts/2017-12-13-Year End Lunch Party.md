@@ -1,18 +1,20 @@
 ---
+title: Year End Lunch
+date: 2017-12-13 00:00:00 Z
+categories:
+- News
+tags:
+- lab party
+- group photo
 layout: news-single
-title: "Year End Lunch"
-author: "Gunho Sohn"
+author: Gunho Sohn
 author-avatar: GSohn.jpg
-categories: News
-tags: [lab party, group photo]
 image:
   feature: toronto-skyline.jpg
   teaser: thumb-3.jpg
-  credit:
-  creditlink:
+  credit: 
+  creditlink: 
 ---
-
-
 
 ![img](https://lh3.googleusercontent.com/hjApXcK56d50DqKcyVRJrIGgW1M78MTxSdMQW7FNoaJdyMvEhvjGAwAmWvPlf7-whmpDI4jfIBHWVbOyAPGuLMJ4WzuY3VZGJ-AlSk9ftH6FKrSx9T3ulJSJ5J9qlyqLF66ifau1A4I6G8tqxvrG7btd_uRdICtvu3ATXMz9bz_NJoz02gAJtlNJ_fU7iDIo3keAIqcFyhhWqKb2qR-1Uovb9VLhzDePPv2-sLiBqe0KXkr_JdXXGKGxKBE_RD917ANms3YrfI0Z4syR627EulnSJGoPmATLT_gNoKdvaSFJWCy3slPgo5tM56MKhx5WueGQGqnYXs9bRG6jkdj1ZmvBxk36QJNhdg6ju6puRNH8XkoL3zC2kj72daV1YmueyxOKQ7OLyAUyPkuKZZ_o2Njat6ucJs8DXZI1NrEYMRYE2FGgW86o9mnDWsmi52Rloo1iGeaRVG8ABkY-BT30Y3pPAzte6TjuYCeaVwWG-GRz6Wc4c0t-KY8lXZWgyz2DChutdUsNZNYu-AYcNIpphsGOr7Nh22Nz7wkwRGePsQJeXXejxTr67Z68jer_N6xskOnMhR9kDu6grdQI8h6GoG0qnbcwBPJsgbKbIMzC=w1602-h1202-no)
 

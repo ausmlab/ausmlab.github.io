@@ -1,63 +1,54 @@
 ---
-title:
+position: 0
 layout: memberbio
 full-name: Afnan Ahmad
 first-name: Afnan
 last-name: Ahmad
-position: Masters Candidate
 institute: York University
 avatar: Afnan.jpg
 cover: wall.jpg
 educations:
-  - degree: Master of Science
-    major: Earth and Space Science
-    institute: York University
-    year: In Progress
-  - degree: Bachelor of Science
-    major: Information Technology
-    institute: University of the Punjab
-    year: 2012
-
+- degree: Master of Science
+  major: Earth and Space Science
+  institute: York University
+  year: In Progress
+- degree: Bachelor of Science
+  major: Information Technology
+  institute: University of the Punjab
+  year: 2012
 positions:
-  - position: Senior Software Engineer
-    employeer: Focusteck
-    year: 2015
-  - position: Software Engineer
-    employeer: TkXel
-    year: 2012
-
+- position: Senior Software Engineer
+  employeer: Focusteck
+  year: 2015
+- position: Software Engineer
+  employeer: TkXel
+  year: 2012
 awards:
-  - title: Nobel Prize
-    description: Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla. Quisque nibh diam, mattis pharetra aliquet sed, venenatis quis neque.
-    year: 2012
-
+- title: Nobel Prize
+  description: Phasellus lectus sem, egestas eget sollicitudin ut, lobortis ac nulla.
+    Quisque nibh diam, mattis pharetra aliquet sed, venenatis quis neque.
+  year: 2012
 research:
-  - title: Analysis of Algorithm
-    url:
-    cover: http://localhost:4000/assets/img/featured-items/06.jpg
-
-  - title: Analysis of Algorithm
-    url:
-    cover: http://localhost:4000/assets/img/featured-items/06.jpg
-
-  - title: Analysis of Algorithm
-    url:
-    cover: http://localhost:4000/assets/img/featured-items/06.jpg
-
-  - title: Analysis of Algorithm
-    url:
-    cover: http://localhost:4000/assets/img/featured-items/06.jpg
-
-  - title: Analysis of Algorithm
-    url:
-    cover: http://localhost:4000/assets/img/featured-items/06.jpg
-
+- title: Analysis of Algorithm
+  url: 
+  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+- title: Analysis of Algorithm
+  url: 
+  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+- title: Analysis of Algorithm
+  url: 
+  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+- title: Analysis of Algorithm
+  url: 
+  cover: http://localhost:4000/assets/img/featured-items/06.jpg
+- title: Analysis of Algorithm
+  url: 
+  cover: http://localhost:4000/assets/img/featured-items/06.jpg
 facebook: afnan.ahmad
 twitter: rockafnan
-googleplus: 117533368899354291255
+googleplus: '117533368899354291255'
 linkedin: afnanahmad
 skype: afnan-ahmad
-
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lacinia commodo mauris, vel ultrices ante. Fusce condimentum quam ut enim bibendum, vitae placerat enim consequat. Etiam consectetur congue sapien ut bibendum. Nullam convallis ac turpis a mollis. Phasellus ac faucibus ante. Etiam rutrum varius rutrum. Cras faucibus lorem eget justo ultrices imperdiet. Curabitur in purus ullamcorper, viverra libero id, rutrum dolor. Curabitur sit amet orci pharetra, dapibus erat et, tempor ipsum. Duis rutrum porta eros sed auctor. Pellentesque et mollis erat. Nulla at mattis odio, eu ornare lorem. Nam malesuada massa a condimentum mollis. Quisque eleifend ultrices velit quis luctus.
