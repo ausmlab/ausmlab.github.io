@@ -112,7 +112,6 @@ http://themeforest.net/user/owwwlab/
 
 
                     {% for post in site.posts %}
-                      {% unless post.categories contains 'Placement' %}
 
                     <div class="post">
                       <!--
@@ -141,7 +140,6 @@ http://themeforest.net/user/owwwlab/
                     {% if forloop.last == false %}
                     <div class="sp-line-75"></div>
                     {% endif %}
-                    {% endunless %}
                     {% endfor %}
                   </div>
                 </div>

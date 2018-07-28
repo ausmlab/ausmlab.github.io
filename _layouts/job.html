@@ -79,59 +79,71 @@ http://themeforest.net/user/owwwlab/
     <!-- #####Begin contents-->
     <section id="contents">
       <!-- #####Begin page head-->
-      <div class="page-head h-200 parallax-layer center-it dark ov-blue-alpha-50" data-img-src="{{ site.url }}/assets/img/bg/010.jpg" data-parallax-mode="mode-title">
+      <div class="page-head light lined">
         <div class="container">
           <div class="tb-vcenter-wrapper">
             <div class="title-wrapper vcenter">
-              <!--<h4 class="head">PEAR REVIEWED</h4>-->
               <h1 class="title">{{ page.title }}</h1>
-            </div>
-            <div class="breadcrumb-wrapper vcenter">
-              <ul class="breadcrumb">
-                <li><a href="#"><i class="oli oli-home"></i></a></li>
-                <li><a href="#">publication</a></li>
-                <li><a href="#">publication type</a></li>
-                <li>learning environment</li>
-              </ul>
             </div>
           </div>
         </div>
       </div>
       <!-- #####End page head
-        -->
+      -->
       <section class="page-contents">
-        <!-- #####Begin main area-->
-        <section id="main-area">
-          <section class="p-bottom-100 slim-container">
-
-            <div class="container">
-              <div class="sp-blank-50"></div>
-
-              <div class="ol-grid grid col-3 with-gutter">
-              {% for project in site.projects %}
-
-                <!-- #####Begin grid item-->
-                <div class="grid-item ratio-2">
-                  <div class="gi-wrapper ol-hover hover-3">
-                    <div class="img-layer set-bg"><img src="{{ site.url }}/assets/img/{{ project.cover }}" alt="image hover"></div>
-                    <div class="ol-overlay ov-grad6-alpha-80"></div>
-                    <div class="icons"><a href="{{ project.url }}"><i class="oli oli-right"></i></a></div>
-                    <h3 class="title"><a href="{{ project.url }}">{{ project.title }}</a></h3>
-                    <h4 class="subtitle">{{ project.authors }}</h4>
-                  </div>
+        <section class="section">
+          <div class="container">
+            <div class="row">
+              <!-- #####Begin main area-->
+              <div class="col-md-9 col-md-push-3">
+                <div id="main-area">
+                  <section class="section-narrow section-nopadding">
+                    {{ content }}
+                  </section>
                 </div>
-                <!-- #####End grid item-->
-
-              {% endfor%}
               </div>
-
-
-
-          </section>
+              <!-- #####End main area-->
+              <!-- #####Begin sidebar-->
+              <div class="col-md-3 col-md-pull-9">
+                <div class="sidebar left">
+                  <h4 class="with-underline">Details</h4>
+                  <!-- #####Begin description metas-->
+                  <dl class="description-item">
+                    <dt>DEPARTMENT</dt>
+                    <dd>{{ page.department }}</dd>
+                    <div class="sp-blank-30"></div>
+                    <dt>LOCATION</dt>
+                    <dd>{{ page.location }}</dd>
+                    <div class="sp-blank-30"></div>
+                    <dt>CATEGORY</dt>
+                    <dd>{{ page.category }}</dd>
+                    <div class="sp-blank-30"></div>
+                    <dt>PUBLISHED</dt>
+                    <dd>{{ page.date | date_to_long_string }}</dd>
+                    <div class="sp-blank-30"></div>
+                    <dt>CLOSING DATE</dt>
+                    <dd>{{ page.deadline }}</dd>
+                  </dl>
+                  <!-- #####End description metas-->
+                  <div class="sp-blank-50"></div>
+                  <h4 class="with-underline">Apply</h4>
+                  <div class="btn btn-medium btn-block btn-skin-dark">APPLY ONLINE</div>
+                  <div class="sp-blank-50"></div>
+                  <h4 class="with-underline">SHARE</h4>
+                  <!-- #####Begin social icons-->
+                  <ul class="social-icons shape-circle">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                  </ul>
+                  <!-- #####End social icons-->
+                </div>
+              </div>
+              <!-- #####End sidebar-->
+            </div>
+          </div>
         </section>
-        <!-- #####End main area
-          -->
-        <div class="clearfix"></div>
       </section>
     </section>
     <!-- #####End contents-->

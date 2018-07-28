@@ -3,3 +3,12 @@ title: Augmented Urban Space Modeling Lab @ York University
 institute: York University
 location: York University, Toronto, Canada
 permalink: pretty
+collections:
+  projects:
+    output: true
+    permalink: /projects/:year/:title/
+  recruitment:
+    output: true
+    permalink: /recruitment/:year/:month/:day/:title/
+  members:
+    output: true
