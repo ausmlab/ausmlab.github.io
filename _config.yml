@@ -1,5 +1,4 @@
 ---
-name: Augmented Urban Space Modeling Lab
 title: Augmented Urban Space Modeling Lab @ York University
 timezone: America/New_York
 collections:
@@ -23,6 +22,7 @@ collections:
   uploads:
     title: Uploads
     output: true
+name: Augmented Urban Space Modeling Lab
 institute: York University
 location: York University, Toronto, Canada
 permalink: pretty
