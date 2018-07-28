@@ -1,12 +1,17 @@
 ---
-layout: job
 title: Research Assistant Position in Transport-Regulated Plant Immunity
-short-description: Applications are invited for a postdoctoral researcher to join the Laboratory of Prof. Jonathan Jones to study genomic diversity of intracellular plant immune receptor genes.
-category: Biological Chemistry
+date: 2018-07-28 00:00:00 Z
+categories:
+- Biological Chemistry
+layout: job
+short-description: Applications are invited for a postdoctoral researcher to join
+  the Laboratory of Prof. Jonathan Jones to study genomic diversity of intracellular
+  plant immune receptor genes.
 deadline: 07 September 2018
 department: Earth and Space Science and Engineering
 location: York University
 ---
+
 <p>The Department of Radiology is seeking to appoint an experienced and enthusiastic Administration and IT Assistant. The role holder will contribute to teaching, research and operations through the provision of administrative and technical support and advice to staff, students and visitors. The role holder will assist the Senior IT Technician in providing essential IT support to the department.</p>
 <p>S/he will also support the Operations Manager with administrative duties including procurement, filing, photocopying, reports and other general tasks.</p>
 <p>S/he will ensure publications database, website information, lists of assets and IT equipment are efficiently kept up-to-date.</p>

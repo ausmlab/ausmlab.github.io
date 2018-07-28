@@ -1,4 +1,5 @@
 ---
+title: Afnan
 position: 0
 layout: memberbio
 full-name: Afnan Ahmad
