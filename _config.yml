@@ -14,6 +14,80 @@ collections:
     permalink: "/recruitment/:year/:month/:day/:title/"
   uploads:
     output: true
+defaults:
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: "news-single" # overrides previous default layout
+      author: "Gunho Sohn"
+      author-avatar: "GSohn.jpg"
+      categories:
+        -
+      tags:
+        -
+      image:
+        feature: toronto-skyline.jpg
+        teaser: thumb-3.jpg
+  -
+    scope:
+      type: "projects" # previously `page` in Jekyll 2.2.
+    values:
+      layout: project
+      year: 2019
+      completion:
+      authors:
+        -
+      cover:
+      website:
+  -
+    scope:
+      type: "recruitment" # previously `page` in Jekyll 2.2.
+    values:
+      layout: job
+      categories:
+        - ""
+      short-description: ""
+      deadline: ""
+      department: Earth and Space Science and Engineering
+      location: York University
+  -
+    scope:
+      type: "members"
+    values:
+      layout: memberbio
+      position: PhD Candidate
+      full-name: ""
+      first-name: ""
+      last-name: ""
+      institute: York University
+      avatar: avatar.jpg
+      cover: cover.jpg
+      educations:
+        -
+          degree: Master of Science
+          major: Earth and Space Science
+          institute: York University
+          year: In Progress
+      positions:
+        -
+          position: Senior Software Engineer
+          employeer: Focusteck
+          year: 2015
+      awards:
+        -
+          title: Nobel Prize
+          description: ""
+          year: 2012
+      research:
+        -
+          title: Analysis of Algorithm
+          url:
+          cover: ../../assets/img/featured-items/06.jpg
+      facebook: ""
+      twitter: ""
+      linkedin: ""
+      skype: ""
 name: Augmented Urban Space Modeling Lab
 institute: York University
 location: York University, Toronto, Canada
