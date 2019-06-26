@@ -5,7 +5,7 @@
   <div id="footer-main">
     <div class="container">
       <div class="row">
-        <div class="col-md-5 col-sm-12 m-bottom-sm-40"><a href="#" class="img"><img src="{{ site.url }}/assets/img/logo/logo-light.png" alt="CHAOS HTML Template" class="logo-light ol-retina"></a>
+        <div class="col-md-5 col-sm-12 m-bottom-sm-40"><a href="#" class="img"><img src="{{ site.url }}/assets/img/logo/logo-light.png" alt="Augmented Urban Space Modeling" class="logo-light ol-retina"></a>
           <div class="sp-blank-30"></div>
           <p>
             Dept. of Earth and Space Science and Engineering<br> Lassonde School of Engineering, York University<br> Room 312, Petrie Science & Engineering Building<br> 4700 Keele St., Toronto, ON M3J 1P3, Canada</p>
@@ -23,12 +23,12 @@
             <h4>Information for</h4>
             <div class="links">
               <ul>
-                <li><a href="#">Alumni</a></li>
-                <!--<li><a href="#">Entrepreneurs</a></li>-->
-                <li><a href="#">Current students</a></li>
-                <li><a href="">Faculty and staff</a></li>
-                <li><a href="#">Future students</a></li>
-                <li><a href="#">Fellowship students</a></li>
+                <li><a href="{{ site.alumni }}" target="_blank">Alumni</a></li>
+                <li><a href="{{ site.entrepreneurs }}" target="_blank">Entrepreneurs</a></li>
+                <li><a href="{{ site.currentstudents }}" target="_blank">Current students</a></li>
+                <li><a href="{{ site.facultyandstaff }}" target="_blank">Faculty and staff</a></li>
+                <li><a href="{{ site.futurestudents }}" target="_blank">Future students</a></li>
+                <li><a href="{{ site.fellowshipstudents }}" target="_blank">Fellowship students</a></li>
               </ul>
             </div>
           </div>
@@ -38,12 +38,12 @@
             <h4>Usefull links</h4>
             <div class="links">
               <ul>
-                <li><a href="#">Admission & Aid</a></li>
-                <li><a href="#">Accessibility</a></li>
-                <li><a href="#">Academics</a></li>
-                <li><a href="#">Research</a></li>
-                <li><a href="#">Campus Life</a></li>
-                <li><a href="#">Library</a></li>
+                <li><a href="{{ site.admissionsandaid }}" target="_blank">Admission & Aid</a></li>
+                <li><a href="{{ site.accessibility }}" target="_blank">Accessibility</a></li>
+                <li><a href="{{ site.academics }}" target="_blank">Academics</a></li>
+                <li><a href="{{ site.research }}" target="_blank">Research</a></li>
+                <li><a href="{{ site.campuslife }}" target="_blank">Campus Life</a></li>
+                <li><a href="{{ site.library }}" target="_blank">Library</a></li>
               </ul>
             </div>
           </div>
@@ -61,8 +61,8 @@
         <div class="col-sm-6 vcenter">
           <ul class="footer-menu text-right-md">
             <li><a href="/">Home</a></li>
-            <li><a href="https://futurestudents.yorku.ca/" target="_blank">Admission</a></li>
-            <li><a href="#">Staff</a></li>
+            <li><a href="{{ site.futurestudents }}" target="_blank">Admission</a></li>
+            <li><a href="{{ site.facultyandstaff }}" target="_blank">Staff</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>

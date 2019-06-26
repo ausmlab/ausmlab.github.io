@@ -21,10 +21,21 @@ http://themeforest.net/user/owwwlab/
   <meta name="Content-Type-Script" content="text/javascript">
   <meta name="Content-Type-Style" content="text/css">
   <!-- author of this doc-->
-  <meta name="author" content="{{ page.full-name }}">
+  <meta name="author" content="{{ page.title }}">
   <!-- ################################-->
   <!-- #### add SEO metadata here-->
   <!-- ################################-->
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="/assets/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="/assets/img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
   <!-- #####Begin styles-->
   <!-- stylesheets	-->
   <link href="{{ site.url }}/assets/css/vendors/vendors.css" rel="stylesheet" type="text/css">
@@ -45,9 +56,24 @@ http://themeforest.net/user/owwwlab/
   <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,400,400italic,700,700italic&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Exo+2:400,200,300,400italic,500,700,900&amp;subset=latin,greek,cyrillic" rel="stylesheet" type="text/css">
   <!-- #####End load google fonts-->
-  <title> {{ page.full-name }} • {{ site.title }}</title>
+  <title> {{ page.title }} • {{ site.title }}</title>
+
+  <style>
+    
+  img.fill-image {
+    object-fit: cover;
+  }
+
+  div.justify-text {
+    text-align: justify;
+  }
+
+  </style>
+
 </head>
 <!-- #####End head-->
+
+{% assign name = page.title | split: ' ' %}
 
 <body class="fullwidth bg-gray sticky-header homepage">
   <div id="wrapper" class="boxed-layout bg-white">
@@ -56,9 +82,9 @@ http://themeforest.net/user/owwwlab/
         <header id="header" data-sticky-threshold='-300' class="trans dark sticky-light slim-container">
           <div class="head-main header-home text-center">
             <div class="logo-wrapper visible-sticky">
-              <!-- standard Logo--><a href="index.html" class="standard-logo text-logo"><img src="{{ site.url }}/assets/img/people/{{ page.avatar }}" alt="{{ page.full-name }}">
+              <!-- standard Logo--><a href="index.html" class="standard-logo text-logo"><img class="fill-image" src="{{ site.url }}/assets/img/people/{{ page.avatar }}" alt="{{ page.full-name }}">
                   <div class="text-wrapper">
-                    <h1 class="title">{{ page.full-name }}</h1>
+                    <h1 class="title">{{ page.title }}</h1>
                   </div></a>
             </div>
             <!-- primary navigation-->
@@ -81,8 +107,8 @@ http://themeforest.net/user/owwwlab/
             <div class="tb-vcenter-wrapper">
               <div class="vcenter">
                 <div data-parallax-mode="mode-header-demo-2" class="ol-user-profile parallax-layer">
-                  <div class="avatar"><img src="{{ site.url }}/assets/img/people/{{ page.avatar }}"></div>
-                  <h1 class="title"><span>{{ page.first-name }}</span>{{ page.last-name}}</h1>
+                  <div class="avatar"><img class="fill-image"  src="{{ site.url }}/assets/img/people/{{ page.avatar }}"></div>
+                  <h1 class="title"><span>{{ name[0] }}</span>{{ name[1] }}</h1>
                   <h2 class="subtitle">{{ page.position }} @ {{ page.institute }}</h2>
                 </div>
               </div>
@@ -92,10 +118,8 @@ http://themeforest.net/user/owwwlab/
       </div>
       <div class="page-contents">
         <section class="section slim-container p-bottom-80">
-          <div class="container">
-            <p>
+          <div class="container justify-text ">
               <!--<span class="ol-dropcaps square dark">C</span>-->{{ page.content }}
-            </p>
           </div>
         </section>
         <section class="slim-container">
@@ -192,20 +216,18 @@ http://themeforest.net/user/owwwlab/
           <div class="container">
             <div class="col-md-6 col-md-offset-3">
               <ul class="social-icons shape-circle hover-theme m-top-20">
-                {% if page.facebook %}
+                {% if page.facebook != '' %}
                 <li><a href="https://www.facebook.com/{{ page.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                {% endif %} {% if page.twitter %}
+                {% endif %} {% if page.twitter != '' %}
                 <li><a href="https://www.twitter.com/{{ page.twitter}}" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                {% endif %} {% if page.googleplus %}
-                <li><a href="https://plus.google.com/{{ page.googleplus }}" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                {% endif %} {% if page.linkedin %}
+                {% endif %} {% if page.linkedin != '' %}
                 <li><a href="https://www.linkedin.com/in/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
-                {% endif %} {% if page.skype %}
+                {% endif %} {% if page.skype != '' %}
                 <li><a href="skype:{{ page.skype}}" target="_blank"><i class="fa fa-skype"></i></a></li>
                 {% endif %}
               </ul>
               <div class="sp-blank-20"></div>
-              <div class="copyright">{{ page.full-name }} • {{ 'now' | date: "%Y" }}</div>
+              <div class="copyright">{{ page.title }} • {{ site.name }} • {{ 'now' | date: "%Y" }}</div>
             </div>
           </div>
         </div>

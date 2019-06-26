@@ -4154,18 +4154,18 @@ button, button:active, button:focus, button:hover, .btn, .btn:active, .btn:focus
 .set-bg img.set-me {
     display: none;
 }
-.chaos-icons-list {
+.Augmented Urban Space Modeling-icons-list {
     margin: 0;
     padding: 0;
     list-style: none;
 }
-.chaos-icons-list li {
+.Augmented Urban Space Modeling-icons-list li {
     margin: 0;
     padding: 0;
     overflow: hidden;
     margin-bottom: 25px;
 }
-.chaos-icons-list i {
+.Augmented Urban Space Modeling-icons-list i {
     margin: 0;
     margin-right: 10px;
     padding: 13px;
@@ -4174,7 +4174,7 @@ button, button:active, button:focus, button:hover, .btn, .btn:active, .btn:focus
     float: left;
     font-size: 24px;
 }
-.chaos-icons-list input {
+.Augmented Urban Space Modeling-icons-list input {
     margin: 0;
     margin-top: 5px;
     padding: 8px;
@@ -4585,7 +4585,7 @@ blockquote.quote:before {
     font-size: 42px;
     top: 0;
     left: 0;
-    color: $chaos_light_lighter;
+    color: $Augmented Urban Space Modeling_light_lighter;
 }
 p {}
 p.tight {
@@ -6171,10 +6171,10 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
     background-color: #eee;
     border-top: 1px solid #e6e6e6;
 }
-#footer a {/*color:$chaos_textinlight_lighter;*/
+#footer a {/*color:$Augmented Urban Space Modeling_textinlight_lighter;*/
     text-decoration: none;/*&:hover,
 		&:focus {
-			color:$chaos_dark;
+			color:$Augmented Urban Space Modeling_dark;
 		}*/
 }
 #footer p {
@@ -6623,7 +6623,7 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
 .btn i {
     position: relative;
 }
-.dark-wrapper .btn {/*color:$chaos_textinlight;*/
+.dark-wrapper .btn {/*color:$Augmented Urban Space Modeling_textinlight;*/
 }
 .btn:hover, .btn:focus {
     background-color: #eee;
@@ -9018,27 +9018,27 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
 /*	Tables
  *	===================================================
  */
-.chaos-table a {
+.Augmented Urban Space Modeling-table a {
     text-decoration: none;
     color: #636363;
 }
-.chaos-table a:hover {
+.Augmented Urban Space Modeling-table a:hover {
     color: #FF3366;
 }
-.chaos-table thead tr th {
+.Augmented Urban Space Modeling-table thead tr th {
     font-size: 15px;
     font-weight: bold;
     font-weight: 700;
     padding-bottom: 5px;
 }
-.chaos-table tbody tr td {
+.Augmented Urban Space Modeling-table tbody tr td {
     vertical-align: middle;
 }
-.chaos-table th, .chaos-table td {}
-.chaos-table th:first-child, .chaos-table td:first-child {
+.Augmented Urban Space Modeling-table th, .Augmented Urban Space Modeling-table td {}
+.Augmented Urban Space Modeling-table th:first-child, .Augmented Urban Space Modeling-table td:first-child {
     padding-left: 40px;
 }
-.chaos-table th:last-child, .chaos-table td:last-child {
+.Augmented Urban Space Modeling-table th:last-child, .Augmented Urban Space Modeling-table td:last-child {
     padding-right: 40px;
 }
 .table td.bold {
@@ -9435,7 +9435,7 @@ ul#primary-menu li.mega-menu .megamenu-wrapper:after {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;/*border:1px solid $chaos_borderinlight;*/
+    bottom: 0;/*border:1px solid $Augmented Urban Space Modeling_borderinlight;*/
     box-shadow: 0 0 6px -4px #000;
     border-bottom: none;
 }
@@ -12260,7 +12260,7 @@ ul.comments .comment-body .comment-content p {
 .ol-agenda .ag-section:nth-child(2n+1) .section-head {
     background-color: rgba(255, 51, 102, 0.9);
 }
-.ol-agenda .ag-section:nth-child(2) .section-body {/* border-top:1px solid $chaos_borderinlight; */
+.ol-agenda .ag-section:nth-child(2) .section-body {/* border-top:1px solid $Augmented Urban Space Modeling_borderinlight; */
 }
 .dark-wrapper .ol-agenda {
     background-color: #3a3a3a;

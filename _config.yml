@@ -1,6 +1,9 @@
 ---
 title: Augmented Urban Space Modeling Lab @ York University
 timezone: America/New_York
+scholar:
+  style: mla
+  source: _bibliography
 collections:
   members:
     output: true
@@ -62,7 +65,7 @@ defaults:
       last-name: ""
       institute: York University
       avatar: avatar.jpg
-      cover: cover.jpg
+      cover: wall.jpg
       educations:
         -
           degree: Master of Science
@@ -92,3 +95,15 @@ name: Augmented Urban Space Modeling Lab
 institute: York University
 location: York University, Toronto, Canada
 permalink: pretty
+admissionsandaid: https://futurestudents.yorku.ca/graduate/programs/earth-and-space-science
+accessibility: https://accessibility.students.yorku.ca
+academics: http://acadresources.yorku.ca
+research: http://research.info.yorku.ca
+campuslife: http://campuslife.yorku.ca
+library: https://www.library.yorku.ca/web/
+alumni: http://alumniandfriends.yorku.ca
+entrepreneurs: http://launchyu.ca
+currentstudents: https://currentstudents.yorku.ca
+facultyandstaff: http://facultyandstaff.yorku.ca
+futurestudents: http://futurestudents.yorku.ca
+fellowshipstudents: http://gradstudies.yorku.ca/graduate-funding-model

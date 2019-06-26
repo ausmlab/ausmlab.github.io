@@ -1,235 +1,218 @@
-
----
 director:
   - name: Dr. Gunho Sohn
     position: Lab Director
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/GSohn.jpg
-
 current:
   - name: Dr. Pio Claudio
-    position: PDF, Co-supervised with Drs. James Elder and Petros Faloutsos
-    homepage:
-    bio:
+    position: 'PDF, Co-supervised with Drs. James Elder and Petros Faloutsos'
+    homepage: null
+    bio: claudio
     pic: /assets/img/people/pio.jpg
-
   - name: Dr. Jungwon Kang
     position: Postdoctoral Research Fellow
-    homepage:
-    bio:
+    homepage: null
+    bio: kang
     pic: /assets/img/people/Jungwon-Kang.PNG
-
   - name: Dr. Bruce (Jaewook) Jung
     position: Postdoctoral Research Fellow
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/BJung.png
-
   - name: Ali Baligh
     position: PHD Candidate
-    homepage:
-    bio:
+    homepage: null
+    bio: Baligh
     pic: /assets/img/people/BAli.png
-
   - name: Kivanc Babacan
     position: PHD Candidate
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/KBabacan.png
-
   - name: Abdel-Hadi Hor
     position: PHD Candidate (Part-time)
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/HHor.png
-
   - name: Andreas Wichman
-    position: PHD Candidate; Co-Supervised by Martic Kada, TU Berlin
-    homepage:
-    bio:
+    position: 'PHD Candidate; Co-Supervised by Martic Kada, TU Berlin'
+    homepage: null
+    bio: null
     pic: /assets/img/people/Andreas-Wichmann.jpg
-
   - name: Eros Gulo
     position: MSc Candidate
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/Eros-Gulo.jpg
-
   - name: Phillip Robbins
     position: MSc Candidate
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/Phillip-Robbins.jpg
-
   - name: Leihan Chen
     position: MSc Candidate
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/leihan.jpg
-
   - name: Kang Zhao
     position: MSc Student
-    homepage:
-    bio:
+    homepage: null
+    bio: zhao
     pic: /assets/img/people/Kang-Zhao.PNG
-
   - name: Dr. Jong-Un Won
-    position: Visiting Scholar, Korea Railway Research Institute, South Korea
-    homepage:
-    bio:
+    position: 'Visiting Scholar, Korea Railway Research Institute, South Korea'
+    homepage: null
+    bio: null
     pic: /assets/img/people/Jong-Un Won.PNG
-
   - name: Afnan Ahmad
     position: MSc Student
-    homepage: https://www.afnanahmad.com
+    homepage: 'https://www.afnanahmad.com'
     bio: afnan
     pic: /assets/img/people/Afnan.jpg
-
   - name: Kunwoo Park
     position: MSc Student
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/kunwoo.jpg
-
   - name: Mohammd Ishfaq
     position: MSc Student (Part-time)
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/Mohammd-Ishfaq.PNG
-
   - name: Ario Hadian
     position: Undergraduate Student
-    homepage:
-    bio:
+    homepage: null
+    bio: null
     pic: /assets/img/people/person.png
+  - name: Dr. Yujia Zhang
+    position: Postdoctoral Research Fellow
+    homepage: zhang
+    pic: /assets/img/people/zhang.JPG
+  - name: Maryam Jameela
+    position: PhD Student
+    bio: jameela
+    homepage: jameela
+    pic: /assets/img/people/jameela.jpeg
+  - name: Zahra Arjmandi
+    position: PhD Student
+    bio: arjmandi
+    homepage: arjmandi
+    pic: /assets/img/people/arjmandi.jpg
+  - name: Muhammad Kamran
+    position: PhD Student
+    bio: kamran
+    homepage: null
+    pic: /assets/img/people/kamran.jpg
 
 alumni:
- - name: Jahyuck Koo
-   position: Visiting Scholar
-   homepage:
-   bio:
-   pic: /assets/img/people/person.png
-
- - name: Dr. Ruiju Zhang
-   position:
-   homepage:
-   bio:
-   pic: /assets/img/people/person.png
-
- - name: Krystel Reyes
-   position: Undergraduate Student
-   homepage:
-   bio:
-   pic: /assets/img/people/Krystel-Reyes.PNG
-
- - name: Kartiketa Bhargava
-   position: Undergraduate Student
-   homepage:
-   bio:
-   pic: /assets/img/people/Kartiketa-Bhargava.PNG
-
- - name: Dr. Ki-in Bang
-   position: PDF
-   location: North West Geomatics, Calgary, Canada
-   homepage:
-   bio:
-   pic: /assets/img/people/person.png
-
- - name: Dr. Mojgan Jadidi
-   position: PDF
-   location: Lecturer, York University, Canada
-   homepage:
-   bio:
-   pic: /assets/img/people/Mojgan-Jadidi.PNG
-
- - name: Dr. Mozhdeh Shahbazi
-   position: PhD, Co-supervised with Dr. Jerome Theau, University of Sherbrook
-   location: Assistant Professor, Univ. of Calgary
-   homepage:
-   bio:
-   pic: /assets/img/people/Mozhdeh-Shahbazi.PNG
-
- - name: Dr. Chao Luo
-   position: PhD
-   location: Video game company, Shanghai, China
-   homepage:
-   bio:
-   pic: /assets/img/people/Chao-Luo.PNG
-
- - name: Dr. Junjie Zhang
-   position: PhD
-   location: PDF, University of Toronto/Sunnybrook Health Sciences Centre
-   homepage:
-   bio:
-   pic: /assets/img/people/Junjie-Zhang.PNG
-
- - name: Dr. Brian (Heungsik) Kim
-   position: PhD, PDF
-   location: Industrial SkyWorks, Toronto
-   homepage:
-   bio:
-   pic: /assets/img/people/Brian-Kim.PNG
-
- - name: Dr. Connie Ko
-   position: PhD, Co-supervised with Dr. Tarmo Remmel, York University
-   location: York University
-   homepage:
-   bio:
-   pic: /assets/img/people/Connie-Ko.PNG
-
- - name: Dr. Yoonseok Jwa
-   position: PhD, PDF
-   location: Industrial SkyWorks, Toronto
-   homepage:
-   bio:
-   pic: /assets/img/people/Yoonseok-Jwa.PNG
-
- - name: Larry Wang
-   position: PhD (Incomplete)
-   location: Weather Network, Mississauga
-   homepage:
-   bio:
-   pic: /assets/img/people/Larry-Wang.PNG
-
- - name: Solomon Chan
-   position: MSc
-   location: RDP Associate Inc., Toronto
-   homepage:
-   bio:
-   pic: /assets/img/people/Solomon-Chan.PNG
-
- - name: Ravi Persad
-   position: MSc, Co-supervised with Dr. Costas Armenakis, York University
-   location: PhD student, York University
-   homepage:
-   bio:
-   pic: /assets/img/people/person.png
-
- - name: Yu Gao
-   position: MSc, Co-supervised with Dr. Costas Armenakis, York University
-   location: Teledyine-Optech, Toronto
-   homepage:
-   bio:
-   pic: /assets/img/people/Yu-Gao.PNG
-
- - name: Dr. Inian Moorthy
-   position: PDF, Co-supervised with Dr. John Miller, York University
-   location: International Institute for Applied Systems Analysis (IIASA), Austria
-   homepage:
-   bio:
-   pic: /assets/img/people/Inian-Moorthy.PNG
-
- - name: Ramu Narayanan
-   position: MSc
-   location: Microdea Inc.
-   homepage:
-   bio:
-   pic: /assets/img/people/Ramu-Narayanan.PNG
-
- - name: Ima Ituen
-   position: MSc
-   location:
-   homepage:
-   bio:
-   pic: /assets/img/people/person.png
+  - name: Jahyuck Koo
+    position: Visiting Scholar
+    homepage: null
+    bio: null
+    pic: /assets/img/people/person.png
+  - name: Dr. Ruiju Zhang
+    position: null
+    homepage: null
+    bio: null
+    pic: /assets/img/people/person.png
+  - name: Krystel Reyes
+    position: Undergraduate Student
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Krystel-Reyes.PNG
+  - name: Kartiketa Bhargava
+    position: Undergraduate Student
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Kartiketa-Bhargava.PNG
+  - name: Dr. Ki-in Bang
+    position: PDF
+    location: 'North West Geomatics, Calgary, Canada'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/person.png
+  - name: Dr. Mojgan Jadidi
+    position: PDF
+    location: 'Lecturer, York University, Canada'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Mojgan-Jadidi.PNG
+  - name: Dr. Mozhdeh Shahbazi
+    position: 'PhD, Co-supervised with Dr. Jerome Theau, University of Sherbrook'
+    location: 'Assistant Professor, Univ. of Calgary'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Mozhdeh-Shahbazi.PNG
+  - name: Dr. Chao Luo
+    position: PhD
+    location: 'Video game company, Shanghai, China'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Chao-Luo.PNG
+  - name: Dr. Junjie Zhang
+    position: PhD
+    location: 'PDF, University of Toronto/Sunnybrook Health Sciences Centre'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Junjie-Zhang.PNG
+  - name: Dr. Brian (Heungsik) Kim
+    position: 'PhD, PDF'
+    location: 'Industrial SkyWorks, Toronto'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Brian-Kim.PNG
+  - name: Dr. Connie Ko
+    position: 'PhD, Co-supervised with Dr. Tarmo Remmel, York University'
+    location: York University
+    homepage: null
+    bio: connie
+    pic: /assets/img/people/Connie-Ko.PNG
+  - name: Dr. Yoonseok Jwa
+    position: 'PhD, PDF'
+    location: 'Industrial SkyWorks, Toronto'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Yoonseok-Jwa.PNG
+  - name: Larry Wang
+    position: PhD (Incomplete)
+    location: 'Weather Network, Mississauga'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Larry-Wang.PNG
+  - name: Solomon Chan
+    position: MSc
+    location: 'RDP Associate Inc., Toronto'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Solomon-Chan.PNG
+  - name: Ravi Persad
+    position: 'MSc, Co-supervised with Dr. Costas Armenakis, York University'
+    location: 'PhD student, York University'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/person.png
+  - name: Yu Gao
+    position: 'MSc, Co-supervised with Dr. Costas Armenakis, York University'
+    location: 'Teledyine-Optech, Toronto'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Yu-Gao.PNG
+  - name: Dr. Inian Moorthy
+    position: 'PDF, Co-supervised with Dr. John Miller, York University'
+    location: 'International Institute for Applied Systems Analysis (IIASA), Austria'
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Inian-Moorthy.PNG
+  - name: Ramu Narayanan
+    position: MSc
+    location: Microdea Inc.
+    homepage: null
+    bio: null
+    pic: /assets/img/people/Ramu-Narayanan.PNG
+  - name: Ima Ituen
+    position: MSc
+    location: null
+    homepage: null
+    bio: null
+    pic: /assets/img/people/person.png
