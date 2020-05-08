@@ -1,20 +1,21 @@
-- title: Home
-  url: /
+items:
+  - title: Home
+    url: /
 
-- title: News
-  url: /news
+  - title: News
+    url: /news
 
-- title: Members
-  url: /members
+  - title: Members
+    url: /members
 
-- title: Projects
-  url: /projects
+  - title: Projects
+    url: /projects
 
-- title: Publications
-  url: /publications
+  - title: Publications
+    url: /publications
 
-- title: Recruitment
-  url: /recruitment
+  - title: Recruitment
+    url: /recruitment
 
-- title: Contact
-  url: /contact
+  - title: Contact
+    url: /contact

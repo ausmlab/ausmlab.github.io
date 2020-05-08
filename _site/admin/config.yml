@@ -1,0 +1,63 @@
+backend:
+  name: github
+  repo: ausmlab/ausmlab.github.io # Path to your GitHub repository
+  branch: master
+  base_url: https://protected-sea-97480.herokuapp.com/
+media_folder: 'assets/uploads'
+collections:
+  - name: 'posts'
+    label: 'Posts'
+    folder: '_posts/'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Layout', name: 'layout', widget: 'hidden', default: 'post' }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    folder: '/'
+    create: true
+    slug: '{{title}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Layout', name: 'layout', widget: 'select', options: ["home", "page"]}
+      - { label: "Permalink", name: "permalink", widget: "string"}
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'projects'
+    label: 'Projects'
+    folder: '_projects'
+    create: true
+    slug: '{{title}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Layout', name: 'layout', widget: 'select', options: ["project"], default: "project"}
+      - { label: "Year", name: "year", widget: "date", format: 'YY'}
+      - { label: "Completion", name: "completion", widget: "date", format: 'MMM YY'}
+      - { label: "Authors", name: "authors", widget: "list"}
+      - { label: "Cover", name: "cover", widget: "image" }
+      - { label: "Website", name: "website", widget: "string"}
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: "config"
+    label: "Config"
+    editor:
+      preview: false
+    files:
+      - label: "Navigation"
+        name: "navigation"
+        file: "_data/navigation.yml"
+        fields:
+          - label: "Navigation Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Link, name: link, widget: string}
+
