@@ -1,0 +1,1145 @@
+[
+ {
+  "id": 34541957,
+  "count": 3,
+  "description": "",
+  "link": "https://gunhosohn.me/category/3d-city-modeling/",
+  "name": "3D City Modeling",
+  "slug": "3d-city-modeling",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541957",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541957"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541907,
+  "count": 11,
+  "description": "",
+  "link": "https://gunhosohn.me/category/3dmmai/",
+  "name": "3DMMAI",
+  "slug": "3dmmai",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541907",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541907"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541964,
+  "count": 0,
+  "description": "",
+  "link": "https://gunhosohn.me/category/artificial-intelligence/",
+  "name": "Artificial Intelligence",
+  "slug": "artificial-intelligence",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541964",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541964"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541912,
+  "count": 1,
+  "description": "",
+  "link": "https://gunhosohn.me/category/issum/augmented-reality/",
+  "name": "Augmented Reality",
+  "slug": "augmented-reality",
+  "taxonomy": "category",
+  "parent": 34541910,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541912",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "up": [
+    {
+     "embeddable": true,
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541910"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541912"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541963,
+  "count": 1,
+  "description": "",
+  "link": "https://gunhosohn.me/category/autonomous-mapping/",
+  "name": "Autonomous Mapping",
+  "slug": "autonomous-mapping",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541963",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541963"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541849,
+  "count": 0,
+  "description": "",
+  "link": "https://gunhosohn.me/category/blog/",
+  "name": "Blog",
+  "slug": "blog",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541849",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541849"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541850,
+  "count": 5,
+  "description": "",
+  "link": "https://gunhosohn.me/category/conference/",
+  "name": "Conference",
+  "slug": "conference",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541850",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541850"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541935,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/research/create-dav/",
+  "name": "CREATE DAV",
+  "slug": "create-dav",
+  "taxonomy": "category",
+  "parent": 34541851,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541935",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "up": [
+    {
+     "embeddable": true,
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541851"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541935"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541965,
+  "count": 1,
+  "description": "",
+  "link": "https://gunhosohn.me/category/indoor-positioning/",
+  "name": "Indoor Positioning",
+  "slug": "indoor-positioning",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541965",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541965"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541910,
+  "count": 5,
+  "description": "",
+  "link": "https://gunhosohn.me/category/issum/",
+  "name": "ISSUM",
+  "slug": "issum",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541910",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541910"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541857,
+  "count": 7,
+  "description": "",
+  "link": "https://gunhosohn.me/category/lab-activity/",
+  "name": "Lab Activity",
+  "slug": "lab-activity",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541857",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541857"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541908,
+  "count": 1,
+  "description": "",
+  "link": "https://gunhosohn.me/category/layout-slam/",
+  "name": "Layout SLAM",
+  "slug": "layout-slam",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541908",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541908"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 103,
+  "count": 10,
+  "description": "",
+  "link": "https://gunhosohn.me/tag/news/",
+  "name": "News",
+  "slug": "news",
+  "taxonomy": "post_tag",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/tags/103",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=103"
+    },
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/tribe_events?categories=103"
+    },
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/tec_calendar_embed?categories=103"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541905,
+  "count": 3,
+  "description": "",
+  "link": "https://gunhosohn.me/category/ontrac/",
+  "name": "OnTRAC",
+  "slug": "ontrac",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541905",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541905"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541862,
+  "count": 1,
+  "description": "",
+  "link": "https://gunhosohn.me/category/outreacing/",
+  "name": "Outreaching",
+  "slug": "outreacing",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541862",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541862"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541951,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/power-line/",
+  "name": "Power Line",
+  "slug": "power-line",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541951",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541951"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541909,
+  "count": 1,
+  "description": "",
+  "link": "https://gunhosohn.me/category/progressive-3d-city-modelling/",
+  "name": "Progressive 3D City Modelling",
+  "slug": "progressive-3d-city-modelling",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541909",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541909"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541906,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/q-drone/",
+  "name": "Q-Drone",
+  "slug": "q-drone",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541906",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541906"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 39653,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/recruitment/",
+  "name": "Recruitment",
+  "slug": "recruitment",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/39653",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=39653"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541851,
+  "count": 18,
+  "description": "",
+  "link": "https://gunhosohn.me/category/research/",
+  "name": "Research",
+  "slug": "research",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541851",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541851"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541962,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/slam/",
+  "name": "SLAM",
+  "slug": "slam",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541962",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541962"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 1,
+  "count": 13,
+  "description": "",
+  "link": "https://gunhosohn.me/category/uncategorized/",
+  "name": "Uncategorized",
+  "slug": "uncategorized",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/1",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=1"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541852,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/undergraduate-student/",
+  "name": "Undergraduate Student",
+  "slug": "undergraduate-student",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541852",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541852"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541865,
+  "count": 2,
+  "description": "",
+  "link": "https://gunhosohn.me/category/undergraudate-internship/",
+  "name": "Undergraudate Internship",
+  "slug": "undergraudate-internship",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541865",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541865"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ },
+ {
+  "id": 34541923,
+  "count": 10,
+  "description": "",
+  "link": "https://gunhosohn.me/category/video/",
+  "name": "Video",
+  "slug": "video",
+  "taxonomy": "category",
+  "parent": 0,
+  "meta": [],
+  "_links": {
+   "self": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories/34541923",
+     "targetHints": {
+      "allow": [
+       "GET"
+      ]
+     }
+    }
+   ],
+   "collection": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/categories"
+    }
+   ],
+   "about": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/taxonomies/category"
+    }
+   ],
+   "wp:post_type": [
+    {
+     "href": "https://gunhosohn.me/wp-json/wp/v2/posts?categories=34541923"
+    }
+   ],
+   "curies": [
+    {
+     "name": "wp",
+     "href": "https://api.w.org/{rel}",
+     "templated": true
+    }
+   ]
+  }
+ }
+]

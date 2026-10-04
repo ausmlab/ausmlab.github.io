@@ -1,0 +1,13 @@
+posts page 1 of 1 -> 48
+pages page 1 of 1 -> 42
+categories page 1 of 1 -> 25
+tags page 1 of 1 -> 77
+media page 1 of 4 -> 100
+media page 2 of 4 -> 200
+media page 3 of 4 -> 300
+media page 4 of 4 -> 355
+retry https://gunhosohn.me/wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg UnicodeEncodeError('ascii', 'GET /wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg HTTP/1.1', 41, 42, 'ordinal not in range(128)')
+retry https://gunhosohn.me/wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg UnicodeEncodeError('ascii', 'GET /wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg HTTP/1.1', 41, 42, 'ordinal not in range(128)')
+retry https://gunhosohn.me/wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg UnicodeEncodeError('ascii', 'GET /wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg HTTP/1.1', 41, 42, 'ordinal not in range(128)')
+skip https://gunhosohn.me/wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg failed: https://gunhosohn.me/wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg :: UnicodeEncodeError('ascii', 'GET /wp-content/uploads/2019/05/Sun-Park-—-Lassonde-Undergraduate-Research-2018.jpg HTTP/1.1', 41, 42, 'ordinal not in range(128)')
+images: 352 errors: 1
