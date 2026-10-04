@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="{{ asset(url('/css/style.css')) }}">
 {% if switcher %}
 {% for key, (label, fonts) in themes_all.items() if fonts %}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ fonts }}&display=swap">{% endfor %}
-<link rel="stylesheet" id="theme-css" href="{{ asset(url('/css/themes/' ~ theme ~ '.css')) if theme else '' }}" data-base="{{ url('/css/themes/') }}">
+<link rel="stylesheet" id="theme-css"{% if theme %} href="{{ asset(url('/css/themes/' ~ theme ~ '.css')) }}"{% endif %} data-base="{{ url('/css/style.css')[:-9] }}themes/">
 {% elif theme %}
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ themes_all[theme][1] }}&display=swap">
 <link rel="stylesheet" href="{{ asset(url('/css/themes/' ~ theme ~ '.css')) }}">
