@@ -1,9 +1,9 @@
-# Rebuilds and publishes ausmlab.com every time something changes on the main branch.
+# Rebuilds and publishes ausmlab.com every time something changes on the master branch.
 name: Build and publish site
 
 on:
   push:
-    branches: [main]
+    branches: [master, main]
   workflow_dispatch:
 
 permissions:
