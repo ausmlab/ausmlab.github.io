@@ -11,6 +11,7 @@ GitHub runs this automatically every time a file changes (see
 .github/workflows/deploy.yml), so you never need to run it yourself.
 """
 import datetime as dt
+import hashlib
 import http.server
 import os
 import shutil
@@ -186,6 +187,13 @@ def build():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
     preview = "--preview" in sys.argv
+    # A short fingerprint of the CSS and JS. It changes whenever they change,
+    # so browsers fetch the new files instead of using an old saved copy.
+    stamp = hashlib.sha1(b"".join((ROOT / "static" / f).read_bytes()
+                                  for f in ("css/style.css", "js/main.js"))).hexdigest()[:8]
+
+    def asset(u):
+        return f"{u}?v={stamp}"
     for tpl, out, key, title in PAGES:
         depth = out.count("/")
         base = "../" * depth
@@ -201,7 +209,7 @@ def build():
                 p += "index.html"
             return base + p if (base or p) else "./"
 
-        html = env.get_template(tpl).render(active=key, title=title, url=url, **ctx)
+        html = env.get_template(tpl).render(active=key, title=title, url=url, asset=asset, **ctx)
         path = OUT / out
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(html, encoding="utf-8")
