@@ -52,8 +52,16 @@ def load(name):
         return yaml.safe_load(f) or {}
 
 
+def as_line(item):
+    """A list line like 'Name | Role | Now: Company' is read by YAML as a
+    {key: value} pair because of the ': '. Put it back together as text."""
+    if isinstance(item, dict):
+        return "; ".join(f"{k}: {v}" for k, v in item.items())
+    return str(item)
+
+
 def split_pipe(line, n):
-    parts = [p.strip() for p in str(line).split("|")]
+    parts = [p.strip() for p in as_line(line).split("|")]
     return (parts + [""] * n)[:n]
 
 
