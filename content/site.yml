@@ -1,0 +1,40 @@
+# General lab information shown on every page (header, footer, home page).
+# Edit the text after the colon. Keep the quotes if the text has a colon in it.
+
+name: AUSM Lab
+full_name: Augmented Urban Space Modeling Laboratory
+affiliation: York University · Lassonde
+url: https://ausmlab.com
+
+hero:
+  kicker: AUGMENTED URBAN SPACE MODELING LABORATORY
+  title: EMBODIED SPATIAL INTELLIGENCE
+  subtitle: 3D DIGITAL TWINS · AUTONOMOUS MAPPING · SPACE AWARENESS
+  # Put a wide photo in static/images/ and write its file name here, e.g. hero.jpg
+  image: ""
+
+intro:
+  - The AUSM Lab develops solutions for representing and understanding urban environments through visual and spatial data.
+  - "Our focus is embodied spatial intelligence: AI systems that perceive, reason about and act within physical space, for construction and infrastructure monitoring, extended to Earth and space observation."
+
+contact:
+  person: Prof. Gunho Sohn
+  email: gsohn@yorku.ca
+  phone: 416-650-8011
+  address:
+    - Department of Earth and Space Science and Engineering
+    - Lassonde School of Engineering, York University
+    - 4700 Keele Street, Toronto, ON M3J 1P3, Canada
+
+links:
+  - { label: GitHub, url: "https://github.com/ausmlab" }
+  - { label: Hugging Face, url: "https://huggingface.co/ausmlab" }
+  - { label: YouTube, url: "https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ" }
+  - { label: Prof. Sohn, url: "https://gunhosohn.me" }
+
+# Numbers on the home page. Leave "auto" to count from the other files.
+stats:
+  - { number: "160+", label: Research papers }
+  - { number: auto-phd, label: Ph.D. graduates }
+  - { number: auto-postdoc, label: Postdoctoral fellows trained }
+  - { number: auto-datasets, label: Open datasets }

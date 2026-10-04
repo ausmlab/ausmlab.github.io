@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture, page_hero, filters, paper %}
+{% block main %}
+{{ page_hero("PUBLICATIONS", "160+ research papers since 1995") }}
+
+<section class="wrap section">
+  <h2>Featured</h2>
+  <div class="grid-4">
+    {% for p in featured_papers[:4] %}
+    <a class="card-link" href="{{ p.link or p.code or '#list' }}">
+      {{ picture(url, "", "Key figure", "ph ph-cover") }}
+      <span class="card-title">{{ p.short or p.title }}</span>
+      <span class="muted small"><em>{{ p.venue_short or p.venue.split(',')[0] }}, {{ p.year }}</em></span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="list" class="wrap section" data-filter-scope>
+  <div class="section-head">
+    <h2>Recent publications</h2>
+    {{ filters("type", pub_types, "Filter by type") }}
+  </div>
+  {% for y, items in pub_years.items() %}
+  <div class="yearblock" data-year-block>
+    <div class="year-side"><span class="year accent">{{ y }}</span><span class="mono muted small">{{ items | length }} papers</span></div>
+    <div>
+      {% for p in items %}{{ paper(p) }}{% endfor %}
+      <p class="muted empty-note" hidden>No papers of this type in {{ y }}.</p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><h2>Earlier years</h2><a class="more" href="{{ full_list }}">Full list on gunhosohn.me →</a></div>
+  <ul class="years-grid">
+    {% for y, n in older_counts.items() %}<li><span class="year-s">{{ y }}</span><span class="mono muted small">{{ n }} papers</span></li>{% endfor %}
+  </ul>
+</section>
+{% endblock %}

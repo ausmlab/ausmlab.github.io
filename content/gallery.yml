@@ -1,0 +1,17 @@
+# Photos and videos for the Gallery page.
+# Photos: put the image file in static/images/gallery/ and add a block.
+#   file:     file name, e.g. isprs-2026.jpg   (leave "" to show a grey placeholder)
+#   title:    caption
+#   date:     e.g. Aug 2026
+#   category: Research Activities, Conferences or Lab Life
+# Videos: paste the YouTube link.
+
+photos:
+  - { file: "", title: "ISPRS Congress 2026, Toronto", date: "Jul 2026", category: Conferences }
+  - { file: "", title: "Holiday Gathering 2024", date: "Dec 2024", category: Lab Life }
+  - { file: "", title: "Mobile mapping campaign", date: "", category: Research Activities }
+  - { file: "", title: "Q-Drone flight tests", date: "", category: Research Activities }
+  - { file: "", title: "LiDAR survey, York campus", date: "", category: Research Activities }
+
+videos:
+  - { title: "AUSMLab on YouTube", url: "https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ", category: "Research Activities" }

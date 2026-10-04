@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_hero %}
+{% block main %}
+{{ page_hero("JOIN US", join.headline) }}
+
+<section class="wrap split section">
+  <div class="stack">
+    <h2>Open positions</h2>
+    {% for p in join.positions %}<p class="lead">{{ p }}</p>{% endfor %}
+  </div>
+  <div>
+    <p class="label">RESEARCH AREAS</p>
+    <ol class="numbered">{% for a in join.areas %}<li><span class="mono accent">{{ "%02d" % loop.index }}</span>{{ a }}</li>{% endfor %}</ol>
+  </div>
+</section>
+
+<section class="wrap split section">
+  <div class="stack">
+    <h2>Who we look for</h2>
+    {% for r in join.requirements %}<p class="lead">{{ r }}</p>{% endfor %}
+  </div>
+  <div class="stack">
+    <h2>How to apply</h2>
+    <ol class="steps">{% for s in join.steps %}<li><span class="step-n">{{ loop.index }}</span><span>{{ s }}</span></li>{% endfor %}</ol>
+  </div>
+</section>
+
+<section class="band band-dark">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="kicker">NSERC CREATE SMART</p>
+      <h2>Enhanced stipends and industry internships</h2>
+      <p class="lead">{{ join.create_smart }}</p>
+    </div>
+    <div class="stack">
+      <a class="btn btn-light" href="mailto:{{ site.contact.email }}?subject=%5BPh.D.%2FM.Sc.%2FPDF%5D%20Application%20-%20Your%20Name">Email Prof. Sohn</a>
+      <p>{{ site.contact.email }} · {{ site.contact.phone }}</p>
+      <a class="on-dark" href="https://lassonde.yorku.ca/esse">ESSE graduate admissions</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

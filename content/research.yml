@@ -1,0 +1,100 @@
+# Research themes on the Research page (and the 5 cards on the home page).
+#   title / short / body: text
+#   image:    a file name in static/images/ (optional)
+#   projects: name | partner or funder
+
+themes:
+  - id: perception
+    short: Perception
+    title: Robotic Perception & Neural Vision
+    body: Deep networks that segment, detect and understand 3D scenes from LiDAR point clouds and imagery, from utility corridors to large outdoor scenes. We also study self-supervised learning, diffusion models and vision-language models.
+    image: ""
+    image_note: EyeNet++ semantic segmentation of an outdoor LiDAR scene
+    projects:
+      - "3DMMAI: noise filtering & semantic segmentation of LiDAR | NSERC CRD"
+      - "Diffusion models for point cloud upsampling | Ph.D. research"
+      - "Polarization-aware camouflaged threat detection from UAVs | Active"
+
+  - id: mapping
+    short: Mapping
+    title: Autonomous Mapping & Navigation
+    body: SLAM and positioning for mobile mapping systems, drones, trains and ground robots. We fuse LiDAR, panoramic cameras, UWB and IMU so platforms know where they are, even without GPS.
+    image: ""
+    image_note: YUTO MMS trajectory over Toronto
+    projects:
+      - "Railway perception & ego-path segmentation with VLMs | OnTRAC · KRRI"
+      - "UWB-aided UAV positioning (Q-Drone) | CREATE DAV"
+      - "Delivery robot navigation | with Hanyang University"
+
+  - id: twins
+    short: Digital Twins
+    title: 3D Urban Modelling & Digital Twins
+    body: Automatic building reconstruction and digital twins of the built environment, from terrain models and building footprints to semantic building information models and pedestrian simulation.
+    image: ""
+    image_note: LoD building models of a city block
+    projects:
+      - "Building footprints & LoD reconstruction | Ph.D. research"
+      - "GeoPriorPC: diffusion priors for building point clouds | Ph.D. research"
+      - "Semantic-first BIM/IFC digital twins | with Yonsei University"
+
+  - id: mobility
+    short: Infrastructure
+    title: AI for Infrastructure & Mobility
+    body: Embodied AI for infrastructure monitoring and urban mobility, led through the Mobility Innovation Centre (MOVE).
+    image: ""
+    image_note: Aerial mapping of a highway interchange
+    projects:
+      - "AI-enhanced aerial mapping of infrastructure | OCI C2C"
+      - "Winter materials management | MTO · MOVE"
+      - "Indoor AR navigation for the visually impaired | ISSUM"
+
+  - id: space
+    short: Earth & Space
+    title: AI for Earth & Space Observation
+    body: Remote sensing and space situational awareness. We detect and track resident space objects from on-orbit images, and apply deep learning to environmental and public-health questions.
+    image: ""
+    image_note: Resident space object detections in a star field
+    projects:
+      - "RSO detection & tracking (OrbitNet, OrbitTrack) | with Prof. Regina Lee"
+      - "Smokestack plume rise for air-quality models | Air-quality research"
+      - "Geospatial AI for disease modelling | ORF-RE"
+
+datasets:
+  - name: YUTO MMS
+    text: SLAM benchmark for urban mobile mapping with tilted LiDAR and a panoramic camera; four sequences totalling 20.1 km.
+    year: 2025 · IJRR
+    link: https://ausmlab.github.io/yutomms/
+    link_label: Project page
+    home: true
+  - name: YUTO Semantic
+    text: "Aerial LiDAR for 3D semantic segmentation: about 738 million points over 9.46 km² of York campus, nine classes."
+    year: "2023"
+    link: https://huggingface.co/datasets/ausmlab/yuto-semantic
+    link_label: Hugging Face
+    home: true
+  - name: Q-Drone UWB Benchmark
+    text: Benchmark for ultra-wideband radio-based UAV positioning.
+    year: 2020 · IROS
+    link: https://benchmark.qdrone.ausmlab.com/
+    link_label: Benchmark site
+    home: true
+  - name: YUTO Tree5000
+    text: Airborne LiDAR dataset for single-tree detection with 5,000 annotated trees.
+    year: "2022"
+    link: ""
+  - name: Smokestack Plume Images
+    text: Image dataset for industrial plume rise measurement, with plume masks.
+    year: 2026 · FRDR
+    link: ""
+  - name: Unmanned Aerial Image Dataset
+    text: UAV imagery ready for 3D reconstruction.
+    year: "2019"
+    link: ""
+
+partners:
+  Government & Funders: [NSERC, CFI, Mitacs, Transport Canada, Ontario Research Fund, OCE / OCI, AVIN, MTO, Centre de Géomatique du Québec, KRRI, KICT, Ministry of Land (Korea)]
+  Industry: [Teledyne Optech, Thales, Fugro, Mircom, Esri Canada, Autodesk, PCI Geomatics, GeoDigital, XEOS, Olameter, Hyundai Munsoft, FirstBase Solution, NapTech, Lumibird]
+  Affiliations: [MOVE, CRESS, ADERSIM, CREATE DAV, ISSUM, Brain Alliance, VISTA, CAR]
+
+# Shown as a strip on the home page
+home_partners: [NSERC, CFI, Ontario Research Fund, Mitacs, Transport Canada, MTO, OCI, KRRI, KICT, Teledyne Optech, Thales, Fugro, Esri Canada, Autodesk]

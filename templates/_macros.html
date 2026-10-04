@@ -1,0 +1,29 @@
+{% macro picture(url, file, note, cls="ph", folder="images/") %}
+{% if file %}<img class="{{ cls }}" src="{{ url('/' ~ folder ~ file) }}" alt="{{ note }}" loading="lazy">
+{% else %}<div class="{{ cls }} ph-empty" role="img" aria-label="{{ note }}"><span>{{ note }}</span></div>
+{% endif %}
+{% endmacro %}
+
+{% macro page_hero(title, subtitle="") %}
+<section class="band band-hero">
+  <div class="wrap">
+    <h1>{{ title }}</h1>
+    {% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
+  </div>
+</section>
+{% endmacro %}
+
+{% macro filters(name, items, label) %}
+<div class="filters" role="group" aria-label="{{ label }}" data-filter-group="{{ name }}">
+  <button type="button" class="chip" aria-pressed="true" data-filter="all">All</button>
+  {% for it in items %}<button type="button" class="chip" aria-pressed="false" data-filter="{{ it }}">{{ it }}</button>{% endfor %}
+</div>
+{% endmacro %}
+
+{% macro paper(p) %}
+<article class="paper" data-type="{{ p.type }}">
+  <p class="paper-title"><span class="tag">{{ p.type }}</span> {% if p.link %}<a href="{{ p.link }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+  <p class="paper-authors">{{ p.authors }}</p>
+  <p class="paper-venue"><em>{{ p.venue }}</em>{% if p.code %} · <a href="{{ p.code }}">Code / project</a>{% endif %}</p>
+</article>
+{% endmacro %}

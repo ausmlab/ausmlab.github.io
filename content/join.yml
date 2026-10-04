@@ -1,0 +1,21 @@
+# Text for the Join Us page.
+
+headline: We are recruiting Ph.D. and M.Sc. students
+positions:
+  - The AUSM Lab is recruiting Ph.D. and M.Sc. students. We also welcome inquiries from prospective postdoctoral fellows.
+  - Positions are supported by NSERC Discovery Grants, the NSERC CREATE SMART program and industry partnerships.
+areas:
+  - Neural computer vision
+  - Autonomous mapping and navigation
+  - 3D urban modelling
+  - Vision-language models for infrastructure monitoring
+  - AI for Earth observation
+requirements:
+  - "A strong background in one or more of: computer vision, machine learning and deep learning, robotics, photogrammetry and remote sensing, or geomatics engineering."
+  - Programming in Python and PyTorch and experience with spatial data are important assets.
+steps:
+  - Prepare your CV and transcripts.
+  - Write a short statement of your research interests.
+  - Add representative publications, if you have any.
+  - Email them to gsohn@yorku.ca. Put the position type and your name in the subject line.
+create_smart: Graduate admission is through the Department of Earth and Space Science and Engineering. Admitted students may be eligible for enhanced stipends and industry internships through the NSERC CREATE SMART program.

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} · {% endif %}{{ site.name }} — {{ site.full_name }}</title>
+<meta name="description" content="{{ site.intro[0] }}">
+<meta property="og:title" content="{% if title %}{{ title }} · {% endif %}{{ site.name }}">
+<meta property="og:description" content="{{ site.intro[0] }}">
+<meta property="og:type" content="website">
+<link rel="icon" href="{{ url('/favicon.svg') }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="{{ url('/css/style.css') }}">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="logo" href="{{ url('/') }}">AUSM LAB</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mainnav" aria-label="Open menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav id="mainnav" class="mainnav" aria-label="Main">
+      {% for key, label, href in nav %}
+      <a href="{{ url(href) }}"{% if key == active %} aria-current="page"{% endif %}>{{ label }}</a>
+      {% endfor %}
+    </nav>
+    <span class="affil">{{ site.affiliation }}</span>
+  </div>
+</header>
+
+<main id="main">
+{% block main %}{% endblock %}
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name">AUSM LAB</p>
+      <p>{% for line in site.contact.address %}{{ line }}<br>{% endfor %}</p>
+    </div>
+    <div>
+      <p class="footer-h">Contact</p>
+      <p>{{ site.contact.person }}<br>
+      <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a><br>
+      {{ site.contact.phone }}</p>
+    </div>
+    <div>
+      <p class="footer-h">Follow</p>
+      <p>{% for l in site.links %}<a href="{{ l.url }}">{{ l.label }}</a><br>{% endfor %}</p>
+    </div>
+  </div>
+  <div class="wrap footer-copy">© {{ year }} AUSM Lab, York University</div>
+</footer>
+<script src="{{ url('/js/main.js') }}" defer></script>
+</body>
+</html>

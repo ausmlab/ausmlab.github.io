@@ -1,0 +1,77 @@
+# Current lab members, in groups. The order here is the order on the page.
+# To add a person, copy one block under the right group and change it.
+#   name:      full name
+#   role:      shown under the name
+#   since:     year they started, e.g. 2026
+#   history:   short lines about past positions or degrees (optional)
+#   interests: research interests
+#   photo:     a file name in static/images/people/ (optional, square photo works best)
+#   email / website: optional
+#   lab_phd:   true if they earned their Ph.D. in this lab (used for the home-page count)
+# When someone leaves, move them to alumni.yml.
+
+- group: Principal Investigator
+  people:
+    - name: Gunho Sohn
+      role: Professor of Geomatics Engineering
+      history:
+        - "2026–  Director, Mobility Innovation Centre (MOVE)"
+        - "2023–2026  Chair, Dept. of Earth and Space Science and Engineering"
+        - "Ph.D., University College London (RSPSoc best thesis, 2004)"
+        - "B.Sc. & M.Sc., Astronomy and Space Science, Yonsei University"
+      interests: Embodied spatial intelligence, 3D digital twins, autonomous mapping, AI for Earth and space observation
+      email: gsohn@yorku.ca
+      website: https://gunhosohn.me
+
+- group: Postdoctoral Fellows
+  people:
+    - name: Mohammadjavad Ghorbanalivakili
+      role: Postdoctoral Fellow
+      since: 2026
+      history:
+        - "Ph.D., York University"
+      interests: AI for autonomous trains, railway perception, vision-language models, delivery robots
+      lab_phd: true
+
+- group: Ph.D. Students
+  people:
+    - name: Sunghwan (Jacob) Yoo
+      role: Ph.D. student
+      since: 2019
+      interests: 3D object detection and point cloud understanding using deep learning
+    - name: Mohammad Moein Sheikholeslami
+      role: Ph.D. student
+      since: 2022
+      interests: LoD1 building reconstruction, 3D rooftop modelling with deep learning
+    - name: Ashley Varghese
+      role: Ph.D. student
+      since: 2024
+      interests: Self-supervised segmentation with vision-language models
+    - name: Youssef Korny
+      role: Ph.D. student
+      since: 2024
+      interests: 3D urban modelling, diffusion priors for building point clouds (GeoPriorPC)
+    - name: Md. Ehsan Shahmi Chowdhury
+      role: Ph.D. student
+      since: 2026
+      interests: Semantic-first BIM/IFC digital twins, delivery robots
+
+- group: M.Sc. Students
+  people:
+    - name: Youssef Beshir
+      role: M.Sc. student
+      since: 2026
+      interests: Resident space object detection and tracking for space situational awareness
+    - name: Merna Tamer Youssef
+      role: M.Sc. student
+      since: 2026
+      history:
+        - "University of Manitoba"
+      interests: Diffusion models for space situational awareness
+
+- group: Undergraduate Researchers
+  people:
+    - name: Maria Alisod
+      role: Undergraduate researcher, ESSE
+      since: 2026
+      interests: ""

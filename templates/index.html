@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture %}
+{% block main %}
+<section class="hero"{% if site.hero.image %} style="background-image:url('{{ url('/images/' ~ site.hero.image) }}')"{% endif %}>
+  <canvas class="hero-dots" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <p class="kicker">{{ site.hero.kicker }}</p>
+    <h1>{{ site.hero.title }}</h1>
+    <p class="hero-sub">{{ site.hero.subtitle }}</p>
+    <div class="btn-row">
+      <a class="btn btn-light" href="{{ url('/research/') }}">Explore our research</a>
+      <a class="btn btn-ghost" href="{{ url('/join/') }}">Join the lab</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap stats" aria-label="The lab in numbers">
+  {% for s in stats %}<div class="stat"><span class="stat-n">{{ s.number }}</span><span class="stat-l">{{ s.label }}</span></div>{% endfor %}
+</section>
+
+<section class="wrap split">
+  {{ picture(url, "", "Research overview figure", "ph ph-tall") }}
+  <div class="stack">
+    <h2>Research</h2>
+    {% for p in site.intro %}<p class="lead">{{ p }}</p>{% endfor %}
+    <a class="more" href="{{ url('/research/') }}">Read more →</a>
+  </div>
+</section>
+
+<section class="wrap grid-5">
+  {% for t in themes %}
+  <a class="card-link" href="{{ url('/research/') }}#{{ t.id }}">
+    {{ picture(url, t.image, t.image_note, "ph ph-sq") }}
+    <span class="mono accent">{{ t.no }}</span>
+    <span class="card-title">{{ t.title }}</span>
+  </a>
+  {% endfor %}
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><h2>News &amp; Events</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>
+  <ul class="newslist">
+    {% for n in news[:6] %}
+    <li><span class="mono accent">{{ n.date_label }}</span><span>{{ n.title }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><h2>Recent Publications</h2><a class="more" href="{{ url('/publications/') }}">All publications →</a></div>
+  <div class="grid-5">
+    {% for p in featured_papers[:5] %}
+    <a class="card-link" href="{{ p.link or url('/publications/') }}">
+      {{ picture(url, "", "Key figure", "ph ph-cover") }}
+      <span class="card-title small">{{ p.short or p.title }}</span>
+      <span class="muted small"><em>{{ p.venue_short or p.venue.split(',')[0] }}, {{ p.year }}</em></span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="section-head"><h2>Open Datasets</h2><a class="more" href="{{ url('/research/') }}#datasets">All datasets &amp; code →</a></div>
+  <div class="grid-3">
+    {% for d in datasets if d.home %}
+    <a class="card-link" href="{{ d.link }}">
+      <div class="ph ph-dark ph-empty" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>
+      <span class="card-title">{{ d.name }}</span>
+      <span class="body">{{ d.text }}</span>
+      <span class="mono muted small">{{ d.year }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap section center">
+  <p class="mono muted small kicker-dark">FUNDERS &amp; PARTNERS</p>
+  <ul class="logos">{% for p in home_partners %}<li>{{ p }}</li>{% endfor %}</ul>
+  <a class="more" href="{{ url('/research/') }}#partners">All collaborators →</a>
+</section>
+
+<section class="band band-dark">
+  <div class="wrap split">
+    <div class="stack">
+      <p class="kicker">JOIN US</p>
+      <h2>{{ join.headline }}.</h2>
+    </div>
+    <div class="stack">
+      <p class="lead">{% for x in join.positions %}{{ x }} {% endfor %}</p>
+      <div class="btn-row">
+        <a class="btn btn-light" href="{{ url('/join/') }}">How to apply</a>
+        <a class="btn btn-ghost" href="{{ url('/members/') }}">Meet the team</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,229 @@
+# Publications. NEWEST AT THE TOP. Copy one block to add a paper.
+#   year:     2026
+#   type:     Journal, Conference, Preprint or Dataset
+#   authors:  as you would cite them
+#   title:    paper title
+#   venue:    journal or conference, with volume and pages if you have them
+#   link:     DOI or paper web address (optional)
+#   code:     code or project web address (optional)
+#   featured: true  -> shown in the "Featured" row and on the home page (keep 4–5)
+#   short:    a short name for the featured card (optional)
+#   venue_short: a short venue name for the featured card (optional)
+#
+# Older years (before the oldest year below) are listed only as counts in
+# older_counts at the bottom. Full lists stay on gunhosohn.me/publications.
+
+papers:
+  - year: 2026
+    type: Conference
+    authors: Korny, Y., Yoo, S., Panangian, D., Bittner, K., Wichmann, A., Sohn, G.
+    title: "GeoPriorPC: Nadir-view to 3D Point Cloud Reconstruction for Buildings via Two-Stage Diffusion Priors"
+    venue: Proceedings of the IEEE/CVF CVPR Workshops, 2026
+    featured: true
+    short: GeoPriorPC
+    venue_short: CVPR Workshops
+
+  - year: 2026
+    type: Journal
+    authors: Suthakar, V., Kunalakantha, P., Lee, R. S. K., Sohn, G.
+    title: An On-Orbit Star Tracker Benchmark for Resident Space Object Detection and Attitude Estimation
+    venue: Scientific Data, 2026
+    featured: true
+    short: On-Orbit Star Tracker Benchmark
+    venue_short: Scientific Data
+
+  - year: 2026
+    type: Conference
+    authors: Ghorbanalivakili, M., Varghese, A., Sohn, G.
+    title: Reasoning-guided Ego-path Segmentation for Autonomous Trains using Vision-Language Models
+    venue: ISPRS Archives, XLIX-B3-2026, 89–96
+    featured: true
+    short: Reasoning-guided Ego-path Segmentation
+    venue_short: ISPRS Archives
+
+  - year: 2026
+    type: Conference
+    authors: Varghese, A., Ghorbanalivakili, M., Sohn, G.
+    title: "The Emerging Role of Vision-Language Models in the Automation of Railway Asset Management: A Review and Future Perspective"
+    venue: ISPRS Archives, XLIX-B2-2026
+
+  - year: 2026
+    type: Conference
+    authors: Yoo, S., Sohn, G.
+    title: Appearance-aware Scaling Diffusion Model for 3D Point Cloud Upsampling
+    venue: ISPRS Archives, XLIX-B2-2026
+
+  - year: 2026
+    type: Conference
+    authors: Korny, Y., Yoo, S., Sohn, G.
+    title: Polarization-Aware Segmentation for Camouflaged Threat Detection from UAVs
+    venue: ISPRS Archives, XLIX-B2-2026
+
+  - year: 2026
+    type: Journal
+    authors: Hwang, M., Suthakar, V., Qashoa, R., Lee, R. S. K., Sohn, G.
+    title: "Light-Curve Classification of Resident Space Objects for Space Situational Awareness: A Scoping Review"
+    venue: Aerospace, 13(3), 287
+
+  - year: 2026
+    type: Dataset
+    authors: Gordon, M., Koushafar, M., Axelrod, K., Sohn, G.
+    title: Smokestack Plume Images and Plume Identification Masks
+    venue: Federated Research Data Repository
+
+  - year: 2025
+    type: Journal
+    authors: Zhang, Y., Ahmadi, S. M., Kang, J., Arjmandi, Z., Sohn, G.
+    title: "YUTO MMS: A Comprehensive SLAM Dataset for Urban Mobile Mapping with Tilted LiDAR and Panoramic Camera Integration"
+    venue: The International Journal of Robotics Research, 44(1), 3–21
+    code: https://ausmlab.github.io/yutomms/
+    featured: true
+    short: YUTO MMS
+    venue_short: IJRR
+
+  - year: 2025
+    type: Journal
+    authors: Yoo, S., Jeong, Y., Sheikholeslami, M. M., Sohn, G.
+    title: "EyeNet++: A Multiscale and Multidensity Approach for Outdoor 3-D Semantic Segmentation Inspired by the Human Visual Field"
+    venue: IEEE Transactions on Geoscience and Remote Sensing, 63, 1–19
+    code: https://github.com/ausmlab/EyeNetPlus
+    featured: true
+    short: EyeNet++
+    venue_short: IEEE TGRS
+
+  - year: 2025
+    type: Journal
+    authors: Jeong, Y. J., Suthakar, V., Qashoa, R., Sohn, G., Lee, R. S. K.
+    title: "OrbitTrack: Advanced RSO Detection and Tracking from Wide Field-of-view On-orbit Images"
+    venue: Advances in Space Research
+
+  - year: 2025
+    type: Journal
+    authors: Yang, S., Usman, M., Hassan, A., Sohn, G., Faloutsos, P., Haworth, B.
+    title: Digital Twin-based Evaluation of Tactical Interventions for High-density Pedestrian Environments
+    venue: Geo-spatial Information Science, 1–19
+
+  - year: 2025
+    type: Journal
+    authors: Hosseini, R., Tong, D., Lim, S., Sohn, G., Gidofalvi, G.
+    title: "A Framework for Performance Analysis of OpenStreetMap Data in Navigation Applications: The Case of a Well-developed Road Network in Australia"
+    venue: Annals of GIS, 31(2), 233–250
+
+  - year: 2025
+    type: Conference
+    authors: Jung, J., Ghorbanalivakili, M., Sohn, G.
+    title: Multi-Railway Track and Switch Region Recognition Using Mobile Laser Scanning Data
+    venue: IEEE ITSC 2025, 3713–3720
+
+  - year: 2025
+    type: Conference
+    authors: Ghorbanalivakili, M., Sohn, G.
+    title: "TRIT-Net: Triplet-based Railway Instance Tracing Network Using Attraction Field Representation"
+    venue: Conference on Robots and Vision (CRV) 2025
+
+  - year: 2025
+    type: Conference
+    authors: Kamran, M., Sheikholeslami, M. M., Sohn, G.
+    title: "PolyAttractNet: Graph-Based Polygonal Segmentation of Building Footprints Using Attraction Field Maps"
+    venue: ISPRS Archives, 2025
+
+  - year: 2025
+    type: Preprint
+    authors: Axelrod, K. M., Gordon, M., Koushafar, M., Hao, J., Makar, P. A., Fathi, S., Sohn, G.
+    title: Evaluation of Plume Rise Parameterizations in GEM-MACHv2 with Analysis of Image Data Using a Deep Convolutional Neural Network
+    venue: EGUsphere, 1–38
+
+  - year: 2025
+    type: Preprint
+    authors: Arjmandi, Z., Sohn, G.
+    title: "Dynamic Recalibration in LiDAR SLAM: Integrating AI and Geometric Methods with Real-Time Feedback Using INAF Fusion"
+    venue: arXiv:2510.15803
+    link: https://arxiv.org/abs/2510.15803
+
+  - year: 2025
+    type: Preprint
+    authors: Kamran, M., Sheikholeslami, M. M., Wichmann, A., Sohn, G.
+    title: Transformer Based Building Boundary Reconstruction using Attraction Field Maps
+    venue: arXiv:2507.17038
+    link: https://arxiv.org/abs/2507.17038
+
+  - year: 2024
+    type: Journal
+    authors: Alizadeh Naeini, A., Sheikholeslami, M. M., Sohn, G.
+    title: Advancing Physically Informed Autoencoders for DTM Generation
+    venue: Remote Sensing, 16(11), 1841
+
+  - year: 2024
+    type: Journal
+    authors: Jameela, M., Sohn, G.
+    title: "NSANet: Noise-Seeking Attention Network"
+    venue: IEEE JSTARS, 17, 13708–13724
+
+  - year: 2024
+    type: Journal
+    authors: Hosseini, R., Lim, S., Tong, D., Sohn, G., Seyedabrishami, S.
+    title: A Specialized Inclusive Road Dataset with Elevation Profiles for Realistic Pedestrian Navigation Using Open Geospatial Data and Deep Learning
+    venue: Computers, Environment and Urban Systems, 114, 102199
+
+  - year: 2024
+    type: Journal
+    authors: Kiavarz, H., Jadidi, M., Rajabifard, A., Sohn, G.
+    title: An Explainable and Prescriptive Solution for Space-based Energy Consumption Optimization Using BIM Data and Genetic Algorithm
+    venue: Journal of Building Engineering, 92, 109763
+
+  - year: 2024
+    type: Conference
+    authors: Arjmandi, Z., Kang, J., Sohn, G., Armenakis, C., Shahbazi, M.
+    title: "DeepCovPG: Deep-Learning-based Dynamic Covariance Prediction in Pose Graphs for Ultra-Wideband-Aided UAV Positioning"
+    venue: IEEE CASE 2024, 3836–3843
+
+  - year: 2024
+    type: Conference
+    authors: Alizadeh Naeini, A., Sheikholeslami, M. M., Sohn, G.
+    title: "Ressub-Net: Residual Subtraction Network for DTM Extraction from DSM"
+    venue: IGARSS 2024, 8655–8659
+
+  - year: 2024
+    type: Conference
+    authors: Sheikholeslami, M. M., Kamran, M., Wichmann, A., Sohn, G.
+    title: "CornerRegNet: Building Segmentation from Overhead Imagery Using Oriented Corners in Deep Networks"
+    venue: IGARSS 2024, 4642–4647
+
+  - year: 2024
+    type: Conference
+    authors: Jeong, Y., Qashoa, R., Lee, R. S. K., Sohn, G.
+    title: "OrbitNet: Advanced 2D Keypoint-Based Detection and Tracking of LEO Resident Space Objects Using Deep Convolutional Neural Network"
+    venue: 45th COSPAR Scientific Assembly
+
+  - year: 2024
+    type: Conference
+    authors: Axelrod, K., Hao, J., Fathi, S., Makar, P., Koushafar, M., Sohn, G., Gordon, M.
+    title: Using Observations of Smokestack Plume Rise in the Athabasca Oil Sands, Canada to Improve Air Quality Models
+    venue: AGU Fall Meeting 2024
+
+  - year: 2024
+    type: Preprint
+    authors: Sheikholeslami, M. M., Kamran, M., Wichmann, A., Sohn, G.
+    title: Enhancing Polygonal Building Segmentation via Oriented Corners
+    venue: arXiv:2407.12256
+    link: https://arxiv.org/abs/2407.12256
+
+older_counts:
+  "2023": 13
+  "2022": 1
+  "2021": 4
+  "2020": 10
+  "2019": 5
+  "2018": 8
+  "2017": 7
+  "2016": 6
+  "2015": 8
+  "2014": 4
+  "2013": 7
+  "2012": 13
+  "2011": 6
+  "2010": 11
+  "2009": 9
+  "2008 and earlier": 18
+
+full_list: https://gunhosohn.me/publications/

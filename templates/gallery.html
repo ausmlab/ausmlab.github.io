@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture, page_hero, filters %}
+{% block main %}
+{{ page_hero("GALLERY", "Field campaigns, conferences and lab life") }}
+
+<section class="wrap section" data-filter-scope>
+  <div class="center">{{ filters("category", gal_cats, "Filter by category") }}</div>
+  <div class="grid-3 gallery">
+    {% for p in photos %}
+    <figure class="photo" data-type="{{ p.category }}">
+      {{ picture(url, p.file, p.title, "ph ph-photo", "images/gallery/") }}
+      <figcaption><span>{{ p.title }}</span><span class="mono muted small">{{ p.date }}</span></figcaption>
+    </figure>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="wrap section">
+  <h2>Videos</h2>
+  <div class="grid-2">
+    {% for v in videos %}
+    <a class="card-link" href="{{ v.url }}">
+      <div class="ph ph-dark ph-video" aria-hidden="true"><svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="#fff" stroke-width="2"><circle cx="32" cy="32" r="30"/><path d="M26 21l19 11-19 11z"/></svg></div>
+      <span class="card-title">{{ v.title }}</span>
+      <span class="muted small">{{ v.category }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

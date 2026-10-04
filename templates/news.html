@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture, page_hero %}
+{% block main %}
+{{ page_hero("NEWS & EVENTS") }}
+
+{% if featured_news %}
+<section class="wrap split section">
+  {{ picture(url, featured_news.image, featured_news.title, "ph ph-tall") }}
+  <div class="stack">
+    <p class="mono accent">{{ featured_news.date_label | upper }} · {{ featured_news.category | upper }}</p>
+    <h2>{{ featured_news.title }}</h2>
+    {% if featured_news.text %}<p class="lead">{{ featured_news.text }}</p>{% endif %}
+    {% if featured_news.link %}<a class="more" href="{{ featured_news.link }}">Read more →</a>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="wrap section">
+  {% for y, items in news_years.items() %}
+  <div class="yearblock">
+    <div class="year-side"><span class="year accent">{{ y }}</span></div>
+    <div>
+      {% for n in items %}
+      <article class="newsitem">
+        {{ picture(url, n.image, n.category, "ph ph-thumb") }}
+        <div>
+          <p class="newsmeta"><span class="mono muted">{{ n.date_label }}</span><span class="tag">{{ n.category | upper }}</span></p>
+          <h3>{% if n.link %}<a href="{{ n.link }}">{{ n.title }}</a>{% else %}{{ n.title }}{% endif %}</h3>
+          {% if n.text %}<p class="body">{{ n.text }}</p>{% endif %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}

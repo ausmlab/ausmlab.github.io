@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% from "_macros.html" import page_hero %}
+{% block main %}
+<section class="band band-photo">
+  <div class="ph-empty ph-band" role="img" aria-label="Group photo"><span>Group photo</span></div>
+</section>
+
+<section class="wrap center section-tight">
+  <h1 class="h1-dark">Members</h1>
+  <a class="more" href="{{ url('/join/') }}">Join us!</a>
+</section>
+
+{% for g in members %}
+<section class="wrap section-tight">
+  <div class="group-head"><h2>{{ g.group }}</h2><span class="mono muted">{{ "%02d" % (g.people | length) }}</span></div>
+  <div class="people{% if g.people | length <= 2 %} few{% endif %}">
+    {% for p in g.people %}
+    <article class="person">
+      {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="{{ p.name }}" loading="lazy">
+      {% else %}<div class="person-photo ph-empty" role="img" aria-label="Photo of {{ p.name }}"><span class="initials">{{ p.initials }}</span></div>{% endif %}
+      <div class="person-info">
+      <div>
+        <h3>{{ p.name }}</h3>
+        <p class="accent role">{{ p.role }}{% if p.since %} · since {{ p.since }}{% endif %}</p>
+      </div>
+      {% if p.history %}<ul class="history">{% for h in p.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
+      {% if p.interests %}<div class="interests"><p class="label">RESEARCH INTERESTS</p><p>{{ p.interests }}</p></div>{% endif %}
+      {% if p.email or p.website %}<p class="small">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.website %} · {% endif %}{% if p.website %}<a href="{{ p.website }}">Website</a>{% endif %}</p>{% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endfor %}
+
+<section class="wrap section" data-tabs>
+  <div class="group-head"><h2>Alumni &amp; Former Members</h2><span class="mono muted">{{ alumni_total }} people</span></div>
+  <div class="filters" role="tablist" aria-label="Alumni groups">
+    {% for g in alumni_groups %}
+    <button type="button" class="chip" role="tab" id="tab-{{ g.id }}" aria-controls="panel-{{ g.id }}" aria-selected="{{ 'true' if loop.index == 2 else 'false' }}">{{ g.name }} · {{ g.people | length }}</button>
+    {% endfor %}
+  </div>
+  {% for g in alumni_groups %}
+  <ul class="alumni" role="tabpanel" id="panel-{{ g.id }}" aria-labelledby="tab-{{ g.id }}"{% if loop.index != 2 %} hidden{% endif %}>
+    {% for a in g.people %}<li><strong>{{ a.name }}</strong><span class="accent">{{ a.role }}</span><span class="muted">{{ a.note }}</span></li>{% endfor %}
+  </ul>
+  {% endfor %}
+</section>
+{% endblock %}
