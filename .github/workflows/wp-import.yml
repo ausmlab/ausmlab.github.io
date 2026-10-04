@@ -21,6 +21,7 @@ jobs:
           python-version: "3.12"
       - run: pip install pillow
       - run: python tools/wp_import.py
+        continue-on-error: true
       - name: Save the result to the wp-import branch
         run: |
           git config user.name "github-actions[bot]"
