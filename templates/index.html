@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% from "_macros.html" import picture %}
+{% from "_worldmodel.html" import worldmodel with context %}
 {% block main %}
 <section class="hero{% if site.hero.image %} hero-photo{% endif %}"{% if site.hero.image %} style="background-image:url('{{ url('/images/' ~ site.hero.image) }}')"{% endif %}>
   <canvas class="hero-dots" aria-hidden="true"></canvas>
@@ -21,20 +22,16 @@
 <section class="wrap split">
   {{ picture(url, site.overview_image, site.overview_caption, "ph ph-tall") }}
   <div class="stack">
-    <h2>Research</h2>
-    {% for p in site.intro %}<p class="lead">{{ p }}</p>{% endfor %}
+    <p class="mono accent">RESEARCH DIRECTION</p>
+    <h2>{{ vision.title }}</h2>
+    <p class="lead">{{ vision.lead }}</p>
+    <p class="lead">{{ site.intro[0] }}</p>
     <a class="more" href="{{ url('/research/') }}">Read more →</a>
   </div>
 </section>
 
-<section class="wrap grid-5">
-  {% for t in themes %}
-  <a class="card-link" href="{{ url('/research/') }}#{{ t.id }}">
-    {{ picture(url, t.image, t.image_note, "ph ph-sq") }}
-    <span class="mono accent">{{ t.no }}</span>
-    <span class="card-title">{{ t.title }}</span>
-  </a>
-  {% endfor %}
+<section class="wrap section-tight">
+  {{ worldmodel(url, compact=True) }}
 </section>
 
 <section class="wrap section">

@@ -1,0 +1,24 @@
+{# The research-direction diagram: goal, three pillars with a feedback loop, applications, foundation. #}
+{% macro worldmodel(url, compact=False) %}
+<figure class="wm" aria-label="{{ vision.title }}: research direction">
+  <div class="wm-goal">
+    <strong>{{ vision.title }}</strong>
+    {% if vision.flagship %}<span>Flagship direction: {{ vision.flagship }}</span>{% endif %}
+  </div>
+  <ol class="wm-pillars">
+    {% for p in pillars %}
+    <li class="wm-pillar">
+      <a class="plain" href="{{ url('/research/') }}#{{ p.id }}"><strong>{{ p.title }}</strong></a>
+      <em>{{ p.question }}</em>
+      {% if not compact %}<ul>{% for t in p.topics %}<li>{{ t.name }}</li>{% endfor %}</ul>{% endif %}
+    </li>
+    {% if not loop.last %}<li class="wm-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h15M13 6l6 6-6 6"/></svg></li>{% endif %}
+    {% endfor %}
+  </ol>
+  {% if loop_note %}<p class="wm-loop"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.6M20 4v5h-5"/></svg>{{ loop_note }}</p>{% endif %}
+  {% if not compact %}
+  <ul class="wm-apps">{% for a in applications %}<li><strong>{{ a.title }}</strong><span>{{ a.text }}</span></li>{% endfor %}</ul>
+  {% if foundation %}<div class="wm-base"><strong>{{ foundation.title }}</strong><span>{{ foundation.text }}</span></div>{% endif %}
+  {% endif %}
+</figure>
+{% endmacro %}

@@ -231,19 +231,26 @@ def build():
     pub_types = [t for t in ("Journal", "Conference", "Preprint", "Dataset") if any(p["type"] == t for p in papers)]
 
     # Research
-    themes = research.get("themes", [])
-    for i, t in enumerate(themes):
+    pillars = research.get("pillars", [])
+    for i, t in enumerate(pillars):
         t["no"] = f"{i + 1:02d}"
-        t["projects"] = [dict(zip(("name", "partner"), split_pipe(x, 2))) for x in t.get("projects", [])]
+        topics = []
+        for line in t.get("topics", []):
+            name, people, partner, flag = split_pipe(line, 4)
+            topics.append({"name": name, "people": people, "partner": partner, "open": flag.lower() == "open"})
+        t["topics"] = topics
+        for k in ("image", "question", "body"):
+            t.setdefault(k, "")
+        t.setdefault("image_note", t["title"])
+    vision = research.get("vision", {})
+    for k in ("title", "lead", "flagship"):
+        vision.setdefault(k, "")
     datasets = research.get("datasets", [])
     for d in datasets:
         for k in ("link", "link_label"):
             d.setdefault(k, "")
         d.setdefault("home", False)
         d.setdefault("image", "")
-    for t in themes:
-        t.setdefault("image", "")
-        t.setdefault("image_note", t["title"])
     for n in news:
         n.setdefault("featured", False)
     for p in gallery.get("photos", []):
@@ -273,7 +280,9 @@ def build():
         members=members, alumni_groups=alumni_groups, alumni_total=alumni_total,
         papers=papers, pub_years=pub_years, featured_papers=featured_papers, pub_types=pub_types,
         older_counts=pubs.get("older_counts", {}), full_list=pubs.get("full_list", ""),
-        themes=themes, datasets=datasets, partners=research.get("partners", {}),
+        pillars=pillars, vision=vision, applications=research.get("applications", []),
+        foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
+        datasets=datasets, partners=research.get("partners", {}),
         home_partners=research.get("home_partners", []), stats=stats,
         photos=gallery.get("photos", []), videos=gallery.get("videos", []), gal_cats=gal_cats,
         join=join, year=dt.date.today().year,

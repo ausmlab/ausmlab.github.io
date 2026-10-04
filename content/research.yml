@@ -1,64 +1,72 @@
-# Research themes on the Research page (and the 5 cards on the home page).
-#   title / short / body: text
-#   image:    a file name in static/images/ (optional)
-#   image_note: a short description of the picture
-#   projects: name | partner or funder
+# The lab's research direction, shown on the Research page and the home page.
+#
+# vision:      the goal at the top of the diagram
+# pillars:     the three parts of a world model. Each topic line is
+#              "Topic | People | Partner or funder". Leave People empty and add
+#              "| open" at the end to show "Looking for students" with a link to Join Us.
+# applications: where the work is used
+# foundation:  the grant that supports all of it
 
-themes:
-  - id: perception
-    short: Perception
-    title: Robotic Perception & Neural Vision
-    body: Deep networks that segment, detect and understand 3D scenes from LiDAR point clouds and imagery, from utility corridors to large outdoor scenes. We also study self-supervised learning, diffusion models and vision-language models.
-    image: theme-perception-eyenet.jpg
-    image_note: EyeNet results compared with RandLA-Net and ground truth on aerial LiDAR
-    projects:
-      - "3DMMAI: noise filtering & semantic segmentation of LiDAR | NSERC CRD"
-      - "Diffusion models for point cloud upsampling | Ph.D. research"
-      - "Polarization-aware camouflaged threat detection from UAVs | Active"
+vision:
+  title: Structured Spatial World Models
+  lead: Drones and robots sense the world, build accurate 3D world models, and use those models to predict, decide and act. What they learn from acting flows back to update the model.
+  flagship: Autonomous mapping agents
 
-  - id: mapping
-    short: Mapping
-    title: Autonomous Mapping & Navigation
-    body: SLAM and positioning for mobile mapping systems, drones, trains and ground robots. We fuse LiDAR, panoramic cameras, UWB and IMU so platforms know where they are, even without GPS.
+pillars:
+  - id: sensing
+    short: Sensing
+    title: Sensing · Autonomy
+    question: See the world now
+    body: Drones, mobile mappers and satellites collect LiDAR, imagery and orbital observations. We fuse these sensors and detect what matters in them, from tiny objects in orbit to people on a sidewalk.
     image: theme-mapping-qdrone.jpg
     image_note: Q-Drone UWB positioning system and test sites
-    projects:
-      - "Railway perception & ego-path segmentation with VLMs | OnTRAC · KRRI"
-      - "UWB-aided UAV positioning (Q-Drone) | CREATE DAV"
-      - "Delivery robot navigation | with Hanyang University"
+    topics:
+      - "Image–LiDAR co-serialization | Jacob Yoo, Youssef Korny | OCI C2C · Aethon"
+      - "Resident space object (RSO) tiny-object detection | Youssef Beshir | K-SSA, with Prof. Regina Lee's lab"
+      - "Pedestrian trajectory sensing | Mohammadjavad Ghorbanalivakili | OCI C2C, with Hanyang University"
+      - "Quality-aware drone mapping |  |  | open"
 
-  - id: twins
-    short: Digital Twins
-    title: 3D Urban Modelling & Digital Twins
-    body: Automatic building reconstruction and digital twins of the built environment, from terrain models and building footprints to semantic building information models and pedestrian simulation.
-    image: theme-twins-campus.jpg
-    image_note: Digital twin of the York campus for delivery-robot simulation
-    projects:
-      - "Building footprints & LoD reconstruction | Ph.D. research"
-      - "GeoPriorPC: diffusion priors for building point clouds | Ph.D. research"
-      - "Semantic-first BIM/IFC digital twins | with Yonsei University"
+  - id: model
+    short: 3D World Model
+    title: 3D World Model
+    question: Know what the world looks like
+    body: We turn sensor data into accurate, structured 3D models of cities and infrastructure, from building geometry to semantic BIM, so machines can reason about space.
+    image: wp/2889-Multi-scale-Layout-CRF-Chao-Luo.jpg
+    image_note: 3D building models from airborne LiDAR
+    topics:
+      - "LoD1 to LoD2 building reconstruction | Mohammad Moein Sheikholeslami | "
+      - "Semantic-first BIM/IFC digital twins | Md. Ehsan Shahmi Chowdhury | with Yonsei University"
+      - "Single-view 3D reconstruction with diffusion priors (GeoPriorPC) | Youssef Korny | NSERC Discovery"
+      - "Diffusion models for RSO imagery | Merna Tamer Youssef | K-SSA, with Prof. Regina Lee's lab"
+      - "Gaussian splatting for 3D city models |  |  | open"
 
-  - id: mobility
-    short: Infrastructure
-    title: AI for Infrastructure & Mobility
-    body: Embodied AI for infrastructure monitoring and urban mobility, led through the Mobility Innovation Centre (MOVE).
-    image: theme-mobility-rail.jpg
-    image_note: Rail track field survey for the autonomous train project
-    projects:
-      - "AI-enhanced aerial mapping of infrastructure | OCI C2C"
-      - "Winter materials management | MTO · MOVE"
-      - "Indoor AR navigation for the visually impaired | ISSUM"
+  - id: action
+    short: Prediction · Action
+    title: Prediction · Action
+    question: Predict what happens before acting
+    body: With a world model in hand, agents can plan, simulate and act. We build agents that map on their own, connect spatial graphs to language models, and simulate how people and vehicles move.
+    image: wp/4230-Screenshots.jpg
+    image_note: Simulating a sidewalk delivery robot in a campus digital twin
+    topics:
+      - "Spatial graph + LLM agents | Md. Ehsan Shahmi Chowdhury | ORF-RE"
+      - "Pedestrian and CFD simulation | Mohammadjavad Ghorbanalivakili | ORF-RE · NSERC CREATE SMART"
+      - "Vision-language models for railways | Mohammadjavad Ghorbanalivakili, Ashley Varghese | "
+      - "Autonomous mapping agents |  |  | open"
+      - "3D-grounded vision-language-action models |  |  | open"
 
-  - id: space
-    short: Earth & Space
-    title: AI for Earth & Space Observation
-    body: Remote sensing and space situational awareness. We detect and track resident space objects from on-orbit images, and apply deep learning to environmental and public-health questions.
-    image: ""
-    image_note: Resident space object detections in a star field
-    projects:
-      - "RSO detection & tracking (OrbitNet, OrbitTrack) | with Prof. Regina Lee"
-      - "Smokestack plume rise for air-quality models | Air-quality research"
-      - "Geospatial AI for disease modelling | ORF-RE"
+loop_note: Results of action feed back into sensing, closing the loop.
+
+applications:
+  - title: Infrastructure · Digital twins
+    text: Maps, BIM, power lines and rail
+  - title: Mobility · Public health
+    text: Delivery robots, pedestrian flow, disease modelling
+  - title: Space
+    text: Space situational awareness (K-SSA)
+
+foundation:
+  title: "NSERC Discovery: Embodied Spatial Intelligence"
+  text: The program that supports all of the lab's research
 
 datasets:
   - name: YUTO MMS

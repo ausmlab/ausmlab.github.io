@@ -37,3 +37,6 @@ img.ph-theme, img.ph-tall, img.ph-cover { background: #fff; border-color: var(--
 .topbar, .footer-copy, .footer { border-color: var(--line); }
 .prose td, .prose th { border-color: var(--line); }
 .prose figure img { background: var(--soft); }
+
+.wm { --wm-goal: #123a37; --wm-goal-ink: #cfefea; --wm-goal-line: #5cc2b5; --wm-p: #262250; --wm-p-ink: #e4e1fb; --wm-p-line: #a9a2ee; --wm-a: #2a2925; --wm-a-ink: #e9e7e0; --wm-a-line: #a9a69c; }
+.open-tag { background: #3a2b14; color: #e3a94e; }

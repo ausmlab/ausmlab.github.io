@@ -1,35 +1,47 @@
 {% extends "base.html" %}
 {% from "_macros.html" import picture, page_hero %}
+{% from "_worldmodel.html" import worldmodel with context %}
 {% block main %}
 {{ page_hero("RESEARCH", "AI that perceives, reasons about and acts in physical space") }}
 
 <section class="wrap narrow center section">
-  <p class="lead">{{ site.intro[0] }} We turn LiDAR, imagery, UWB and orbital observations into 3D understanding that robots, cities and satellites can act on.</p>
+  <p class="mono accent">RESEARCH DIRECTION</p>
+  <h2 class="vision-title">{{ vision.title }}</h2>
+  <p class="lead">{{ vision.lead }}</p>
   <nav class="chips" aria-label="On this page">
-    {% for t in themes %}<a class="chip" href="#{{ t.id }}">{{ t.no }} {{ t.short }}</a>{% endfor %}
+    {% for t in pillars %}<a class="chip" href="#{{ t.id }}">{{ t.no }} {{ t.short }}</a>{% endfor %}
     <a class="chip" href="#projects">Projects</a>
     <a class="chip" href="#datasets">Datasets</a>
     <a class="chip" href="#partners">Collaborators</a>
   </nav>
 </section>
 
-{% for t in themes %}
+<section class="wrap section-tight">
+  {{ worldmodel(url) }}
+</section>
+
+{% for t in pillars %}
 <section id="{{ t.id }}" class="wrap theme{% if loop.index is even %} theme-flip{% endif %}">
   {{ picture(url, t.image, t.image_note, "ph ph-theme") }}
   <div class="stack">
-    <p class="mono accent">THEME {{ t.no }}</p>
+    <p class="mono accent">PILLAR {{ t.no }} · {{ t.question | upper }}</p>
     <h2>{{ t.title }}</h2>
     <p class="body">{{ t.body }}</p>
     <div class="projects">
-      <p class="label">PROJECTS</p>
-      {% for p in t.projects %}<div class="project"><span>{{ p.name }}</span><span class="muted">{{ p.partner }}</span></div>{% endfor %}
+      <p class="label">TOPICS</p>
+      {% for p in t.topics %}
+      <div class="project">
+        <span>{{ p.name }}{% if p.partner %}<br><span class="muted small">{{ p.partner }}</span>{% endif %}</span>
+        {% if p.open %}<a class="open-tag" href="{{ url('/join/') }}">Looking for students</a>{% else %}<span class="muted">{{ p.people }}</span>{% endif %}
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
 {% endfor %}
 
 <section id="projects" class="wrap section">
-  <div class="section-head"><h2>Projects</h2></div>
+  <div class="section-head"><h2>Projects</h2><p class="muted">Funded projects, current and past</p></div>
   <div class="grid-3">
     {% for pr in projects %}
     <a class="card-link" href="{{ url(pr.url) }}">
