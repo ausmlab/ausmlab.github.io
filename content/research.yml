@@ -1,6 +1,7 @@
 # Research themes on the Research page (and the 5 cards on the home page).
 #   title / short / body: text
 #   image:    a file name in static/images/ (optional)
+#   image_note: a short description of the picture
 #   projects: name | partner or funder
 
 themes:
@@ -8,8 +9,8 @@ themes:
     short: Perception
     title: Robotic Perception & Neural Vision
     body: Deep networks that segment, detect and understand 3D scenes from LiDAR point clouds and imagery, from utility corridors to large outdoor scenes. We also study self-supervised learning, diffusion models and vision-language models.
-    image: ""
-    image_note: EyeNet++ semantic segmentation of an outdoor LiDAR scene
+    image: theme-perception-eyenet.jpg
+    image_note: EyeNet results compared with RandLA-Net and ground truth on aerial LiDAR
     projects:
       - "3DMMAI: noise filtering & semantic segmentation of LiDAR | NSERC CRD"
       - "Diffusion models for point cloud upsampling | Ph.D. research"
@@ -19,8 +20,8 @@ themes:
     short: Mapping
     title: Autonomous Mapping & Navigation
     body: SLAM and positioning for mobile mapping systems, drones, trains and ground robots. We fuse LiDAR, panoramic cameras, UWB and IMU so platforms know where they are, even without GPS.
-    image: ""
-    image_note: YUTO MMS trajectory over Toronto
+    image: theme-mapping-qdrone.jpg
+    image_note: Q-Drone UWB positioning system and test sites
     projects:
       - "Railway perception & ego-path segmentation with VLMs | OnTRAC · KRRI"
       - "UWB-aided UAV positioning (Q-Drone) | CREATE DAV"
@@ -30,8 +31,8 @@ themes:
     short: Digital Twins
     title: 3D Urban Modelling & Digital Twins
     body: Automatic building reconstruction and digital twins of the built environment, from terrain models and building footprints to semantic building information models and pedestrian simulation.
-    image: ""
-    image_note: LoD building models of a city block
+    image: theme-twins-campus.jpg
+    image_note: Digital twin of the York campus for delivery-robot simulation
     projects:
       - "Building footprints & LoD reconstruction | Ph.D. research"
       - "GeoPriorPC: diffusion priors for building point clouds | Ph.D. research"
@@ -41,8 +42,8 @@ themes:
     short: Infrastructure
     title: AI for Infrastructure & Mobility
     body: Embodied AI for infrastructure monitoring and urban mobility, led through the Mobility Innovation Centre (MOVE).
-    image: ""
-    image_note: Aerial mapping of a highway interchange
+    image: theme-mobility-rail.jpg
+    image_note: Rail track field survey for the autonomous train project
     projects:
       - "AI-enhanced aerial mapping of infrastructure | OCI C2C"
       - "Winter materials management | MTO · MOVE"
@@ -77,6 +78,7 @@ datasets:
     year: 2020 · IROS
     link: https://benchmark.qdrone.ausmlab.com/
     link_label: Benchmark site
+    image: dataset-qdrone.jpg
     home: true
   - name: YUTO Tree5000
     text: Airborne LiDAR dataset for single-tree detection with 5,000 annotated trees.

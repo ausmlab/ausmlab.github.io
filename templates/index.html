@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_macros.html" import picture %}
 {% block main %}
-<section class="hero"{% if site.hero.image %} style="background-image:url('{{ url('/images/' ~ site.hero.image) }}')"{% endif %}>
+<section class="hero{% if site.hero.image %} hero-photo{% endif %}"{% if site.hero.image %} style="background-image:url('{{ url('/images/' ~ site.hero.image) }}')"{% endif %}>
   <canvas class="hero-dots" aria-hidden="true"></canvas>
   <div class="wrap hero-in">
     <p class="kicker">{{ site.hero.kicker }}</p>
@@ -19,7 +19,7 @@
 </section>
 
 <section class="wrap split">
-  {{ picture(url, "", "Research overview figure", "ph ph-tall") }}
+  {{ picture(url, site.overview_image, site.overview_caption, "ph ph-tall") }}
   <div class="stack">
     <h2>Research</h2>
     {% for p in site.intro %}<p class="lead">{{ p }}</p>{% endfor %}
@@ -51,7 +51,7 @@
   <div class="grid-5">
     {% for p in featured_papers[:5] %}
     <a class="card-link" href="{{ p.link or url('/publications/') }}">
-      {{ picture(url, "", "Key figure", "ph ph-cover") }}
+      {{ picture(url, p.image, p.short or p.title, "ph ph-cover") }}
       <span class="card-title small">{{ p.short or p.title }}</span>
       <span class="muted small"><em>{{ p.venue_short or p.venue.split(',')[0] }}, {{ p.year }}</em></span>
     </a>
@@ -64,7 +64,7 @@
   <div class="grid-3">
     {% for d in datasets if d.home %}
     <a class="card-link" href="{{ d.link }}">
-      <div class="ph ph-dark ph-empty" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>
+      {% if d.image %}{{ picture(url, d.image, d.name, "ph ph-data") }}{% else %}<div class="ph ph-dark ph-empty ph-data" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>{% endif %}
       <span class="card-title">{{ d.name }}</span>
       <span class="body">{{ d.text }}</span>
       <span class="mono muted small">{{ d.year }}</span>

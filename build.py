@@ -121,6 +121,7 @@ def build():
         for k in ("link", "code", "short", "venue_short"):
             p.setdefault(k, "")
         p.setdefault("featured", False)
+        p.setdefault("image", "")
     pub_years = {}
     for p in papers:
         pub_years.setdefault(p["year"], []).append(p)
@@ -137,6 +138,7 @@ def build():
         for k in ("link", "link_label"):
             d.setdefault(k, "")
         d.setdefault("home", False)
+        d.setdefault("image", "")
     for t in themes:
         t.setdefault("image", "")
         t.setdefault("image_note", t["title"])
@@ -155,7 +157,9 @@ def build():
     }
     stats = [{"number": count.get(str(s["number"]), s["number"]), "label": s["label"]} for s in site.get("stats", [])]
 
-    gal_cats = sorted({p["category"] for p in gallery.get("photos", [])})
+    for k in ("overview_image", "overview_caption", "group_photo", "group_caption"):
+        site.setdefault(k, "")
+    gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), undefined=StrictUndefined, autoescape=True,
                       trim_blocks=True, lstrip_blocks=True)

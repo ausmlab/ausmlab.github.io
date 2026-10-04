@@ -20,6 +20,7 @@
         - "Ph.D., University College London (RSPSoc best thesis, 2004)"
         - "B.Sc. & M.Sc., Astronomy and Space Science, Yonsei University"
       interests: Embodied spatial intelligence, 3D digital twins, autonomous mapping, AI for Earth and space observation
+      photo: gunho-sohn.jpg
       email: gsohn@yorku.ca
       website: https://gunhosohn.me
 
@@ -32,6 +33,7 @@
         - "Ph.D., York University"
       interests: AI for autonomous trains, railway perception, vision-language models, delivery robots
       lab_phd: true
+      photo: mohammadjavad-ghorbanalivakili.jpg
 
 - group: Ph.D. Students
   people:
@@ -39,6 +41,7 @@
       role: Ph.D. student
       since: 2019
       interests: 3D object detection and point cloud understanding using deep learning
+      photo: jacob-yoo.jpg
     - name: Mohammad Moein Sheikholeslami
       role: Ph.D. student
       since: 2022

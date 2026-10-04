@@ -11,11 +11,19 @@ hero:
   title: EMBODIED SPATIAL INTELLIGENCE
   subtitle: 3D DIGITAL TWINS · AUTONOMOUS MAPPING · SPACE AWARENESS
   # Put a wide photo in static/images/ and write its file name here, e.g. hero.jpg
-  image: ""
+  image: hero-powerline-lidar.jpg
 
 intro:
   - The AUSM Lab develops solutions for representing and understanding urban environments through visual and spatial data.
   - "Our focus is embodied spatial intelligence: AI systems that perceive, reason about and act within physical space, for construction and infrastructure monitoring, extended to Earth and space observation."
+
+# Picture next to the Research intro on the home page (in static/images/)
+overview_image: research-overview-toronto3d.jpg
+overview_caption: Semantic segmentation of a city-scale LiDAR point cloud
+
+# Wide photo at the top of the Members page (in static/images/)
+group_photo: lab-group-2019.jpg
+group_caption: AUSM Lab members, 2019
 
 contact:
   person: Prof. Gunho Sohn

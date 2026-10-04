@@ -9,6 +9,7 @@
 #   featured: true  -> shown in the "Featured" row and on the home page (keep 4–5)
 #   short:    a short name for the featured card (optional)
 #   venue_short: a short venue name for the featured card (optional)
+#   image:    a key figure in static/images/ for the featured card (optional)
 #
 # Older years (before the oldest year below) are listed only as counts in
 # older_counts at the bottom. Full lists stay on gunhosohn.me/publications.
@@ -89,6 +90,7 @@ papers:
     code: https://github.com/ausmlab/EyeNetPlus
     featured: true
     short: EyeNet++
+    image: paper-eyenet.jpg
     venue_short: IEEE TGRS
 
   - year: 2025

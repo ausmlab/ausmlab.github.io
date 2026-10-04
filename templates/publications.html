@@ -8,7 +8,7 @@
   <div class="grid-4">
     {% for p in featured_papers[:4] %}
     <a class="card-link" href="{{ p.link or p.code or '#list' }}">
-      {{ picture(url, "", "Key figure", "ph ph-cover") }}
+      {{ picture(url, p.image, p.short or p.title, "ph ph-cover") }}
       <span class="card-title">{{ p.short or p.title }}</span>
       <span class="muted small"><em>{{ p.venue_short or p.venue.split(',')[0] }}, {{ p.year }}</em></span>
     </a>

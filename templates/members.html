@@ -2,7 +2,8 @@
 {% from "_macros.html" import page_hero %}
 {% block main %}
 <section class="band band-photo">
-  <div class="ph-empty ph-band" role="img" aria-label="Group photo"><span>Group photo</span></div>
+  {% if site.group_photo %}<figure class="band-figure"><img class="ph-band" src="{{ url('/images/' ~ site.group_photo) }}" alt="{{ site.group_caption }}"><figcaption class="wrap">{{ site.group_caption }}</figcaption></figure>
+  {% else %}<div class="ph-empty ph-band" role="img" aria-label="Group photo"><span>Group photo</span></div>{% endif %}
 </section>
 
 <section class="wrap center section-tight">

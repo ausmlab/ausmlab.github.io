@@ -36,7 +36,7 @@
     <div class="grid-3">
       {% for d in datasets %}
       <article class="card">
-        <div class="ph ph-dark ph-empty" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>
+        {% if d.image %}{{ picture(url, d.image, d.name, "ph ph-data") }}{% else %}<div class="ph ph-dark ph-empty ph-data" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>{% endif %}
         <div class="card-body">
           <h3>{{ d.name }}</h3>
           <p class="body">{{ d.text }}</p>
