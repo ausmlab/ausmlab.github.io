@@ -1,0 +1,30 @@
+# One-time job: copies all public content and images from gunhosohn.me
+# into the wp-import branch. Runs only on that branch; does not touch the live site.
+name: Import from WordPress
+
+on:
+  push:
+    branches: [wp-import]
+    paths: [tools/wp_import.py, .github/workflows/wp-import.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - run: python tools/wp_import.py
+      - name: Save the result to the wp-import branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add wp-import
+          git commit -m "Import content and images from gunhosohn.me" || echo "nothing new"
+          git push origin HEAD:wp-import
