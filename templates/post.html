@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% from "_article.html" import article_head %}
+{% block main %}
+{{ article_head(item.date_label if item.date_label is defined else item.date ~ " · " ~ item.category | upper, item.title) }}
+<article class="wrap narrow prose section">
+  {{ fix(item.body) }}
+  {% if item.categories %}<p class="tags">{% for c in item.categories %}<span class="tag">{{ c }}</span>{% endfor %}</p>{% endif %}
+  <p class="back"><a href="{{ url('/news/') }}">← All news</a></p>
+</article>
+{% endblock %}

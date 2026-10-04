@@ -1,0 +1,9 @@
+{% macro article_head(kicker, title, sub="") %}
+<section class="band band-hero band-article">
+  <div class="wrap narrow">
+    {% if kicker %}<p class="kicker">{{ kicker }}</p>{% endif %}
+    <h1>{{ title }}</h1>
+    {% if sub %}<p>{{ sub }}</p>{% endif %}
+  </div>
+</section>
+{% endmacro %}

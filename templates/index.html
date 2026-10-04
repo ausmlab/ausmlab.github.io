@@ -41,7 +41,7 @@
   <div class="section-head"><h2>News &amp; Events</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>
   <ul class="newslist">
     {% for n in news[:6] %}
-    <li><span class="mono accent">{{ n.date_label }}</span><span>{{ n.title }}</span></li>
+    <li><span class="mono accent">{{ n.date_label }}</span>{% if n.link %}<a class="plain" href="{{ url(n.link) }}">{{ n.title }}</a>{% else %}<span>{{ n.title }}</span>{% endif %}</li>
     {% endfor %}
   </ul>
 </section>

@@ -11,6 +11,7 @@ GitHub runs this automatically every time a file changes (see
 .github/workflows/deploy.yml), so you never need to run it yourself.
 """
 import datetime as dt
+import re
 import hashlib
 import http.server
 import os
@@ -20,6 +21,7 @@ from pathlib import Path
 
 import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from markupsafe import Markup
 
 ROOT = Path(__file__).parent
 OUT = ROOT / "_site"
@@ -61,6 +63,54 @@ def as_line(item):
     return str(item)
 
 
+def load_folder(folder):
+    """Read content/<folder>/*.html. Each file starts with a --- block of
+    fields (title, date, image, ...) followed by the page text in HTML."""
+    items = []
+    for path in sorted((ROOT / "content" / folder).glob("*.html")):
+        text = path.read_text(encoding="utf-8")
+        meta, body = {}, text
+        if text.startswith("---"):
+            _, head, body = text.split("---", 2)
+            meta = yaml.safe_load(head) or {}
+        meta["slug"] = path.stem
+        meta["body"] = body.strip()
+        for k in ("title", "image", "summary", "source", "date"):
+            meta.setdefault(k, "")
+        meta.setdefault("categories", [])
+        items.append(meta)
+    return items
+
+
+NEWS_CATEGORY = [("Recruitment", "Recruitment"), ("Lab Activity", "Lab Life"), ("Outreaching", "Lab Life"),
+                 ("Conference", "Event"), ("Undergraduate Student", "People"),
+                 ("Undergraudate Internship", "People"), ("Research", "Research")]
+
+
+def news_category(cats, title):
+    for key, label in NEWS_CATEGORY:
+        if key in cats:
+            return label
+    t = title.lower()
+    if any(w in t for w in ("grant", "awarded", "funded", "funding")):
+        return "Funding"
+    if any(w in t for w in ("award", "recognized", "receives")):
+        return "Award"
+    if any(w in t for w in ("appointed", "congratulation", "welcome", "position", "defense", "defence")):
+        return "People"
+    if any(w in t for w in ("congress", "conference", "forum", "symposium")):
+        return "Event"
+    if "featured" in t or "yfile" in t:
+        return "Media"
+    return "News"
+
+
+def name_key(name):
+    name = re.sub(r"\(.*?\)", " ", name.lower())
+    name = re.sub(r"^(dr|prof|ms|mr)\.?\s*", "", name.strip())
+    return " ".join(re.sub(r"[^a-z ]", " ", name).split())
+
+
 def split_pipe(line, n):
     parts = [p.strip() for p in as_line(line).split("|")]
     return (parts + [""] * n)[:n]
@@ -98,7 +148,38 @@ def build():
     gallery = load("gallery")
     join = load("join")
 
-    # News: parse dates, keep file order (newest first), group by year
+    posts = load_folder("posts")
+    projects = load_folder("projects")
+    profiles = load_folder("people")
+    archive = {a["slug"]: a for a in load_folder("archive")}
+
+    for p in posts:
+        p["url"] = f"/news/{p['slug']}/"
+        p["category"] = news_category(p["categories"], p["title"])
+        p["date_label"] = parse_date(p["date"])[2]
+    for pr in projects:
+        pr["url"] = f"/research/{pr['slug']}/"
+    profile_by_name = {name_key(p["title"]): f"/members/{p['slug']}/" for p in profiles}
+
+    def find_profile(name):
+        """Match 'Amin Alizadeh-Naeini' to the profile 'Amin Alizadeh', etc."""
+        key = name_key(name)
+        if key in profile_by_name:
+            return profile_by_name[key]
+        words = key.split()
+        for pkey, link in profile_by_name.items():
+            pw = pkey.split()
+            if words and pw and words[0] == pw[0] and words[-1][:4] == pw[-1][:4]:
+                return link
+            if words and pw and words[0] == pw[0] and len(words) > 1 and pw[-1] in words:
+                return link
+        return ""
+
+    # News = the hand-written items in news.yml + one item per story in content/posts/
+    for p in posts:
+        news.append({"date": p["date"], "category": p["category"], "title": p["title"],
+                     "text": p["summary"], "image": p["image"] and "wp/" + p["image"],
+                     "link": p["url"], "featured": bool(p.get("featured"))})
     for n in news:
         n["sort"], n["year"], n["date_label"] = parse_date(n["date"])
         n.setdefault("text", "")
@@ -114,6 +195,7 @@ def build():
     for g in members:
         for p in g["people"]:
             p["initials"] = initials(p["name"])
+            p["profile"] = find_profile(p["name"])
             for k in ("role", "interests", "photo", "email", "website", "since"):
                 p.setdefault(k, "")
             p.setdefault("history", [])
@@ -121,6 +203,8 @@ def build():
     alumni_groups = []
     for group, lines in alumni.items():
         people = [dict(zip(("name", "role", "note"), split_pipe(l, 3))) for l in lines or []]
+        for a in people:
+            a["profile"] = find_profile(a["name"])
         alumni_groups.append({"name": group, "id": group.lower().replace(".", "").replace(" ", "-"), "people": people})
     alumni_total = sum(len(g["people"]) for g in alumni_groups)
 
@@ -168,6 +252,9 @@ def build():
 
     for k in ("overview_image", "overview_caption", "group_photo", "group_caption"):
         site.setdefault(k, "")
+    for p in gallery.get("photos", []):
+        p["path"] = p["file"] if "/" in p["file"] else ("gallery/" + p["file"] if p["file"] else "")
+    research_posts = [p for p in posts if "Research" in p["categories"]]
     gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), undefined=StrictUndefined, autoescape=True,
@@ -181,11 +268,23 @@ def build():
         home_partners=research.get("home_partners", []), stats=stats,
         photos=gallery.get("photos", []), videos=gallery.get("videos", []), gal_cats=gal_cats,
         join=join, year=dt.date.today().year,
+        posts=posts, projects=projects, research_posts=research_posts,
     )
 
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(ROOT / "static", OUT)
+    pages = list(PAGES)
+    for p in posts:
+        pages.append(("post.html", f"news/{p['slug']}/index.html", "news", p["title"], {"item": p}))
+    for pr in projects:
+        pages.append(("project.html", f"research/{pr['slug']}/index.html", "research", pr["title"], {"item": pr}))
+    for pe in profiles:
+        pages.append(("person.html", f"members/{pe['slug']}/index.html", "members", pe["title"], {"item": pe}))
+    if "publications" in archive:
+        pages.append(("archive.html", "publications/all/index.html", "publications", "All publications",
+                      {"item": archive["publications"]}))
+
     preview = "--preview" in sys.argv
     # A short fingerprint of the CSS and JS. It changes whenever they change,
     # so browsers fetch the new files instead of using an old saved copy.
@@ -194,7 +293,9 @@ def build():
 
     def asset(u):
         return f"{u}?v={stamp}"
-    for tpl, out, key, title in PAGES:
+    for entry in pages:
+        tpl, out, key, title = entry[:4]
+        extra = entry[4] if len(entry) > 4 else {}
         depth = out.count("/")
         base = "../" * depth
         if out == "404.html" and not preview:
@@ -209,11 +310,15 @@ def build():
                 p += "index.html"
             return base + p if (base or p) else "./"
 
-        html = env.get_template(tpl).render(active=key, title=title, url=url, asset=asset, **ctx)
+        def fix(body, url=url):
+            """Make the site links inside ported page text work from this page."""
+            return Markup(re.sub(r'(src|href)="(/[^"]*)"', lambda m: f'{m.group(1)}="{url(m.group(2))}"', body))
+
+        html = env.get_template(tpl).render(active=key, title=title, url=url, asset=asset, fix=fix, **ctx, **extra)
         path = OUT / out
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(html, encoding="utf-8")
-    print(f"Built {len(PAGES)} pages into {OUT}")
+    print(f"Built {len(pages)} pages into {OUT}")
 
 
 if __name__ == "__main__":

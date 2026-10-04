@@ -7,52 +7,19 @@
 #   image:    a file name in static/images/ (optional)
 #   link:     a web address for "Read more" (optional)
 #   featured: true  -> shown as the big story at the top of the News page (only one)
+#
+# Longer stories with photos live in content/posts/ (one file each). They are
+# added to the News page automatically, so don't list them here as well.
 
 - date: 2026-09
   category: People
   title: Welcome to our new members
   text: Md. Ehsan Shahmi Chowdhury joins as a Ph.D. student and Merna Tamer Youssef as an M.Sc. student.
 
-- date: 2026-08-06
-  category: People
-  title: Prof. Gunho Sohn appointed Director of the Mobility Innovation Centre (MOVE)
-  text: Prof. Gunho Sohn has been appointed Director of the Mobility Innovation Centre (MOVE) at York University's Lassonde School of Engineering.
-  featured: true
-
-- date: 2026-08-06
-  category: Funding
-  title: OCI C2C grant for AI-enhanced aerial mapping of infrastructure
-  text: Funding from the Ontario Centre of Innovation for AI-based infrastructure mapping research.
-
-- date: 2026-08-06
-  category: Event
-  title: AUSMLab at the XXV ISPRS Congress 2026 in Toronto
-  image: news-isprs-2026.jpg
-  text: A strong lab presence at the Congress, held July 4–11, 2026 at the Metro Toronto Convention Centre.
-
-- date: 2026-07-01
-  category: People
-  title: Dr. Zahra Arjmandi appointed at Lassonde
-  text: Sessional Assistant Professor in Mechatronics Engineering, York University.
-
-- date: 2026-06-03
-  category: Funding
-  title: New MTO-funded project on winter materials management
-  text: Awarded under MOVE by the Ontario Ministry of Transportation.
-
-- date: 2026-06-02
-  category: Media
-  title: Prof. Sohn featured in York's Ascend Magazine
-  text: On AI for urban mobility.
-
 - date: "2026"
   category: Defence
   title: Dr. Mohammadjavad Ghorbanalivakili completes his Ph.D.
   text: He continues in the lab as a postdoctoral fellow from October 2026.
-
-- date: "2025"
-  category: Award
-  title: Prof. Gunho Sohn named KOFST Overseas Scientist & Engineer of the Year 2025
 
 - date: "2025"
   category: Defence

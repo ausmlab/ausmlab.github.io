@@ -35,6 +35,15 @@ If something looks wrong, open the **Actions** tab. A red ✗ means a typo in th
 | `content/research.yml` | Research themes, datasets, collaborators |
 | `content/gallery.yml` | Gallery photos and videos |
 | `content/join.yml` | The Join Us page |
+| `content/posts/*.html` | Full news stories with photos (one file each; shown on News automatically) |
+| `content/projects/*.html` | Project pages linked from Research |
+| `content/people/*.html` | Member and alumni profile pages (linked from names on Members) |
+| `content/archive/publications.html` | The complete publication list |
+
+The `.html` files start with a short block between `---` lines (title, date, image).
+Below it is the page text. To add a story, copy an existing file, rename it, and
+change the title, date and text. Most of these files came from gunhosohn.me;
+`tools/port_wordpress.py` is the one-time script that converted them.
 
 ## Photos
 - Member photos: `static/images/people/` (square, about 600×600 px), then write the file name in `photo:`.

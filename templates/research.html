@@ -7,6 +7,7 @@
   <p class="lead">{{ site.intro[0] }} We turn LiDAR, imagery, UWB and orbital observations into 3D understanding that robots, cities and satellites can act on.</p>
   <nav class="chips" aria-label="On this page">
     {% for t in themes %}<a class="chip" href="#{{ t.id }}">{{ t.no }} {{ t.short }}</a>{% endfor %}
+    <a class="chip" href="#projects">Projects</a>
     <a class="chip" href="#datasets">Datasets</a>
     <a class="chip" href="#partners">Collaborators</a>
   </nav>
@@ -26,6 +27,28 @@
   </div>
 </section>
 {% endfor %}
+
+<section id="projects" class="wrap section">
+  <div class="section-head"><h2>Projects</h2></div>
+  <div class="grid-3">
+    {% for pr in projects %}
+    <a class="card-link" href="{{ url(pr.url) }}">
+      {% if pr.image %}<img class="ph ph-proj" src="{{ url('/images/wp/' ~ pr.image) }}" alt="{{ pr.title }}" loading="lazy">{% else %}<div class="ph ph-proj ph-empty"><span>{{ pr.title }}</span></div>{% endif %}
+      <span class="card-title">{{ pr.title }}</span>
+      <span class="body small">{{ pr.summary }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="highlights" class="wrap section">
+  <div class="section-head"><h2>Research highlights</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>
+  <ul class="highlights">
+    {% for p in research_posts %}
+    <li><span class="mono muted">{{ p.date[:4] }}</span><a class="plain" href="{{ url(p.url) }}">{{ p.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
 
 <section id="datasets" class="band band-soft">
   <div class="wrap">

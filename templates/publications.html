@@ -33,9 +33,9 @@
 </section>
 
 <section class="wrap section">
-  <div class="section-head"><h2>Earlier years</h2><a class="more" href="{{ full_list }}">Full list on gunhosohn.me →</a></div>
+  <div class="section-head"><h2>Earlier years</h2><a class="more" href="{{ url('/publications/all/') }}">Complete publication list →</a></div>
   <ul class="years-grid">
-    {% for y, n in older_counts.items() %}<li><span class="year-s">{{ y }}</span><span class="mono muted small">{{ n }} papers</span></li>{% endfor %}
+    {% for y, n in older_counts.items() %}<li><a class="plain" href="{{ url('/publications/all/') }}"><span class="year-s">{{ y }}</span><span class="mono muted small">{{ n }} papers</span></a></li>{% endfor %}
   </ul>
 </section>
 {% endblock %}

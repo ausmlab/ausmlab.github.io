@@ -8,7 +8,7 @@
   <div class="grid-3 gallery">
     {% for p in photos %}
     <figure class="photo" data-type="{{ p.category }}">
-      {{ picture(url, p.file, p.title, "ph ph-photo", "images/gallery/") }}
+      {{ picture(url, p.path, p.title, "ph ph-photo") }}
       <figcaption><span>{{ p.title }}</span><span class="mono muted small">{{ p.date }}</span></figcaption>
     </figure>
     {% endfor %}

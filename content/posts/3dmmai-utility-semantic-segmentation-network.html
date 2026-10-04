@@ -1,0 +1,31 @@
+---
+title: "3DMMAI: Utility Semantic Segmentation Network"
+date: "2023-06-11"
+categories: ["3DMMAI", "Research"]
+image: "4178-image.jpg"
+summary: "Authors: Maryam Jameela, Gunho Sohn, Sunghwan Yon Department of Earth and Space Science and Engineering, York University Toronto, ON M3J 1P3 Canada The 3DMMAI pipeline includes several stages of post-data acquisition…"
+source: "https://gunhosohn.me/2023/06/11/3dmmai-utility-semantic-segmentation-network/"
+---
+<h3>Authors: Maryam Jameela, Gunho Sohn, Sunghwan Yon</h3>
+<h3>Department of Earth and Space Science and Engineering, York University Toronto, ON M3J 1P3 Canada</h3>
+<p>The 3DMMAI pipeline includes several stages of post-data acquisition processing, and the significant step is the semantic segmentation of the utility transmission corridor. LiDAR (Light Detection and Ranging) mounted with static and mobile vehicles has been rapidly adopted as a primary sensor for mapping natural and built environments for a range of civil and military applications. Due to the aged nature of much of the utility network infrastructure, developing a robust and trustworthy computer vision system capable of inspecting it with minimal human intervention has attracted considerable research attention. The airborne laser terrain mapping (ALTM) system quickly becomes the central data collection system among the numerous available sensors. Its ability to penetrate foliage with high-powered energy provides wide coverage and achieves survey-grade ranging accuracy. However, the post-data acquisition process for classifying the ALTM’s dense and irregular point clouds is a critical bottleneck that must be addressed to improve efficiency and accuracy. We introduce two novel deep convolutional neural network (DCNN) techniques for achieving voxel-based semantic segmentation of the ALTM’s point clouds.</p>
+<p><strong>Abstract:</strong></p>
+<figure><img alt="" src="/images/wp/4171-Fusion-SUNet.jpg"/></figure>
+<p><strong>Methodology</strong></p>
+<p><em>The proposed network combines two networks to achieve voxel-based semantic segmentation of the point clouds at multi-resolution with object categories in three dimensions and predict two-dimensional regional labels distinguishing corridor regions from non-corridors. The network imposes spatial layout consistency on the features of the voxel-based 3D network using regional segmentation features. The authors demonstrate the effectiveness of the proposed technique by testing it on </em>67km2 <em>of utility corridor data with an average density of </em>5pp/m2<em>, achieving significantly better performance compared to the state-of-the-art baseline network, with an F1 score of 93% for pylon class, 99% for ground class, 99% for vegetation class, and 98% for power line class.</em></p>
+<p><strong>Network</strong></p>
+<figure><img alt="" src="/images/wp/4172-network-5.jpg"/></figure>
+<p><strong>Feature-based Fusion Module:</strong></p>
+<figure><img alt="" src="/images/wp/4174-attention_fusion.jpg"/></figure>
+<p><strong>Results:</strong></p>
+<p>Our results have shown performance improvement due to spatial layout consistency using deeper-level fusion.</p>
+<figure><img alt="" src="/images/wp/4176-Screen-Shot-2023-05-13-at-5.15.02-PM.jpg"/></figure>
+<figure>
+
+<figcaption>Fusion-SUNet Results</figcaption></figure>
+<p><strong>Main</strong> <strong>Contributors: </strong><a href="/members/maryam-jameela/">Maryam Jameela</a></p>
+<p><strong>Publications: </strong></p>
+<ul>
+<li><a href="https://arxiv.org/abs/2303.00939">Spatial Layout Consistency for 3D Semantic Segmentation</a>, <strong>ICPR PRRS Workshop 2022</strong></li>
+<li><a href="https://openaccess.thecvf.com/content/CVPR2023W/PCV/papers/Jameela_Fusion-SUNet_Spatial_Layout_Consistency_for_3D_Semantic_Segmentation_CVPRW_2023_paper.pdf">Fusion-SUNet: Spatial Layout Consistency for 3D Semantic Segmentation</a>, <strong>CVPR PCV Workshop 2023</strong></li>
+</ul>

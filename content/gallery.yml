@@ -13,14 +13,32 @@ photos:
   - { file: isprs-2026-poster.jpg, title: "Poster session, ISPRS Congress 2026", date: "Jul 2026", category: Conferences }
   - { file: isprs-2026-3.jpg, title: "Presentation at ISPRS Congress 2026", date: "Jul 2026", category: Conferences }
   - { file: tac-its-2019.jpg, title: "TAC-ITS Canada Joint Conference", date: "Sep 2019", category: Conferences }
-  - { file: uxbridge-field-2.jpg, title: "Rail survey, Uxbridge", date: "May 2017", category: Research Activities }
-  - { file: uxbridge-field-1.jpg, title: "Field team, Uxbridge", date: "May 2017", category: Research Activities }
+  - { file: uxbridge-field-2.jpg, title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
+  - { file: uxbridge-field-1.jpg, title: "Field team, Uxbridge", date: "May 2019", category: Research Activities }
   - { file: research-leaders-award-2019.jpg, title: "York Research Leaders Award", date: "2019", category: Research Activities }
   - { file: phd-defence-2019.jpg, title: "Ph.D. defence of Ali Baligh Jahromi", date: "Sep 2019", category: Lab Life }
   - { file: lab-dinner-2019.jpg, title: "Farewell dinner for David Recchia", date: "May 2019", category: Lab Life }
   - { file: lab-bbq-1.jpg, title: "Lab BBQ", date: "2019", category: Lab Life }
   - { file: lab-bbq-2.jpg, title: "Lab BBQ", date: "2019", category: Lab Life }
-  - { file: niagara-trip.jpg, title: "Lab trip to Niagara Falls", date: "", category: Lab Life }
+  - { file: niagara-trip.jpg, title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+
+  # Photos below came from the old gunhosohn.me gallery
+  - { file: "wp/506-David-Recchias-Farewell-Party-20190517.jpg", title: "Farewell dinner after the YDHR field work", date: "May 2019", category: Lab Life }
+  - { file: "wp/558-Uxbridge-May17-Photo-2.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
+  - { file: "wp/559-Uxbridge-May17-Photo-3-e1599397512556.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
+  - { file: "wp/560-Uxbridge-May17-Photo-4-e1599397495431.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
+  - { file: "wp/561-Uxbridge-May17-Photo-5.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
+  - { file: "wp/535-IMG_20180228_214850.jpg", title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+  - { file: "wp/536-IMG_1328.jpg", title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+  - { file: "wp/537-IMG_1353.jpg", title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+  - { file: "wp/538-IMG_1240.jpg", title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+  - { file: "wp/539-IMG_1233.jpg", title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+  - { file: "wp/389-20171214_141615.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: "wp/395-20171214_134032.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: "wp/392-20171214_140634.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: "wp/391-20171214_140637.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: "wp/403-20171214_130334.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: "wp/404-20171214_130141.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
 
 videos:
   - { title: "AUSMLab on YouTube", url: "https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ", category: "Research Activities" }

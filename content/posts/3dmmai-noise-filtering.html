@@ -1,0 +1,13 @@
+---
+title: "3DMMAI: Noise Filtering"
+date: "2020-09-06"
+categories: ["3DMMAI", "Research"]
+image: "2957-Scene11_Poster-1.jpg"
+summary: "The 3DMMAI pipeline includes several stages of post data acquisition processing, and the first significant step is noise filtering. LiDAR (Light Detection and Ranging) mounted with static and mobile vehicles has been…"
+source: "https://gunhosohn.me/2020/09/06/3dmmai-noise-filtering/"
+---
+<p>The 3DMMAI pipeline includes several stages of post data acquisition processing, and the first significant step is noise filtering. LiDAR (Light Detection and Ranging) mounted with static and mobile vehicles has been rapidly adopted as a primary sensor for mapping natural and built environments for a range of civil and military applications. Recently, technology advancement in electro-optical engineering enables acquiring laser returns at high pulse repetition frequency (PRF) from 100Hz to 2MHz for airborne LiDAR, which leads to an increase in the density of 3D point cloud significantly. Traditional systems with lower PRF had a single pulse-in-air zone (PIA) big enough to avoid a mismatch between pulse pair at the receiver. Modern multiple pulses-in-air (MPIA) technology ensures multiple windows of operational ranges for single flight lines and no blind-zones; the downside of the technology is a projection of atmospheric returns closer to the same PIA zone of neighbouring ground points and more likely to be overlapping with objects of interest. These characteristics of noise compromise the quality of the scene and encourage usage of noise filtering neural network as existing filters are not effective and scalable for the large-scale point cloud dataset.</p>
+<figure><img alt="" src="/images/wp/2958-Scene11_Poster_11.jpg"/></figure>
+<p><strong>Contributors: </strong><a href="/members/maryam-jameela/">Maryam Jameela</a></p>
+<p><strong>Publications: </strong></p>
+<ul><li><a href="/publications/all/">Simulation-based Data Augmentation Using Physical Priors for Noise Filtering Deep Neural Network</a></li></ul>
