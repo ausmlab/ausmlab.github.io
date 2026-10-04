@@ -1,0 +1,39 @@
+/* Theme: Dark. Point-cloud night view: deep navy, faint grid, sky-blue accent, mono labels. */
+:root {
+  --ink: #e8ecf3; --body: #c3cad6; --muted: #8f99aa; --line: #232b3a; --line-strong: #34405a;
+  --paper: #0d1118; --soft: #131a25; --ph: #161e2b; --ph-ink: #8f99aa;
+  --dark: #090c12; --dark-ink: #d6dce6; --dark-muted: #8f99aa;
+  --accent: #6cb8ff; --accent-hover: #a3d2ff;
+  --sans: "Space Grotesk", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, monospace;
+  color-scheme: dark;
+}
+body { background: var(--paper); background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 64px 64px; background-attachment: fixed; }
+main, .footer { background: transparent; }
+.topbar { background: rgba(13,17,24,.86); border-bottom-color: var(--line); }
+.logo, .mainnav a { color: var(--ink); }
+.logo:hover { color: var(--ink); }
+.menu-btn { color: var(--ink); }
+.mainnav { background: inherit; }
+@media (max-width: 760px) { .mainnav { background: var(--paper); } }
+.btn-light { background: var(--accent); color: #07121f; }
+.btn-light:hover { background: var(--accent-hover); color: #07121f; }
+.btn-ghost { border-color: var(--line-strong); }
+.hero-photo::before { background: linear-gradient(rgba(9,12,18,.55), rgba(9,12,18,.85)); }
+.hero h1 { text-shadow: 0 0 40px rgba(108,184,255,.25); }
+.kicker { color: var(--accent); }
+.band-hero { background: rgba(9,12,18,.7); border-bottom: 1px solid var(--line); }
+.band-hero h1 { font-family: var(--mono); font-weight: 500; letter-spacing: .12em; }
+.band-dark { background: var(--soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.band-soft { background: rgba(19,26,37,.8); }
+.card { background: var(--soft); border: 1px solid var(--line); }
+.chip { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.chip[aria-pressed="true"], .chip[aria-selected="true"] { color: #07121f; }
+.ph-empty, .ph { background: var(--ph); }
+img.ph-theme, img.ph-tall, img.ph-cover { background: #fff; border-color: var(--line); }
+.logos li { border-color: var(--line); background: rgba(19,26,37,.6); }
+.group-head, .yearblock { border-color: var(--line-strong); }
+.stat-n { color: var(--accent); font-family: var(--mono); font-weight: 500; }
+.topbar, .footer-copy, .footer { border-color: var(--line); }
+.prose td, .prose th { border-color: var(--line); }
+.prose figure img { background: var(--soft); }

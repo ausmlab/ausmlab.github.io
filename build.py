@@ -38,6 +38,15 @@ PAGES = [
     ("404.html", "404.html", None, "Page not found"),
 ]
 
+# Optional looks for the whole site. Pick one with "theme:" in content/site.yml.
+THEMES = {
+    "": ("Image-led", ""),
+    "modern": ("Modern", "family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500"),
+    "academic": ("Academic", "family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=Source+Sans+3:wght@400;500;600;700"),
+    "york": ("York", "family=Public+Sans:wght@400;500;600;700;800"),
+    "dark": ("Dark", "family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500"),
+}
+
 NAV = [
     ("research", "Research", "/research/"),
     ("publications", "Publications", "/publications/"),
@@ -269,6 +278,7 @@ def build():
         photos=gallery.get("photos", []), videos=gallery.get("videos", []), gal_cats=gal_cats,
         join=join, year=dt.date.today().year,
         posts=posts, projects=projects, research_posts=research_posts,
+        themes_all=THEMES, theme=str(site.get("theme") or ""), switcher="--switcher" in sys.argv,
     )
 
     if OUT.exists():
@@ -290,6 +300,9 @@ def build():
     # so browsers fetch the new files instead of using an old saved copy.
     stamp = hashlib.sha1(b"".join((ROOT / "static" / f).read_bytes()
                                   for f in ("css/style.css", "js/main.js"))).hexdigest()[:8]
+
+    for f in (ROOT / "static" / "css" / "themes").glob("*.css"):
+        stamp = hashlib.sha1((stamp + f.read_text()).encode()).hexdigest()[:8]
 
     def asset(u):
         return f"{u}?v={stamp}"

@@ -6,6 +6,10 @@ full_name: Augmented Urban Space Modeling Laboratory
 affiliation: York University · Lassonde
 url: https://ausmlab.com
 
+# Look of the whole site: leave empty for the image-led design, or use
+# modern, academic, york or dark.
+theme: ""
+
 hero:
   kicker: AUGMENTED URBAN SPACE MODELING LABORATORY
   title: EMBODIED SPATIAL INTELLIGENCE

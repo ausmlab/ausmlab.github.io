@@ -13,6 +13,13 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap">
 <link rel="stylesheet" href="{{ asset(url('/css/style.css')) }}">
+{% if switcher %}
+{% for key, (label, fonts) in themes_all.items() if fonts %}<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ fonts }}&display=swap">{% endfor %}
+<link rel="stylesheet" id="theme-css" href="{{ asset(url('/css/themes/' ~ theme ~ '.css')) if theme else '' }}" data-base="{{ url('/css/themes/') }}">
+{% elif theme %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ themes_all[theme][1] }}&display=swap">
+<link rel="stylesheet" href="{{ asset(url('/css/themes/' ~ theme ~ '.css')) }}">
+{% endif %}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -55,5 +62,25 @@
   <div class="wrap footer-copy">© {{ year }} AUSM Lab, York University</div>
 </footer>
 <script src="{{ asset(url('/js/main.js')) }}" defer></script>
+{% if switcher %}
+<div class="theme-switcher" role="group" aria-label="Try a design">
+  <span>Design:</span>
+  {% for key, (label, fonts) in themes_all.items() %}<button type="button" data-theme="{{ key }}" aria-pressed="{{ 'true' if key == theme else 'false' }}">{{ label }}</button>{% endfor %}
+</div>
+<script>
+(function () {
+  var link = document.getElementById('theme-css'), base = link.getAttribute('data-base');
+  var buttons = document.querySelectorAll('.theme-switcher button');
+  function apply(t) {
+    if (t) link.setAttribute('href', base + t + '.css'); else link.removeAttribute('href');
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-theme') === t ? 'true' : 'false'); });
+    try { localStorage.setItem('ausm-theme', t); } catch (e) {}
+  }
+  var saved = null; try { saved = localStorage.getItem('ausm-theme'); } catch (e) {}
+  if (saved !== null) apply(saved);
+  buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.getAttribute('data-theme')); }); });
+})();
+</script>
+{% endif %}
 </body>
 </html>

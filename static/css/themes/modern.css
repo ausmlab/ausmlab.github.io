@@ -1,0 +1,38 @@
+/* Theme: Modern. Clean, bright, large type, soft rounded cards, cobalt accent. */
+:root {
+  --ink: #0f1420; --body: #3a4152; --muted: #5d6576; --line: #e4e7ee; --line-strong: #cfd4de;
+  --paper: #ffffff; --soft: #f3f5f9; --ph: #eceff5; --ph-ink: #5d6576;
+  --dark: #111827; --dark-ink: #e5e8ef; --dark-muted: #b6bdcb;
+  --accent: #2346d8; --accent-hover: #1a35a8;
+  --sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+body { font-feature-settings: "ss01"; }
+h1, h2, h3, .card-title, .logo { letter-spacing: -0.02em; }
+h2 { font-weight: 800; }
+.logo { font-weight: 800; letter-spacing: .04em; }
+.topbar { background: rgba(255,255,255,.85); }
+.mainnav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--accent); }
+.btn { border-radius: 999px; }
+.btn-light { background: #fff; }
+.hero { text-align: left; min-height: min(720px, 86vh); }
+.hero-photo::before { background: linear-gradient(100deg, rgba(10,14,28,.92) 0%, rgba(10,14,28,.7) 45%, rgba(10,14,28,.15) 100%); }
+.hero-in { align-items: flex-start; }
+.hero h1 { font-weight: 800; letter-spacing: -0.03em; text-transform: none; max-width: 12ch; }
+.hero-sub { letter-spacing: .14em; font-size: clamp(12px, 1.2vw, 15px); }
+.hero .btn-row { justify-content: flex-start; }
+.ph, .card, .person-photo, .logos li, .chip, .years-grid li, .ph-band { border-radius: 16px; }
+.band-figure img.ph-band { border-radius: 0; }
+.card { box-shadow: 0 1px 2px rgba(15,20,32,.06), 0 8px 24px rgba(15,20,32,.06); }
+.card-link .ph { transition: transform .25s ease; }
+.card-link:hover .ph { transform: translateY(-3px); }
+.chip { border-radius: 999px; }
+.stats { border: 0; background: var(--soft); border-radius: 20px; padding: 36px 40px; margin-top: 40px; }
+.band-hero { background: var(--soft); color: var(--ink); text-align: left; }
+.band-hero h1 { color: var(--ink); letter-spacing: -0.02em; font-weight: 800; text-transform: none; }
+.band-hero p { color: var(--muted); }
+.band-hero .kicker { color: var(--accent); }
+.band-dark { border-radius: 28px; width: auto; margin-left: var(--gutter); margin-right: var(--gutter); }
+.group-head, .yearblock { border-color: var(--line-strong); }
+.tag { border-radius: 999px; }
+@media (prefers-reduced-motion: reduce) { .card-link:hover .ph { transform: none; } }

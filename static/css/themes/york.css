@@ -1,0 +1,38 @@
+/* Theme: York. Institutional look in York University red, strong sans headings, red rules. */
+:root {
+  --ink: #1b1b1b; --body: #383838; --muted: #5c5c5c; --line: #e5e5e5; --line-strong: #cfcfcf;
+  --paper: #ffffff; --soft: #f5f5f5; --ph: #ececec; --ph-ink: #5c5c5c;
+  --dark: #1b1b1b; --dark-ink: #ededed; --dark-muted: #c4c4c4;
+  --accent: #c8102e; --accent-hover: #9b0c23;
+  --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+.topbar { background: #fff; border-bottom: 0; box-shadow: 0 4px 0 var(--accent); }
+.logo { color: var(--accent); }
+.logo:hover { color: var(--accent); }
+.mainnav a { font-weight: 600; text-transform: uppercase; font-size: 13px; letter-spacing: .08em; }
+.mainnav a[aria-current="page"] { color: var(--accent); }
+.hero { text-align: left; min-height: min(680px, 84vh); }
+.hero-photo::before { background: linear-gradient(90deg, rgba(200,16,46,.94) 0%, rgba(200,16,46,.86) 48%, rgba(27,27,27,.35) 100%); }
+.hero-in { align-items: flex-start; }
+.hero .kicker { color: #fff; opacity: .9; }
+.hero h1 { font-weight: 800; letter-spacing: 0; max-width: 12ch; }
+.hero-sub { color: #fff; letter-spacing: .1em; font-weight: 600; }
+.hero .btn-row { justify-content: flex-start; }
+.hero .btn-light { color: var(--accent); }
+.btn { border-radius: 0; text-transform: uppercase; letter-spacing: .06em; font-size: 14px; }
+h2 { font-weight: 800; }
+.section-head h2, .group-head h2 { position: relative; padding-bottom: 12px; }
+.section-head h2::after { content: ""; position: absolute; left: 0; bottom: 0; width: 56px; height: 4px; background: var(--accent); }
+.group-head { border-bottom: 4px solid var(--accent); }
+.yearblock { border-top: 4px solid var(--accent); }
+.band-hero { background: var(--accent); }
+.band-hero p { color: #fff; }
+.band-dark { background: var(--dark); border-top: 6px solid var(--accent); }
+.stats { border-bottom: 0; background: var(--soft); padding-left: var(--gutter); padding-right: var(--gutter); max-width: none; }
+.stat-n { color: var(--accent); font-weight: 800; }
+.chip[aria-pressed="true"], .chip[aria-selected="true"] { background: var(--accent); }
+.footer { background: var(--dark); color: var(--dark-muted); border-top: 6px solid var(--accent); }
+.footer a { color: #fff; }
+.footer-name, .footer-h { color: #fff; }
+.footer-copy { border-color: #333; }

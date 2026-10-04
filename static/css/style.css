@@ -247,6 +247,12 @@ a.plain:hover { color: var(--accent); }
 .highlights li { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 20px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 17px; }
 .years-grid li a { display: flex; flex-direction: column; }
 
+/* Design switcher (preview only) */
+.theme-switcher { position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 20; display: flex; gap: 4px; align-items: center; flex-wrap: wrap; justify-content: center; max-width: calc(100vw - 24px); padding: 6px; background: #111; color: #fff; border-radius: 999px; box-shadow: 0 8px 30px rgba(0,0,0,.35); font: 500 13px system-ui, sans-serif; }
+.theme-switcher span { padding: 0 8px 0 10px; opacity: .7; }
+.theme-switcher button { min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: transparent; color: #fff; font: inherit; cursor: pointer; }
+.theme-switcher button[aria-pressed="true"] { background: #fff; color: #111; }
+
 /* Footer */
 .footer { margin-top: clamp(72px, 8vw, 120px); border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.7; }
 main:has(> .band-dark:last-child) + .footer { margin-top: 0; }
