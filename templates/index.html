@@ -10,11 +10,14 @@
 </section>
 
 <section class="wrap section">
-  <div class="research-card" style="background-image:url('{{ url('/images/' ~ site.home_research_image) }}')">
-    <div class="research-card-in">
-      <h2>Research</h2>
-      <p>{{ vision.lead }}</p>
-      {% for line in site.intro %}<p>{{ line }}</p>{% endfor %}
+  <div class="research-feature">
+    <a class="research-feature-img" href="{{ url(site.home_research_link or '/research/') }}"><img src="{{ url('/images/' ~ site.home_research_image) }}" alt="{{ site.home_research_caption }}" loading="lazy"></a>
+    <div class="research-feature-text">
+      <p class="kicker-accent">RESEARCH</p>
+      <h2>Embodied spatial intelligence</h2>
+      <p class="lead">{{ vision.lead }}</p>
+      <p>{{ site.intro[1] if site.intro | length > 1 else site.intro[0] }}</p>
+      {% if site.home_research_caption %}<p class="muted small">Pictured: {{ site.home_research_caption }}</p>{% endif %}
       <a class="btn btn-accent" href="{{ url('/research/') }}">Read More</a>
     </div>
   </div>

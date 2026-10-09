@@ -22,7 +22,9 @@ intro:
   - "Our focus is embodied spatial intelligence: AI systems that perceive, reason about and act within physical space, for construction and infrastructure monitoring, extended to Earth and space observation."
 
 # Background photo of the Research box on the home page (in static/images/)
-home_research_image: theme-mobility-rail.jpg
+home_research_image: wp/922-Automatic-Annotation-System.jpg
+home_research_caption: Automatic annotation of railway LiDAR and images for the autonomous train
+home_research_link: /news/york-u-researchers-play-major-role-in-advancing-autonomous-rail-travel/
 
 # Picture next to the Research intro on the home page (in static/images/)
 overview_image: research-overview-toronto3d.jpg
