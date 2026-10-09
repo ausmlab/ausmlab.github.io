@@ -36,7 +36,6 @@ PAGES = [
     ("gallery.html", "gallery/index.html", "gallery", "Gallery"),
     ("join.html", "join/index.html", "join", "Recruitment"),
     ("datasets.html", "datasets/index.html", "datasets", "Datasets & Code"),
-    ("collaborators.html", "collaborators/index.html", "collaborators", "Research Collaborators"),
     ("contact.html", "contact/index.html", "contact", "Contact"),
     ("404.html", "404.html", None, "Page not found"),
 ]
@@ -59,7 +58,6 @@ NAV = [
     ("datasets", "Datasets & Code", "/datasets/"),
     ("more", "More", [
         ("join", "Recruitment", "/join/"),
-        ("collaborators", "Research Collaborators", "/collaborators/"),
         ("contact", "Contact", "/contact/"),
     ]),
 ]
