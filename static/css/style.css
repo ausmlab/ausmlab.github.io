@@ -496,3 +496,5 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
   .people.solo .person { grid-template-columns: 120px minmax(0, 1fr); gap: 16px; }
   .people.solo .person-info { grid-template-columns: minmax(0, 1fr); }
 }
+.affil-logo img { height: 34px; }
+@media (max-width: 1320px) { .affil-logo { display: none; } }
