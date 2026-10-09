@@ -270,6 +270,11 @@ def build():
         site.setdefault(k, "")
     for p in gallery.get("photos", []):
         p["path"] = p["file"] if "/" in p["file"] else ("gallery/" + p["file"] if p["file"] else "")
+    videos = gallery.get("videos", []) or []
+    for v in videos:
+        m = re.search(r"(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{11})", v.get("url", ""))
+        v["yt"] = m.group(1) if m else ""
+    video_topics = list(dict.fromkeys(v["topic"] for v in videos if v.get("topic")))
     research_posts = [p for p in posts if "Research" in p["categories"]]
     gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
@@ -284,7 +289,7 @@ def build():
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
         datasets=datasets, partners=research.get("partners", {}),
         home_partners=research.get("home_partners", []), stats=stats,
-        photos=gallery.get("photos", []), videos=gallery.get("videos", []), gal_cats=gal_cats,
+        photos=gallery.get("photos", []), videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
         join=join, year=dt.date.today().year,
         posts=posts, projects=projects, research_posts=research_posts,
         themes_all=THEMES, theme=str(site.get("theme") or ""), switcher="--switcher" in sys.argv,

@@ -326,3 +326,14 @@ main:has(> .band-dark:last-child) + .footer { margin-top: 0; }
   .grid-3, .grid-4, .alumni, .grid-2 { grid-template-columns: minmax(0, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Gallery videos */
+.video-card { display: flex; flex-direction: column; gap: 8px; }
+.video-card .card-title { color: var(--ink); }
+.video-card .card-title:hover { color: var(--accent); text-decoration: none; }
+.video-thumb { position: relative; display: block; }
+.ph-video-img { aspect-ratio: 16 / 9; object-fit: cover; display: block; background: var(--dark); }
+.video-thumb .play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; transition: transform .15s; }
+.video-thumb:hover .play { transform: scale(1.08); }
+.btn-outline { border: 1px solid var(--ink); color: var(--ink); }
+.btn-outline:hover { background: var(--ink); color: #fff; }

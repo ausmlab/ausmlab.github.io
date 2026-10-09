@@ -41,4 +41,25 @@ photos:
   - { file: "wp/404-20171214_130141.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
 
 videos:
-  - { title: "AUSMLab on YouTube", url: "https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ", category: "Research Activities" }
+  # Newest first. url = YouTube link, story = the news story that explains it (optional).
+  - { title: "Digital Twins: Simulating Robot–Human Sidewalk Interactions", url: "https://www.youtube.com/watch?v=eMcufkp1TpA", date: "Jul 2023", topic: "Smart Mobility", story: "/news/harmonizing-human-robot-coexistence-an-exploration-into-sidewalk-autonomous-delivery-robots/" }
+  - { title: "RPV-SLAM: Range-Augmented Panoramic Visual SLAM (ICAR 2021)", url: "https://www.youtube.com/watch?v=WrKYths3D0Q", date: "Nov 2021", topic: "SLAM & Positioning", story: "/news/icar-2021-rpv-slam-3dmmai-paper-accepted/" }
+  - { title: "3D Mobile Mapping AI Project: AI for Digital Twin Infrastructure", url: "https://www.youtube.com/watch?v=rqVrOgmqa-4", date: "Sep 2020", topic: "Digital Twins", story: "/news/3d-mobile-mapping-ai-project/" }
+  - { title: "AR-Based Indoor Navigation and Visual Assistant for the Visually Impaired", url: "https://www.youtube.com/watch?v=6lD_lo_TP5g", date: "Sep 2020", topic: "Smart Mobility", story: "/news/augmented-reality/" }
+  - { title: "ITSC 2020: Benchmark Dataset for Ultra-Wideband UAV Positioning", url: "https://www.youtube.com/watch?v=TcIcC1tqbmk", date: "Sep 2020", topic: "SLAM & Positioning", story: "/news/itsc-2020-paper-and-releasing-q-drone-uwb-benchmark/" }
+  - { title: "Q-Drone: Ultra-Wideband Aided UAV Positioning", url: "https://www.youtube.com/watch?v=DQhIIWzXfKg", date: "2020", topic: "SLAM & Positioning", story: "/research/q-drone/" }
+  - { title: "Single 3D Tree Detection from LiDAR with Deep Learning (CRSS-SCT 2020)", url: "https://www.youtube.com/watch?v=ba8cHzugmBk", date: "Aug 2020", topic: "Point Clouds", story: "/news/special-session-of-ai-in-remote-sensing-41st-canadian-symposium-on-remote-sensing-landscapes-of-change-remote-sensing-for-a-sustainable-future-july-13-16-2020/" }
+  - { title: "IROS 2020 Oral: UWB-Aided UAV Positioning", url: "https://www.youtube.com/watch?v=kHAMGv80YVk", date: "Aug 2020", topic: "SLAM & Positioning", story: "/news/ultra-wideband-aided-uav-positioning-using-incremental-smoothing-with-ranges-and-multilateration/" }
+  - { title: "PERA: Path Evaluation and Retroactive Adjustment for Wi-Fi Indoor Positioning", url: "https://www.youtube.com/watch?v=A2UWZn3Jm0c", date: "Jun 2020", topic: "SLAM & Positioning", story: "/news/congratulations-on-the-success-of-the-thesis-defence-eros-gulo/" }
+  - { title: "Layout SLAM", url: "https://www.youtube.com/watch?v=Wv0nVAeNIn8", date: "Nov 2019", topic: "SLAM & Positioning", story: "/research/layout-slam/" }
+  - { title: "ADE (Automatic Data Extraction) for the Autonomous Train", url: "https://www.youtube.com/watch?v=Cwe0FKRblP4", date: "Sep 2019", topic: "Digital Twins", story: "/news/digital-twin-for-the-autonomous-train/" }
+  - { title: "Thales Canada ADE: LYNX Mobile Mapping of Vancouver's SkyTrain", url: "https://www.youtube.com/watch?v=E4AAbt3bsGw", date: "Sep 2019", topic: "Digital Twins", story: "/news/digital-twin-for-the-autonomous-train/" }
+  - { title: "Thales Canada ADE: LYNX Scanning Results over the SkyTrain", url: "https://www.youtube.com/watch?v=T8v2WL--np4", date: "Sep 2019", topic: "Digital Twins", story: "/news/digital-twin-for-the-autonomous-train/" }
+  - { title: "Team Hortons, ECCE App Challenge 2019", url: "https://www.youtube.com/watch?v=0aCJ76I6dgU", date: "May 2019", topic: "Smart Mobility", story: "/news/esri-app-challenge-2019/" }
+  - { title: "Power Line Network Modeling and Single Tree Detection from Airborne Point Clouds", url: "https://www.youtube.com/watch?v=JCycMU6YBAs", date: "Sep 2018", topic: "Point Clouds", story: "/news/power-line-network-modelling-and-single-tree-detection/" }
+  - { title: "3D Power Line Network Detection and Modeling from Airborne LiDAR", url: "https://www.youtube.com/watch?v=CcsygbCWygg", date: "Sep 2016", topic: "Point Clouds", story: "/news/digital-twining-of-power-line-networks-using-airborne-lidar/" }
+  - { title: "Power Line Extraction from Airborne LiDAR Point Clouds", url: "https://www.youtube.com/watch?v=5vnkoDt-yrk", date: "Sep 2016", topic: "Point Clouds", story: "/news/digital-twining-of-power-line-networks-using-airborne-lidar/" }
+  - { title: "Multi-Scale Graph Networks for 3D Point Cloud Segmentation (Chao Luo, Ph.D.)", url: "https://www.youtube.com/watch?v=MXYFAFunWwY", date: "Sep 2016", topic: "Point Clouds", story: "/news/multi-scale-conditional-random-graph-for-3d-point-cloud-segmentation/" }
+
+# The "More on YouTube" button under the videos
+youtube_channel: "https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ"
