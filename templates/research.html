@@ -11,8 +11,8 @@
   <nav class="chips" aria-label="On this page">
     {% for t in pillars %}<a class="chip" href="#{{ t.id }}">{{ t.no }} {{ t.short }}</a>{% endfor %}
     <a class="chip" href="#projects">Projects</a>
-    <a class="chip" href="#datasets">Datasets</a>
-    <a class="chip" href="#partners">Collaborators</a>
+    <a class="chip" href="{{ url('/datasets/') }}">Datasets &amp; Code</a>
+    <a class="chip" href="{{ url('/collaborators/') }}">Research Collaborators</a>
   </nav>
 </section>
 
@@ -62,34 +62,4 @@
   </ul>
 </section>
 
-<section id="datasets" class="band band-soft">
-  <div class="wrap">
-    <div class="section-head">
-      <h2>Datasets &amp; Code</h2>
-      <p class="links-inline"><a href="https://github.com/ausmlab">GitHub</a><a href="https://huggingface.co/ausmlab">Hugging Face</a><a href="https://github.com/yorku-ausml/DL_reading_club/blob/master/agenda.md">Deep Learning Reading Club</a><a href="https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ">YouTube</a></p>
-      <p class="lead">Our lab is committed to open science. We publicly release the datasets, benchmarks, and code developed through our research. Most resources are hosted on our GitHub organization and Hugging Face organization.</p>
-    </div>
-    <div class="grid-3">
-      {% for d in datasets %}
-      <article class="card">
-        {% if d.image %}{{ picture(url, d.image, d.name, "ph ph-data") }}{% else %}<div class="ph ph-dark ph-empty ph-data" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>{% endif %}
-        <div class="card-body">
-          <h3>{{ d.name }}</h3>
-          <p class="body">{{ d.text }}</p>
-          <p class="mono muted small">{{ d.year }}</p>
-          <p class="links-inline">{% if d.link %}<a class="more" href="{{ d.link }}">{{ d.link_label or "Get the data" }} →</a>{% else %}<span class="muted small">Available on request</span>{% endif %}{% if d.link2 %}<a class="more" href="{{ d.link2 }}">{{ d.link2_label }} →</a>{% endif %}</p>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section id="partners" class="wrap section">
-  <h2>Research Collaborators</h2>
-  {% for group, items in partners.items() %}
-  <p class="mono muted small kicker-dark">{{ group | upper }}</p>
-  <ul class="logos">{% for p in items %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>{% endfor %}</ul>
-  {% endfor %}
-</section>
 {% endblock %}

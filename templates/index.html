@@ -68,10 +68,10 @@
 </section>
 
 <section class="wrap section">
-  <div class="section-head"><h2>Open Datasets</h2><a class="more" href="{{ url('/research/') }}#datasets">All datasets &amp; code →</a></div>
+  <div class="section-head"><h2>Open Datasets</h2><a class="more" href="{{ url('/datasets/') }}">All datasets &amp; code →</a></div>
   <div class="grid-3">
     {% for d in datasets if d.home %}
-    <a class="card-link data-card" href="{{ d.link or url('/research/') ~ '#datasets' }}"{% if d.link %} target="_blank" rel="noopener"{% endif %}>
+    <a class="card-link data-card" href="{{ d.link or url('/datasets/') }}"{% if d.link %} target="_blank" rel="noopener"{% endif %}>
       {% if d.image %}{{ picture(url, d.image, d.name, "ph ph-data") }}{% else %}<div class="ph ph-dark ph-empty ph-data" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>{% endif %}
       <span class="card-title">{{ d.name }}</span>
       <span class="body">{{ d.text }}</span>
@@ -84,7 +84,7 @@
 <section class="wrap section center">
   <p class="mono muted small kicker-dark">FUNDERS &amp; PARTNERS</p>
   <ul class="logos">{% for p in home_partners %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>{% endfor %}</ul>
-  <a class="more" href="{{ url('/research/') }}#partners">All collaborators →</a>
+  <a class="more" href="{{ url('/collaborators/') }}">All collaborators →</a>
 </section>
 
 <section class="band band-dark">

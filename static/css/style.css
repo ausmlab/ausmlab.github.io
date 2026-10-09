@@ -391,3 +391,14 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .quote { margin: 0; padding: 32px clamp(20px, 4vw, 56px); border-left: 3px solid var(--accent); background: var(--soft); }
 .quote blockquote { margin: 0; font-size: clamp(18px, 1.8vw, 24px); line-height: 1.5; color: var(--ink); }
 .quote figcaption { margin-top: 14px; color: var(--muted); font-size: 13px; letter-spacing: 1px; }
+
+/* Longer menu (10 items, like gunhosohn.me) */
+.mainnav { gap: clamp(14px, 1.4vw, 24px); font-size: 14px; white-space: nowrap; }
+@media (max-width: 1500px) { .affil { display: none; } }
+@media (max-width: 1240px) {
+  .menu-btn { display: inline-flex; }
+  .topbar { position: sticky; }
+  .mainnav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 8px var(--gutter) 16px; }
+  .mainnav.open { display: flex; }
+  .mainnav a { padding: 12px 0; border-top: 1px solid var(--line); font-size: 16px; }
+}

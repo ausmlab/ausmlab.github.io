@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% from "_macros.html" import picture, page_hero %}
+{% block main %}
+{{ page_hero("DATASETS & CODE", "Open datasets, benchmarks and code from the lab", "dataset-yutosemantic.jpg", url) }}
+<section id="datasets" class="wrap section">
+    <div class="section-head">
+      <h2>Open science</h2>
+      <p class="links-inline"><a href="https://github.com/ausmlab">GitHub</a><a href="https://huggingface.co/ausmlab">Hugging Face</a><a href="https://github.com/yorku-ausml/DL_reading_club/blob/master/agenda.md">Deep Learning Reading Club</a><a href="https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ">YouTube</a></p>
+      <p class="lead">Our lab is committed to open science. We publicly release the datasets, benchmarks, and code developed through our research. Most resources are hosted on our GitHub organization and Hugging Face organization.</p>
+    </div>
+    <div class="grid-3">
+      {% for d in datasets %}
+      <article class="card">
+        {% if d.image %}{{ picture(url, d.image, d.name, "ph ph-data") }}{% else %}<div class="ph ph-data pub-fallback" role="img" aria-label="{{ d.name }}"><span class="mono small">DATASET</span><span class="pub-fallback-title">{{ d.name }}</span><span class="mono small">{{ d.year }}</span></div>{% endif %}
+        <div class="card-body">
+          <h3>{{ d.name }}</h3>
+          <p class="body">{{ d.text }}</p>
+          <p class="mono muted small">{{ d.year }}</p>
+          <p class="links-inline">{% if d.link %}<a class="more" href="{{ d.link }}">{{ d.link_label or "Get the data" }} →</a>{% else %}<span class="muted small">Available on request</span>{% endif %}{% if d.link2 %}<a class="more" href="{{ d.link2 }}">{{ d.link2_label }} →</a>{% endif %}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+</section>
+{% endblock %}
