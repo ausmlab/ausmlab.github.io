@@ -428,3 +428,33 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 }
 .btn-accent { background: var(--accent); color: #fff; } .btn-accent:hover { background: var(--accent-hover); color: #fff; text-decoration: none; }
 @media (max-width: 760px) { .mainnav { align-items: stretch; } .mainnav > a, .nav-drop a { width: 100%; } }
+
+/* Simple home page (Oct 2026), modelled on a plain group site */
+.hero-simple { min-height: min(560px, 70vh); }
+.hero-simple .hero-in h1 { font-weight: 300; letter-spacing: .04em; font-size: clamp(32px, 4.6vw, 60px); }
+.hero-simple .hero-sub { font-weight: 300; letter-spacing: .25em; font-size: clamp(12px, 1.2vw, 15px); }
+.research-card { position: relative; background: var(--dark) center/cover no-repeat; color: #fff; }
+.research-card::before { content: ""; position: absolute; inset: 0; background: rgba(15,18,26,.72); }
+.research-card-in { position: relative; max-width: 760px; margin: 0 auto; padding: clamp(48px, 7vw, 96px) 24px; text-align: center; }
+.research-card h2 { color: #fff; font-weight: 400; margin-bottom: 20px; }
+.research-card p { color: #e6e8ee; font-size: 16px; line-height: 1.75; margin: 0 0 16px; }
+.research-card .btn { margin-top: 12px; }
+.home-news { max-width: 900px; }
+.home-news h2, .section h2.center { font-weight: 400; margin-bottom: 28px; }
+.news-year { font-family: Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400; font-size: 26px; margin: 32px 0 12px; }
+.news-plain { list-style: none; padding: 0; margin: 0; }
+.news-plain li { padding: 7px 0; font-size: 15px; line-height: 1.6; color: var(--body); }
+.news-plain .news-date { color: var(--muted); margin-right: 4px; }
+.news-plain a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.news-plain a:hover { color: var(--accent); }
+.home-news .btn, .section > .center .btn { margin-top: 28px; }
+.pub-covers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 3vw, 40px); max-width: 960px; margin: 0 auto; }
+.pub-cover { display: flex; flex-direction: column; gap: 8px; color: var(--ink); }
+.pub-cover img { aspect-ratio: 3 / 4; object-fit: cover; border: 1px solid var(--line); transition: transform .2s, box-shadow .2s; }
+.pub-cover:hover { text-decoration: none; color: var(--accent); }
+.pub-cover:hover img { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
+.pub-cover-title { font-weight: 600; font-size: 15px; }
+.home-group { margin: 0; }
+.home-group img { width: 100%; }
+.home-group figcaption { margin-top: 10px; }
+@media (max-width: 760px) { .pub-covers { grid-template-columns: minmax(0, 1fr); max-width: 360px; } }
