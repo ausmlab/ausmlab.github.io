@@ -289,7 +289,7 @@ def build():
         m = re.search(r"(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{11})", v.get("url", ""))
         v["yt"] = m.group(1) if m else ""
     video_topics = list(dict.fromkeys(v["topic"] for v in videos if v.get("topic")))
-    research_posts = [p for p in posts if "Research" in p["categories"]]
+    research_posts = sorted((p for p in posts if "Research" in p["categories"]), key=lambda p: str(p["date"]), reverse=True)
     gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), undefined=StrictUndefined, autoescape=True,
