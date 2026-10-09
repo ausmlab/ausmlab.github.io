@@ -56,8 +56,8 @@ NAV = [
     ("members", "Members", "/members/"),
     ("news", "News", "/news/"),
     ("gallery", "Gallery", "/gallery/"),
+    ("datasets", "Datasets & Code", "/datasets/"),
     ("more", "More", [
-        ("datasets", "Datasets & Code", "/datasets/"),
         ("join", "Recruitment", "/join/"),
         ("collaborators", "Research Collaborators", "/collaborators/"),
         ("contact", "Contact", "/contact/"),
