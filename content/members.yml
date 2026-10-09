@@ -15,6 +15,9 @@
   people:
     - name: Gunho Sohn
       role: Professor of Geomatics Engineering
+      bio:
+        - "Professor of Geomatics Engineering at the Lassonde School of Engineering, York University, and Director of the Mobility Innovation Centre (MOVE), which he founded and previously led as its inaugural director. From 2023 to June 2026, he served as Chair of the Department of Earth and Space Science and Engineering. He also directs the Augmented Urban Space Modeling Laboratory (AUSMLab), where the lab develops innovative solutions to represent, describe, and understand urban environments through visual and spatial data."
+        - "His research develops embodied spatial intelligence – AI systems that perceive, reason about, and act within physical space – for smart construction and autonomous infrastructure monitoring. His group has led large-scale collaborative research programs supported by CFI, NSERC CREATE, ORF-RE, OCI, and industry partners, including the 3D Mobile Mapping AI (3DMMAI) project with Teledyne Optech and the KAIA digital twin project with Aethon Aerial Solutions."
       history:
         - "2026–  Director, Mobility Innovation Centre (MOVE)"
         - "2023–2026  Chair, Dept. of Earth and Space Science and Engineering"

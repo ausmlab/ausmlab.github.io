@@ -15,7 +15,7 @@
 {% for g in members %}
 <section class="wrap section-tight">
   <div class="group-head"><h2>{{ g.group }}</h2></div>
-  <div class="people{% if g.people | length <= 2 %} few{% endif %}">
+  <div class="people{% if g.people | length == 1 %} solo{% elif g.people | length <= 2 %} few{% endif %}">
     {% for p in g.people %}
     <article class="person">
       {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="{{ p.name }}" loading="lazy">
@@ -25,6 +25,7 @@
         <h3>{% if p.profile %}<a class="plain" href="{{ url(p.profile) }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
         <p class="accent role">{{ p.role }}{% if p.since %} · since {{ p.since }}{% endif %}</p>
       </div>
+      {% if p.get("bio") %}<div class="person-bio">{% for b in p.bio %}<p>{{ b }}</p>{% endfor %}{% if p.profile %}<p><a class="more" href="{{ url(p.profile) }}">Full profile →</a></p>{% endif %}</div>{% endif %}
       {% if p.history %}<ul class="history">{% for h in p.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
       {% if p.interests %}<div class="interests"><p class="label">RESEARCH INTERESTS</p><p>{{ p.interests }}</p></div>{% endif %}
       {% if p.get("projects") %}<div class="interests"><p class="label">CURRENT PROJECTS</p><ul class="projects-list">{% for x in p.projects %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}

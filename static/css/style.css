@@ -485,3 +485,14 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .pub-list li { padding: 10px 0; border-bottom: 1px solid var(--line); line-height: 1.6; }
 .pub-list li a { color: var(--ink); font-weight: 600; }
 .pub-list li a:hover { color: var(--accent); }
+
+/* One-person groups (PI, single postdoc) use the full width */
+.people.solo { grid-template-columns: minmax(0, 1fr); }
+.people.solo .person { display: grid; grid-template-columns: minmax(180px, 300px) minmax(0, 1fr); gap: clamp(24px, 4vw, 48px); align-items: start; }
+.people.solo .person-info { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 40px; row-gap: 16px; align-content: start; }
+.people.solo .person-info > div:first-child, .people.solo .person-bio, .people.solo .person-info > p.small { grid-column: 1 / -1; }
+.person-bio p { margin: 0 0 12px; line-height: 1.7; color: var(--body); }
+@media (max-width: 760px) {
+  .people.solo .person { grid-template-columns: 120px minmax(0, 1fr); gap: 16px; }
+  .people.solo .person-info { grid-template-columns: minmax(0, 1fr); }
+}
