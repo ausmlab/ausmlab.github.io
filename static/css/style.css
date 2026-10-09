@@ -498,3 +498,15 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 }
 .affil-logo img { height: 34px; }
 @media (max-width: 1320px) { .affil-logo { display: none; } }
+
+/* Home: larger text (Oct 2026) */
+.research-card-in { max-width: 860px; }
+.research-card h2 { font-size: clamp(32px, 3.4vw, 44px); }
+.research-card p { font-size: clamp(17px, 1.35vw, 19px); line-height: 1.75; }
+.home-news { max-width: 1000px; }
+.home-news h2, .section h2.center { font-size: clamp(34px, 3.4vw, 46px); }
+.news-year { font-size: 32px; }
+.news-plain li { font-size: clamp(17px, 1.3vw, 19px); padding: 10px 0; }
+.pub-cover-title { font-size: 17px; }
+.pub-cover .small { font-size: 15px; }
+.btn { font-size: 17px; }
