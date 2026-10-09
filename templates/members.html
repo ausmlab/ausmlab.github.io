@@ -18,7 +18,7 @@
     {% for p in g.people %}
     <article class="person">
       {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="{{ p.name }}" loading="lazy">
-      {% else %}<div class="person-photo ph-empty" role="img" aria-label="Photo of {{ p.name }}"><span class="initials">{{ p.initials }}</span></div>{% endif %}
+      {% else %}<div class="person-photo person-nophoto" role="img" aria-label="{{ p.name }}"><span class="initials">{{ p.initials }}</span></div>{% endif %}
       <div class="person-info">
       <div>
         <h3>{% if p.profile %}<a class="plain" href="{{ url(p.profile) }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
@@ -26,6 +26,7 @@
       </div>
       {% if p.history %}<ul class="history">{% for h in p.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
       {% if p.interests %}<div class="interests"><p class="label">RESEARCH INTERESTS</p><p>{{ p.interests }}</p></div>{% endif %}
+      {% if p.get("projects") %}<div class="interests"><p class="label">CURRENT PROJECTS</p><ul class="projects-list">{% for x in p.projects %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
       {% if p.email or p.website %}<p class="small">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.website %} · {% endif %}{% if p.website %}<a href="{{ p.website }}">Website</a>{% endif %}</p>{% endif %}
       </div>
     </article>

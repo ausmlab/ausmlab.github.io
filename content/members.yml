@@ -5,6 +5,7 @@
 #   since:     year they started, e.g. 2026
 #   history:   short lines about past positions or degrees (optional)
 #   interests: research interests
+#   projects:  current projects, one per line (optional)
 #   photo:     a file name in static/images/people/ (optional, square photo works best)
 #   email / website: optional
 #   lab_phd:   true if they earned their Ph.D. in this lab (used for the home-page count)
@@ -34,6 +35,9 @@
       interests: AI for autonomous trains, railway perception, vision-language models, delivery robots
       lab_phd: true
       photo: mohammadjavad-ghorbanalivakili.jpg
+      projects:
+        - "Ego-path segmentation for autonomous trains with vision-language models (ISPRS 2026)"
+        - "Sidewalk delivery robots in a campus digital twin"
 
 - group: Ph.D. Students
   people:
@@ -42,22 +46,38 @@
       since: 2019
       interests: 3D object detection and point cloud understanding using deep learning
       photo: jacob-yoo.jpg
+      projects:
+        - "YUPU: airborne LiDAR point-cloud upsampling benchmark (ECCV 2026 Workshop)"
+        - "Multimodal point-cloud segmentation for transmission corridor mapping"
+        - "EyeNet++ (IEEE TGRS 2025)"
     - name: Mohammad Moein Sheikholeslami
       role: Ph.D. student
       since: 2022
       interests: LoD1 building reconstruction, 3D rooftop modelling with deep learning
+      projects:
+        - "LoD1 building reconstruction from airborne data"
+        - "Transmission corridor mapping"
     - name: Ashley Varghese
       role: Ph.D. student
       since: 2024
       interests: Self-supervised segmentation with vision-language models
+      projects:
+        - "Vision-language models for railway asset management (ISPRS 2026 review)"
     - name: Youssef Korny
       role: Ph.D. student
       since: 2024
       interests: 3D urban modelling, diffusion priors for building point clouds (GeoPriorPC)
+      projects:
+        - "GeoPriorPC: building point clouds from nadir views (CVPR Workshops 2026)"
+        - "Annotation tool for space situational awareness (K-SSA)"
     - name: Md. Ehsan Shahmi Chowdhury
       role: Ph.D. student
       since: 2026
       interests: Semantic-first BIM/IFC digital twins, delivery robots
+      projects:
+        - "Semantic-first BIM/IFC digital twins, with Yonsei University"
+        - "Sidewalk delivery robots"
+        - "Disease modelling (ORF-RE)"
 
 - group: M.Sc. Students
   people:
@@ -65,12 +85,16 @@
       role: M.Sc. student
       since: 2026
       interests: Resident space object detection and tracking for space situational awareness
+      projects:
+        - "Tiny-object detection of resident space objects (K-SSA), with Prof. Regina Lee's lab"
     - name: Merna Tamer Youssef
       role: M.Sc. student
       since: 2026
       history:
         - "University of Manitoba"
       interests: Diffusion models for space situational awareness
+      projects:
+        - "Diffusion models for space imagery (K-SSA), with Prof. Regina Lee's lab"
 
 - group: Undergraduate Researchers
   people:

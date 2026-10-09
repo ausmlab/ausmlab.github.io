@@ -358,3 +358,9 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .pub-card:hover img, .data-card:hover img, .pub-card:hover .pub-fallback { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,.12); }
 .pub-go { margin-top: auto; font-weight: 500; }
 .data-card:hover .card-title { color: var(--accent); }
+
+/* Members: placeholder without photo, project list */
+.person-nophoto { display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--dark) 0%, #2d3446 100%); border-bottom: 4px solid var(--accent); }
+.person-nophoto .initials { color: #fff; font-family: var(--mono); letter-spacing: 3px; opacity: .9; }
+.projects-list { margin: 0; padding-left: 18px; }
+.projects-list li { margin: 2px 0; }
