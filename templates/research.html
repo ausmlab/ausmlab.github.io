@@ -9,7 +9,7 @@
   <h2 class="vision-title">{{ vision.title }}</h2>
   <p class="lead">{{ vision.lead }}</p>
   <nav class="chips" aria-label="On this page">
-    {% for t in pillars %}<a class="chip" href="#{{ t.id }}">{{ t.no }} {{ t.short }}</a>{% endfor %}
+    {% for t in pillars %}<a class="chip" href="#{{ t.id }}">{{ t.short }}</a>{% endfor %}
     <a class="chip" href="#projects">Projects</a>
     <a class="chip" href="{{ url('/datasets/') }}">Datasets &amp; Code</a>
     <a class="chip" href="#partners">Research Collaborators</a>
@@ -24,7 +24,7 @@
 <section id="{{ t.id }}" class="wrap theme{% if loop.index is even %} theme-flip{% endif %}">
   {{ picture(url, t.image, t.image_note, "ph ph-theme") }}
   <div class="stack">
-    <p class="mono accent">PILLAR {{ t.no }} · {{ t.question | upper }}</p>
+    <p class="mono accent">{{ t.question | upper }}</p>
     <h2>{{ t.title }}</h2>
     <p class="body">{{ t.body }}</p>
     <div class="projects">
