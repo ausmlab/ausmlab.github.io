@@ -78,7 +78,7 @@
 
 <section class="wrap section center">
   <p class="mono muted small kicker-dark">FUNDERS &amp; PARTNERS</p>
-  <ul class="logos">{% for p in home_partners %}<li>{{ p }}</li>{% endfor %}</ul>
+  <ul class="logos">{% for p in home_partners %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>{% endfor %}</ul>
   <a class="more" href="{{ url('/research/') }}#partners">All collaborators →</a>
 </section>
 

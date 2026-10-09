@@ -125,6 +125,12 @@ def split_pipe(line, n):
     return (parts + [""] * n)[:n]
 
 
+def split_partner(item):
+    """'Fugro | https://www.fugro.com/' -> {'name': 'Fugro', 'url': 'https://...'}"""
+    name, _, link = str(item).partition("|")
+    return {"name": name.strip(), "url": link.strip()}
+
+
 def parse_date(value):
     """Accept 2026-08-06, 2026-08 or 2026. Return (sort key, year, label)."""
     if isinstance(value, (dt.date, dt.datetime)):
@@ -287,8 +293,8 @@ def build():
         older_counts=pubs.get("older_counts", {}), full_list=pubs.get("full_list", ""),
         pillars=pillars, vision=vision, applications=research.get("applications", []),
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
-        datasets=datasets, partners=research.get("partners", {}),
-        home_partners=research.get("home_partners", []), stats=stats,
+        datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
+        home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
         photos=gallery.get("photos", []), videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
         join=join, year=dt.date.today().year,
         posts=posts, projects=projects, research_posts=research_posts,

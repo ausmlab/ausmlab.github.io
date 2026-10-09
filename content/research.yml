@@ -103,10 +103,12 @@ datasets:
     year: "2019"
     link: ""
 
+# Partners: add a web address after the name to make the box a link, like this:
+#   "Fugro | https://www.fugro.com/"
 partners:
-  Government & Funders: [NSERC, CFI, Mitacs, Transport Canada, Ontario Research Fund, OCE / OCI, AVIN, MTO, Centre de Géomatique du Québec, KRRI, KICT, Ministry of Land (Korea)]
-  Industry: [Teledyne Optech, Thales, Fugro, Mircom, Esri Canada, Autodesk, PCI Geomatics, GeoDigital, XEOS, Olameter, Hyundai Munsoft, FirstBase Solution, NapTech, Lumibird]
-  Affiliations: [MOVE, CRESS, ADERSIM, CREATE DAV, ISSUM, Brain Alliance, VISTA, CAR]
+  Government & Funders: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "OCE / OCI | https://www.oc-innovation.ca/", "AVIN | https://www.avinhub.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "Centre de Géomatique du Québec | https://cgq.qc.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", Ministry of Land (Korea)]
+  Industry: ["Teledyne Optech | https://www.teledyneoptech.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Mircom | https://www.mircom.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/", "PCI Geomatics | https://catalyst.earth/", GeoDigital, XEOS, Olameter, Hyundai Munsoft, FirstBase Solution, NapTech, "Lumibird | https://www.lumibird.com/"]
+  Affiliations: ["MOVE | https://lassonde.yorku.ca/move", "CRESS | https://cress.info.yorku.ca/", "ADERSIM | https://adersim.info.yorku.ca/", "CREATE DAV | https://www.createdav.com/", "ISSUM | http://issum.yorku.ca/", Brain Alliance, "VISTA | https://vista.info.yorku.ca/", CAR]
 
 # Shown as a strip on the home page
-home_partners: [NSERC, CFI, Ontario Research Fund, Mitacs, Transport Canada, MTO, OCI, KRRI, KICT, Teledyne Optech, Thales, Fugro, Esri Canada, Autodesk]
+home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/"]

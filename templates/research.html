@@ -2,7 +2,7 @@
 {% from "_macros.html" import picture, page_hero %}
 {% from "_worldmodel.html" import worldmodel with context %}
 {% block main %}
-{{ page_hero("RESEARCH", "AI that perceives, reasons about and acts in physical space") }}
+{{ page_hero("RESEARCH", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
 
 <section class="wrap narrow center section">
   <p class="mono accent">RESEARCH DIRECTION</p>
@@ -88,7 +88,7 @@
   <h2>Research Collaborators</h2>
   {% for group, items in partners.items() %}
   <p class="mono muted small kicker-dark">{{ group | upper }}</p>
-  <ul class="logos">{% for p in items %}<li>{{ p }}</li>{% endfor %}</ul>
+  <ul class="logos">{% for p in items %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>{% endfor %}</ul>
   {% endfor %}
 </section>
 {% endblock %}
