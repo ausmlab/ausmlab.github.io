@@ -70,3 +70,12 @@ img.ph-pub { background: #0b0f16; border-color: var(--line); }
 .band-figure img.ph-band { filter: saturate(.9) brightness(.85); }
 img.ph-data { background: #070a10; }
 .prose a, .more { color: var(--accent); }
+
+/* Simpler type (Oct 2026): fewer mono and spaced-out headings */
+.section-head h2::before, .group-head h2::before { content: none; }
+.band-hero h1 { font-family: var(--sans); font-weight: 700; letter-spacing: .02em; text-transform: none; }
+.hero h1 { letter-spacing: .01em; }
+.hero-sub { letter-spacing: .08em; }
+.stat-n { font-family: var(--sans); font-weight: 600; }
+.tag { font-family: var(--sans); letter-spacing: .5px; }
+.subnav { margin-top: 24px; }

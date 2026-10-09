@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_macros.html" import page_hero %}
 {% block main %}
-{{ page_hero("RESEARCH COLLABORATORS", "Funders, industry partners and research centres we work with", "theme-mobility-rail.jpg", url) }}
+{{ page_hero("Research Collaborators", "Funders, industry partners and research centres we work with", "theme-mobility-rail.jpg", url) }}
 <section id="partners" class="wrap section">
   {% for group, items in partners.items() %}
   <p class="mono muted small kicker-dark">{{ group | upper }}</p>

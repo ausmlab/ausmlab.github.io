@@ -51,16 +51,17 @@ THEMES = {
 }
 
 NAV = [
-    ("home", "Home", "/"),
-    ("news", "News", "/news/"),
     ("research", "Research", "/research/"),
     ("publications", "Publications", "/publications/"),
-    ("datasets", "Datasets & Code", "/datasets/"),
-    ("members", "Team", "/members/"),
-    ("join", "Recruitment", "/join/"),
-    ("collaborators", "Research Collaborators", "/collaborators/"),
+    ("members", "Members", "/members/"),
+    ("news", "News", "/news/"),
     ("gallery", "Gallery", "/gallery/"),
-    ("contact", "Contact", "/contact/"),
+    ("more", "More", [
+        ("datasets", "Datasets & Code", "/datasets/"),
+        ("join", "Recruitment", "/join/"),
+        ("collaborators", "Research Collaborators", "/collaborators/"),
+        ("contact", "Contact", "/contact/"),
+    ]),
 ]
 
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()

@@ -2,7 +2,7 @@
 {% from "_macros.html" import picture, page_hero %}
 {% from "_worldmodel.html" import worldmodel with context %}
 {% block main %}
-{{ page_hero("RESEARCH", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
+{{ page_hero("Research", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
 
 <section class="wrap narrow center section">
   <p class="mono accent">RESEARCH DIRECTION</p>
@@ -12,7 +12,7 @@
     {% for t in pillars %}<a class="chip" href="#{{ t.id }}">{{ t.no }} {{ t.short }}</a>{% endfor %}
     <a class="chip" href="#projects">Projects</a>
     <a class="chip" href="{{ url('/datasets/') }}">Datasets &amp; Code</a>
-    <a class="chip" href="{{ url('/collaborators/') }}">Research Collaborators</a>
+    <a class="chip" href="#partners">Research Collaborators</a>
   </nav>
 </section>
 
@@ -62,4 +62,12 @@
   </ul>
 </section>
 
+
+<section id="partners" class="wrap section">
+  <div class="section-head"><h2>Research Collaborators</h2></div>
+  {% for group, items in partners.items() %}
+  <p class="mono muted small kicker-dark">{{ group | upper }}</p>
+  <ul class="logos">{% for p in items %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>{% endfor %}</ul>
+  {% endfor %}
+</section>
 {% endblock %}

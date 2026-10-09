@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_macros.html" import page_hero %}
 {% block main %}
-{{ page_hero("CONTACT", "", "hero-york-digital-twin.jpg", url) }}
+{{ page_hero("Contact", "", "hero-york-digital-twin.jpg", url) }}
 <section class="wrap split section">
   <div class="stack">
     <h2>{{ site.contact.person }}</h2>
@@ -11,6 +11,7 @@
   </div>
   <div class="stack">
     <p class="label">PROSPECTIVE STUDENTS</p>
+    <p><a class="btn btn-accent" href="{{ url('/join/') }}">Recruitment</a></p>
     <p class="lead">Please see the <a href="{{ url('/join/') }}">Recruitment</a> page or contact Prof. Sohn at <a href="mailto:{{ site.contact.email }}">{{ site.contact.email }}</a>.</p>
     <p class="label">FOLLOW THE LAB</p>
     <p class="links-inline">{% for l in site.links %}<a class="more" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>

@@ -8,7 +8,7 @@ url: https://ausmlab.com
 
 # Look of the whole site: leave empty for the image-led design, or use
 # modern, academic, york or dark.
-theme: dark
+theme: ""
 
 hero:
   kicker: AUGMENTED URBAN SPACE MODELING LABORATORY
