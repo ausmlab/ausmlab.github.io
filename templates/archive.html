@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% from "_article.html" import article_head %}
-{% block main %}
-{{ article_head("PUBLICATIONS", "All publications", "Complete list, 1995 to today") }}
-<article class="wrap narrow prose section">
-  {{ fix(item.body) }}
-  <p class="back"><a href="{{ url('/publications/') }}">← Recent publications</a></p>
-</article>
-{% endblock %}

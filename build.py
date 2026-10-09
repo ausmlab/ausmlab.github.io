@@ -303,6 +303,7 @@ def build():
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
         photos=gallery.get("photos", []), videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
         join=join, year=dt.date.today().year,
+        all_pubs=archive.get("publications"),
         posts=posts, projects=projects, research_posts=research_posts,
         themes_all=THEMES, theme=str(site.get("theme") or ""), switcher="--switcher" in sys.argv,
     )
@@ -317,9 +318,7 @@ def build():
         pages.append(("project.html", f"research/{pr['slug']}/index.html", "research", pr["title"], {"item": pr}))
     for pe in profiles:
         pages.append(("person.html", f"members/{pe['slug']}/index.html", "members", pe["title"], {"item": pe}))
-    if "publications" in archive:
-        pages.append(("archive.html", "publications/all/index.html", "publications", "All publications",
-                      {"item": archive["publications"]}))
+    # The full list is now on /publications/ itself; /publications/all/ forwards there.
 
     preview = "--preview" in sys.argv
     # A short fingerprint of the CSS and JS. It changes whenever they change,

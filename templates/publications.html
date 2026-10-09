@@ -1,40 +1,8 @@
 {% extends "base.html" %}
-{% from "_macros.html" import picture, page_hero, filters, paper %}
+{% from "_macros.html" import page_hero %}
 {% block main %}
 {{ page_hero("Publications", "", "research-overview-toronto3d.jpg", url) }}
-
-<section class="wrap section">
-  <h2>Featured</h2>
-  <div class="grid-4">
-    {% for p in (featured_papers | selectattr("image") | list)[:4] %}
-    <a class="card-link" href="{{ p.link or p.code or '#list' }}">
-      {{ picture(url, p.image, p.short or p.title, "ph ph-cover") }}
-      <span class="card-title">{{ p.short or p.title }}</span>
-      <span class="muted small"><em>{{ p.venue_short or p.venue.split(',')[0] }}, {{ p.year }}</em></span>
-    </a>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="list" class="wrap section" data-filter-scope>
-  <div class="section-head">
-    <h2>Recent publications</h2>
-  </div>
-  {% for y, items in pub_years.items() %}
-  <div class="yearblock" data-year-block>
-    <div class="year-side"><span class="year accent">{{ y }}</span></div>
-    <div>
-      {% for p in items %}{{ paper(p) }}{% endfor %}
-      <p class="muted empty-note" hidden>No papers of this type in {{ y }}.</p>
-    </div>
-  </div>
-  {% endfor %}
-</section>
-
-<section class="wrap section">
-  <div class="section-head"><h2>Earlier years</h2><a class="more" href="{{ url('/publications/all/') }}">Complete publication list →</a></div>
-  <ul class="years-grid">
-    {% for y, n in older_counts.items() %}<li><a class="plain" href="{{ url('/publications/all/') }}"><span class="year-s">{{ y }}</span></a></li>{% endfor %}
-  </ul>
-</section>
+<article class="wrap narrow prose section pub-list">
+  {{ fix(all_pubs.body) }}
+</article>
 {% endblock %}

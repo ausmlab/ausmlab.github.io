@@ -478,3 +478,10 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .logo-img img, .affil-logo img { max-width: none; width: auto; object-fit: contain; }
 @media (max-width: 1200px) { .affil-logo { display: none; } }
 @media (max-width: 1000px) { .mainnav { gap: 18px; font-size: 14px; } .logo-img img { height: 38px; } }
+
+/* Full publication list on one page */
+.pub-list h3 { font-size: 26px; margin: 44px 0 12px; padding-bottom: 8px; border-bottom: 1px solid var(--line-strong); color: var(--accent); }
+.pub-list ul { list-style: none; padding: 0; margin: 0; }
+.pub-list li { padding: 10px 0; border-bottom: 1px solid var(--line); line-height: 1.6; }
+.pub-list li a { color: var(--ink); font-weight: 600; }
+.pub-list li a:hover { color: var(--accent); }
