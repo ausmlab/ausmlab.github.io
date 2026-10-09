@@ -288,6 +288,12 @@ def build():
         v["yt"] = m.group(1) if m else ""
     video_topics = list(dict.fromkeys(v["topic"] for v in videos if v.get("topic")))
     research_posts = sorted((p for p in posts if "Research" in p["categories"]), key=lambda p: str(p["date"]), reverse=True)
+    def _gal_key(ph):
+        bits = str(ph.get("date", "")).split()
+        y = int(bits[-1]) if bits and bits[-1].isdigit() else 0
+        m = MONTHS.index(bits[0][:3]) + 1 if len(bits) == 2 and bits[0][:3] in MONTHS else 0
+        return (y, m)
+    gallery["photos"] = sorted(gallery.get("photos", []), key=_gal_key, reverse=True)
     gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), undefined=StrictUndefined, autoescape=True,

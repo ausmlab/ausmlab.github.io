@@ -23,7 +23,6 @@ photos:
   - { file: niagara-trip.jpg, title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
 
   # Photos below came from the old gunhosohn.me gallery
-  - { file: "wp/506-David-Recchias-Farewell-Party-20190517.jpg", title: "Farewell dinner after the YDHR field work", date: "May 2019", category: Lab Life }
   - { file: "wp/558-Uxbridge-May17-Photo-2.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
   - { file: "wp/559-Uxbridge-May17-Photo-3-e1599397512556.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
   - { file: "wp/560-Uxbridge-May17-Photo-4-e1599397495431.jpg", title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities }
@@ -39,6 +38,31 @@ photos:
   - { file: "wp/391-20171214_140637.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
   - { file: "wp/403-20171214_130334.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
   - { file: "wp/404-20171214_130141.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+
+  # More photos from gunhosohn.me (Oct 2026)
+  - { file: niagara-2018-group.jpg, title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
+  - { file: ecce-app-challenge-2019.jpg, title: "Team Hortons, ECCE App Challenge", date: "May 2019", category: Research Activities }
+  - { file: holiday-lunch-2017-group.jpg, title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: holiday-lunch-2017-a.jpg, title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: holiday-lunch-2017-b.jpg, title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
+  - { file: lab-gathering-2019-a.jpg, title: "Lab gathering", date: "Aug 2019", category: Lab Life }
+  - { file: lab-gathering-2019-b.jpg, title: "Lab gathering", date: "Aug 2019", category: Lab Life }
+  - { file: lab-bbq-2019-group.jpg, title: "Lab BBQ", date: "2019", category: Lab Life }
+  - { file: lab-bbq-2019-a.jpg, title: "Lab BBQ", date: "2019", category: Lab Life }
+  - { file: lab-bbq-2019-b.jpg, title: "Lab BBQ", date: "2019", category: Lab Life }
+  - { file: lura-2019.jpg, title: "Lassonde Undergraduate Research Conference", date: "2019", category: Conferences }
+  - { file: field-work-2019-a.jpg, title: "Field data collection", date: "Aug 2019", category: Research Activities }
+  - { file: tac-its-2019-a.jpg, title: "TAC-ITS Canada Joint Conference", date: "Oct 2019", category: Conferences }
+  - { file: tac-its-2019-b.jpg, title: "TAC-ITS Canada Joint Conference", date: "Oct 2019", category: Conferences }
+  - { file: career-panel-a.jpg, title: "Career panel", date: "2019", category: Lab Life }
+  - { file: career-panel-b.jpg, title: "Career panel", date: "2019", category: Lab Life }
+  - { file: convocation.jpg, title: "Convocation", date: "2019", category: Lab Life }
+  - { file: cvpr-2018-kang-zhao.jpg, title: "Kang Zhao at CVPR", date: "Jun 2018", category: Conferences }
+  - { file: convocation-2017.jpg, title: "Convocation", date: "Oct 2017", category: Lab Life }
+  - { file: isprs-gsw-2017.jpg, title: "ISPRS Geospatial Week", date: "Sep 2017", category: Conferences }
+  - { file: lab-members-2014.jpg, title: "Lab members", date: "Oct 2014", category: Lab Life }
+  - { file: lab-research-2014-a.jpg, title: "Lab research activities", date: "2014", category: Research Activities }
+  - { file: lab-research-2014-b.jpg, title: "Lab research activities", date: "2014", category: Research Activities }
 
 videos:
   # Newest first. url = YouTube link, story = the news story that explains it (optional).

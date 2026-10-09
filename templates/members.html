@@ -12,11 +12,25 @@
   <p><a class="btn btn-accent" href="{{ url('/join/') }}">We are recruiting — join us</a></p>
 </section>
 
-{% for g in members %}
+{% set pi = members[0].people[0] if members and members[0].group == "Principal Investigator" else None %}
+{% if pi %}
 <section class="wrap section-tight">
-  <div class="group-head"><h2>{{ g.group }}</h2></div>
-  <div class="people{% if g.people | length == 1 %} solo{% elif g.people | length <= 2 %} few{% endif %}">
-    {% for p in g.people %}
+  <div class="pi-feature">
+    <img class="pi-photo" src="{{ url('/images/people/' ~ (pi.get('photo_large') or pi.photo)) }}" alt="{{ pi.name }}">
+    <div class="pi-text">
+      <p class="kicker-accent">PRINCIPAL INVESTIGATOR</p>
+      <h2>{{ pi.name }}</h2>
+      <p class="pi-role">{{ pi.role }}</p>
+      {% for b in pi.get("bio", []) %}<p>{{ b }}</p>{% endfor %}
+      {% if pi.interests %}<p class="pi-label">Research Interests</p><ul class="pi-interests">{% for x in pi.interests.split("; ") %}<li>{{ x[:1] | upper }}{{ x[1:] }}</li>{% endfor %}</ul>{% endif %}
+      <p class="pi-links">{% if pi.email %}<a href="mailto:{{ pi.email }}">{{ pi.email }}</a>{% endif %}{% if pi.get("full_profile") %} · <a href="{{ pi.full_profile }}" target="_blank" rel="noopener">York profile</a>{% endif %}{% if pi.profile %} · <a href="{{ url(pi.profile) }}">Full biography</a>{% endif %}</p>
+    </div>
+  </div>
+</section>
+{% endif %}
+<section class="wrap section-tight">
+  <div class="people cards">
+    {% for g in members if not (pi and g.group == "Principal Investigator") %}{% for p in g.people %}
     <article class="person">
       {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="{{ p.name }}" loading="lazy">
       {% else %}<div class="person-photo person-nophoto" role="img" aria-label="{{ p.name }}"><span class="initials">{{ p.initials }}</span></div>{% endif %}
@@ -25,17 +39,16 @@
         <h3>{% if p.profile %}<a class="plain" href="{{ url(p.profile) }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
         <p class="accent role">{{ p.role }}{% if p.since %} · since {{ p.since }}{% endif %}</p>
       </div>
-      {% if p.get("bio") %}<div class="person-bio">{% for b in p.bio %}<p>{{ b }}</p>{% endfor %}{% if p.get("full_profile") %}<p><a class="more" href="{{ p.full_profile }}" target="_blank" rel="noopener">Full profile →</a></p>{% elif p.profile %}<p><a class="more" href="{{ url(p.profile) }}">Full profile →</a></p>{% endif %}</div>{% endif %}
       {% if p.history %}<ul class="history">{% for h in p.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
-      {% if p.interests %}<div class="interests"><p class="label">RESEARCH INTERESTS</p><p>{{ p.interests }}</p></div>{% endif %}
-      {% if p.get("projects") %}<div class="interests"><p class="label">CURRENT PROJECTS</p><ul class="projects-list">{% for x in p.projects %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+      {% if p.interests %}<div class="interests"><p class="label">Research Interests</p><p>{{ p.interests }}</p></div>{% endif %}
+      {% if p.get("projects") %}<div class="interests"><p class="label">Current Projects</p><ul class="projects-list">{% for x in p.projects %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
+      {% if p.get("full_profile") %}<p class="small"><a href="{{ p.full_profile }}" target="_blank" rel="noopener">Read more</a></p>{% elif p.profile %}<p class="small"><a href="{{ url(p.profile) }}">Read more</a></p>{% endif %}
       {% if p.email or p.website %}<p class="small">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.website %} · {% endif %}{% if p.website %}<a href="{{ p.website }}">{{ p.get("website_label") or "Website" }}</a>{% endif %}</p>{% endif %}
       </div>
     </article>
-    {% endfor %}
+    {% endfor %}{% endfor %}
   </div>
 </section>
-{% endfor %}
 
 <section class="wrap section" data-tabs>
   <div class="group-head"><h2>Alumni &amp; Former Members</h2></div>
