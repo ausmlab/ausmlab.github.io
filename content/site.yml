@@ -59,7 +59,7 @@ links:
   - { label: GitHub, url: "https://github.com/ausmlab" }
   - { label: Hugging Face, url: "https://huggingface.co/ausmlab" }
   - { label: YouTube, url: "https://www.youtube.com/channel/UCw8XLS8N5A4Nvg_R2tTZ9CQ" }
-  - { label: Prof. Sohn, url: "https://gunhosohn.me" }
+  - { label: Prof. Sohn (York profile), url: "https://discover.academics.yorku.ca/Gunho.Sohn" }
 
 # Numbers on the home page. Leave "auto" to count from the other files.
 stats:

@@ -458,3 +458,12 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .home-group img { width: 100%; }
 .home-group figcaption { margin-top: 10px; }
 @media (max-width: 760px) { .pub-covers { grid-template-columns: minmax(0, 1fr); max-width: 360px; } }
+
+/* Logos in header and footer */
+.logo-img { display: flex; align-items: center; letter-spacing: 0; }
+.logo-img img { height: 44px; width: auto; display: block; }
+.affil-logo { display: flex; align-items: center; }
+.affil-logo img { height: 44px; width: auto; display: block; }
+.footer-name img { height: 40px; width: auto; display: block; }
+@media (max-width: 760px) { .logo-img img { height: 36px; } }
+@media (max-width: 760px) { .affil-logo { display: none; } }

@@ -28,7 +28,7 @@
       {% if p.history %}<ul class="history">{% for h in p.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
       {% if p.interests %}<div class="interests"><p class="label">RESEARCH INTERESTS</p><p>{{ p.interests }}</p></div>{% endif %}
       {% if p.get("projects") %}<div class="interests"><p class="label">CURRENT PROJECTS</p><ul class="projects-list">{% for x in p.projects %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
-      {% if p.email or p.website %}<p class="small">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.website %} · {% endif %}{% if p.website %}<a href="{{ p.website }}">Website</a>{% endif %}</p>{% endif %}
+      {% if p.email or p.website %}<p class="small">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.website %} · {% endif %}{% if p.website %}<a href="{{ p.website }}">{{ p.get("website_label") or "Website" }}</a>{% endif %}</p>{% endif %}
       </div>
     </article>
     {% endfor %}

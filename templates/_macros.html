@@ -22,7 +22,7 @@
 
 {% macro paper(p) %}
 <article class="paper" data-type="{{ p.type }}">
-  <p class="paper-title"><span class="tag">{{ p.type }}</span> {% if p.link %}<a href="{{ p.link }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
+  <p class="paper-title">{% if p.link %}<a href="{{ p.link }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}</p>
   <p class="paper-authors">{{ p.authors }}</p>
   <p class="paper-venue"><em>{{ p.venue }}</em>{% if p.code %} · <a href="{{ p.code }}">Code / project</a>{% endif %}</p>
 </article>
