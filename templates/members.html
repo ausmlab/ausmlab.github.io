@@ -11,16 +11,10 @@
   {% if site.team_intro %}<p class="lead team-intro">{{ site.team_intro }}</p>{% endif %}
   <p><a class="btn btn-accent" href="{{ url('/join/') }}">We are recruiting — join us</a></p>
 </section>
-{% if site.training %}
-<section class="wrap section-tight">
-  <p class="label center">TRAINING AT A GLANCE</p>
-  <div class="stats training">{% for t in site.training %}<div class="stat"><span class="stat-n">{{ t.number }}</span><span class="stat-l">{{ t.label }}</span></div>{% endfor %}</div>
-</section>
-{% endif %}
 
 {% for g in members %}
 <section class="wrap section-tight">
-  <div class="group-head"><h2>{{ g.group }}</h2><span class="mono muted">{{ "%02d" % (g.people | length) }}</span></div>
+  <div class="group-head"><h2>{{ g.group }}</h2></div>
   <div class="people{% if g.people | length <= 2 %} few{% endif %}">
     {% for p in g.people %}
     <article class="person">
@@ -43,10 +37,10 @@
 {% endfor %}
 
 <section class="wrap section" data-tabs>
-  <div class="group-head"><h2>Alumni &amp; Former Members</h2><span class="mono muted">{{ alumni_total }} people</span></div>
+  <div class="group-head"><h2>Alumni &amp; Former Members</h2></div>
   <div class="filters" role="tablist" aria-label="Alumni groups">
     {% for g in alumni_groups %}
-    <button type="button" class="chip" role="tab" id="tab-{{ g.id }}" aria-controls="panel-{{ g.id }}" aria-selected="{{ 'true' if loop.index == 2 else 'false' }}">{{ g.name }} · {{ g.people | length }}</button>
+    <button type="button" class="chip" role="tab" id="tab-{{ g.id }}" aria-controls="panel-{{ g.id }}" aria-selected="{{ 'true' if loop.index == 2 else 'false' }}">{{ g.name }}</button>
     {% endfor %}
   </div>
   {% for g in alumni_groups %}

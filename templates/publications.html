@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_macros.html" import picture, page_hero, filters, paper %}
 {% block main %}
-{{ page_hero("Publications", "160+ research papers since 1995", "research-overview-toronto3d.jpg", url) }}
+{{ page_hero("Publications", "", "research-overview-toronto3d.jpg", url) }}
 
 <section class="wrap section">
   <h2>Featured</h2>
@@ -23,7 +23,7 @@
   </div>
   {% for y, items in pub_years.items() %}
   <div class="yearblock" data-year-block>
-    <div class="year-side"><span class="year accent">{{ y }}</span><span class="mono muted small">{{ items | length }} papers</span></div>
+    <div class="year-side"><span class="year accent">{{ y }}</span></div>
     <div>
       {% for p in items %}{{ paper(p) }}{% endfor %}
       <p class="muted empty-note" hidden>No papers of this type in {{ y }}.</p>
@@ -35,7 +35,7 @@
 <section class="wrap section">
   <div class="section-head"><h2>Earlier years</h2><a class="more" href="{{ url('/publications/all/') }}">Complete publication list →</a></div>
   <ul class="years-grid">
-    {% for y, n in older_counts.items() %}<li><a class="plain" href="{{ url('/publications/all/') }}"><span class="year-s">{{ y }}</span><span class="mono muted small">{{ n }} papers</span></a></li>{% endfor %}
+    {% for y, n in older_counts.items() %}<li><a class="plain" href="{{ url('/publications/all/') }}"><span class="year-s">{{ y }}</span></a></li>{% endfor %}
   </ul>
 </section>
 {% endblock %}
