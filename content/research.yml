@@ -70,37 +70,41 @@ foundation:
 
 datasets:
   - name: YUTO MMS
-    text: SLAM benchmark for urban mobile mapping with tilted LiDAR and a panoramic camera; four sequences totalling 20.1 km.
-    year: 2025 · IJRR
+    text: A comprehensive SLAM benchmark for urban mobile mapping with tilted LiDAR and panoramic camera integration; four sequences totalling 20.1 km.
+    year: IJRR, 2025
     link: https://ausmlab.github.io/yutomms/
     link_label: Project page
+    link2: https://github.com/ausmlab/yutomms
+    link2_label: GitHub
     image: dataset-yutomms.jpg
     home: true
   - name: YUTO Semantic
-    text: "Aerial LiDAR for 3D semantic segmentation: about 738 million points over 9.46 km² of York campus, nine classes."
-    year: "2023"
-    link: https://huggingface.co/datasets/ausmlab/yuto-semantic
-    link_label: Hugging Face
+    text: "A large-scale aerial LiDAR dataset for 3D semantic segmentation: ~738 million points covering 9.46 km² of the York University campus, annotated with nine semantic classes."
+    year: ISPRS Archives, 2023
+    link: https://github.com/ausmlab/yutosemantic
+    link_label: GitHub
+    link2: https://huggingface.co/datasets/ausmlab/yuto-semantic
+    link2_label: Hugging Face
     image: dataset-yutosemantic.jpg
     home: true
   - name: Q-Drone UWB Benchmark
-    text: Benchmark for ultra-wideband radio-based UAV positioning.
-    year: 2020 · IROS
+    text: Benchmark dataset of ultra-wideband radio based UAV positioning.
+    year: IEEE ITSC, 2020
     link: https://benchmark.qdrone.ausmlab.com/
     link_label: Benchmark site
     image: dataset-qdrone.jpg
     home: true
   - name: YUTO Tree5000
-    text: Airborne LiDAR dataset for single-tree detection with 5,000 annotated trees.
-    year: "2022"
+    text: A large-scale airborne LiDAR dataset for single tree detection with 5,000 annotated trees.
+    year: ICPR Workshops, 2022
     link: ""
-  - name: Smokestack Plume Images
-    text: Image dataset for industrial plume rise measurement, with plume masks.
-    year: 2026 · FRDR
+  - name: Smokestack Plume Images and Plume Identification Masks
+    text: Image dataset for industrial plume rise measurement.
+    year: Federated Research Data Repository, 2026
     link: ""
   - name: Unmanned Aerial Image Dataset
     text: UAV imagery ready for 3D reconstruction.
-    year: "2019"
+    year: Data in Brief, 2019
     link: ""
 
 # Partners: add a web address after the name to make the box a link, like this:

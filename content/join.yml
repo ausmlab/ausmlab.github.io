@@ -1,21 +1,22 @@
-# Text for the Join Us page.
+# Text for the Join Us page (wording from the gunhosohn.me Recruitment page).
 
 headline: We are recruiting Ph.D. and M.Sc. students
 positions:
-  - The AUSM Lab is recruiting Ph.D. and M.Sc. students. We also welcome inquiries from prospective postdoctoral fellows.
-  - Positions are supported by NSERC Discovery Grants, the NSERC CREATE SMART program and industry partnerships.
+  - "The AUSMLab at York University is always looking for talented and motivated researchers to join our team. Our research develops embodied spatial intelligence – AI systems that perceive, reason about, and act within physical space – with applications in smart construction, autonomous infrastructure monitoring, autonomous mapping and navigation, urban digital twins, and AI for Earth and space observation."
+  - "We are currently recruiting Ph.D. and M.Sc. students (and welcome inquiries from prospective postdoctoral fellows) supported by active research programs, including the NSERC Discovery Grant “Embodied Spatial Intelligence for Autonomous Infrastructure Monitoring” (2026-2031), the NSERC CREATE “Smart Mobility Advanced Research and Training (SMART)” program, and industry-partnered projects with organizations such as Teledyne Optech, Aethon Aerial Solutions, and the Ontario Ministry of Transportation."
 areas:
-  - Neural computer vision
-  - Autonomous mapping and navigation
-  - 3D urban modelling
-  - Vision-language models for infrastructure monitoring
-  - AI for Earth observation
+  - Neural computer vision and robotic perception
+  - Autonomous mapping and navigation (SLAM, mobile mapping, UAVs)
+  - 3D urban modelling and digital twins of the built environment
+  - Vision-language models for infrastructure and railway monitoring
+  - AI for Earth and space observation, including Space Situational Awareness
 requirements:
   - "A strong background in one or more of: computer vision, machine learning and deep learning, robotics, photogrammetry and remote sensing, or geomatics engineering."
-  - Programming in Python and PyTorch and experience with spatial data are important assets.
+  - Solid programming skills (Python, PyTorch) and enthusiasm for working with real-world spatial data are important assets.
 steps:
-  - Prepare your CV and transcripts.
-  - Write a short statement of your research interests.
-  - Add representative publications, if you have any.
-  - Email them to gsohn@yorku.ca. Put the position type and your name in the subject line.
-create_smart: Graduate admission is through the Department of Earth and Space Science and Engineering. Admitted students may be eligible for enhanced stipends and industry internships through the NSERC CREATE SMART program.
+  - Your CV
+  - Transcripts
+  - A brief statement of research interests
+  - Representative publications or project work, if available
+  - "Email them to Prof. Gunho Sohn at gsohn@yorku.ca. Use the subject line “Prospective [Ph.D./M.Sc./Postdoc] – Your Name.”"
+create_smart: Graduate admission is through the Department of Earth and Space Science and Engineering (ESSE) at the Lassonde School of Engineering. Trainees may also be eligible for the MOVE-affiliated NSERC CREATE SMART training program, which offers enhanced stipends, industry internships, and exchange opportunities.

@@ -29,6 +29,20 @@ overview_caption: Semantic segmentation of a city-scale LiDAR point cloud
 group_photo: lab-group-2026.jpg
 group_caption: AUSM Lab members, 2026
 
+# Shown at the top of the Members page
+team_intro: "Our team at the AUSMLab develops embodied spatial intelligence – AI systems that perceive, reason about, and act within physical space – for smart construction, autonomous infrastructure monitoring, and Earth and space observation."
+training:
+  - { number: "16", label: "Ph.D. graduated · 6 in progress" }
+  - { number: "13", label: "M.Sc. graduated · 1 in progress" }
+  - { number: "13", label: "Postdoctoral fellows" }
+  - { number: "17+", label: "Visiting scholars" }
+  - { number: "30", label: "Undergraduate researchers" }
+  - { number: "84", label: "Graduate examination committees" }
+
+# Quote on the home page (from the gunhosohn.me About page)
+quote: "Our research lab is interested in science and engineering to solve a common problem of representing, describing and understanding our environments from visual and spatial data for advancing data-driven decision processes and thus addressing many challenges that our cities are facing."
+quote_by: Dr. Gunho Sohn, Principal Director
+
 contact:
   person: Prof. Gunho Sohn
   email: gsohn@yorku.ca

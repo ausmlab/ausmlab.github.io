@@ -382,3 +382,12 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .logos li > a, .logos li > span { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: 80px; padding: 8px; color: var(--muted); }
 .logos li > a { transition: background .15s, color .15s; }
 .logos li > a:hover { background: var(--soft); color: var(--accent); text-decoration: none; }
+
+/* Members intro, training numbers, home quote */
+.team-intro { max-width: 760px; margin: 12px auto 0; }
+.stats.training { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+@media (max-width: 900px) { .stats.training { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .stats.training { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.quote { margin: 0; padding: 32px clamp(20px, 4vw, 56px); border-left: 3px solid var(--accent); background: var(--soft); }
+.quote blockquote { margin: 0; font-size: clamp(18px, 1.8vw, 24px); line-height: 1.5; color: var(--ink); }
+.quote figcaption { margin-top: 14px; color: var(--muted); font-size: 13px; letter-spacing: 1px; }

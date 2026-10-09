@@ -20,7 +20,7 @@
         - "2023–2026  Chair, Dept. of Earth and Space Science and Engineering"
         - "Ph.D., University College London (RSPSoc best thesis, 2004)"
         - "B.Sc. & M.Sc., Astronomy and Space Science, Yonsei University"
-      interests: Embodied spatial intelligence, 3D digital twins, autonomous mapping, AI for Earth and space observation
+      interests: Neural computer vision and robotic perception; autonomous mapping and navigation; 3D urban modelling and digital twins of the built environment; embodied spatial intelligence for smart construction and infrastructure monitoring; AI for Earth and space observation
       photo: gunho-sohn.jpg
       email: gsohn@yorku.ca
       website: https://gunhosohn.me
@@ -32,7 +32,7 @@
       since: 2026
       history:
         - "Ph.D., York University"
-      interests: AI for autonomous trains, railway perception, vision-language models, delivery robots
+      interests: AI for autonomous trains and railway perception
       lab_phd: true
       photo: mohammadjavad-ghorbanalivakili.jpg
       projects:
@@ -53,20 +53,20 @@
     - name: Mohammad Moein Sheikholeslami
       role: Ph.D. student
       since: 2022
-      interests: LoD1 building reconstruction, 3D rooftop modelling with deep learning
+      interests: 3D building rooftop reconstruction using deep learning
       projects:
         - "LoD1 building reconstruction from airborne data"
         - "Transmission corridor mapping"
     - name: Ashley Varghese
       role: Ph.D. student
       since: 2024
-      interests: Self-supervised segmentation with vision-language models
+      interests: Self-supervised segmentation using vision-language models
       projects:
         - "Vision-language models for railway asset management (ISPRS 2026 review)"
     - name: Youssef Korny
       role: Ph.D. student
       since: 2024
-      interests: 3D urban modelling, diffusion priors for building point clouds (GeoPriorPC)
+      interests: 3D urban modelling
       projects:
         - "GeoPriorPC: building point clouds from nadir views (CVPR Workshops 2026)"
         - "Annotation tool for space situational awareness (K-SSA)"
@@ -84,7 +84,7 @@
     - name: Youssef Beshir
       role: M.Sc. student
       since: 2026
-      interests: Resident space object detection and tracking for space situational awareness
+      interests: Resident space object (RSO) detection and tracking for Space Situational Awareness
       projects:
         - "Tiny-object detection of resident space objects (K-SSA), with Prof. Regina Lee's lab"
     - name: Merna Tamer Youssef
@@ -99,6 +99,8 @@
 - group: Undergraduate Researchers
   people:
     - name: Maria Alisod
-      role: Undergraduate researcher, ESSE
+      role: Undergraduate researcher
       since: 2026
+      history:
+        - "ESSE, York University"
       interests: ""

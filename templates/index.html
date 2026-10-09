@@ -33,6 +33,11 @@
 <section class="wrap section-tight">
   {{ worldmodel(url, compact=True) }}
 </section>
+{% if site.quote %}
+<section class="wrap section-tight">
+  <figure class="quote"><blockquote>“{{ site.quote }}”</blockquote><figcaption class="mono">— {{ site.quote_by }}</figcaption></figure>
+</section>
+{% endif %}
 
 <section class="wrap section">
   <div class="section-head"><h2>News &amp; Events</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>

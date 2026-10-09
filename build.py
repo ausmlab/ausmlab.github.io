@@ -253,7 +253,7 @@ def build():
         vision.setdefault(k, "")
     datasets = research.get("datasets", [])
     for d in datasets:
-        for k in ("link", "link_label"):
+        for k in ("link", "link_label", "link2", "link2_label"):
             d.setdefault(k, "")
         d.setdefault("home", False)
         d.setdefault("image", "")

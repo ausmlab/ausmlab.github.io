@@ -8,8 +8,15 @@
 
 <section class="wrap center section-tight">
   <h1 class="h1-dark">Members</h1>
+  {% if site.team_intro %}<p class="lead team-intro">{{ site.team_intro }}</p>{% endif %}
   <a class="more" href="{{ url('/join/') }}">Join us!</a>
 </section>
+{% if site.training %}
+<section class="wrap section-tight">
+  <p class="label center">TRAINING AT A GLANCE</p>
+  <div class="stats training">{% for t in site.training %}<div class="stat"><span class="stat-n">{{ t.number }}</span><span class="stat-l">{{ t.label }}</span></div>{% endfor %}</div>
+</section>
+{% endif %}
 
 {% for g in members %}
 <section class="wrap section-tight">
