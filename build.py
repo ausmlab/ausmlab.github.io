@@ -91,7 +91,7 @@ def load_folder(folder):
     return items
 
 
-NEWS_CATEGORY = [("Recruitment", "Recruitment"), ("Lab Activity", "Lab Life"), ("Outreaching", "Lab Life"),
+NEWS_CATEGORY = [("Defence", "Defence"), ("Recruitment", "Recruitment"), ("Lab Activity", "Lab Life"), ("Outreaching", "Lab Life"),
                  ("Conference", "Event"), ("Undergraduate Student", "People"),
                  ("Undergraudate Internship", "People"), ("Research", "Research")]
 
@@ -187,7 +187,7 @@ def build():
     # News = the hand-written items in news.yml + one item per story in content/posts/
     for p in posts:
         news.append({"date": p["date"], "category": p["category"], "title": p["title"],
-                     "text": p["summary"], "image": p["image"] and "wp/" + p["image"],
+                     "text": p["summary"], "image": p["image"] and (p["image"] if "/" in p["image"] or (ROOT / "static" / "images" / p["image"]).exists() else "wp/" + p["image"]),
                      "link": p["url"], "featured": bool(p.get("featured"))})
     for n in news:
         n["sort"], n["year"], n["date_label"] = parse_date(n["date"])

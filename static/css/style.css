@@ -364,3 +364,11 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .person-nophoto .initials { color: #fff; font-family: var(--mono); letter-spacing: 3px; opacity: .9; }
 .projects-list { margin: 0; padding-left: 18px; }
 .projects-list li { margin: 2px 0; }
+
+/* News: card when a story has no picture */
+.news-fallback { display: flex; flex-direction: column; justify-content: space-between; padding: 14px; background: linear-gradient(135deg, var(--dark) 0%, #2d3446 100%); color: var(--dark-muted); border-left: 4px solid var(--accent); overflow: hidden; }
+.news-fallback-title { color: #fff; font-weight: 600; line-height: 1.3; font-size: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.ph-tall.news-fallback { padding: 32px; } .ph-tall .news-fallback-title { font-size: 26px; -webkit-line-clamp: 5; }
+.news-thumb { display: block; overflow: hidden; }
+.news-thumb img, .news-thumb .news-fallback { transition: transform .25s; }
+.newsitem:hover .news-thumb img, .newsitem:hover .news-thumb .news-fallback { transform: scale(1.03); }
