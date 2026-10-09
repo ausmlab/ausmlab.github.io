@@ -36,9 +36,13 @@
 
 <section class="wrap section">
   <div class="section-head"><h2>News &amp; Events</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>
-  <ul class="newslist">
+  <ul class="newslist newslist-links">
     {% for n in news[:6] %}
-    <li><span class="mono accent">{{ n.date_label }}</span>{% if n.link %}<a class="plain" href="{{ url(n.link) }}">{{ n.title }}</a>{% else %}<span>{{ n.title }}</span>{% endif %}</li>
+    <li><a class="news-row" href="{{ url(n.link) if n.link else url('/news/') }}">
+      <span class="mono accent">{{ n.date_label }}</span>
+      <span class="news-main"><span class="news-title">{{ n.title }}</span>{% if n.category %}<span class="mono muted small news-cat">{{ n.category }}</span>{% endif %}</span>
+      <span class="news-arrow" aria-hidden="true">→</span>
+    </a></li>
     {% endfor %}
   </ul>
 </section>
@@ -47,10 +51,12 @@
   <div class="section-head"><h2>Recent Publications</h2><a class="more" href="{{ url('/publications/') }}">All publications →</a></div>
   <div class="grid-5">
     {% for p in featured_papers[:5] %}
-    <a class="card-link" href="{{ p.link or url('/publications/') }}">
-      {{ picture(url, p.image, p.short or p.title, "ph ph-cover") }}
+    <a class="card-link pub-card" href="{{ p.link or p.code or url('/publications/') }}"{% if p.link or p.code %} target="_blank" rel="noopener"{% endif %}>
+      {% if p.image %}{{ picture(url, p.image, p.short or p.title, "ph ph-pub") }}
+      {% else %}<div class="ph ph-pub pub-fallback" role="img" aria-label="{{ p.short or p.title }}"><span class="mono small">{{ p.type | upper }}</span><span class="pub-fallback-title">{{ p.short or p.title }}</span><span class="mono small">{{ p.venue_short or p.venue.split(',')[0] }} · {{ p.year }}</span></div>{% endif %}
       <span class="card-title small">{{ p.short or p.title }}</span>
       <span class="muted small"><em>{{ p.venue_short or p.venue.split(',')[0] }}, {{ p.year }}</em></span>
+      <span class="small accent pub-go">{% if p.link %}Read paper ↗{% elif p.code %}Code ↗{% else %}See publications →{% endif %}</span>
     </a>
     {% endfor %}
   </div>
@@ -60,7 +66,7 @@
   <div class="section-head"><h2>Open Datasets</h2><a class="more" href="{{ url('/research/') }}#datasets">All datasets &amp; code →</a></div>
   <div class="grid-3">
     {% for d in datasets if d.home %}
-    <a class="card-link" href="{{ d.link }}">
+    <a class="card-link data-card" href="{{ d.link or url('/research/') ~ '#datasets' }}"{% if d.link %} target="_blank" rel="noopener"{% endif %}>
       {% if d.image %}{{ picture(url, d.image, d.name, "ph ph-data") }}{% else %}<div class="ph ph-dark ph-empty ph-data" role="img" aria-label="{{ d.name }} preview"><span>Dataset preview</span></div>{% endif %}
       <span class="card-title">{{ d.name }}</span>
       <span class="body">{{ d.text }}</span>

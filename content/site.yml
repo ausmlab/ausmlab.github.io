@@ -15,7 +15,7 @@ hero:
   title: EMBODIED SPATIAL INTELLIGENCE
   subtitle: 3D DIGITAL TWINS · AUTONOMOUS MAPPING · SPACE AWARENESS
   # Put a wide photo in static/images/ and write its file name here, e.g. hero.jpg
-  image: hero-powerline-lidar.jpg
+  image: hero-york-digital-twin.jpg   # 3D digital twin of York campus
 
 intro:
   - The AUSM Lab develops solutions for representing and understanding urban environments through visual and spatial data.

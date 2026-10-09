@@ -74,12 +74,14 @@ datasets:
     year: 2025 · IJRR
     link: https://ausmlab.github.io/yutomms/
     link_label: Project page
+    image: dataset-yutomms.jpg
     home: true
   - name: YUTO Semantic
     text: "Aerial LiDAR for 3D semantic segmentation: about 738 million points over 9.46 km² of York campus, nine classes."
     year: "2023"
     link: https://huggingface.co/datasets/ausmlab/yuto-semantic
     link_label: Hugging Face
+    image: dataset-yutosemantic.jpg
     home: true
   - name: Q-Drone UWB Benchmark
     text: Benchmark for ultra-wideband radio-based UAV positioning.

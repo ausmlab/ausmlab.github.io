@@ -22,6 +22,7 @@ papers:
     venue: Proceedings of the IEEE/CVF CVPR Workshops, 2026
     featured: true
     short: GeoPriorPC
+    link: https://openaccess.thecvf.com/content/CVPR2026W/USM3D/html/Korny_GeoPriorPC_Nadir-view_to_3D_Point_Cloud_Reconstruction_for_buildings_via_CVPRW_2026_paper.html
     venue_short: CVPR Workshops
 
   - year: 2026
@@ -40,6 +41,8 @@ papers:
     venue: ISPRS Archives, XLIX-B3-2026, 89–96
     featured: true
     short: Reasoning-guided Ego-path Segmentation
+    link: https://isprs-archives.copernicus.org/articles/XLIX-B3-2026/89/2026/
+    image: gallery/isprs-2026-talk.jpg
     venue_short: ISPRS Archives
 
   - year: 2026
@@ -80,6 +83,8 @@ papers:
     code: https://ausmlab.github.io/yutomms/
     featured: true
     short: YUTO MMS
+    link: https://doi.org/10.1177/02783649241261079
+    image: dataset-yutomms.jpg
     venue_short: IJRR
 
   - year: 2025
