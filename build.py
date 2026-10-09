@@ -135,8 +135,8 @@ def split_pipe(line, n):
 
 def split_partner(item):
     """'Fugro | https://www.fugro.com/' -> {'name': 'Fugro', 'url': 'https://...'}"""
-    name, _, link = str(item).partition("|")
-    return {"name": name.strip(), "url": link.strip()}
+    bits = [b.strip() for b in str(item).split("|")] + ["", ""]
+    return {"name": bits[0], "url": bits[1], "logo": bits[2]}
 
 
 def parse_date(value):

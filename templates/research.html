@@ -67,7 +67,7 @@
   <div class="section-head"><h2>Research Collaborators</h2></div>
   {% for group, items in partners.items() %}
   <p class="mono muted small kicker-dark">{{ group | upper }}</p>
-  <ul class="logos">{% for p in items %}<li>{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ p.name }}</a>{% else %}<span>{{ p.name }}</span>{% endif %}</li>{% endfor %}</ul>
+  <ul class="logos">{% for p in items %}{% set inner %}{% if p.logo %}<img src="{{ url('/images/partners/' ~ p.logo) }}" alt="{{ p.name }}" title="{{ p.name }}" loading="lazy">{% else %}{{ p.name }}{% endif %}{% endset %}<li class="{{ 'has-logo' if p.logo }}">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ inner }}</a>{% else %}<span>{{ inner }}</span>{% endif %}</li>{% endfor %}</ul>
   {% endfor %}
 </section>
 {% endblock %}

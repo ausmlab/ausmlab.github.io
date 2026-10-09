@@ -6,7 +6,7 @@
 <section class="wrap section">
   <h2>Featured</h2>
   <div class="grid-4">
-    {% for p in featured_papers[:4] %}
+    {% for p in (featured_papers | selectattr("image") | list)[:4] %}
     <a class="card-link" href="{{ p.link or p.code or '#list' }}">
       {{ picture(url, p.image, p.short or p.title, "ph ph-cover") }}
       <span class="card-title">{{ p.short or p.title }}</span>
