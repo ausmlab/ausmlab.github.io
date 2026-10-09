@@ -25,6 +25,8 @@
 - date: "2025"
   category: Paper
   title: YUTO MMS published in The International Journal of Robotics Research
+  image: dataset-yutomms.jpg
+  link: https://doi.org/10.1177/02783649241261079
   text: A 20.1 km SLAM benchmark for urban mobile mapping.
 
 - date: 2024-12-21
