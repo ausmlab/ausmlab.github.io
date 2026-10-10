@@ -9,6 +9,13 @@
 # Videos: paste the YouTube link.
 
 photos:
+  - { file: "korny-msc-defence-2026-selfie.jpg", title: "Lab members cheering after Youssef Korny's M.Sc. defence", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026", featured: true }
+  - { file: "news/korny-msc-defence-2026.jpg", title: "Youssef Korny with Prof. Sohn and the examining committee", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
+  - { file: "korny-msc-defence-2026-title.jpg", title: "Youssef Korny presents his M.Sc. thesis", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
+  - { file: "korny-msc-defence-2026-dataset.jpg", title: "Stage 1: building the nadir-to-oblique training set", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
+  - { file: "korny-msc-defence-2026-methods.jpg", title: "Stage 1: fine-tuning Stable Diffusion", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
+  - { file: "korny-msc-defence-2026-start.jpg", title: "Opening the M.Sc. defence", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
+  - { file: "korny-msc-defence-2026-thanks.jpg", title: "Questions from the committee", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
   - { file: isprs-2026-1.jpg, title: "XXV ISPRS Congress, Toronto", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-talk.jpg, title: "Talk on ego-path segmentation for autonomous trains", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-2.jpg, title: "ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
