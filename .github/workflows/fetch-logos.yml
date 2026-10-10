@@ -1,0 +1,18 @@
+name: Fetch partner logos
+on:
+  push:
+    branches: [fetch-logos-2]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p fetched
+          curl -fsSL -A "Mozilla/5.0" -o fetched/optech.svg "https://www.teledyneoptech.com/img/logo--optech.svg" || echo optech failed
+          curl -fsSL -A "Mozilla/5.0" -o fetched/flir.svg "https://www.flir.com/svg/flir-logo-black.svg" || echo flir failed
+          ls -la fetched
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add fetched; git commit -m "Fetched logos" || true; git push
