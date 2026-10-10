@@ -676,3 +676,6 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .gallery-featured img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 35%; border-radius: 6px; }
 .gallery-featured figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; font-weight: 600; }
 @media (max-width: 760px) { .gallery-featured { grid-template-columns: minmax(0, 1fr); } }
+
+/* Research themes: show each picture at its own shape, filling the column (no white frame) */
+img.ph-theme { aspect-ratio: auto; height: auto; width: 100%; object-fit: cover; border: 0; background: none; border-radius: 6px; }
