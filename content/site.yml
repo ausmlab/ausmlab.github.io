@@ -22,8 +22,8 @@ hero:
   # Photos that take turns behind the headline (every 6 seconds). The first one shows first.
   # Each line: "file in static/images/ | which part to keep in view (e.g. center 30%)"
   slides:
-    - "gallery/lab-research-2014-a.jpg | center 35%"
     - "lab-group-2026.jpg | center 40%"
+    - "gallery/lab-research-2014-a.jpg | center 35%"
     - "gallery/niagara-2018-group.jpg | center 45%"
     - "gallery/ecce-app-challenge-2019.jpg | center 30%"
     - "gallery/lab-members-2014.jpg | center 40%"

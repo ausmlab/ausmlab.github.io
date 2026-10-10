@@ -693,3 +693,7 @@ img.ph-theme { aspect-ratio: auto; height: auto; width: 100%; object-fit: cover;
 
 /* Datasets: pictures fill the card */
 img.ph-data { object-fit: cover; background: var(--dark); }
+
+/* News photos: keep heads in the frame (crop from the bottom, not the top) */
+.news-card img, .news-thumb img, img.ph-thumb, .news-feature img, img.ph-tall:not(.ph-theme) { object-position: center 22%; }
+img.ph-tall { object-fit: cover; }
