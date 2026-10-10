@@ -32,7 +32,7 @@
       {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="" loading="lazy">
       {% else %}<div class="person-photo person-nophoto" role="img" aria-label="{{ p.name }}"><span class="initials">{{ p.initials }}</span></div>{% endif %}
       <div class="person-info">
-        <h3>{{ p.name }}</h3>
+        <h3>{{ p.display }}</h3>
         <p class="role">{{ p.role }}{% if p.since %} · since {{ p.since }}{% endif %}</p>
         {% if p.interests %}<p class="person-topics">{{ p.interests }}</p>{% endif %}
         {% if p.profile %}<span class="person-more">Profile and papers →</span>{% endif %}
@@ -52,7 +52,7 @@
   </div>
   {% for g in alumni_groups %}
   <ul class="alumni" role="tabpanel" id="panel-{{ g.id }}" aria-labelledby="tab-{{ g.id }}"{% if loop.index != 2 %} hidden{% endif %}>
-    {% for a in g.people %}<li><strong>{% if a.profile %}<a class="plain" href="{{ url(a.profile) }}">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}</strong><span class="accent">{{ a.role }}</span><span class="muted">{{ a.note }}</span></li>{% endfor %}
+    {% for a in g.people %}<li><strong>{% if a.profile %}<a class="plain" href="{{ url(a.profile) }}">{{ a.display }}</a>{% else %}{{ a.display }}{% endif %}</strong><span class="accent">{{ a.role }}</span><span class="muted">{{ a.note }}</span></li>{% endfor %}
   </ul>
   {% endfor %}
 </section>

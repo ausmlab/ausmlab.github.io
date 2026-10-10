@@ -94,6 +94,15 @@ datasets:
     link_label: Benchmark site
     image: dataset-qdrone.jpg
     home: true
+  - name: DUST
+    text: "An on-orbit star-tracker benchmark for resident space object (RSO) detection and attitude estimation: 1,378 calibrated near-infrared images from the CASSIOPE Fast Auroral Imager with 4,237 verified RSO annotations. Led by Vithurshan Suthakar (Prof. Regina Lee's lab) with the AUSM Lab."
+    year: Zenodo, 2026
+    link: https://doi.org/10.5281/zenodo.20255672
+    link_label: Zenodo
+  - name: YorkU Indoor
+    text: "Multi-year indoor positioning dataset from four York University buildings (2021 and 2022): Wi-Fi signal strength, inertial and magnetometer data from Android phones, with HoloLens 2 augmented-reality ground truth. By Afnan Ahmad."
+    year: ISPRS IJGI (submitted), 2026
+    link: ""
   - name: YUTO Tree5000
     text: A large-scale airborne LiDAR dataset for single tree detection with 5,000 annotated trees.
     year: ICPR Workshops, 2022

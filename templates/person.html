@@ -8,7 +8,7 @@
   {% else %}<div class="profile-photo person-nophoto" role="img" aria-label="{{ m.name }}"><span class="initials">{{ m.initials }}</span></div>{% endif %}
   <div class="profile-card">
     <p class="mono accent">{{ item.group | upper }}</p>
-    <h1>{{ m.name }}</h1>
+    <h1>{{ m.get("display") or m.name }}</h1>
     <p class="profile-role">{{ m.role }}{% if m.since %} · since {{ m.since }}{% endif %}</p>
     {% if m.history %}<ul class="history">{% for h in m.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
     {% if m.interests %}<p class="label">RESEARCH INTERESTS</p><p>{{ m.interests }}</p>{% endif %}

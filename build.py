@@ -225,6 +225,8 @@ def build():
     for g in members:
         for p in g["people"]:
             p["initials"] = initials(p["name"])
+            # Doctorate holders are shown as "Dr. Name" (the PI keeps his plain name)
+            p["display"] = ("Dr. " + p["name"]) if g["group"] == "Postdoctoral Fellows" or p.get("doctor") else p["name"]
             p["profile"] = find_profile(p["name"])
             for k in ("role", "interests", "photo", "email", "website", "since"):
                 p.setdefault(k, "")
@@ -235,6 +237,7 @@ def build():
         people = [dict(zip(("name", "role", "note"), split_pipe(l, 3))) for l in lines or []]
         for a in people:
             a["profile"] = find_profile(a["name"])
+            a["display"] = ("Dr. " + a["name"]) if group in ("Postdocs", "Ph.D.") else a["name"]
         alumni_groups.append({"name": group, "id": group.lower().replace(".", "").replace(" ", "-"), "people": people})
     alumni_total = sum(len(g["people"]) for g in alumni_groups)
 
@@ -405,6 +408,9 @@ def build():
             continue
         item = dict(pe)
         item["member"] = None
+        doctor_slugs = {a["profile"].strip("/").split("/")[-1] for g in alumni_groups if g["name"] in ("Postdocs", "Ph.D.") for a in g["people"] if a["profile"]}
+        if pe["slug"] in doctor_slugs and not str(item["title"]).startswith("Dr"):
+            item["title"] = "Dr. " + item["title"]
         item["papers"] = papers_for(pe["title"])
         pages.append(("person.html", f"members/{pe['slug']}/index.html", "members", pe["title"], {"item": item}))
     # The full list is now on /publications/ itself; /publications/all/ forwards there.
