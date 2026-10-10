@@ -669,3 +669,10 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .funding-list a:hover { color: var(--accent); }
 .funding-list span { font-size: 14px; color: var(--muted); line-height: 1.5; }
 @media (max-width: 900px) { .funding-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Gallery: favourite photos shown large */
+.gallery-featured { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 3vw, 32px); }
+.gallery-featured figure { margin: 0; }
+.gallery-featured img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 35%; border-radius: 6px; }
+.gallery-featured figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; font-weight: 600; }
+@media (max-width: 760px) { .gallery-featured { grid-template-columns: minmax(0, 1fr); } }

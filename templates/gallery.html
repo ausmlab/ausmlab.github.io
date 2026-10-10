@@ -3,6 +3,16 @@
 {% block main %}
 {{ page_hero("Gallery", "Field campaigns, conferences and lab life", "gallery/uxbridge-field-2.jpg", url) }}
 
+{% set fav = photos | selectattr("featured") | list %}
+{% if fav %}
+<section class="wrap section-tight">
+  <div class="gallery-featured">
+    {% for p in fav %}
+    <figure>{{ picture(url, p.path, p.title, "ph") }}<figcaption><span>{{ p.title }}</span><span class="mono muted small">{{ p.date }}</span></figcaption></figure>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 <section class="wrap section" data-filter-scope>
   <div class="center">{{ filters("category", gal_cats, "Filter by category") }}</div>
   <div class="grid-3 gallery">

@@ -273,7 +273,7 @@ def build():
     for n in news:
         n.setdefault("featured", False)
     for p in gallery.get("photos", []):
-        p.setdefault("file", ""); p.setdefault("date", "")
+        p.setdefault("file", ""); p.setdefault("date", ""); p.setdefault("featured", False)
 
     # Home-page numbers
     count = {

@@ -4,6 +4,7 @@
 #   title:    caption
 #   date:     e.g. Aug 2026
 #   category: Research Activities, Conferences or Lab Life
+#   featured: true  -> also shown large at the top of the Gallery page
 # Videos: paste the YouTube link.
 
 photos:
@@ -40,8 +41,8 @@ photos:
   - { file: "wp/404-20171214_130141.jpg", title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
 
   # More photos from gunhosohn.me (Oct 2026)
-  - { file: niagara-2018-group.jpg, title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life }
-  - { file: ecce-app-challenge-2019.jpg, title: "Team Hortons, ECCE App Challenge", date: "May 2019", category: Research Activities }
+  - { file: niagara-2018-group.jpg, title: "Lab trip to Niagara Falls for the AOLS AGM", date: "Mar 2018", category: Lab Life, featured: true }
+  - { file: ecce-app-challenge-2019.jpg, title: "Team Hortons, ECCE App Challenge", date: "May 2019", category: Research Activities, featured: true }
   - { file: holiday-lunch-2017-group.jpg, title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
   - { file: holiday-lunch-2017-a.jpg, title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
   - { file: holiday-lunch-2017-b.jpg, title: "Holiday Lunch 2017", date: "Dec 2017", category: Lab Life }
@@ -60,7 +61,7 @@ photos:
   - { file: cvpr-2018-kang-zhao.jpg, title: "Kang Zhao at CVPR", date: "Jun 2018", category: Conferences }
   - { file: convocation-2017.jpg, title: "Convocation", date: "Oct 2017", category: Lab Life }
   - { file: isprs-gsw-2017.jpg, title: "ISPRS Geospatial Week", date: "Sep 2017", category: Conferences }
-  - { file: lab-members-2014.jpg, title: "Lab members", date: "Oct 2014", category: Lab Life }
+  - { file: lab-members-2014.jpg, title: "Lab members", date: "Oct 2014", category: Lab Life, featured: true }
   - { file: lab-research-2014-a.jpg, title: "Lab research activities", date: "2014", category: Research Activities }
   - { file: lab-research-2014-b.jpg, title: "Lab research activities", date: "2014", category: Research Activities }
 
