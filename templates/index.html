@@ -4,8 +4,10 @@
 {# Home page laid out like a simple group site: photo, research, news, publications, group photo #}
 <section class="hero hero-photo hero-simple" style="background-image:url('{{ url('/images/' ~ site.hero.image) }}')">
   <div class="wrap hero-in">
+    {% if site.hero.kicker %}<p class="hero-kicker">{{ site.hero.kicker }}</p>{% endif %}
     <h1>{{ site.hero.title }}</h1>
     <p class="hero-sub">{{ site.hero.subtitle }}</p>
+    <p class="hero-btns"><a class="btn btn-accent" href="{{ url('/research/') }}">Our research</a><a class="btn btn-ghost" href="{{ url('/join/') }}">Join the lab</a></p>
   </div>
 </section>
 
@@ -14,7 +16,7 @@
     <a class="research-feature-img" href="{{ url(site.home_research_link or '/research/') }}"><img src="{{ url('/images/' ~ site.home_research_image) }}" alt="{{ site.home_research_caption }}" loading="lazy"></a>
     <div class="research-feature-text">
       <p class="kicker-accent">RESEARCH</p>
-      <h2>Embodied spatial intelligence</h2>
+      <h2>{{ vision.title }}</h2>
       <p class="lead">{{ vision.lead }}</p>
       <p>{{ site.intro[1] if site.intro | length > 1 else site.intro[0] }}</p>
       {% if site.home_research_caption %}<p class="muted small">Pictured: {{ site.home_research_caption }}</p>{% endif %}
@@ -25,15 +27,16 @@
 
 <section class="wrap section home-news">
   <h2 class="center">News &amp; Events</h2>
-  {% for y, items in news[:8] | groupby("year") | reverse %}
-  <h3 class="news-year">{{ y }}</h3>
-  <ul class="news-plain">
-    {% for n in items %}
-    <li><span class="news-date">{{ n.date_label }}.</span> {% if n.link %}<a href="{{ url(n.link) }}">{{ n.title }}</a>{% else %}{{ n.title }}{% endif %}{% if n.text and not n.link %} {{ n.text }}{% endif %}</li>
+  <div class="news-cards">
+    {% for n in news[:4] %}
+    <a class="news-card" href="{{ url(n.link) if n.link else url('/news/') }}"{% if n.link and n.link.startswith('http') %} target="_blank" rel="noopener"{% endif %}>
+      {% if n.image %}<img src="{{ url('/images/' ~ n.image) }}" alt="" loading="lazy">{% else %}<span class="news-card-noimg">{{ n.category }}</span>{% endif %}
+      <span class="news-card-meta">{{ n.category }} · {{ n.date_label }}</span>
+      <span class="news-card-title">{{ n.title }}</span>
+    </a>
     {% endfor %}
-  </ul>
-  {% endfor %}
-  <p class="center"><a class="btn btn-accent" href="{{ url('/news/') }}">Read More</a></p>
+  </div>
+  <p class="center"><a class="btn btn-accent" href="{{ url('/news/') }}">All news</a></p>
 </section>
 
 <section class="wrap section">

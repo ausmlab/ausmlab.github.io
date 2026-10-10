@@ -32,19 +32,16 @@
   <div class="people cards">
     {% for g in members if not (pi and g.group == "Principal Investigator") %}{% for p in g.people %}
     <article class="person">
-      {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="{{ p.name }}" loading="lazy">
+      <a class="person-link" href="{{ url(p.profile) if p.profile else '#' }}">
+      {% if p.photo %}<img class="person-photo" src="{{ url('/images/people/' ~ p.photo) }}" alt="" loading="lazy">
       {% else %}<div class="person-photo person-nophoto" role="img" aria-label="{{ p.name }}"><span class="initials">{{ p.initials }}</span></div>{% endif %}
       <div class="person-info">
-      <div>
-        <h3>{% if p.profile %}<a class="plain" href="{{ url(p.profile) }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
-        <p class="accent role">{{ p.role }}{% if p.since %} · since {{ p.since }}{% endif %}</p>
+        <h3>{{ p.name }}</h3>
+        <p class="role">{{ p.role }}{% if p.since %} · since {{ p.since }}{% endif %}</p>
+        {% if p.interests %}<p class="person-topics">{{ p.interests }}</p>{% endif %}
+        {% if p.profile %}<span class="person-more">Profile and papers →</span>{% endif %}
       </div>
-      {% if p.history %}<ul class="history">{% for h in p.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
-      {% if p.interests %}<div class="interests"><p class="label">Research Interests</p><p>{{ p.interests }}</p></div>{% endif %}
-      {% if p.get("projects") %}<div class="interests"><p class="label">Current Projects</p><ul class="projects-list">{% for x in p.projects %}<li>{{ x }}</li>{% endfor %}</ul></div>{% endif %}
-      {% if p.get("full_profile") %}<p class="small"><a href="{{ p.full_profile }}" target="_blank" rel="noopener">Read more</a></p>{% elif p.profile %}<p class="small"><a href="{{ url(p.profile) }}">Read more</a></p>{% endif %}
-      {% if p.email or p.website %}<p class="small">{% if p.email %}<a href="mailto:{{ p.email }}">{{ p.email }}</a>{% endif %}{% if p.email and p.website %} · {% endif %}{% if p.website %}<a href="{{ p.website }}">{{ p.get("website_label") or "Website" }}</a>{% endif %}</p>{% endif %}
-      </div>
+      </a>
     </article>
     {% endfor %}{% endfor %}
   </div>

@@ -57,31 +57,27 @@
 <section id="highlights" class="wrap section">
   <div class="section-head"><h2>Research highlights</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>
   <ul class="highlights">
-    {% for p in research_posts %}
+    {% for p in research_posts[:6] %}
     <li><span class="mono muted">{{ p.date[:4] }}</span><a class="plain" href="{{ url(p.url) }}">{{ p.title }}</a></li>
     {% endfor %}
   </ul>
 </section>
 
 
-<section class="wrap section" id="videos" data-filter-scope>
-  <div class="section-head"><h2>Videos</h2></div>
-  <p class="muted">Research demos, conference talks and thesis work from the lab.</p>
-  {% if video_topics %}<div class="center">{{ filters("topic", video_topics, "Filter videos by topic") }}</div>{% endif %}
+<section class="wrap section" id="videos">
+  <div class="section-head"><h2>Videos</h2><a class="more" href="{{ url('/gallery/#videos') }}">All {{ videos | length }} videos →</a></div>
   <div class="grid-3 videos">
-    {% for v in videos %}
-    <article class="video-card" data-type="{{ v.topic }}">
+    {% for v in videos[:3] %}
+    <article class="video-card">
       <a class="video-thumb" href="{{ v.url }}" target="_blank" rel="noopener" aria-label="Watch on YouTube: {{ v.title }}">
         {% if v.yt %}<img class="ph ph-video-img" src="https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg" alt="" loading="lazy">{% else %}<div class="ph ph-dark ph-video"></div>{% endif %}
         <span class="play" aria-hidden="true"><svg width="56" height="56" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.55)" stroke="#fff" stroke-width="2"/><path d="M26 21l19 11-19 11z" fill="#fff"/></svg></span>
       </a>
       <a class="card-title small" href="{{ v.url }}" target="_blank" rel="noopener">{{ v.title }}</a>
       <span class="mono muted small">{{ v.date }}{% if v.topic %} · {{ v.topic }}{% endif %}</span>
-      {% if v.story %}<a class="small" href="{{ url(v.story) }}">Read the story →</a>{% endif %}
     </article>
     {% endfor %}
   </div>
-  {% if youtube_channel %}<p class="center" style="margin-top:32px"><a class="btn btn-outline" href="{{ youtube_channel }}" target="_blank" rel="noopener">More on our YouTube channel</a></p>{% endif %}
 </section>
 
 <section id="partners" class="wrap section">

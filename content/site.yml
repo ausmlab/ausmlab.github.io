@@ -12,7 +12,7 @@ theme: ""
 
 hero:
   kicker: AUGMENTED URBAN SPACE MODELING LABORATORY
-  title: EMBODIED SPATIAL INTELLIGENCE
+  title: Embodied Spatial Intelligence
   subtitle: 3D DIGITAL TWINS · AUTONOMOUS MAPPING · SPACE AWARENESS
   # Put a wide photo in static/images/ and write its file name here, e.g. hero.jpg
   image: hero-york-digital-twin.jpg   # 3D digital twin of York campus
