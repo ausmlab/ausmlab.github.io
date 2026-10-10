@@ -11,25 +11,17 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf fetched fetched2; mkdir -p fetched3
+          rm -rf fetched3; mkdir -p fetched4
           UA="AUSMLabSite/1.0 (gsohn@yorku.ca)"
-          for t in Jade_University_of_Applied_Sciences Université_de_Sherbrooke; do
-            curl -sSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=images&imlimit=60&titles=$t" -o fetched3/$t.json
-            python3 - "$t" <<'PY' > fetched3/$t.list
-          import json,sys
-          d=json.load(open(f"fetched3/{sys.argv[1]}.json"))
-          for p in d.get('query',{}).get('pages',{}).values():
-              for i in p.get('images',[]):
-                  n=i['title']
-                  if any(k in n.lower() for k in ('logo','wordmark','signature')) and 'commons-logo' not in n.lower():
-                      print(n.replace(' ','_'))
-          PY
-            while read -r f; do
-              iu=$(curl -sSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=$f" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];print(p.get('imageinfo',[{}])[0].get('url',''))")
-              echo "$t | $f -> $iu" >> fetched3/log.txt
-              [ -n "$iu" ] && curl -sSL -A "$UA" -o "fetched3/$(basename "${iu%%\?*}")" "$iu"
-            done < fetched3/$t.list
+          for q in "Universite de Sherbrooke logo" "UdeS logo" "Sherbrooke university logo svg"; do
+            curl -sSL -A "$UA" --get "https://commons.wikimedia.org/w/api.php" --data-urlencode "action=query" --data-urlencode "format=json" --data-urlencode "list=search" --data-urlencode "srnamespace=6" --data-urlencode "srlimit=8" --data-urlencode "srsearch=$q" | python3 -c "import json,sys;[print(r['title'].replace(' ','_')) for r in json.load(sys.stdin)['query']['search']]" >> fetched4/titles.txt
           done
-          ls -la fetched3
+          sort -u fetched4/titles.txt | grep -i -E "sherbrooke|udes" > fetched4/sel.txt
+          while read -r f; do
+            iu=$(curl -sSL -A "$UA" --get "https://commons.wikimedia.org/w/api.php" --data-urlencode "action=query" --data-urlencode "format=json" --data-urlencode "prop=imageinfo" --data-urlencode "iiprop=url|size" --data-urlencode "titles=$f" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];ii=p.get('imageinfo',[{}])[0];print(ii.get('url','') if ii.get('size',10**9)<3000000 else '')")
+            echo "$f -> $iu" >> fetched4/log.txt
+            [ -n "$iu" ] && curl -sSL -A "$UA" -o "fetched4/$(echo "$f" | md5sum | cut -c1-8)-$(basename "${iu%%\?*}" | tr -cd 'A-Za-z0-9._-')" "$iu"
+          done < fetched4/sel.txt
+          ls -la fetched4
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "Fetched logos 3"; git push
