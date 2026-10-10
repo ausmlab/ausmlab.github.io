@@ -296,8 +296,13 @@ def build():
     gallery["photos"] = sorted(gallery.get("photos", []), key=_gal_key, reverse=True)
     gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
+    def replace_imgs(body):
+        """Drop pictures from old profile text; the profile already shows the photo."""
+        return re.sub(r"<figure>\s*(<img[^>]*>\s*)+</figure>|<img[^>]*>", "", body)
+
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), undefined=StrictUndefined, autoescape=True,
                       trim_blocks=True, lstrip_blocks=True)
+    env.filters["replace_imgs"] = replace_imgs
     ctx = dict(
         site=site, nav=NAV, news=news, news_years=news_years, featured_news=featured_news,
         members=members, alumni_groups=alumni_groups, alumni_total=alumni_total,
@@ -322,8 +327,51 @@ def build():
         pages.append(("post.html", f"news/{p['slug']}/index.html", "news", p["title"], {"item": p}))
     for pr in projects:
         pages.append(("project.html", f"research/{pr['slug']}/index.html", "research", pr["title"], {"item": pr}))
+    # Papers by author, from the complete publication list (h3 = year, li = paper)
+    paper_rows = []
+    if "publications" in archive:
+        year = ""
+        for m in re.finditer(r"<h3>(.*?)</h3>|<li>(.*?)</li>", archive["publications"]["body"], re.S):
+            if m.group(1):
+                year = re.sub("<[^>]+>", "", m.group(1)).strip()
+            else:
+                paper_rows.append((year, m.group(2).strip()))
+
+    def papers_for(name):
+        clean = re.sub(r"\(.*?\)", " ", name)
+        words = [w for w in re.sub(r"[^A-Za-z\- ]", " ", clean).split() if w.lower() not in ("md", "dr", "prof")]
+        if len(words) < 2:
+            return []
+        surname, given = words[-1], words[:-1]
+        initials = "|".join(sorted({w[0].upper() for w in given}))
+        pat = re.compile(rf"\b{re.escape(surname)},\s*(?:{initials})\.")
+        found = {}
+        for y, html_ in paper_rows:
+            if pat.search(re.sub("<[^>]+>", "", html_)):
+                found.setdefault(y, []).append(html_)
+        return list(found.items())
+
+    by_slug = {pe["slug"]: pe for pe in profiles}
+    member_pages = {}
+    for g in members:
+        for p in g["people"]:
+            slug = (p["profile"].strip("/").split("/")[-1] if p["profile"]
+                    else re.sub(r"[^a-z0-9]+", "-", re.sub(r"\(.*?\)", "", p["name"]).lower()).strip("-"))
+            p["profile"] = f"/members/{slug}/"
+            member_pages[slug] = (p, g["group"])
+    for slug, (p, group) in member_pages.items():
+        item = dict(by_slug.get(slug, {"title": p["name"], "body": "", "slug": slug}))
+        item["member"] = p
+        item["group"] = group
+        item["papers"] = [] if group == "Principal Investigator" else papers_for(p["name"])
+        pages.append(("person.html", f"members/{slug}/index.html", "members", p["name"], {"item": item}))
     for pe in profiles:
-        pages.append(("person.html", f"members/{pe['slug']}/index.html", "members", pe["title"], {"item": pe}))
+        if pe["slug"] in member_pages:
+            continue
+        item = dict(pe)
+        item["member"] = None
+        item["papers"] = papers_for(pe["title"])
+        pages.append(("person.html", f"members/{pe['slug']}/index.html", "members", pe["title"], {"item": item}))
     # The full list is now on /publications/ itself; /publications/all/ forwards there.
 
     preview = "--preview" in sys.argv

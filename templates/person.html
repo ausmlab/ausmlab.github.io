@@ -1,9 +1,39 @@
 {% extends "base.html" %}
 {% from "_article.html" import article_head %}
 {% block main %}
+{% set m = item.member %}
+{% if m %}
+<section class="wrap section profile-head">
+  {% if m.photo %}<img class="profile-photo" src="{{ url('/images/people/' ~ (m.get('photo_large') or m.photo)) }}" alt="{{ m.name }}">
+  {% else %}<div class="profile-photo person-nophoto" role="img" aria-label="{{ m.name }}"><span class="initials">{{ m.initials }}</span></div>{% endif %}
+  <div class="profile-card">
+    <p class="mono accent">{{ item.group | upper }}</p>
+    <h1>{{ m.name }}</h1>
+    <p class="profile-role">{{ m.role }}{% if m.since %} · since {{ m.since }}{% endif %}</p>
+    {% if m.history %}<ul class="history">{% for h in m.history %}<li>{{ h }}</li>{% endfor %}</ul>{% endif %}
+    {% if m.interests %}<p class="label">RESEARCH INTERESTS</p><p>{{ m.interests }}</p>{% endif %}
+    <p class="profile-links">
+      {% if m.email %}<a href="mailto:{{ m.email }}">{{ m.email }}</a>{% endif %}
+      {% if m.get("github") %}<a href="{{ m.github }}">GitHub</a>{% endif %}
+      {% if m.website %}<a href="{{ m.website }}">{{ m.get("website_label") or "Website" }}</a>{% endif %}
+    </p>
+  </div>
+</section>
+<article class="wrap narrow prose profile">
+  {% for b in m.get("bio", []) %}<p>{{ b }}</p>{% endfor %}
+  {% if m.get("projects") %}<h3>Current projects</h3><ul>{% for x in m.projects %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  {% if item.body and not m.get("bio") %}<h3>More about {{ m.name.split(" ")[0] }}</h3>{{ fix(item.body | replace_imgs) }}{% endif %}
+{% else %}
 {{ article_head("MEMBER PROFILE", item.title) }}
 <article class="wrap narrow prose section profile">
   {{ fix(item.body) }}
+{% endif %}
+  {% if item.papers %}
+  <h3 id="papers">Publications <span class="muted small">({{ item.papers | sum(attribute=1, start=[]) | length }})</span></h3>
+  <div class="profile-papers">
+    {% for y, rows in item.papers %}<h4>{{ y }}</h4><ul>{% for r in rows %}<li>{{ fix(r) }}</li>{% endfor %}</ul>{% endfor %}
+  </div>
+  {% endif %}
   <p class="back"><a href="{{ url('/members/') }}">← All members</a></p>
 </article>
 {% endblock %}

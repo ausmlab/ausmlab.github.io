@@ -278,6 +278,19 @@ a.plain:hover { color: var(--accent); }
 .theme-switcher button { min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: transparent; color: #fff; font: inherit; cursor: pointer; }
 .theme-switcher button[aria-pressed="true"] { background: #fff; color: #111; }
 
+/* Member profile pages */
+.profile-head { display: grid; grid-template-columns: minmax(200px, 340px) minmax(0, 1fr); gap: clamp(28px, 4vw, 56px); align-items: start; }
+.profile-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; display: flex; align-items: center; justify-content: center; background: var(--ph); }
+.profile-card { display: flex; flex-direction: column; gap: 10px; }
+.profile-card h1 { font-size: clamp(30px, 3.6vw, 44px); }
+.profile-role { color: var(--accent); font-weight: 500; }
+.profile-card .label { margin: 10px 0 0; }
+.profile-links { display: flex; gap: 18px; flex-wrap: wrap; font-weight: 500; }
+.profile-papers h4 { margin-top: 1.4em; color: var(--accent); }
+.profile-papers ul { list-style: none; padding: 0; }
+.profile-papers li { padding: 8px 0; border-bottom: 1px solid var(--line); font-size: 15px; line-height: 1.55; }
+@media (max-width: 760px) { .profile-head { grid-template-columns: minmax(0, 1fr); } .profile-photo { max-width: 280px; } }
+
 /* Footer */
 .footer { margin-top: clamp(72px, 8vw, 120px); border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; line-height: 1.7; }
 main:has(> .band-dark:last-child) + .footer { margin-top: 0; }

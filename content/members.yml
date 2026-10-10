@@ -7,7 +7,11 @@
 #   interests: research interests
 #   projects:  current projects, one per line (optional)
 #   photo:     a file name in static/images/people/ (optional, square photo works best)
+#   bio:       one or more short paragraphs for the profile page (optional)
+#   github:    personal GitHub address (optional)
 #   email / website: optional
+# Every member gets a profile page. Their papers are found automatically in the
+# complete publication list by surname and initial (e.g. "Yoo, S.").
 #   lab_phd:   true if they earned their Ph.D. in this lab (used for the home-page count)
 # When someone leaves, move them to alumni.yml.
 
@@ -51,6 +55,12 @@
       role: Ph.D. student
       since: 2019
       interests: 3D object detection and point cloud understanding using deep learning
+      bio:
+        - "Sunghwan (Jacob) Yoo received the B.S. degree in Astrophysics and Statistics from the University of Toronto in 2018 and is pursuing the Ph.D. degree in the Department of Earth and Space Science and Engineering, York University. His research interests include computer vision, 3D point cloud semantic segmentation and diffusion models."
+      history:
+        - "2019–  Ph.D. student, York University"
+        - "2018  B.S., Astrophysics and Statistics, University of Toronto"
+      github: https://github.com/Yacovitch
       photo: jacob-yoo.jpg
       projects:
         - "YUPU: airborne LiDAR point-cloud upsampling benchmark (ECCV 2026 Workshop)"
@@ -60,6 +70,12 @@
       role: Ph.D. student
       since: 2022
       interests: 3D building rooftop reconstruction using deep learning
+      bio:
+        - "Moein has been a Ph.D. student in Earth and Space Science and Engineering at York University since May 2022. He received his B.Sc. in Geomatics Engineering and M.Sc. in Remote Sensing from the University of Isfahan, Iran. His research models buildings from overhead imagery and LiDAR using deep learning."
+      history:
+        - "2022–  Ph.D. student, York University"
+        - "M.Sc., Remote Sensing, University of Isfahan"
+        - "B.Sc., Geomatics Engineering, University of Isfahan"
       projects:
         - "LoD1 building reconstruction from airborne data"
         - "Transmission corridor mapping"
@@ -74,6 +90,12 @@
       role: Ph.D. student
       since: 2024
       interests: 3D urban modelling
+      bio:
+        - "Youssef joined Prof. Sohn's lab in September 2024. He received his B.S. in Systems and Biomedical Engineering from Cairo University. He has worked on polarized imaging and deep learning for landmine detection, and now on 3D urban modelling."
+      history:
+        - "2024–  York University"
+        - "2019–2024  B.S., Systems and Biomedical Engineering, Cairo University"
+      github: https://github.com/youssef-shaban
       projects:
         - "GeoPriorPC: building point clouds from nadir views (CVPR Workshops 2026)"
         - "Annotation tool for space situational awareness (K-SSA)"
