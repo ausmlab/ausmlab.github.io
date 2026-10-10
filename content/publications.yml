@@ -16,6 +16,13 @@
 
 papers:
   - year: 2026
+    type: Journal
+    authors: Axelrod, K. M., Gordon, M., Koushafar, M., Hao, J., Makar, P., Fathi, S., Sohn, G.
+    title: Evaluation of plume rise parameterizations in GEM-MACHv2 with analysis of image data using a deep convolutional neural network
+    venue: Geoscientific Model Development, 19(18), 8855–8876
+    link: https://doi.org/10.5194/gmd-19-8855-2026
+
+  - year: 2026
     type: Conference
     authors: Korny, Y., Yoo, S., Panangian, D., Bittner, K., Wichmann, A., Sohn, G.
     title: "GeoPriorPC: Nadir-view to 3D Point Cloud Reconstruction for Buildings via Two-Stage Diffusion Priors"
@@ -49,25 +56,35 @@ papers:
     type: Conference
     authors: Varghese, A., Ghorbanalivakili, M., Sohn, G.
     title: "The Emerging Role of Vision-Language Models in the Automation of Railway Asset Management: A Review and Future Perspective"
-    venue: ISPRS Archives, XLIX-B2-2026
+    venue: ISPRS Archives, XLIX-B2-2026, 745–753
+    link: https://doi.org/10.5194/isprs-archives-XLIX-B2-2026-745-2026
 
   - year: 2026
     type: Conference
     authors: Yoo, S., Sohn, G.
     title: Appearance-aware Scaling Diffusion Model for 3D Point Cloud Upsampling
-    venue: ISPRS Archives, XLIX-B2-2026
+    venue: ISPRS Archives, XLIX-B2-2026, 315–320
+    link: https://doi.org/10.5194/isprs-archives-XLIX-B2-2026-315-2026
 
   - year: 2026
     type: Conference
     authors: Korny, Y., Yoo, S., Sohn, G.
     title: Polarization-Aware Segmentation for Camouflaged Threat Detection from UAVs
-    venue: ISPRS Archives, XLIX-B2-2026
+    venue: ISPRS Archives, XLIX-B2-2026, 705–713
+    link: https://doi.org/10.5194/isprs-archives-XLIX-B2-2026-705-2026
 
   - year: 2026
     type: Journal
     authors: Hwang, M., Suthakar, V., Qashoa, R., Lee, R. S. K., Sohn, G.
     title: "Light-Curve Classification of Resident Space Objects for Space Situational Awareness: A Scoping Review"
     venue: Aerospace, 13(3), 287
+
+  - year: 2026
+    type: Preprint
+    authors: Sohn, G., Ghorbanalivakili, M., Varghese, A.
+    title: Triplet-based Railway Ego-path Instance Tracing using Learned Attraction Field Representation
+    venue: SSRN preprint
+    link: https://doi.org/10.2139/ssrn.6827662
 
   - year: 2026
     type: Dataset
