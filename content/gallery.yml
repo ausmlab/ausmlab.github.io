@@ -16,8 +16,10 @@ photos:
   - { file: "korny-msc-defence-2026-methods.jpg", title: "Stage 1: fine-tuning Stable Diffusion", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
   - { file: "korny-msc-defence-2026-start.jpg", title: "Opening the M.Sc. defence", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
   - { file: "korny-msc-defence-2026-thanks.jpg", title: "Questions from the committee", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
+  - { file: isprs-2026-group.jpg, title: "AUSM Lab at the XXV ISPRS Congress, Toronto", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-1.jpg, title: "XXV ISPRS Congress, Toronto", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-talk.jpg, title: "Talk on ego-path segmentation for autonomous trains", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
+  - { file: isprs-2026-talk-yoo.jpg, title: "Sunghwan (Jacob) Yoo presenting at ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-2.jpg, title: "ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-poster.jpg, title: "Poster session, ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-3.jpg, title: "Presentation at ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
