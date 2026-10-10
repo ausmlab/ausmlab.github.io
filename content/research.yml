@@ -124,7 +124,8 @@ partners:
     - "KICT | https://www.kict.re.kr/ | kict.png"
     - "Ministry of Land, Infrastructure and Transport (Korea) | https://www.molit.go.kr/ | ministry-of-land.png"
   Industry:
-    - "Teledyne Optech | https://www.teledyneoptech.com/ | teledyne-optech.png"
+    - "Teledyne Optech | https://www.teledyneoptech.com/ | teledyne-optech-logo.svg"
+    - "Teledyne FLIR | https://www.flir.com/ | teledyne-flir.svg"
     - "Thales | https://www.thalesgroup.com/en/countries/americas/canada | thales.png"
     - "Fugro | https://www.fugro.com/ | fugro.png"
     - "Mircom | https://www.mircom.com/ | mircom.png"
@@ -151,4 +152,4 @@ partners:
     - "CAR | http://car.lassonde.yorku.ca/ | car.png"
 
 # Shown as a strip on the home page
-home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/", "Aethon Aerial | https://www.aethonaerial.com/", "MOVE | https://lassonde.yorku.ca/move/", "SmartTO | https://www.yorku.ca/research/project/smartto/"]
+home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Teledyne FLIR | https://www.flir.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/", "Aethon Aerial | https://www.aethonaerial.com/", "MOVE | https://lassonde.yorku.ca/move/", "SmartTO | https://www.yorku.ca/research/project/smartto/"]
