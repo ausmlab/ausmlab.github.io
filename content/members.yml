@@ -84,6 +84,13 @@
       role: Ph.D. student
       since: 2024
       interests: Self-supervised segmentation using vision-language models
+      bio:
+        - "Ashley is a Ph.D. student at York University and a Data Scientist at Canadian National Railway (CN). At the 7th Toronto Machine Learning Summit (TMLS), she presented automated inspection of rail cars using computer vision and machine learning. Her Ph.D. research studies vision-language models for railway asset management."
+      history:
+        - "2024–  Ph.D. student, York University"
+        - "Data Scientist, Canadian National Railway (CN)"
+      talks:
+        - "Automated Inspection for Rail Cars Using Computer Vision and Machine Learning, 7th Toronto Machine Learning Summit (TMLS)"
       projects:
         - "Vision-language models for railway asset management (ISPRS 2026 review)"
       photo: ashley-varghese.jpg
