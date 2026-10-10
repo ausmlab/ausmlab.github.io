@@ -63,6 +63,7 @@
       projects:
         - "LoD1 building reconstruction from airborne data"
         - "Transmission corridor mapping"
+      photo: moein-sheikholeslami.jpg
     - name: Ashley Varghese
       role: Ph.D. student
       since: 2024
@@ -76,6 +77,7 @@
       projects:
         - "GeoPriorPC: building point clouds from nadir views (CVPR Workshops 2026)"
         - "Annotation tool for space situational awareness (K-SSA)"
+      photo: youssef-korny.jpg
     - name: Md. Ehsan Shahmi Chowdhury
       role: Ph.D. student
       since: 2026
