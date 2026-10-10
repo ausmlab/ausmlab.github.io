@@ -140,11 +140,19 @@ partners:
     - "Neptec Technologies |  | neptec.png"
     - "Lumibird | https://www.lumibird.com/ | lumibird.png"
     - "Aethon Aerial Solutions | https://www.aethonaerial.com/ | aethon-aerial.png"
+  Academic & Research Collaborators:
+    - "German Aerospace Center (DLR) | https://www.dlr.de/en | dlr.svg"
+    - "Leibniz University Hannover | https://www.uni-hannover.de/en/ | leibniz-hannover.png"
+    - "Yonsei University | https://www.yonsei.ac.kr/en_sc/ | yonsei-university.svg"
+    - "Hanyang University | https://www.hanyang.ac.kr/web/eng | hanyang-university.svg"
+    - "University of Waterloo | https://uwaterloo.ca/ | university-of-waterloo.svg"
+    - "The Seoul Institute | https://global.si.re.kr/ | "
   Affiliations:
     - "MOVE (Mobility Innovation Centre) | https://lassonde.yorku.ca/move/ | move.png"
     - "SmartTO | https://www.yorku.ca/research/project/smartto/ | smartto.png"
     - "CRESS | http://cress.info.yorku.ca/ | cress.png"
     - "ADERSIM | http://adersim.info.yorku.ca/ | adersim.png"
+    - "NSERC CREATE SMART | https://www.yorku.ca/research/project/smart/ | create-smart.png"
     - "CREATE DAV | https://www.createdav.com/ | create-dav.png"
     - "ISSUM | http://issum.yorku.ca/ | issum.png"
     - "Brain Alliance | https://brainalliance.ca/en/ | brain-alliance.png"
@@ -152,4 +160,4 @@ partners:
     - "CAR | http://car.lassonde.yorku.ca/ | car.png"
 
 # Shown as a strip on the home page
-home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Teledyne FLIR | https://www.flir.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/", "Aethon Aerial | https://www.aethonaerial.com/", "MOVE | https://lassonde.yorku.ca/move/", "SmartTO | https://www.yorku.ca/research/project/smartto/"]
+home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Teledyne FLIR | https://www.flir.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/", "Aethon Aerial | https://www.aethonaerial.com/", "MOVE | https://lassonde.yorku.ca/move/", "SmartTO | https://www.yorku.ca/research/project/smartto/", "NSERC CREATE SMART | https://www.yorku.ca/research/project/smart/", "DLR | https://www.dlr.de/en"]
