@@ -110,9 +110,10 @@
       since: 2024
       interests: 3D urban modelling
       bio:
-        - "Youssef joined Prof. Sohn's lab in September 2024. He received his B.S. in Systems and Biomedical Engineering from Cairo University. He has worked on polarized imaging and deep learning for landmine detection, and now on 3D urban modelling."
+        - "Youssef joined Prof. Sohn's lab in September 2024. He received his B.S. in Systems and Biomedical Engineering from Cairo University. He has worked on polarized imaging and deep learning for landmine detection. He completed his M.Sc. in June 2026 with a thesis on diffusion-based 3D building reconstruction from single nadir images, and continues on 3D urban modelling as a Ph.D. student."
       history:
-        - "2024–  York University"
+        - "2026–  Ph.D., York University"
+        - "2024–2026  M.Sc., York University"
         - "2019–2024  B.S., Systems and Biomedical Engineering, Cairo University"
       github: https://github.com/youssef-shaban
       projects:
