@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% from "_macros.html" import picture, page_hero, filters %}
 {% block main %}
-{{ page_hero("Gallery", "Field campaigns, conferences and lab life", "gallery/uxbridge-field-2.jpg", url) }}
+{% set cover = "gallery/ecce-app-challenge-2019.jpg" %}
+{{ page_hero("Gallery", "Field campaigns, conferences and lab life", cover, url) }}
 
-{% set fav = photos | selectattr("featured") | list %}
+{% set fav = photos | selectattr("featured") | rejectattr("path", "equalto", cover) | list %}
 {% if fav %}
 <section class="wrap section-tight">
   <div class="gallery-featured">
