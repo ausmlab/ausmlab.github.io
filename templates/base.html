@@ -32,7 +32,7 @@
     <nav id="mainnav" class="mainnav" aria-label="Main">
       {% for key, label, href in nav %}
       {% if href is string %}
-      <a href="{{ url(href) }}"{% if key == active %} aria-current="page"{% endif %}>{{ label }}</a>
+      <a href="{{ url(href) }}"{% if key == "join" %} class="nav-join"{% endif %}{% if key == active %} aria-current="page"{% endif %}>{{ label }}</a>
       {% else %}
       <div class="nav-more{% if active in href | map(attribute=0) | list %} is-active{% endif %}">
         <button type="button" class="nav-more-btn" aria-haspopup="true">{{ label }} <span aria-hidden="true">▾</span></button>

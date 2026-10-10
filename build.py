@@ -34,7 +34,7 @@ PAGES = [
     ("members.html", "members/index.html", "members", "Members"),
     ("news.html", "news/index.html", "news", "News & Events"),
     ("gallery.html", "gallery/index.html", "gallery", "Gallery"),
-    ("join.html", "join/index.html", "join", "Recruitment"),
+    ("join.html", "join/index.html", "join", "Join Us"),
     ("datasets.html", "datasets/index.html", "datasets", "Datasets & Code"),
     ("contact.html", "contact/index.html", "contact", "Contact"),
     ("404.html", "404.html", None, "Page not found"),
@@ -56,10 +56,8 @@ NAV = [
     ("news", "News", "/news/"),
     ("gallery", "Gallery", "/gallery/"),
     ("datasets", "Datasets & Code", "/datasets/"),
-    ("more", "More", [
-        ("join", "Recruitment", "/join/"),
-        ("contact", "Contact", "/contact/"),
-    ]),
+    ("contact", "Contact", "/contact/"),
+    ("join", "Join Us", "/join/"),
 ]
 
 MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()

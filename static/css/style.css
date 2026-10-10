@@ -614,3 +614,9 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 /* Research page: tighter */
 .logos li.has-logo > a, .logos li.has-logo > span { min-height: 80px; padding: 10px; }
 .logos li.has-logo img { max-height: 52px; }
+
+/* Join Us stands out in the top menu */
+.mainnav a.nav-join { background: var(--accent); color: #fff; padding: 9px 18px; border-radius: 4px; font-weight: 600; }
+.mainnav a.nav-join:hover, .mainnav a.nav-join[aria-current] { background: var(--accent-hover); color: #fff; text-decoration: none; }
+.mainnav a.nav-join[aria-current]::after { display: none; }
+@media (max-width: 760px) { .mainnav a.nav-join { text-align: center; margin-top: 8px; } }

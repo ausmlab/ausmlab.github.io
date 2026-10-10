@@ -138,8 +138,10 @@ partners:
     - "First Base Solutions |  | firstbase-solution.png"
     - "Neptec Technologies |  | neptec.png"
     - "Lumibird | https://www.lumibird.com/ | lumibird.png"
+    - "Aethon Aerial Solutions | https://www.aethonaerial.com/ | aethon-aerial.png"
   Affiliations:
-    - "MOVE | https://lassonde.yorku.ca/move | "
+    - "MOVE (Mobility Innovation Centre) | https://lassonde.yorku.ca/move/ | move.png"
+    - "SmartTO | https://www.yorku.ca/research/project/smartto/ | smartto.png"
     - "CRESS | http://cress.info.yorku.ca/ | cress.png"
     - "ADERSIM | http://adersim.info.yorku.ca/ | adersim.png"
     - "CREATE DAV | https://www.createdav.com/ | create-dav.png"
@@ -149,4 +151,4 @@ partners:
     - "CAR | http://car.lassonde.yorku.ca/ | car.png"
 
 # Shown as a strip on the home page
-home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/"]
+home_partners: ["NSERC | https://www.nserc-crsng.gc.ca/", "CFI | https://www.innovation.ca/", "Ontario Research Fund | https://www.ontario.ca/page/ontario-research-fund-research-excellence", "Mitacs | https://www.mitacs.ca/", "Transport Canada | https://tc.canada.ca/", "MTO | https://www.ontario.ca/page/ministry-transportation", "OCI | https://www.oc-innovation.ca/", "KRRI | https://www.krri.re.kr/", "KICT | https://www.kict.re.kr/", "Teledyne Optech | https://www.teledyneoptech.com/", "Thales | https://www.thalesgroup.com/en/countries/americas/canada", "Fugro | https://www.fugro.com/", "Esri Canada | https://www.esri.ca/", "Autodesk | https://www.autodesk.com/", "Aethon Aerial | https://www.aethonaerial.com/", "MOVE | https://lassonde.yorku.ca/move/", "SmartTO | https://www.yorku.ca/research/project/smartto/"]
