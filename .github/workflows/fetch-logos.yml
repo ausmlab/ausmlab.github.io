@@ -10,20 +10,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          mkdir -p fetched
+          rm -rf fetched; mkdir -p fetched2
           UA="AUSMLabSite/1.0 (gsohn@yorku.ca)"
-          for t in German_Aerospace_Center Yonsei_University Hanyang_University University_of_Waterloo; do
-            curl -fsSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages|images&piprop=original&imlimit=50&titles=$t" -o "fetched/$t.json" || true
-            u=$(python3 -c "import json,sys;d=json.load(open('fetched/$t.json'));p=list(d['query']['pages'].values())[0];print(p.get('original',{}).get('source',''))")
-            echo "$t -> $u"
-            [ -n "$u" ] && curl -fsSL -A "$UA" -o "fetched/$t.${u##*.}" "$u" || true
-            # also any file whose name has 'logo' or 'wordmark'
-            for f in $(python3 -c "import json;d=json.load(open('fetched/$t.json'));p=list(d['query']['pages'].values())[0];print(' '.join(i['title'].replace(' ','_') for i in p.get('images',[]) if any(k in i['title'].lower() for k in ('logo','wordmark','signature','emblem','seal'))))"); do
-              iu=$(curl -fsSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=$f" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];print(p.get('imageinfo',[{}])[0].get('url',''))")
-              echo "  $f -> $iu"
-              [ -n "$iu" ] && curl -fsSL -A "$UA" -o "fetched/${t}__$(basename "$iu")" "$iu" || true
-            done
+          curl -fsSL -A "Mozilla/5.0" -o fetched2/smart.png "https://www.yorku.ca/research/project/smart/wp-content/uploads/sites/1005/2025/09/a7a184ca-4005-4694-a7c5-2dc5161f177f-1.png" || echo smart failed
+          for q in "DLR logo" "Deutsches Zentrum fur Luft- und Raumfahrt logo" "Leibniz Universitat Hannover logo" "Seoul Institute logo"; do
+            curl -fsSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srnamespace=6&srlimit=6&srsearch=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")" | python3 -c "import json,sys;[print(r['title']) for r in json.load(sys.stdin)['query']['search']]" > "fetched2/search-${q// /_}.txt" || true
+            while read -r f; do
+              iu=$(curl -fsSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|size&titles=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$f")" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];ii=p.get('imageinfo',[{}])[0];print(ii.get('url','') if ii.get('size',10**9)<3000000 else '')")
+              echo "$q | $f -> $iu" >> fetched2/log.txt
+              n=$(basename "${iu%%\?*}"); [ -n "$iu" ] && curl -fsSL -A "$UA" -o "fetched2/$n" "$iu" || true
+            done < "fetched2/search-${q// /_}.txt"
           done
-          ls -la fetched
+          ls -la fetched2
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add fetched; git commit -m "Fetched logos" || true; git push
+          git add -A fetched fetched2; git commit -m "Fetched logos 2" || true; git push
