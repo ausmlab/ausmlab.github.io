@@ -98,7 +98,9 @@ def load_folder(folder):
 
 NEWS_CATEGORY = [("Defence", "Defence"), ("Recruitment", "Recruitment"), ("Lab Activity", "Lab Life"), ("Outreaching", "Lab Life"),
                  ("Conference", "Event"), ("Undergraduate Student", "People"),
-                 ("Undergraudate Internship", "People"), ("Research", "Research")]
+                 ("Undergraudate Internship", "People"), ("Publication", "Publication"),
+                 ("Event", "Event"), ("Talks", "Event"), ("Funding", "Funding"), ("Awards", "Award"),
+                 ("SMART CREATE", "Research"), ("Research", "Research")]
 
 
 def news_category(cats, title):
@@ -207,11 +209,12 @@ def build():
     for p in posts:
         news.append({"date": p["date"], "category": p["category"], "title": p["title"],
                      "text": p["summary"], "image": p["image"] and (p["image"] if "/" in p["image"] or (ROOT / "static" / "images" / p["image"]).exists() else "wp/" + p["image"]),
-                     "link": p["url"], "featured": bool(p.get("featured"))})
+                     "link": p["url"], "featured": bool(p.get("featured")), "logo": p.get("logo", "")})
     for n in news:
         n["sort"], n["year"], n["date_label"] = parse_date(n["date"])
         n.setdefault("text", "")
         n.setdefault("image", "")
+        n.setdefault("logo", "")
         n.setdefault("link", "")
     news.sort(key=lambda n: n["sort"], reverse=True)
     featured_news = next((n for n in news if n.get("featured")), news[0] if news else None)

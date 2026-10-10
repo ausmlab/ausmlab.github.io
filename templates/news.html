@@ -6,7 +6,7 @@
 
 {% if featured_news %}
 <section class="wrap split section">
-  {% if featured_news.image %}{{ picture(url, featured_news.image, featured_news.title, "ph ph-tall") }}{% else %}<div class="ph ph-tall news-fallback" role="img" aria-label="{{ featured_news.title }}"><span class="mono small">{{ featured_news.category | upper }}</span><span class="news-fallback-title">{{ featured_news.title }}</span></div>{% endif %}
+  {% if featured_news.image %}{{ picture(url, featured_news.image, featured_news.title, "ph ph-tall") }}{% elif featured_news.logo %}<div class="ph ph-tall news-logo"><img src="{{ url('/images/' ~ featured_news.logo) }}" alt="" loading="lazy"></div>{% else %}<div class="ph ph-tall news-fallback" role="img" aria-label="{{ featured_news.title }}"><span class="mono small">{{ featured_news.category | upper }}</span><span class="news-fallback-title">{{ featured_news.title }}</span></div>{% endif %}
   <div class="stack">
     <p class="mono accent">{{ featured_news.date_label | upper }} · {{ featured_news.category | upper }}</p>
     <h2>{{ featured_news.title }}</h2>
@@ -23,7 +23,7 @@
     <div>
       {% for n in items %}
       <article class="newsitem">
-        <a class="news-thumb" href="{{ url(n.link) if n.link else '#' }}" tabindex="-1" aria-hidden="true">{% if n.image %}{{ picture(url, n.image, n.title, "ph ph-thumb") }}{% else %}<div class="ph ph-thumb news-fallback" role="img" aria-label="{{ n.title }}"><span class="mono small">{{ n.category | upper }}</span><span class="news-fallback-title">{{ n.title }}</span></div>{% endif %}</a>
+        <a class="news-thumb" href="{{ url(n.link) if n.link else '#' }}" tabindex="-1" aria-hidden="true">{% if n.image %}{{ picture(url, n.image, n.title, "ph ph-thumb") }}{% elif n.logo %}<div class="ph ph-thumb news-logo"><img src="{{ url('/images/' ~ n.logo) }}" alt="" loading="lazy"></div>{% else %}<div class="ph ph-thumb news-fallback" role="img" aria-label="{{ n.title }}"><span class="mono small">{{ n.category | upper }}</span><span class="news-fallback-title">{{ n.title }}</span></div>{% endif %}</a>
         <div>
           <p class="newsmeta"><span class="mono muted">{{ n.date_label }}</span><span class="tag">{{ n.category | upper }}</span></p>
           <h3>{% if n.link %}<a href="{{ url(n.link) }}">{{ n.title }}</a>{% else %}{{ n.title }}{% endif %}</h3>
