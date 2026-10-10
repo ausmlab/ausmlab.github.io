@@ -37,6 +37,17 @@
       </div>
       {% endfor %}
     </div>
+    {% if t.key_papers %}
+    <div class="key-papers">
+      <p class="label">KEY PAPERS</p>
+      <ul>
+        {% for kp in t.key_papers %}
+        <li>{% if kp.link %}<a href="{{ kp.link }}">{{ kp.title }}</a>{% else %}{{ kp.title }}{% endif %}<br><span class="muted small">{{ kp.authors }} · <em>{{ kp.venue_short or kp.venue }}</em>{% if kp.venue_short %}, {{ kp.year }}{% endif %}</span></li>
+        {% endfor %}
+      </ul>
+      <a class="more" href="{{ url('/publications/') }}">All publications →</a>
+    </div>
+    {% endif %}
   </div>
 </section>
 {% endfor %}

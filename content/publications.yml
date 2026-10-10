@@ -37,6 +37,7 @@ papers:
     authors: Suthakar, V., Kunalakantha, P., Lee, R. S. K., Sohn, G.
     title: An On-Orbit Star Tracker Benchmark for Resident Space Object Detection and Attitude Estimation
     venue: Scientific Data, 2026
+    link: https://doi.org/10.1038/s41597-026-07736-9
     featured: true
     short: On-Orbit Star Tracker Benchmark
     venue_short: Scientific Data
@@ -78,6 +79,7 @@ papers:
     authors: Hwang, M., Suthakar, V., Qashoa, R., Lee, R. S. K., Sohn, G.
     title: "Light-Curve Classification of Resident Space Objects for Space Situational Awareness: A Scoping Review"
     venue: Aerospace, 13(3), 287
+    link: https://doi.org/10.3390/aerospace13030287
 
   - year: 2026
     type: Preprint
@@ -109,6 +111,7 @@ papers:
     authors: Yoo, S., Jeong, Y., Sheikholeslami, M. M., Sohn, G.
     title: "EyeNet++: A Multiscale and Multidensity Approach for Outdoor 3-D Semantic Segmentation Inspired by the Human Visual Field"
     venue: IEEE Transactions on Geoscience and Remote Sensing, 63, 1–19
+    link: https://doi.org/10.1109/TGRS.2025.3589287
     code: https://github.com/ausmlab/EyeNetPlus
     featured: true
     short: EyeNet++
@@ -119,13 +122,15 @@ papers:
     type: Journal
     authors: Jeong, Y. J., Suthakar, V., Qashoa, R., Sohn, G., Lee, R. S. K.
     title: "OrbitTrack: Advanced RSO Detection and Tracking from Wide Field-of-view On-orbit Images"
-    venue: Advances in Space Research
+    venue: Advances in Space Research, 76(8), 4387–4400
+    link: https://doi.org/10.1016/j.asr.2025.08.006
 
   - year: 2025
     type: Journal
     authors: Yang, S., Usman, M., Hassan, A., Sohn, G., Faloutsos, P., Haworth, B.
     title: Digital Twin-based Evaluation of Tactical Interventions for High-density Pedestrian Environments
     venue: Geo-spatial Information Science, 1–19
+    link: https://doi.org/10.1080/10095020.2025.2600195
 
   - year: 2025
     type: Journal
@@ -149,7 +154,8 @@ papers:
     type: Conference
     authors: Kamran, M., Sheikholeslami, M. M., Sohn, G.
     title: "PolyAttractNet: Graph-Based Polygonal Segmentation of Building Footprints Using Attraction Field Maps"
-    venue: ISPRS Archives, 2025
+    venue: ISPRS Archives, XLVIII-G-2025, 765–771
+    link: https://doi.org/10.5194/isprs-archives-XLVIII-G-2025-765-2025
 
   - year: 2025
     type: Preprint

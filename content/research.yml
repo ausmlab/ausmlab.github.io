@@ -6,6 +6,7 @@
 #              "| open" at the end to show "Looking for students" with a link to Join Us.
 # applications: where the work is used
 # foundation:  the grant that supports all of it
+# papers:      under a pillar, 3–4 key papers. Each line is part of a title in publications.yml.
 
 vision:
   title: Structured Spatial World Models
@@ -25,6 +26,11 @@ pillars:
       - "Resident space object (RSO) tiny-object detection | Youssef Beshir | K-SSA, with Prof. Regina Lee's lab"
       - "Pedestrian trajectory sensing | Mohammadjavad Ghorbanalivakili | OCI C2C, with Hanyang University"
       - "Quality-aware drone mapping |  |  | open"
+    papers:
+      - "YUTO MMS"
+      - "On-Orbit Star Tracker Benchmark"
+      - "OrbitTrack"
+      - "Polarization-Aware Segmentation"
 
   - id: model
     short: 3D World Model
@@ -39,6 +45,11 @@ pillars:
       - "Single-view 3D reconstruction with diffusion priors (GeoPriorPC) | Youssef Korny | NSERC Discovery"
       - "Diffusion models for RSO imagery | Merna Tamer Youssef | K-SSA, with Prof. Regina Lee's lab"
       - "Gaussian splatting for 3D city models |  |  | open"
+    papers:
+      - "GeoPriorPC"
+      - "EyeNet++"
+      - "PolyAttractNet"
+      - "Appearance-aware Scaling Diffusion"
 
   - id: action
     short: Prediction · Action
@@ -53,6 +64,10 @@ pillars:
       - "Vision-language models for railways | Mohammadjavad Ghorbanalivakili, Ashley Varghese | "
       - "Autonomous mapping agents |  |  | open"
       - "3D-grounded vision-language-action models |  |  | open"
+    papers:
+      - "Reasoning-guided Ego-path Segmentation"
+      - "Digital Twin-based Evaluation of Tactical Interventions"
+      - "The Emerging Role of Vision-Language Models"
 
 loop_note: Results of action feed back into sensing, closing the loop.
 

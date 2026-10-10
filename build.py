@@ -274,6 +274,14 @@ def build():
         for k in ("image", "question", "body"):
             t.setdefault(k, "")
         t.setdefault("image_note", t["title"])
+        # Key papers: each line is a piece of a title in publications.yml
+        kp = []
+        for q in t.get("papers", []) or []:
+            m = next((pp for pp in papers if q.lower() in pp["title"].lower()), None)
+            if m is None:
+                raise SystemExit(f"research.yml: no publication matches {q!r}")
+            kp.append(m)
+        t["key_papers"] = kp
     vision = research.get("vision", {})
     for k in ("title", "lead", "flagship"):
         vision.setdefault(k, "")
