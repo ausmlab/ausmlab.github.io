@@ -19,9 +19,10 @@ photos:
   - { file: isprs-2026-group.jpg, title: "AUSM Lab at the XXV ISPRS Congress, Toronto", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-1.jpg, title: "XXV ISPRS Congress, Toronto", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-talk.jpg, title: "Talk on ego-path segmentation for autonomous trains", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
-  - { file: isprs-2026-talk-yoo.jpg, title: "Sunghwan (Jacob) Yoo presenting at ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
+  - { file: isprs-2026-talk-2.jpg, title: "Paper session, ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
+  - { file: isprs-2026-teledyne.jpg, title: "Teledyne Optech booth in the exhibition hall", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-2.jpg, title: "ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
-  - { file: isprs-2026-poster.jpg, title: "Poster session, ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
+  - { file: isprs-2026-poster.jpg, title: "Ashley Varghese presents her poster on vision-language models for railway asset management", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: isprs-2026-3.jpg, title: "Presentation at ISPRS Congress 2026", date: "Jul 2026", category: Conferences, event: "XXV ISPRS Congress 2026, Toronto" }
   - { file: tac-its-2019.jpg, title: "TAC-ITS Canada Joint Conference", date: "Sep 2019", category: Conferences, event: "TAC-ITS Canada Joint Conference 2019" }
   - { file: uxbridge-field-2.jpg, title: "YDHR field work, Uxbridge", date: "May 2019", category: Research Activities, event: "YDHR field work, Uxbridge 2019" }
