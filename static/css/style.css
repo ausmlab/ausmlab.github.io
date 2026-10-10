@@ -645,3 +645,15 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 
 /* Home hero photo: keep faces and the drone in view */
 .hero-simple { background-position: center 35%; }
+
+/* Join Us: poster shown next to the posting */
+.position.has-poster { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px); column-gap: clamp(28px, 4vw, 56px); row-gap: 28px; align-items: start; }
+.position.has-poster > * { grid-column: 1; }
+.position.has-poster > .position-poster { grid-column: 2; grid-row: 1 / span 4; margin: 0; position: sticky; top: 96px; }
+.position-poster img { width: 100%; height: auto; display: block; border-radius: 6px; box-shadow: 0 14px 34px rgba(0,0,0,.18); }
+.position-poster figcaption { margin-top: 10px; font-size: 14px; color: var(--muted); text-align: center; }
+.position.has-poster .focus { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 900px) {
+  .position.has-poster { grid-template-columns: minmax(0, 1fr); }
+  .position.has-poster > .position-poster { grid-column: 1; grid-row: auto; position: static; max-width: 420px; justify-self: center; order: 9; }
+}
