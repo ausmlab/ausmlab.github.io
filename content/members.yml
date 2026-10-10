@@ -53,7 +53,10 @@
       history:
         - "Ph.D., York University, 2019 (AUSM Lab): 3D indoor modelling from optical point clouds"
         - "Postdoctoral Fellow, Y-EMERGE, York University"
-      interests: ""
+      interests: GeoAI for transportation infrastructure
+      photo: ali-baligh-jahromi.jpg
+      projects:
+        - "GeoAI project with the Ontario Ministry of Transportation (MTO)"
 
 - group: Ph.D. Students
   people:
