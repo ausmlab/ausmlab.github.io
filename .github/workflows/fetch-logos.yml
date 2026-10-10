@@ -1,0 +1,29 @@
+name: Fetch partner logos
+on:
+  push:
+    branches: [fetch-logos-3]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p fetched
+          UA="AUSMLabSite/1.0 (gsohn@yorku.ca)"
+          for t in German_Aerospace_Center Yonsei_University Hanyang_University University_of_Waterloo; do
+            curl -fsSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages|images&piprop=original&imlimit=50&titles=$t" -o "fetched/$t.json" || true
+            u=$(python3 -c "import json,sys;d=json.load(open('fetched/$t.json'));p=list(d['query']['pages'].values())[0];print(p.get('original',{}).get('source',''))")
+            echo "$t -> $u"
+            [ -n "$u" ] && curl -fsSL -A "$UA" -o "fetched/$t.${u##*.}" "$u" || true
+            # also any file whose name has 'logo' or 'wordmark'
+            for f in $(python3 -c "import json;d=json.load(open('fetched/$t.json'));p=list(d['query']['pages'].values())[0];print(' '.join(i['title'].replace(' ','_') for i in p.get('images',[]) if any(k in i['title'].lower() for k in ('logo','wordmark','signature','emblem','seal'))))"); do
+              iu=$(curl -fsSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=$f" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];print(p.get('imageinfo',[{}])[0].get('url',''))")
+              echo "  $f -> $iu"
+              [ -n "$iu" ] && curl -fsSL -A "$UA" -o "fetched/${t}__$(basename "$iu")" "$iu" || true
+            done
+          done
+          ls -la fetched
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add fetched; git commit -m "Fetched logos" || true; git push
