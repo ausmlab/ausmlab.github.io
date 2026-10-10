@@ -58,6 +58,25 @@
   </div>
 </section>
 
+
+{% if join.get("funding") %}
+<section class="wrap section" id="funding">
+  <div class="section-head"><h2>Funding opportunities</h2></div>
+  <div class="funding-grid">
+    {% for group, items in join.funding.items() %}
+    <div class="funding-col">
+      <p class="label">{{ group | upper }}</p>
+      <ul class="funding-list">
+        {% for line in items %}{% set f = line.split(" | ") %}
+        <li><a href="{{ f[1] }}"{% if f[1].startswith("http") %} target="_blank" rel="noopener"{% endif %}>{{ f[0] }}</a>{% if f|length > 2 and f[2] %}<span>{{ f[2] }}</span>{% endif %}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 <section class="band band-dark">
   <div class="wrap split">
     <div class="stack">

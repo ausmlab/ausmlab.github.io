@@ -20,3 +20,19 @@ steps:
   - Representative publications or project work, if available
   - "Email them to Prof. Gunho Sohn at gsohn@yorku.ca. Use the subject line “Prospective [Ph.D./M.Sc./Postdoc] – Your Name.”"
 create_smart: Graduate admission is through the Department of Earth and Space Science and Engineering (ESSE) at the Lassonde School of Engineering. Trainees may also be eligible for the MOVE-affiliated NSERC CREATE SMART training program, which offers enhanced stipends, industry internships, and exchange opportunities.
+
+# Funding opportunities shown on the Join Us page.
+# Each line: "Name | web address | one short note". Updated Oct 2026 from gunhosohn.me/recruitment.
+funding:
+  Postdoctoral fellows:
+    - "Postdoctoral positions in the lab | mailto:gsohn@yorku.ca?subject=Prospective%20Postdoc | Email Prof. Sohn with your CV and research plan"
+    - "Canada Postdoctoral Research Award (CPRA) | https://nserc-crsng.canada.ca/en/news/launch-new-harmonized-tri-agency-scholarship-and-fellowship-programs | Tri-agency award that replaced the Banting and NSERC postdoctoral fellowships"
+    - "Mitacs Accelerate Fellowship | https://www.mitacs.ca/en/programs/accelerate/fellowships | Industry-partnered postdoctoral funding"
+  Graduate students:
+    - "NSERC CREATE SMART | https://www.yorku.ca/research/project/smart/ | Enhanced stipends, industry internships and exchanges"
+    - "Tri-agency graduate scholarships | https://www.yorku.ca/gradstudies/2025/07/17/tri-agency-grad-postdoc-funding-updates/ | Canada Graduate Research Scholarships (formerly CGS)"
+    - "York graduate awards (OGS, Carswell, Enbridge and more) | https://www.yorku.ca/gradstudies/awards/ | Faculty of Graduate Studies awards list"
+  Undergraduate students:
+    - "LURA and NSERC USRA summer research | https://lassonde.yorku.ca/wp-content/uploads/2026-Guidelines-for-Students-Summer-UG-Research-Programs-1.pdf | Lassonde summer research awards, usually due in February"
+    - "Research at York (RAY) | https://sfs.yorku.ca/employment/ray | Paid research assistant positions for York students"
+    - "Mitacs Globalink Research Internship | https://www.mitacs.ca/our-programs/globalink-research-internship/ | Summer research in Canada for international undergraduates"
