@@ -7,7 +7,7 @@ affiliation: York University · Lassonde
 url: https://ausmlab.com
 # Web address printed on recruiting posters. Change to https://ausmlab.com once that
 # domain shows this site, then run: python tools/make_posters.py
-poster_url: https://ausmlab.github.io
+poster_url: https://ausmlab.com
 
 # Look of the whole site: leave empty for the image-led design, or use
 # modern, academic, york or dark.
