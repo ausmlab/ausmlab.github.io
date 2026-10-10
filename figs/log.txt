@@ -1,0 +1,23 @@
+== gmd 365639
+<meta property="og:image" content="https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026-avatar-web.png"/>
+<meta property="twitter:image" content="https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026-avatar-web.png"/>
+img=https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026-avatar-web.png
+== scidata 212544
+img=
+https://media.springernature.com/w215h120/springer-static/image/art%3A10.1038%2Fs41598-022-25859-y/MediaObjects/41598_2022_25859_Fig1_HTML.png
+https://media.springernature.com/w215h120/springer-static/image/art%3A10.1038%2Fs41597-025-06056-8/MediaObjects/41597_2025_6056_Fig1_HTML.png
+== aerospace 400
+img=
+figs/gmd-avatar.png:   PNG image data, 500 x 600, 8-bit colormap, non-interlaced
+figs/gmd.img:          PNG image data, 500 x 600, 8-bit colormap, non-interlaced
+figs/gmd.pdf:          PDF document, version 1.5
+figs/log.txt:          ASCII text
+figs/scidata-fig1.png: PNG image data, 215 x 120, 8-bit/color RGB, non-interlaced
+total 3476
+drwxr-xr-x 2 runner runner    4096 Oct 10 16:57 .
+drwxr-xr-x 9 runner runner    4096 Oct 10 16:57 ..
+-rw-r--r-- 1 runner runner   71672 Oct 10 16:57 gmd-avatar.png
+-rw-r--r-- 1 runner runner   71672 Oct 10 16:57 gmd.img
+-rw-r--r-- 1 runner runner 3352952 Oct 10 16:57 gmd.pdf
+-rw-r--r-- 1 runner runner     999 Oct 10 16:57 log.txt
+-rw-r--r-- 1 runner runner   41306 Oct 10 16:57 scidata-fig1.png
