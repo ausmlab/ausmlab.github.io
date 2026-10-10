@@ -21,6 +21,9 @@ papers:
     title: Evaluation of plume rise parameterizations in GEM-MACHv2 with analysis of image data using a deep convolutional neural network
     venue: Geoscientific Model Development, 19(18), 8855–8876
     link: https://doi.org/10.5194/gmd-19-8855-2026
+    image: news/paper-gmd-plume-card.jpg
+    short: Plume Rise from Images with Deep Learning
+    venue_short: Geoscientific Model Development
 
   - year: 2026
     type: Conference
@@ -29,6 +32,7 @@ papers:
     venue: Proceedings of the IEEE/CVF CVPR Workshops, 2026
     featured: true
     short: GeoPriorPC
+    image: paper-geopriorpc.jpg
     link: https://openaccess.thecvf.com/content/CVPR2026W/USM3D/html/Korny_GeoPriorPC_Nadir-view_to_3D_Point_Cloud_Reconstruction_for_buildings_via_CVPRW_2026_paper.html
     venue_short: CVPR Workshops
 

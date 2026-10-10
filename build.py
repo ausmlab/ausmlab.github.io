@@ -260,9 +260,8 @@ def build():
         try: return int(str(p.get("year", 0))[:4])
         except ValueError: return 0
     _with_img = [p for p in papers if p.get("image")]
-    home_papers = sorted([p for p in _with_img if p.get("featured")], key=_py, reverse=True)
-    home_papers += [p for p in sorted(_with_img, key=_py, reverse=True) if p not in home_papers]
-    home_papers = home_papers[:3]
+    # Home page: the newest papers that have a picture; within the same year, featured ones first
+    home_papers = sorted(_with_img, key=lambda p: (_py(p), bool(p.get("featured"))), reverse=True)[:3]
     pub_types = [t for t in ("Journal", "Conference", "Preprint", "Dataset") if any(p["type"] == t for p in papers)]
 
     # Research
