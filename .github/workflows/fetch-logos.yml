@@ -10,16 +10,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          rm -rf fetched fetched2; mkdir -p fetched2
+          set +e
+          rm -rf fetched fetched2; mkdir -p fetched3
           UA="AUSMLabSite/1.0 (gsohn@yorku.ca)"
-                    for q in "Jade Hochschule logo" "Jade University of Applied Sciences logo"; do
-            curl -fsSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srnamespace=6&srlimit=6&srsearch=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")" | python3 -c "import json,sys;[print(r['title']) for r in json.load(sys.stdin)['query']['search']]" > "fetched2/search-${q// /_}.txt" || true
+          for t in Jade_University_of_Applied_Sciences Université_de_Sherbrooke; do
+            curl -sSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&redirects=1&prop=images&imlimit=60&titles=$t" -o fetched3/$t.json
+            python3 - "$t" <<'PY' > fetched3/$t.list
+          import json,sys
+          d=json.load(open(f"fetched3/{sys.argv[1]}.json"))
+          for p in d.get('query',{}).get('pages',{}).values():
+              for i in p.get('images',[]):
+                  n=i['title']
+                  if any(k in n.lower() for k in ('logo','wordmark','signature')) and 'commons-logo' not in n.lower():
+                      print(n.replace(' ','_'))
+          PY
             while read -r f; do
-              iu=$(curl -fsSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|size&titles=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$f")" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];ii=p.get('imageinfo',[{}])[0];print(ii.get('url','') if ii.get('size',10**9)<3000000 else '')")
-              echo "$q | $f -> $iu" >> fetched2/log.txt
-              n=$(basename "${iu%%\?*}"); [ -n "$iu" ] && curl -fsSL -A "$UA" -o "fetched2/$n" "$iu" || true
-            done < "fetched2/search-${q// /_}.txt"
+              iu=$(curl -sSL -A "$UA" "https://en.wikipedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url&titles=$f" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];print(p.get('imageinfo',[{}])[0].get('url',''))")
+              echo "$t | $f -> $iu" >> fetched3/log.txt
+              [ -n "$iu" ] && curl -sSL -A "$UA" -o "fetched3/$(basename "${iu%%\?*}")" "$iu"
+            done < fetched3/$t.list
           done
-          ls -la fetched2
+          ls -la fetched3
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A fetched fetched2; git commit -m "Fetched logos 2" || true; git push
+          git add -A .; git commit -m "Fetched logos 3"; git push
