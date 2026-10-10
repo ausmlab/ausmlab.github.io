@@ -21,7 +21,7 @@
 </section>
 <article class="wrap narrow prose profile">
   {% for b in m.get("bio", []) %}<p>{{ b }}</p>{% endfor %}
-  {% if m.get("talks") %}<h3>Talks</h3><ul>{% for x in m.talks %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  {% if m.get("talks") %}<h3>Talks</h3><ul>{% for x in m.talks %}<li>{{ x }}</li>{% endfor %}</ul>{% for ti in m.get("talk_images", []) %}{% set tp = ti.split(" | ") %}<figure class="talk-figure"><img src="{{ url('/images/' ~ tp[0]) }}" alt="{{ tp[1] if tp|length > 1 else 'Talk' }}" loading="lazy">{% if tp|length > 1 %}<figcaption>{{ tp[1] }}</figcaption>{% endif %}</figure>{% endfor %}{% endif %}
   {% if m.get("projects") %}<h3>Current projects</h3><ul>{% for x in m.projects %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
   {% if item.body and not m.get("bio") %}<h3>More about {{ m.name.split(" ")[0] }}</h3>{{ fix(item.body | replace_imgs) }}{% endif %}
 {% else %}

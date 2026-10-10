@@ -100,6 +100,8 @@
         - "Data Scientist, Canadian National Railway (CN)"
       talks:
         - "Automated Inspection for Rail Cars Using Computer Vision and Machine Learning, 7th Toronto Machine Learning Summit (TMLS)"
+      talk_images:
+        - "talks/ashley-varghese-tmls.jpg | Speaker card, 7th Toronto Machine Learning Summit"
       projects:
         - "Vision-language models for railway asset management (ISPRS 2026 review)"
       photo: ashley-varghese.jpg

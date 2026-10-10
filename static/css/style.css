@@ -697,3 +697,9 @@ img.ph-data { object-fit: cover; background: var(--dark); }
 /* News photos: keep heads in the frame (crop from the bottom, not the top) */
 .news-card img, .news-thumb img, img.ph-thumb, .news-feature img, img.ph-tall:not(.ph-theme) { object-position: center 22%; }
 img.ph-tall { object-fit: cover; }
+
+/* Profile: picture for a talk */
+.talk-figure { display: block; margin: 16px 0 0; max-width: 640px; }
+.talk-figure img { max-height: none; flex: none; }
+.talk-figure img { width: 100%; border-radius: 6px; box-shadow: 0 8px 22px rgba(0,0,0,.12); }
+.talk-figure figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
