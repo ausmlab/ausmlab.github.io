@@ -1,0 +1,21 @@
+name: Fetch partner logos
+on:
+  push:
+    branches: [fetch-logos]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p fetched
+          curl -fsSL -A "Mozilla/5.0" -o fetched/aethon.png "https://static.wixstatic.com/media/5b7dba_308077778d4c42e6b55b274199739b9d~mv2.png" || echo aethon failed
+          curl -fsSL -A "Mozilla/5.0" -o fetched/move.png "https://lassonde.yorku.ca/move/wp-content/themes/lassonde/images/move_logo.png" || echo move failed
+          curl -fsSL -A "Mozilla/5.0" -o fetched/smartto-page.html "https://www.yorku.ca/research/project/smartto/" || echo smartto failed
+          grep -o 'src="[^"]*\(logo\|Logo\|smart\|Smart\)[^"]*"' fetched/smartto-page.html | head -20 > fetched/smartto-imgs.txt || true
+          for u in $(sed 's/src="//;s/"$//' fetched/smartto-imgs.txt | grep -v yorku-logo | grep -v raptors | head -3); do curl -fsSL -A "Mozilla/5.0" -o "fetched/smartto-$(basename "${u%%\?*}")" "$u" || true; done
+          ls -la fetched
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add fetched; git commit -m "Fetched logos" || true; git push
