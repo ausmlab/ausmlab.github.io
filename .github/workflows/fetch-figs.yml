@@ -1,0 +1,38 @@
+name: Fetch paper figures
+on:
+  push:
+    branches: [fetch-figs]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          set +e
+          mkdir -p figs
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
+          get() { name=$1; url=$2
+            curl -sSL -A "$UA" -o figs/$name.html "$url"
+            echo "== $name $(wc -c < figs/$name.html)" >> figs/log.txt
+            grep -o -i -E '<meta[^>]+(og:image|twitter:image)[^>]*>' figs/$name.html | head -3 >> figs/log.txt
+            img=$(grep -o -i -E '<meta[^>]+property="og:image"[^>]*>' figs/$name.html | head -1 | sed -E 's/.*content="([^"]+)".*/\1/')
+            [ -z "$img" ] && img=$(grep -o -i -E '<meta[^>]+name="twitter:image"[^>]*>' figs/$name.html | head -1 | sed -E 's/.*content="([^"]+)".*/\1/')
+            echo "img=$img" >> figs/log.txt
+            [ -n "$img" ] && curl -sSL -A "$UA" -o "figs/$name.img" "$img"
+            grep -o -E 'https://media\.springernature\.com/[^"]+/MediaObjects/[^"]+Fig1_HTML\.png' figs/$name.html | head -2 >> figs/log.txt
+            f1=$(grep -o -E 'https://media\.springernature\.com/[^"]+/MediaObjects/[^"]+Fig[12]_HTML\.png' figs/$name.html | sed 's|/lw[0-9]*/|/full/|' | head -1)
+            [ -n "$f1" ] && curl -sSL -A "$UA" -o "figs/$name-fig1.png" "$f1"
+          }
+          get gmd https://gmd.copernicus.org/articles/19/8855/2026/
+          curl -sSL -A "$UA" -o figs/gmd-avatar.png https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026-avatar-web.png
+          get scidata https://doi.org/10.1038/s41597-026-07736-9
+          get aerospace https://doi.org/10.3390/aerospace13030287
+          curl -sSL -A "$UA" -o figs/gmd.pdf https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026.pdf
+          rm -f figs/*.html
+          file figs/* >> figs/log.txt; ls -la figs >> figs/log.txt
+          git config user.name Claude; git config user.email noreply@anthropic.com
+          git add -A figs; git commit -m "Fetched figures
+
+          Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
