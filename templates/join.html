@@ -1,7 +1,37 @@
 {% extends "base.html" %}
 {% from "_macros.html" import page_hero %}
 {% block main %}
-{{ page_hero("Recruitment", join.headline, "lab-group-2026.jpg", url) }}
+{{ page_hero("Join Us", join.headline, "lab-group-2026.jpg", url) }}
+
+{% for po in positions %}
+<section class="wrap section" id="{{ po.id }}">
+  <article class="position">
+    <div class="position-head">
+      <p class="mono accent">{{ po.kicker }}</p>
+      <h2>{{ po.title }}</h2>
+      {% if po.status %}<p class="status-pill">{{ po.status }}</p>{% endif %}
+      {% if po.intro %}<p class="lead">{{ po.intro }}</p>{% endif %}
+    </div>
+    <ul class="focus">
+      {% for f in po.focus %}
+      <li class="focus-{{ loop.index }}">
+        <span class="focus-icon" aria-hidden="true">{% if loop.index == 1 %}<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1"/></svg>{% elif loop.index == 2 %}<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>{% else %}<svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 18c4 0 4-12 8-12s4 12 8 12"/><path d="M17 6h3v3"/></svg>{% endif %}</span>
+        <strong>{{ f.title }}</strong><span>{{ f.text }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    <dl class="position-facts">
+      {% if po.start %}<div><dt>Start</dt><dd>{{ po.start }}</dd></div>{% endif %}
+      {% if po.offer %}<div><dt>We offer</dt><dd><ul>{% for o in po.offer %}<li>{{ o }}</li>{% endfor %}</ul></dd></div>{% endif %}
+      {% if po.apply %}<div><dt>How to apply</dt><dd>{{ po.apply }}{% if po.subject %}<br>Subject line: <strong>{{ po.subject }}</strong>{% endif %}</dd></div>{% endif %}
+    </dl>
+    <div class="btn-row">
+      <a class="btn btn-accent" href="{{ po.mailto }}">Email Prof. Sohn</a>
+      {% if po.poster %}<a class="btn btn-outline" href="{{ url('/images/' ~ po.poster) }}">Download poster (PNG)</a>{% endif %}
+    </div>
+  </article>
+</section>
+{% endfor %}
 
 <section class="wrap split section">
   <div class="stack">

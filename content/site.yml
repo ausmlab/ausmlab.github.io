@@ -5,6 +5,9 @@ name: AUSM Lab
 full_name: Augmented Urban Space Modeling Laboratory
 affiliation: York University · Lassonde
 url: https://ausmlab.com
+# Web address printed on recruiting posters. Change to https://ausmlab.com once that
+# domain shows this site, then run: python tools/make_posters.py
+poster_url: https://ausmlab.github.io
 
 # Look of the whole site: leave empty for the image-led design, or use
 # modern, academic, york or dark.
@@ -15,7 +18,8 @@ hero:
   title: Embodied Spatial Intelligence
   subtitle: 3D DIGITAL TWINS · AUTONOMOUS MAPPING · SPACE AWARENESS
   # Put a wide photo in static/images/ and write its file name here, e.g. hero.jpg
-  image: hero-york-digital-twin.jpg   # 3D digital twin of York campus
+  image: gallery/lab-research-2014-a.jpg   # lab members preparing the drone sensor payload
+  # earlier: hero-york-digital-twin.jpg (3D digital twin of York campus)
 
 intro:
   - The AUSM Lab develops solutions for representing and understanding urban environments through visual and spatial data.

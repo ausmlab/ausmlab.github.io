@@ -1,0 +1,34 @@
+# Open positions, shown at the top of the Join Us page and on the home page.
+# Each position also gets a poster image for LinkedIn (static/images/posters/<id>.png),
+# made by tools/make_posters.py. Remove a block when the position is filled.
+#
+#   id:        short name, used for the poster file (letters, numbers, dashes)
+#   title:     the position
+#   kicker:    small line above the title
+#   status:    e.g. "Open now" or "Applications reviewed on a rolling basis"
+#   start:     when the person can start
+#   focus:     2-4 research areas (title | one-line detail)
+#   offer:     what the lab offers
+#   apply:     how to apply
+#   poster_image:    background photo for the poster (in static/images/)
+#   poster_position: which part of the photo to show, e.g. center 40%
+#   subject:   what to write in the email subject line
+
+- id: graduate-2027
+  poster_image: gallery/lab-research-2014-a.jpg
+  poster_position: center 40%
+  kicker: GRADUATE OPPORTUNITIES
+  title: Ph.D. and M.Sc. positions
+  status: Applications reviewed on a rolling basis
+  start: Flexible (Fall, Winter or Summer terms)
+  intro: Join our work on structured spatial world models, where drones and robots sense the world, build accurate 3D models of it, and use those models to act.
+  focus:
+    - "Sensing · Autonomy | Drones, image–LiDAR fusion, tiny-object detection in orbit"
+    - "3D World Models | LoD2 buildings, BIM digital twins, Gaussian splatting"
+    - "Prediction · Action | Mapping agents, LLM and vision-language-action models"
+  offer:
+    - Funding through NSERC Discovery, NSERC CREATE SMART and industry partners
+    - Industry internships and enhanced stipends through CREATE SMART
+    - A GPU computing cluster and real-world data from industry partners
+  apply: Email your CV, transcripts, a short research statement and representative publications to gsohn@yorku.ca.
+  subject: "[Ph.D. or M.Sc.] Your Name"

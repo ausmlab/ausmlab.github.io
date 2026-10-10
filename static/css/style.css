@@ -620,3 +620,28 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .mainnav a.nav-join:hover, .mainnav a.nav-join[aria-current] { background: var(--accent-hover); color: #fff; text-decoration: none; }
 .mainnav a.nav-join[aria-current]::after { display: none; }
 @media (max-width: 760px) { .mainnav a.nav-join { text-align: center; margin-top: 8px; } }
+
+/* Open positions */
+.position { border: 1px solid var(--line); border-top: 4px solid var(--accent); padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; gap: 28px; background: var(--paper); }
+.position-head { display: flex; flex-direction: column; gap: 10px; max-width: 760px; }
+.position-head h2 { font-size: clamp(28px, 3.4vw, 40px); }
+.status-pill { align-self: flex-start; font-size: 13px; font-weight: 600; padding: 4px 12px; border-radius: 999px; background: #e3f0e1; color: #2d6a2d; }
+.focus { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.focus li { display: flex; flex-direction: column; gap: 6px; padding: 20px; background: var(--soft); border-radius: 8px; font-size: 15px; color: var(--body); }
+.focus strong { color: var(--ink); font-size: 17px; }
+.focus-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 6px; }
+.focus-1 .focus-icon { background: #0e6b63; } .focus-2 .focus-icon { background: #5148b0; } .focus-3 .focus-icon { background: var(--accent); }
+.position-facts { margin: 0; display: grid; gap: 14px; }
+.position-facts > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
+.position-facts dt { font-weight: 600; color: var(--ink); }
+.position-facts dd { margin: 0; color: var(--body); }
+.position-facts ul { list-style: disc; padding-left: 1.2em; }
+.btn-accent { background: var(--accent); color: #fff; }
+.btn-accent:hover { background: var(--accent-hover); color: #fff; }
+.btn-outline { border: 1px solid var(--ink); color: var(--ink); font-weight: 500; }
+.btn-outline:hover { background: var(--soft); color: var(--ink); }
+@media (max-width: 760px) { .focus { grid-template-columns: minmax(0, 1fr); } .position-facts > div { grid-template-columns: minmax(0, 1fr); gap: 4px; } }
+
+
+/* Home hero photo: keep faces and the drone in view */
+.hero-simple { background-position: center 35%; }

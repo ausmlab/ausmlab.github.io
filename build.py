@@ -11,6 +11,7 @@ GitHub runs this automatically every time a file changes (see
 .github/workflows/deploy.yml), so you never need to run it yourself.
 """
 import datetime as dt
+from urllib.parse import quote
 import re
 import hashlib
 import http.server
@@ -166,6 +167,14 @@ def build():
     research = load("research")
     gallery = load("gallery")
     join = load("join")
+    positions = load("positions") or []
+    for po in positions:
+        po["focus"] = [dict(zip(("title", "text"), split_pipe(f, 2))) for f in po.get("focus", [])]
+        for k in ("kicker", "status", "start", "intro", "apply", "subject"):
+            po.setdefault(k, "")
+        po.setdefault("offer", [])
+        po["poster"] = f"posters/{po['id']}.png" if (ROOT / "static" / "images" / "posters" / f"{po['id']}.png").exists() else ""
+        po["mailto"] = "mailto:" + site["contact"]["email"] + "?subject=" + quote(po["subject"])
 
     posts = load_folder("posts")
     projects = load_folder("projects")
@@ -311,7 +320,7 @@ def build():
         datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
         photos=gallery.get("photos", []), videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
-        join=join, year=dt.date.today().year,
+        join=join, positions=positions, year=dt.date.today().year,
         all_pubs=archive.get("publications"),
         posts=posts, projects=projects, research_posts=research_posts,
         themes_all=THEMES, theme=str(site.get("theme") or ""), switcher="--switcher" in sys.argv,
