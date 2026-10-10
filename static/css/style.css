@@ -703,3 +703,5 @@ img.ph-tall { object-fit: cover; }
 .talk-figure img { max-height: none; flex: none; }
 .talk-figure img { width: 100%; border-radius: 6px; box-shadow: 0 8px 22px rgba(0,0,0,.12); }
 .talk-figure figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
+.prose figure.talk-figure { display: block; }
+.profile .talk-figure img, .prose .talk-figure img { max-width: 100%; width: 100%; flex: none; max-height: none; background: none; }
