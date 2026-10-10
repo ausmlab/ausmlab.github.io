@@ -10,10 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          rm -rf fetched; mkdir -p fetched2
+          rm -rf fetched fetched2; mkdir -p fetched2
           UA="AUSMLabSite/1.0 (gsohn@yorku.ca)"
-          curl -fsSL -A "Mozilla/5.0" -o fetched2/smart.png "https://www.yorku.ca/research/project/smart/wp-content/uploads/sites/1005/2025/09/a7a184ca-4005-4694-a7c5-2dc5161f177f-1.png" || echo smart failed
-          for q in "DLR logo" "Deutsches Zentrum fur Luft- und Raumfahrt logo" "Leibniz Universitat Hannover logo" "Seoul Institute logo"; do
+                    for q in "Jade Hochschule logo" "Jade University of Applied Sciences logo"; do
             curl -fsSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&list=search&srnamespace=6&srlimit=6&srsearch=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")" | python3 -c "import json,sys;[print(r['title']) for r in json.load(sys.stdin)['query']['search']]" > "fetched2/search-${q// /_}.txt" || true
             while read -r f; do
               iu=$(curl -fsSL -A "$UA" "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|size&titles=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$f")" | python3 -c "import json,sys;d=json.load(sys.stdin);p=list(d['query']['pages'].values())[0];ii=p.get('imageinfo',[{}])[0];print(ii.get('url','') if ii.get('size',10**9)<3000000 else '')")
