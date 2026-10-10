@@ -4,24 +4,31 @@
 {% set cover = "gallery/ecce-app-challenge-2019.jpg" %}
 {{ page_hero("Gallery", "Field campaigns, conferences and lab life", cover, url) }}
 
-{% set fav = photos | selectattr("featured") | rejectattr("path", "equalto", cover) | list %}
+{% set fav = gallery_highlights | rejectattr("path", "equalto", cover) | list %}
 {% if fav %}
 <section class="wrap section-tight">
   <div class="gallery-featured">
-    {% for p in fav %}
+    {% for p in fav[:3] %}
     <figure>{{ picture(url, p.path, p.title, "ph") }}<figcaption><span>{{ p.title }}</span><span class="mono muted small">{{ p.date }}</span></figcaption></figure>
     {% endfor %}
   </div>
 </section>
 {% endif %}
 <section class="wrap section" data-filter-scope>
+  <div class="section-head"><h2>Events</h2><p class="muted">Click an event to see all its photos</p></div>
   <div class="center">{{ filters("category", gal_cats, "Filter by category") }}</div>
-  <div class="grid-3 gallery">
-    {% for p in photos %}
-    <figure class="photo" data-type="{{ p.category }}">
-      {{ picture(url, p.path, p.title, "ph ph-photo") }}
-      <figcaption><span>{{ p.title }}</span><span class="mono muted small">{{ p.date }}</span></figcaption>
-    </figure>
+  <div class="albums">
+    {% for al in albums %}
+    <details class="album" data-type="{{ al.category }}">
+      <summary>
+        {{ picture(url, al.cover.path, al.title, "ph ph-photo") }}
+        <span class="album-title">{{ al.title }}</span>
+        <span class="mono muted small">{{ al.date }}{% if al.photos | length > 1 %} · {{ al.photos | length }} photos{% endif %}</span>
+      </summary>
+      <div class="album-photos">
+        {% for p in al.photos %}<a href="{{ url('/images/' ~ p.path) }}" target="_blank" rel="noopener">{{ picture(url, p.path, p.title, "ph") }}</a>{% endfor %}
+      </div>
+    </details>
     {% endfor %}
   </div>
 </section>

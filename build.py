@@ -215,6 +215,8 @@ def build():
         n.setdefault("link", "")
     news.sort(key=lambda n: n["sort"], reverse=True)
     featured_news = next((n for n in news if n.get("featured")), news[0] if news else None)
+    home_news = [n for n in news if n.get("featured")][:2]
+    home_news += [n for n in news if n not in home_news][: 4 - len(home_news)]
     news_years = {}
     for n in news:
         news_years.setdefault(n["year"], []).append(n)
@@ -247,6 +249,14 @@ def build():
     for p in papers:
         pub_years.setdefault(p["year"], []).append(p)
     featured_papers = [p for p in papers if p.get("featured")]
+    # Home page: papers marked "featured: true" first, then the newest papers that have a picture
+    def _py(p):
+        try: return int(str(p.get("year", 0))[:4])
+        except ValueError: return 0
+    _with_img = [p for p in papers if p.get("image")]
+    home_papers = sorted([p for p in _with_img if p.get("featured")], key=_py, reverse=True)
+    home_papers += [p for p in sorted(_with_img, key=_py, reverse=True) if p not in home_papers]
+    home_papers = home_papers[:3]
     pub_types = [t for t in ("Journal", "Conference", "Preprint", "Dataset") if any(p["type"] == t for p in papers)]
 
     # Research
@@ -301,6 +311,24 @@ def build():
         m = MONTHS.index(bits[0][:3]) + 1 if len(bits) == 2 and bits[0][:3] in MONTHS else 0
         return (y, m)
     gallery["photos"] = sorted(gallery.get("photos", []), key=_gal_key, reverse=True)
+    # Albums: photos with the same title belong to the same event (newest event first)
+    albums = {}
+    for ph in gallery["photos"]:
+        name = ph.get("event") or ph.get("title", "")
+        key = re.sub(r"\s+", " ", str(name).strip().lower())
+        if key not in albums:
+            albums[key] = {"title": name, "date": ph.get("date", ""), "category": ph.get("category", ""), "photos": []}
+        albums[key]["photos"].append(ph)
+    albums = list(albums.values())
+    for al in albums:
+        al["cover"] = next((ph for ph in al["photos"] if ph.get("featured")), al["photos"][0])
+    # Highlights at the top of the Gallery: photos marked "featured: true", then the newest events
+    gallery_highlights = [ph for ph in gallery["photos"] if ph.get("featured")]
+    for al in albums:
+        if len(gallery_highlights) >= 6:
+            break
+        if al["cover"] not in gallery_highlights:
+            gallery_highlights.append(al["cover"])
     gal_cats = [c for c in ("Research Activities", "Conferences", "Lab Life") if any(p["category"] == c for p in gallery.get("photos", []))]
 
     def replace_imgs(body):
@@ -311,15 +339,15 @@ def build():
                       trim_blocks=True, lstrip_blocks=True)
     env.filters["replace_imgs"] = replace_imgs
     ctx = dict(
-        site=site, nav=NAV, news=news, news_years=news_years, featured_news=featured_news,
+        site=site, nav=NAV, news=news, home_news=home_news, news_years=news_years, featured_news=featured_news,
         members=members, alumni_groups=alumni_groups, alumni_total=alumni_total,
-        papers=papers, pub_years=pub_years, featured_papers=featured_papers, pub_types=pub_types,
+        papers=papers, pub_years=pub_years, featured_papers=featured_papers, home_papers=home_papers, pub_types=pub_types,
         older_counts=pubs.get("older_counts", {}), full_list=pubs.get("full_list", ""),
         pillars=pillars, vision=vision, applications=research.get("applications", []),
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
         datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
-        photos=gallery.get("photos", []), videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
+        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
         join=join, positions=positions, year=dt.date.today().year,
         all_pubs=archive.get("publications"),
         posts=posts, projects=projects, research_posts=research_posts,

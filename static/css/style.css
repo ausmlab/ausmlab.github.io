@@ -705,3 +705,19 @@ img.ph-tall { object-fit: cover; }
 .talk-figure figcaption { margin-top: 8px; font-size: 14px; color: var(--muted); }
 .prose figure.talk-figure { display: block; }
 .profile .talk-figure img, .prose .talk-figure img { max-width: 100%; width: 100%; flex: none; max-height: none; background: none; }
+
+/* Gallery: one card per event; open it to see all its photos */
+.albums { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 24px; }
+.album summary { list-style: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; }
+.album summary::-webkit-details-marker { display: none; }
+.album summary img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 30%; border-radius: 6px; transition: transform .2s, box-shadow .2s; }
+.album summary:hover img { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,.14); }
+.album-title { font-weight: 600; color: var(--ink); }
+.album[open] { grid-column: 1 / -1; }
+.album[open] summary img { max-width: 360px; }
+.album-photos { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 14px; }
+.album-photos img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 30%; border-radius: 4px; }
+.album[hidden] { display: none; }
+@media (max-width: 900px) { .albums { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .albums { grid-template-columns: minmax(0, 1fr); } }
+.albums { grid-auto-flow: row dense; }

@@ -33,7 +33,7 @@
 <section class="wrap section home-news">
   <h2 class="center">News &amp; Events</h2>
   <div class="news-cards">
-    {% for n in news[:4] %}
+    {% for n in home_news %}
     <a class="news-card" href="{{ url(n.link) if n.link else url('/news/') }}"{% if n.link and n.link.startswith('http') %} target="_blank" rel="noopener"{% endif %}>
       {% if n.image %}<img src="{{ url('/images/' ~ n.image) }}" alt="" loading="lazy">{% else %}<span class="news-card-noimg">{{ n.category }}</span>{% endif %}
       <span class="news-card-meta">{{ n.category }} · {{ n.date_label }}</span>
@@ -47,7 +47,7 @@
 <section class="wrap section">
   <h2 class="center">Publications</h2>
   <div class="pub-covers">
-    {% for p in featured_papers if p.image %}{% if loop.index <= 3 %}
+    {% for p in home_papers %}{% if true %}
     <a class="pub-cover" href="{{ p.link or p.code or url('/publications/') }}"{% if p.link or p.code %} target="_blank" rel="noopener"{% endif %}>
       {{ picture(url, p.image, p.short or p.title, "ph") }}
       <span class="pub-cover-title">{{ p.short or p.title }}</span>
