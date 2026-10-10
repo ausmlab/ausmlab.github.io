@@ -47,6 +47,13 @@
       projects:
         - "Ego-path segmentation for autonomous trains with vision-language models (ISPRS 2026)"
         - "Sidewalk delivery robots in a campus digital twin"
+    - name: Ali Baligh Jahromi
+      role: Postdoctoral Fellow
+      since: 2026
+      history:
+        - "Ph.D., York University, 2019 (AUSM Lab): 3D indoor modelling from optical point clouds"
+        - "Postdoctoral Fellow, Y-EMERGE, York University"
+      interests: ""
 
 - group: Ph.D. Students
   people:
