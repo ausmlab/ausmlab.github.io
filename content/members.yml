@@ -40,8 +40,11 @@
     - name: Mohammadjavad Ghorbanalivakili
       role: Postdoctoral Fellow
       since: 2026
+      bio:
+        - "Mohammadjavad completed his Ph.D. in the lab in September 2026. His dissertation on route-structured perception for railway scene understanding was recommended for a Dissertation Prize. As a postdoctoral fellow, he works on AI for autonomous trains and railway perception."
       history:
-        - "Ph.D., York University, 2026 (AUSM Lab)"
+        - "2026–  Postdoctoral Fellow, AUSM Lab, York University"
+        - "2021–2026  Ph.D., Earth and Space Science, York University"
       interests: AI for autonomous trains and railway perception
       photo: mohammadjavad-ghorbanalivakili.jpg
       projects:
@@ -50,25 +53,27 @@
     - name: Ali Baligh Jahromi
       role: Postdoctoral Fellow
       since: 2026
+      bio:
+        - "Ali earned his Ph.D. in the lab in 2019 with a thesis on 3D indoor modelling from optical point clouds. He then worked as a postdoctoral fellow at Y-EMERGE, York University. He rejoined the lab in 2026 as a GeoAI researcher and works on the lab's project with the Ontario Ministry of Transportation (MTO)."
       history:
-        - "Ph.D., York University, 2019 (AUSM Lab): 3D indoor modelling from optical point clouds"
+        - "2026–  Postdoctoral Fellow, AUSM Lab, York University"
         - "Postdoctoral Fellow, Y-EMERGE, York University"
+        - "2011–2019  Ph.D., Earth and Space Science, York University"
       interests: GeoAI for transportation infrastructure
       photo: ali-baligh-jahromi.jpg
       projects:
         - "GeoAI project with the Ontario Ministry of Transportation (MTO)"
-
 - group: Ph.D. Students
   people:
     - name: Sunghwan (Jacob) Yoo
       role: Ph.D. student
       since: 2019
-      interests: 3D object detection and point cloud understanding using deep learning
       bio:
-        - "Sunghwan (Jacob) Yoo received the B.S. degree in Astrophysics and Statistics from the University of Toronto in 2018 and is pursuing the Ph.D. degree in the Department of Earth and Space Science and Engineering, York University. His research interests include computer vision, 3D point cloud semantic segmentation and diffusion models."
+        - "Jacob joined the lab as a Ph.D. student in 2019, after a B.S. in Astrophysics and Statistics from the University of Toronto. He works on 3D point cloud understanding with deep learning, including semantic segmentation, upsampling and diffusion models."
       history:
-        - "2019–  Ph.D. student, York University"
+        - "2019–  Ph.D., Earth and Space Science, York University"
         - "2018  B.S., Astrophysics and Statistics, University of Toronto"
+      interests: 3D object detection and point cloud understanding using deep learning
       github: https://github.com/Yacovitch
       photo: jacob-yoo.jpg
       projects:
@@ -78,13 +83,13 @@
     - name: Mohammad Moein Sheikholeslami
       role: Ph.D. student
       since: 2022
-      interests: 3D building rooftop reconstruction using deep learning
       bio:
-        - "Moein has been a Ph.D. student in Earth and Space Science and Engineering at York University since May 2022. He received his B.Sc. in Geomatics Engineering and M.Sc. in Remote Sensing from the University of Isfahan, Iran. His research models buildings from overhead imagery and LiDAR using deep learning."
+        - "Moein joined the lab as a Ph.D. student in 2022, after a B.Sc. in Geomatics Engineering and an M.Sc. in Remote Sensing from the University of Isfahan, Iran. He builds 3D building models from overhead imagery and LiDAR using deep learning."
       history:
-        - "2022–  Ph.D. student, York University"
+        - "2022–  Ph.D., Earth and Space Science, York University"
         - "M.Sc., Remote Sensing, University of Isfahan"
         - "B.Sc., Geomatics Engineering, University of Isfahan"
+      interests: 3D building rooftop reconstruction using deep learning
       projects:
         - "LoD1 building reconstruction from airborne data"
         - "Transmission corridor mapping"
@@ -92,12 +97,12 @@
     - name: Ashley Varghese
       role: Ph.D. student
       since: 2024
-      interests: Self-supervised segmentation using vision-language models
       bio:
-        - "Ashley is a Ph.D. student at York University and a Data Scientist at Canadian National Railway (CN). At the 7th Toronto Machine Learning Summit (TMLS), she presented automated inspection of rail cars using computer vision and machine learning. Her Ph.D. research studies vision-language models for railway asset management."
+        - "Ashley joined the lab as a Ph.D. student in 2024 and is also a Data Scientist at Canadian National Railway (CN). She studies vision-language models for railway asset management. At the 7th Toronto Machine Learning Summit (TMLS), she presented automated rail-car inspection with computer vision."
       history:
-        - "2024–  Ph.D. student, York University"
+        - "2024–  Ph.D., Earth and Space Science, York University"
         - "Data Scientist, Canadian National Railway (CN)"
+      interests: Self-supervised segmentation using vision-language models
       talks:
         - "Automated Inspection for Rail Cars Using Computer Vision and Machine Learning, 7th Toronto Machine Learning Summit (TMLS)"
       talk_images:
@@ -108,13 +113,13 @@
     - name: Youssef Korny
       role: Ph.D. student
       since: 2024
-      interests: 3D urban modelling
       bio:
-        - "Youssef joined Prof. Sohn's lab in September 2024. He received his B.S. in Systems and Biomedical Engineering from Cairo University. He has worked on polarized imaging and deep learning for landmine detection. He completed his M.Sc. in June 2026 with a thesis on diffusion-based 3D building reconstruction from single nadir images, and continues on 3D urban modelling as a Ph.D. student."
+        - "Youssef joined the lab in 2024 after a B.S. in Systems and Biomedical Engineering from Cairo University. He completed his M.Sc. in June 2026 with a thesis on diffusion-based 3D building reconstruction from single nadir images, recommended for an M.Sc. Thesis Prize. He continues on 3D urban modelling as a Ph.D. student."
       history:
-        - "2026–  Ph.D., York University"
-        - "2024–2026  M.Sc., York University"
+        - "2026–  Ph.D., Earth and Space Science, York University"
+        - "2024–2026  M.Sc., Earth and Space Science, York University"
         - "2019–2024  B.S., Systems and Biomedical Engineering, Cairo University"
+      interests: 3D urban modelling
       github: https://github.com/youssef-shaban
       projects:
         - "GeoPriorPC: building point clouds from nadir views (CVPR Workshops 2026)"
@@ -123,6 +128,11 @@
     - name: Md. Ehsan Shahmi Chowdhury
       role: Ph.D. student
       since: 2026
+      bio:
+        - "Ehsan joined the lab in September 2026, moving from York's EECS Ph.D. program. He works on semantic-first BIM/IFC digital twins with Yonsei University, sidewalk delivery robots, and disease modelling (ORF-RE)."
+      history:
+        - "2026–  Ph.D., Earth and Space Science, York University"
+        - "2025–2026  Ph.D. studies, Electrical Engineering and Computer Science, York University"
       interests: Semantic-first BIM/IFC digital twins, delivery robots
       projects:
         - "Semantic-first BIM/IFC digital twins, with Yonsei University"
@@ -135,6 +145,10 @@
     - name: Youssef Beshir
       role: M.Sc. student
       since: 2026
+      bio:
+        - "Youssef joined the lab as an M.Sc. student in 2026. He works on detecting and tracking resident space objects for space situational awareness (K-SSA), with Prof. Regina Lee's lab."
+      history:
+        - "2026–  M.Sc., Earth and Space Science, York University"
       interests: Resident space object (RSO) detection and tracking for Space Situational Awareness
       projects:
         - "Tiny-object detection of resident space objects (K-SSA), with Prof. Regina Lee's lab"
@@ -142,8 +156,11 @@
     - name: Merna Tamer Youssef
       role: M.Sc. student
       since: 2026
+      bio:
+        - "Merna joined the lab as an M.Sc. student in September 2026, moving from the University of Manitoba. She works on diffusion models for space imagery (K-SSA), with Prof. Regina Lee's lab."
       history:
-        - "University of Manitoba"
+        - "2026–  M.Sc., Earth and Space Science, York University"
+        - "Graduate studies, University of Manitoba"
       interests: Diffusion models for space situational awareness
       projects:
         - "Diffusion models for space imagery (K-SSA), with Prof. Regina Lee's lab"
