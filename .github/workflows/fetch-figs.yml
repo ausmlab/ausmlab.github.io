@@ -25,12 +25,12 @@ jobs:
             f1=$(grep -o -E 'https://media\.springernature\.com/[^"]+/MediaObjects/[^"]+Fig[12]_HTML\.png' figs/$name.html | sed 's|/lw[0-9]*/|/full/|' | head -1)
             [ -n "$f1" ] && curl -sSL -A "$UA" -o "figs/$name-fig1.png" "$f1"
           }
-          get gmd https://gmd.copernicus.org/articles/19/8855/2026/
-          curl -sSL -A "$UA" -o figs/gmd-avatar.png https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026-avatar-web.png
-          get scidata https://doi.org/10.1038/s41597-026-07736-9
-          get aerospace https://doi.org/10.3390/aerospace13030287
-          curl -sSL -A "$UA" -o figs/gmd.pdf https://gmd.copernicus.org/articles/19/8855/2026/gmd-19-8855-2026.pdf
-          rm -f figs/*.html
+          rm -f figs/gmd.pdf figs/gmd.img figs/gmd-avatar.png figs/scidata-fig1.png
+          curl -sSL -A "$UA" -o figs/scidata.pdf https://www.nature.com/articles/s41597-026-07736-9.pdf
+          curl -sSL -A "$UA" -o figs/aerospace.pdf https://www.mdpi.com/2226-4310/13/3/287/pdf
+          curl -sSL -A "$UA" -o figs/aerospace.html https://www.mdpi.com/2226-4310/13/3/287
+          grep -o -E 'https://www\.mdpi\.com/aerospace/aerospace-13-00287/article_deploy/html/images/[^"]+' figs/aerospace.html | sort -u | head -5 >> figs/log.txt
+          echo
           file figs/* >> figs/log.txt; ls -la figs >> figs/log.txt
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A figs; git commit -m "Fetched figures
