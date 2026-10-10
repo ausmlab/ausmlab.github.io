@@ -21,3 +21,14 @@ drwxr-xr-x 9 runner runner    4096 Oct 10 16:57 ..
 -rw-r--r-- 1 runner runner 3352952 Oct 10 16:57 gmd.pdf
 -rw-r--r-- 1 runner runner     999 Oct 10 16:57 log.txt
 -rw-r--r-- 1 runner runner   41306 Oct 10 16:57 scidata-fig1.png
+figs/aerospace.html: HTML document, ASCII text
+figs/aerospace.pdf:  HTML document, ASCII text
+figs/log.txt:        ASCII text
+figs/scidata.pdf:    JavaScript source, ASCII text, with very long lines (35544)
+total 228
+drwxr-xr-x 2 runner runner   4096 Oct 10 16:59 .
+drwxr-xr-x 9 runner runner   4096 Oct 10 16:59 ..
+-rw-r--r-- 1 runner runner    400 Oct 10 16:59 aerospace.html
+-rw-r--r-- 1 runner runner    408 Oct 10 16:59 aerospace.pdf
+-rw-r--r-- 1 runner runner   1614 Oct 10 16:59 log.txt
+-rw-r--r-- 1 runner runner 212546 Oct 10 16:59 scidata.pdf
