@@ -41,9 +41,8 @@
       role: Postdoctoral Fellow
       since: 2026
       history:
-        - "Ph.D., York University"
+        - "Ph.D., York University, 2026 (AUSM Lab)"
       interests: AI for autonomous trains and railway perception
-      lab_phd: true
       photo: mohammadjavad-ghorbanalivakili.jpg
       projects:
         - "Ego-path segmentation for autonomous trains with vision-language models (ISPRS 2026)"
