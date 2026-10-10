@@ -657,3 +657,6 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
   .position.has-poster { grid-template-columns: minmax(0, 1fr); }
   .position.has-poster > .position-poster { grid-column: 1; grid-row: auto; position: static; max-width: 420px; justify-self: center; order: 9; }
 }
+
+/* Home publications: photos fill the whole frame */
+.pub-cover img { aspect-ratio: 3 / 2; object-fit: cover; padding: 0; background: var(--ph); border: 0; border-radius: 4px; }
