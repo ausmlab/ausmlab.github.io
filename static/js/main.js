@@ -71,4 +71,23 @@
     draw();
     var t; window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(draw, 150); });
   }
+
+  // Home hero: rotate photos every 6 seconds (stops if the visitor prefers less motion)
+  document.querySelectorAll('[data-slides]').forEach(function (hero) {
+    var slides = hero.querySelectorAll('.hero-slide');
+    var dots = hero.querySelectorAll('.hero-slide-dots button');
+    if (slides.length < 2) return;
+    var i = 0, timer = null;
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach(function (s, k) { s.classList.toggle('is-on', k === i); });
+      dots.forEach(function (d, k) { d.setAttribute('aria-pressed', k === i ? 'true' : 'false'); });
+    }
+    function start() {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      timer = setInterval(function () { show(i + 1); }, 6000);
+    }
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { clearInterval(timer); show(k); start(); }); });
+    start();
+  });
 })();

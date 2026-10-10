@@ -76,7 +76,7 @@ datasets:
     link_label: Project page
     link2: https://github.com/ausmlab/yutomms
     link2_label: GitHub
-    image: dataset-yutomms.jpg
+    image: paper-yutomms-car.jpg
     home: true
   - name: YUTO Semantic
     text: "A large-scale aerial LiDAR dataset for 3D semantic segmentation: ~738 million points covering 9.46 km² of the York University campus, annotated with nine semantic classes."
@@ -85,7 +85,7 @@ datasets:
     link_label: GitHub
     link2: https://huggingface.co/datasets/ausmlab/yuto-semantic
     link2_label: Hugging Face
-    image: dataset-yutosemantic.jpg
+    image: dataset-yutosemantic-map.jpg
     home: true
   - name: Q-Drone UWB Benchmark
     text: Benchmark dataset of ultra-wideband radio based UAV positioning.

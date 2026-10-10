@@ -2,13 +2,18 @@
 {% from "_macros.html" import picture %}
 {% block main %}
 {# Home page laid out like a simple group site: photo, research, news, publications, group photo #}
-<section class="hero hero-photo hero-simple" style="background-image:url('{{ url('/images/' ~ site.hero.image) }}')">
+{% set slides = site.hero.get("slides") or [site.hero.image] %}
+<section class="hero hero-photo hero-simple hero-slides" data-slides>
+  {% for sl in slides %}{% set parts = sl.split(" | ") %}
+  <div class="hero-slide{% if loop.first %} is-on{% endif %}" style="background-image:url('{{ url('/images/' ~ parts[0]) }}');background-position:{{ parts[1] if parts|length > 1 else 'center' }}" aria-hidden="true"></div>
+  {% endfor %}
   <div class="wrap hero-in">
     {% if site.hero.kicker %}<p class="hero-kicker">{{ site.hero.kicker }}</p>{% endif %}
     <h1>{{ site.hero.title }}</h1>
     <p class="hero-sub">{{ site.hero.subtitle }}</p>
     <p class="hero-btns"><a class="btn btn-accent" href="{{ url('/research/') }}">Our research</a><a class="btn btn-ghost" href="{{ url('/join/') }}">Join the lab</a></p>
   </div>
+  {% if slides | length > 1 %}<div class="hero-slide-dots" role="group" aria-label="Choose photo">{% for sl in slides %}<button type="button" aria-label="Photo {{ loop.index }}"{% if loop.first %} aria-pressed="true"{% endif %}></button>{% endfor %}</div>{% endif %}
 </section>
 
 <section class="wrap section">

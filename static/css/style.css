@@ -679,3 +679,17 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 
 /* Research themes: show each picture at its own shape, filling the column (no white frame) */
 img.ph-theme { aspect-ratio: auto; height: auto; width: 100%; object-fit: cover; border: 0; background: none; border-radius: 6px; }
+
+/* Home hero: photos take turns behind the headline */
+.hero-slides { background: var(--dark); }
+.hero-slide { position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat; opacity: 0; transition: opacity 1.4s ease; }
+.hero-slide.is-on { opacity: 1; }
+.hero-slides::before { z-index: 1; }
+.hero-slides .hero-in { z-index: 2; }
+.hero-slide-dots { position: absolute; z-index: 3; left: 0; right: 0; bottom: 22px; display: flex; justify-content: center; gap: 10px; }
+.hero-slide-dots button { width: 10px; height: 10px; padding: 0; border-radius: 50%; border: 1.5px solid #fff; background: transparent; cursor: pointer; opacity: .8; }
+.hero-slide-dots button[aria-pressed="true"] { background: #fff; opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
+
+/* Datasets: pictures fill the card */
+img.ph-data { object-fit: cover; background: var(--dark); }
