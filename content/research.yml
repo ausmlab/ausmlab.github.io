@@ -123,9 +123,11 @@ datasets:
     year: ICPR Workshops, 2022
     link: ""
   - name: Smokestack Plume Images and Plume Identification Masks
-    text: Image dataset for industrial plume rise measurement.
+    text: "Images of industrial smokestack plumes in the Athabasca Oil Sands, with plume masks for training deep learning models that measure plume rise. By Mark Gordon (York University) and the AUSM Lab."
     year: Federated Research Data Repository, 2026
-    link: ""
+    link: https://doi.org/10.20383/103.01448
+    link_label: FRDR
+    image: dataset-plume.jpg
   - name: Unmanned Aerial Image Dataset
     text: UAV imagery ready for 3D reconstruction.
     year: Data in Brief, 2019
