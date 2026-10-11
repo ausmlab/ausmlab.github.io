@@ -1,0 +1,10 @@
+== dig
+== curl
+curl: (6) Could not resolve host: yorkuindoor.ausmlab.com
+== wayback cdx
+== gh repos
+== vercel guess
+yorkuindoor.vercel.app 404
+yorku-indoor.vercel.app 404
+yorkuindoor-dataset.vercel.app 404
+snap=
