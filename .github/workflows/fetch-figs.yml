@@ -11,20 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf yi figs sd; mkdir -p ot
-          curl -sL -m 120 -o /tmp/ot.pdf "https://uc99daa0c83eaee5439be2bb7d51.dl.dropboxusercontent.com/cd/0/get/DJzKh6BPi-8-jJOKPT1Fmvn7oJjHb6VoTQdPUsCL78nmHL272Bzi1Xuqyg3tl6QSzzoTxEfcmcgDuIduu7XVRwSFcYPjGIBbAL9tg1qYAb2sQSaY4I1e8tWKmyvpLW-TnqESj07WZ4b5HWjyT-adwMRbvboCkHmo1zsCV3BoU-mC6Q/file?c_luid=bfdddea5"
-          ls -la /tmp/ot.pdf > ot/log.txt
-          pip install -q pymupdf >> ot/log.txt 2>&1
-          python3 -c "
-          import fitz,os
-          d=fitz.open('/tmp/ot.pdf'); os.makedirs('ot/img',exist_ok=True)
-          for i,pg in enumerate(d):
-              pg.get_pixmap(dpi=100).save(f'ot/p{i+1:02d}.jpg')
-              for j,im in enumerate(pg.get_images(full=True)):
-                  x=fitz.Pixmap(d,im[0])
-                  if x.n-x.alpha>=4: x=fitz.Pixmap(fitz.csRGB,x)
-                  if x.width*x.height>150000: x.save(f'ot/img/p{i+1:02d}_{j}.png')
-          " >> ot/log.txt 2>&1
+          rm -rf yi figs sd ot nyc; mkdir -p nyc
+          curl -sL -m 300 -o /tmp/out.mp4 "https://uc607da6806d130f554c7aab8670.dl.dropboxusercontent.com/cd/0/get/DJxRGo2VYvYY2Rcpyh96glkRxTGdDTzp-1YJDbYb4zhsm9vZE2kyB2eR8yDnnKWn_BtUro22Kn4qP_UqhhuJ5RTG2U6DGyUMVZasqb6BcSG8HiO5BEKbTCFQoEYqwisEoOyBRyejLnGTBKP29ugg124-xMmlwQPqFFqlP6O-TXyOJg/file?c_luid=bfdddea5"
+          ls -la /tmp/out.mp4 > nyc/log.txt
+          ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,r_frame_rate -of compact /tmp/out.mp4 >> nyc/log.txt 2>&1
+          ffmpeg -y -v error -i /tmp/out.mp4 -an -vf "scale='min(1280,iw)':-2,fps=25" -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart nyc/nyct-track-extraction.mp4 >> nyc/log.txt 2>&1
+          for t in 2 8 15 25; do ffmpeg -y -v error -ss $t -i /tmp/out.mp4 -frames:v 1 -vf "scale='min(1280,iw)':-2" -q:v 3 nyc/frame-$t.jpg; done
+          ls -la nyc >> nyc/log.txt
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "fetch sci data figs
 
