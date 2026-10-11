@@ -1,6 +1,7 @@
 # Open positions, shown at the top of the Join Us page and on the home page.
 # Each position also gets a poster image for LinkedIn (static/images/posters/<id>.png),
-# made by tools/make_posters.py. Remove a block when the position is filled.
+# made by tools/make_posters.py, and a 2-page PDF ad (static/files/ausmlab-<id>.pdf)
+# made by tools/make_ad_pdf.py. Remove a block when the position is filled.
 #
 #   id:        short name, used for the poster file (letters, numbers, dashes)
 #   title:     the position

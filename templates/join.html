@@ -8,7 +8,7 @@
   <article class="position{% if po.poster %} has-poster{% endif %}">
     {% if po.poster %}<figure class="position-poster">
       <a href="{{ url('/images/' ~ po.poster) }}" target="_blank" rel="noopener"><img src="{{ url('/images/' ~ po.poster) }}" alt="Recruiting poster: {{ po.title }}" width="1080" height="1350"></a>
-      <figcaption>Feel free to share this poster. <a href="{{ url('/images/' ~ po.poster) }}" download>Download (PNG)</a></figcaption>
+      <figcaption>Feel free to share this poster. <a href="{{ url('/images/' ~ po.poster) }}" download>Poster (PNG)</a>{% if po.pdf %} · <a href="{{ url(po.pdf) }}" download>Full ad (PDF)</a>{% endif %}</figcaption>
     </figure>{% endif %}
     <div class="position-head">
       <p class="mono accent">{{ po.kicker }}</p>
@@ -31,6 +31,7 @@
     </dl>
     <div class="btn-row">
       <a class="btn btn-accent" href="{{ po.mailto }}">Email Prof. Sohn</a>
+      {% if po.pdf %}<a class="btn" href="{{ url(po.pdf) }}" target="_blank" rel="noopener">Download the ad (PDF)</a>{% endif %}
     </div>
   </article>
 </section>

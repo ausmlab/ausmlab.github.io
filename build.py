@@ -176,6 +176,7 @@ def build():
             po.setdefault(k, "")
         po.setdefault("offer", [])
         po["poster"] = f"posters/{po['id']}.png" if (ROOT / "static" / "images" / "posters" / f"{po['id']}.png").exists() else ""
+        po["pdf"] = f"/files/ausmlab-{po['id']}.pdf" if (ROOT / "static" / "files" / f"ausmlab-{po['id']}.pdf").exists() else ""
         po["mailto"] = "mailto:" + site["contact"]["email"] + "?subject=" + quote(po["subject"])
 
     posts = load_folder("posts")
