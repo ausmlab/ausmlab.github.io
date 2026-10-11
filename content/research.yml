@@ -13,6 +13,15 @@ vision:
   lead: Drones and robots sense the world, build accurate 3D world models, and use those models to predict, decide and act. What they learn from acting flows back to update the model.
   flagship: Autonomous mapping agents
 
+# thrusts: where the world-model work is applied. Shown on the home page and the
+#          Research page as five icon cards. Each line is "Title | one short line".
+thrusts:
+  - "Urban World Models | City-scale robot–mobility interaction and graph models that understand and predict the city"
+  - "Scan-to-Model | 3D models of infrastructure that carry engineering knowledge, built from scans"
+  - "Autonomous Mapping | Self-driving, mobile mapping and agentic mapping"
+  - "Physics-Informed Earth AI | AI that emulates Earth systems, guided by physics"
+  - "Space Situational Awareness | Space in the loop: detecting and tracking objects in orbit"
+
 pillars:
   - id: sensing
     short: Sensing

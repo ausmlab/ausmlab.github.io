@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import picture %}
+{% from "_macros.html" import picture, thrust_cards %}
 {% block main %}
 {# Home page laid out like a simple group site: photo, research, news, publications, group photo #}
 {% set slides = site.hero.get("slides") or [site.hero.image] %}
@@ -28,6 +28,7 @@
       <a class="btn btn-accent" href="{{ url('/research/') }}">Read More</a>
     </div>
   </div>
+  {% if thrusts %}{{ thrust_cards(thrusts) }}{% endif %}
 </section>
 
 <section class="wrap section home-news">

@@ -379,7 +379,7 @@ def build():
         members=members, alumni_groups=alumni_groups, alumni_total=alumni_total,
         papers=papers, pub_years=pub_years, featured_papers=featured_papers, home_papers=home_papers, pub_types=pub_types,
         older_counts=pubs.get("older_counts", {}), full_list=pubs.get("full_list", ""),
-        pillars=pillars, vision=vision, applications=research.get("applications", []),
+        pillars=pillars, vision=vision, thrusts=[dict(zip(("title", "text"), split_pipe(x, 2))) for x in research.get("thrusts", [])], applications=research.get("applications", []),
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
         datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,

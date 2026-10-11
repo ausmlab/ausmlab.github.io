@@ -16,7 +16,7 @@ theme: ""
 hero:
   kicker: AUGMENTED URBAN SPACE MODELING LABORATORY
   title: Embodied Spatial Intelligence
-  subtitle: 3D DIGITAL TWINS · AUTONOMOUS MAPPING · SPACE AWARENESS
+  subtitle: URBAN WORLD MODELS · SCAN-TO-MODEL · AUTONOMOUS MAPPING · EARTH AI · SPACE AWARENESS
   # Put a wide photo in static/images/ and write its file name here, e.g. hero.jpg
   image: gallery/lab-research-2014-a.jpg   # lab members preparing the drone sensor payload
   # Photos that take turns behind the headline (every 6 seconds). The first one shows first.

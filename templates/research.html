@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import picture, page_hero, filters %}
+{% from "_macros.html" import picture, page_hero, filters, thrust_cards %}
 {% from "_worldmodel.html" import worldmodel with context %}
 {% block main %}
 {{ page_hero("Research", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
@@ -19,6 +19,7 @@
 
 <section class="wrap section-tight">
   {{ worldmodel(url) }}
+  {% if thrusts %}{{ thrust_cards(thrusts) }}{% endif %}
 </section>
 
 {% for t in pillars %}
