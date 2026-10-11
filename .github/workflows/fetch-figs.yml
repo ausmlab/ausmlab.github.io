@@ -11,14 +11,12 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf yi figs sd ot nyc; mkdir -p nyc
-          curl -sL -m 300 -o /tmp/out.mp4 "https://ucf105498ebe4ac61c81541331f5.dl.dropboxusercontent.com/cd/0/get/DJz5qUni-0Sn3ELZ1n-HabA0gF10T170fGhZe8nL95cEWNjQYBppqAawT0JlgYtqPhu8E9C7mDaMC0uFKYuf-GmsEcDj5Psx3jNjzFXfa9nm2Q28Ydhnkl6hwBBjLQtx0hsbRYNr1lAlCKv9Rh-8K1nslIYRvMFSmY8TAYcLHD9sqw/file?c_luid=bfdddea5"
-          ls -la /tmp/out.mp4 > nyc/log.txt
-          pip install -q imageio-ffmpeg >/dev/null 2>&1; FF=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())"); echo "ff=$FF" >> nyc/log.txt
-          $FF -hide_banner -i /tmp/out.mp4 2>&1 | grep -E "Duration|Stream" >> nyc/log.txt; true ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,r_frame_rate -of compact /tmp/out.mp4 >> nyc/log.txt 2>&1
-          $FF -y -v error -i /tmp/out.mp4 -an -vf "scale='min(1280,iw)':-2,fps=25" -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart nyc/nyct-track-extraction.mp4 >> nyc/log.txt 2>&1
-          for t in 2 8 15 25; do $FF -y -v error -ss $t -i /tmp/out.mp4 -frames:v 1 -vf "scale='min(1280,iw)':-2" -q:v 3 nyc/frame-$t.jpg; done
-          ls -la nyc >> nyc/log.txt
+          rm -rf yi figs sd ot nyc my; mkdir -p my
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
+          curl -sL -m 60 -A "$UA" https://myung.skku.edu/ -o my/home.html; echo "size $(wc -c < my/home.html)" > my/log.txt
+          for w in 1440 390; do google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=$w,5200 --virtual-time-budget=15000 --screenshot=my/home-$w.png https://myung.skku.edu/ >> my/log.txt 2>&1; done
+          python3 -c "import re,html;t=open('my/home.html',errors='ignore').read();t=re.sub(r'(?s)<(script|style)[^>]*>.*?</\\1>','',t);print(re.sub(r'\\s+',' ',html.unescape(re.sub('<[^>]+>',' ',t)))[:6000])" > my/text.txt
+          grep -o 'href="[^"]*"' my/home.html | sort -u | head -80 > my/links.txt
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "fetch sci data figs
 
