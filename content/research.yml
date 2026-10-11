@@ -10,13 +10,13 @@
 
 vision:
   title: Structured Spatial World Models
-  lead: Drones and robots sense the world, build accurate 3D world models, and use those models to predict, decide and act. What they learn from acting flows back to update the model.
+  lead: Our world models are structured. They represent the world as 3D geometry, objects, relations and physics, not just pixels, so that robots, drones and satellites can reason about the world and act in it. What they learn from acting flows back to update the model.
   flagship: Autonomous mapping agents
 
 # thrusts: where the world-model work is applied. Shown on the home page and the
 #          Research page as five icon cards. Each line is "Title | one short line".
 thrusts:
-  - "Urban World Models | City-scale robot–mobility interaction and graph models that understand and predict the city"
+  - "Urban World Models | City-scale interaction between robots and mobility, and graph models that understand and predict the city"
   - "Scan-to-Model | 3D models of infrastructure that carry engineering knowledge, built from scans"
   - "Autonomous Mapping | Robots, drones and self-driving vehicles that map on their own: mobile and agentic mapping"
   - "Physics-Informed Earth AI | AI that emulates Earth systems, guided by physics"
