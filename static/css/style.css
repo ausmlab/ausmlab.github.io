@@ -631,7 +631,7 @@ img.ph-pub { object-fit: cover; background: #fff; border: 1px solid var(--line);
 .focus li { display: flex; flex-direction: column; gap: 6px; padding: 20px; background: var(--soft); border-radius: 8px; font-size: 15px; color: var(--body); }
 .focus strong { color: var(--ink); font-size: 17px; }
 .focus-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; margin-bottom: 6px; }
-.focus-1 .focus-icon { background: #0e6b63; } .focus-2 .focus-icon { background: #5148b0; } .focus-3 .focus-icon { background: var(--accent); }
+.focus-1 .focus-icon { background: #0e6b63; } .focus-2 .focus-icon { background: #5148b0; } .focus-3 .focus-icon { background: var(--accent); } .focus-4 .focus-icon { background: #b06a12; } .focus-5 .focus-icon { background: #1f5fa8; }
 .position-facts { margin: 0; display: grid; gap: 14px; }
 .position-facts > div { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .position-facts dt { font-weight: 600; color: var(--ink); }

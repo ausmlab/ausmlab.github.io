@@ -39,11 +39,11 @@
   poster_position: center 50%
   kicker: POSTDOCTORAL OPPORTUNITIES
   poster_accent: "#7fd3ff"
-  poster_tagline: Lead a research thrust in spatial AI
+  poster_tagline: AI world models for cities, Earth and space
   focus_heading: Research thrusts
   about:
-    - "The AUSM Lab at York University develops embodied spatial intelligence: AI systems that perceive, reason about and act within physical space. Our work spans autonomous infrastructure monitoring, aerial mapping and digital twins, smart mobility, and AI for Earth and space observation."
-    - "We are looking for a postdoctoral fellow to lead one of our research thrusts. You will work at the centre of a team of Ph.D. and M.Sc. students, and with industry and government partners such as Teledyne Optech, Aethon Aerial Solutions and the Ontario Ministry of Transportation."
+    - "The AUSM Lab at York University develops embodied spatial intelligence: AI systems that perceive, reason about and act within physical space. Our work spans urban mobility and robotics, infrastructure digital twins, autonomous mapping, and AI for Earth and space."
+    - "We are looking for postdoctoral fellows to lead one of five research thrusts. You will work at the centre of a team of Ph.D. and M.Sc. students, and with industry and government partners such as Teledyne Optech, Aethon Aerial Solutions and the Ontario Ministry of Transportation."
   role:
     - Lead a research thrust, from problem definition to publication
     - Publish in top venues (CVPR, ICCV, ECCV, ISPRS, IEEE TGRS)
@@ -53,11 +53,13 @@
   title: Postdoctoral fellows
   status: Applications reviewed on a rolling basis
   start: Flexible (2026–2027)
-  intro: Lead research on structured spatial world models, mentor graduate students, and work directly with our industry partners on real-world sensing and mapping problems.
+  intro: Build AI world models that understand and predict cities, infrastructure, the Earth and near-Earth space. Lead a research thrust, mentor graduate students and work directly with industry and government partners.
   focus:
-    - "Infrastructure AI | Embodied spatial AI for autonomous infrastructure monitoring (NSERC Discovery)"
-    - "Aerial Digital Twins | Drone LiDAR and imagery, LoD2 and BIM models with industry partners"
-    - "Space Awareness | Resident space object detection and tracking from on-orbit sensors"
+    - "Urban World Models | City-scale robot–mobility interaction; graph models that understand and predict the city"
+    - "Scan-to-Model | Infrastructure-knowledge-compatible 3D models from scans"
+    - "Autonomous Mapping | Self-driving, mobile mapping and agentic mapping"
+    - "Physics-Informed Earth AI | Physics-informed AI for Earth emulation"
+    - "Space Situational Awareness | Space-in-the-loop sensing, detection and tracking"
   offer:
     - Funding through NSERC Discovery, NSERC CREATE SMART and industry partners
     - Support to apply for the Canada Postdoctoral Research Award (CPRA) and Mitacs Accelerate fellowships

@@ -53,8 +53,16 @@ h1 { margin-top: 18px; font-size: 96px; line-height: 1.0; font-weight: 700; lett
 .row b { font-size: 30px; font-weight: 700; line-height: 1.2; }
 .apply { border: 2px solid #6b7690; border-radius: 18px; padding: 20px 28px; font-size: 24px; line-height: 1.45; }
 .apply b { color: #fff; } .apply em { font-style: normal; color: {{ accent }}; font-weight: 600; }
+body.many .top { height: 560px; } body.many .kicker { margin-top: 64px; }
+body.many .focus { display: flex; flex-wrap: wrap; justify-content: center; padding: 34px 40px; row-gap: 26px; }
+body.many .f { width: 33.33%; gap: 8px; padding: 0 14px; }
+body.many .f + .f { border-left: 0; }
+body.many .icon { width: 66px; height: 66px; } body.many .icon svg { width: 36px; height: 36px; }
+body.many .f strong { font-size: 23px; } body.many .f span { font-size: 16.5px; line-height: 1.3; }
+body.many .bottom { padding-top: 30px; gap: 20px; }
+.f:nth-child(4) .icon { background: #b06a12; } .f:nth-child(5) .icon { background: #1f5fa8; }
 .url { font-family: PlexMono; font-size: 26px; text-align: center; color: #e3e6ec; letter-spacing: 1px; }
-</style></head><body>
+</style></head><body class="{{ 'many' if p.focus|length > 3 else '' }}">
 <section class="top">
   <div class="brand">AUSM LAB <span>York University · Lassonde School of Engineering</span></div>
   <p class="kicker">{{ p.kicker }}</p>
@@ -83,6 +91,8 @@ ICONS = [
     '<svg viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="3"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1"/></svg>',
     '<svg viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg>',
     '<svg viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 18c4 0 4-12 8-12s4 12 8 12"/><path d="M17 6h3v3"/></svg>',
+    '<svg viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>',
+    '<svg viewBox="0 0 24 24" width="50" height="50" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M3 6l6 3M21 18l-6-3M15 9l3-3M9 15l-3 3"/><path d="M4 4l3 3M17 17l3 3"/></svg>',
 ]
 
 
@@ -97,7 +107,7 @@ def main():
         browser = pw.chromium.launch()
         page = browser.new_page(viewport={"width": 1080, "height": 1350})
         for p in positions:
-            p["focus"] = [dict(zip(("title", "text"), [x.strip() for x in f.split("|", 1)])) for f in p.get("focus", [])][:3]
+            p["focus"] = [dict(zip(("title", "text"), [x.strip() for x in f.split("|", 1)])) for f in p.get("focus", [])][:6]
             img = p.get("poster_image") or site["hero"]["image"]
             hero = data_uri(ROOT / "static" / "images" / img, "image/jpeg")
             html = POSTER.render(accent=p.get("poster_accent", "#ff8a9a"), bgpos=p.get("poster_position", "center"), p=p, fonts=fonts, hero=hero, icons=ICONS, email=site["contact"]["email"], url=url)
