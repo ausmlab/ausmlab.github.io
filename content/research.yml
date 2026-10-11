@@ -114,6 +114,9 @@ datasets:
     year: Zenodo, 2026
     link: https://doi.org/10.5281/zenodo.20255672
     link_label: Zenodo
+    link2: https://doi.org/10.1038/s41597-026-07736-9
+    link2_label: Paper
+    image: dataset-dust.jpg
   - name: YorkU Indoor
     text: "Multi-year indoor positioning dataset from four York University buildings (2021 and 2022): Wi-Fi signal strength, inertial and magnetometer data from Android phones, with HoloLens 2 augmented-reality ground truth. By Afnan Ahmad."
     year: ISPRS IJGI (submitted), 2026
