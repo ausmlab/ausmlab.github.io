@@ -182,6 +182,26 @@ def build():
     projects = load_folder("projects")
     profiles = load_folder("people")
     archive = {a["slug"]: a for a in load_folder("archive")}
+    # The complete publication list: years covered by publications.yml are written
+    # from it (so new papers show up), older years come from the archived list.
+    if "publications" in archive:
+        import html as _html
+        _yml = pubs.get("papers", [])
+        _years = sorted({int(str(q["year"])[:4]) for q in _yml}, reverse=True)
+        def _li(q):
+            t = _html.escape(q["title"])
+            t = f'<a href="{q["link"]}">{t}</a>' if q.get("link") else t
+            tag = f' <span class="muted">({q["type"]})</span>' if q.get("type") in ("Preprint", "Dataset") else ""
+            return f'<li>{_html.escape(q["authors"])} ({q["year"]}). {t}. <em>{_html.escape(str(q.get("venue", "")))}</em>.{tag}</li>'
+        _new = "".join(f'<h3>{y}</h3>\n<ul>\n' + "\n".join(_li(q) for q in _yml if int(str(q["year"])[:4]) == y) + "\n</ul>\n" for y in _years)
+        _body = archive["publications"]["body"]
+        _parts = re.split(r"(<h3>\d{4}</h3>)", _body)
+        _keep = _parts[0]
+        for _i in range(1, len(_parts), 2):
+            if int(_parts[_i][4:8]) not in _years:
+                _keep += _parts[_i] + _parts[_i + 1]
+        _intro, _sep, _rest = _keep.partition("<h3>")
+        archive["publications"]["body"] = _intro + _new + (_sep + _rest if _sep else "")
 
     for p in posts:
         p["url"] = f"/news/{p['slug']}/"
