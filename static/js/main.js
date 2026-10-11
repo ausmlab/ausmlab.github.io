@@ -91,3 +91,16 @@
     start();
   });
 })();
+
+// Home "Research in Motion": swap the thumbnail for the YouTube player on click
+document.querySelectorAll('.hv-play').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
+    f.title = b.getAttribute('aria-label');
+    f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen = true;
+    f.className = 'hv-frame';
+    b.replaceWith(f);
+  });
+});

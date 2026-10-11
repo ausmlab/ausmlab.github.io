@@ -385,7 +385,7 @@ def build():
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
         datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
-        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
+        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, home_videos=[v for v in videos if v.get("home") and v.get("yt")][:4], youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
         join=join, positions=positions, year=dt.date.today().year,
         all_pubs=archive.get("publications"),
         posts=posts, projects=projects, research_posts=research_posts,
