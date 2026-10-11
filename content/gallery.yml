@@ -9,6 +9,7 @@
 # Videos: paste the YouTube link.
 
 photos:
+  - { file: "neubility-visit-2026.jpg", title: "Visiting Neubility's robot lab in Seoul", date: "Apr 2026", category: Research Activities, event: "Visiting research at Hanyang University and Neubility, Seoul 2026" }
   - { file: "ocn-2026-group.jpg", title: "SMART CREATE team with the delivery robot at Opaskwayak Cree Nation", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026", featured: true }
   - { file: "ocn-2026-robot-delivery.jpg", title: "The delivery robot carries food through a community hall during live music", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
   - { file: "ocn-2026-talk.jpg", title: "Sharing research with the community", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
