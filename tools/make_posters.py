@@ -35,7 +35,7 @@ body { width: 1080px; height: 1350px; font-family: Plex, sans-serif; color: #fff
 .top > * { position: relative; }
 .brand { display: flex; align-items: center; gap: 16px; font-weight: 700; letter-spacing: 4px; font-size: 26px; }
 .brand span { font-weight: 500; letter-spacing: 1px; font-size: 20px; opacity: .8; }
-.kicker { margin-top: 92px; font-family: PlexMono; font-size: 22px; letter-spacing: 6px; color: #ff8a9a; }
+.kicker { margin-top: 92px; font-family: PlexMono; font-size: 22px; letter-spacing: 6px; color: {{ accent }}; }
 h1 { margin-top: 18px; font-size: 96px; line-height: 1.0; font-weight: 700; letter-spacing: -1px; }
 .where { margin-top: 26px; font-size: 32px; font-weight: 500; color: #e3e6ec; }
 .where b { font-weight: 700; color: #fff; }
@@ -48,18 +48,18 @@ h1 { margin-top: 18px; font-size: 96px; line-height: 1.0; font-weight: 700; lett
 .f span { font-size: 19px; line-height: 1.35; color: #4a5160; }
 .bottom { padding: 40px 72px 0; display: flex; flex-direction: column; gap: 26px; }
 .row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-.row div { border-left: 4px solid #ff8a9a; padding-left: 20px; }
+.row div { border-left: 4px solid {{ accent }}; padding-left: 20px; }
 .row small { display: block; font-size: 20px; color: #b6bdcb; }
 .row b { font-size: 30px; font-weight: 700; line-height: 1.2; }
 .apply { border: 2px solid #6b7690; border-radius: 18px; padding: 20px 28px; font-size: 24px; line-height: 1.45; }
-.apply b { color: #fff; } .apply em { font-style: normal; color: #ff8a9a; font-weight: 600; }
+.apply b { color: #fff; } .apply em { font-style: normal; color: {{ accent }}; font-weight: 600; }
 .url { font-family: PlexMono; font-size: 26px; text-align: center; color: #e3e6ec; letter-spacing: 1px; }
 </style></head><body>
 <section class="top">
   <div class="brand">AUSM LAB <span>York University · Lassonde School of Engineering</span></div>
   <p class="kicker">{{ p.kicker }}</p>
   <h1>{{ p.title }}</h1>
-  <p class="where"><b>Structured Spatial World Models</b><br>Toronto, Canada</p>
+  <p class="where"><b>{{ p.poster_tagline or "Structured Spatial World Models" }}</b><br>Toronto, Canada</p>
 </section>
 <section class="focus">
   {% for f in p.focus %}
@@ -100,7 +100,7 @@ def main():
             p["focus"] = [dict(zip(("title", "text"), [x.strip() for x in f.split("|", 1)])) for f in p.get("focus", [])][:3]
             img = p.get("poster_image") or site["hero"]["image"]
             hero = data_uri(ROOT / "static" / "images" / img, "image/jpeg")
-            html = POSTER.render(bgpos=p.get("poster_position", "center"), p=p, fonts=fonts, hero=hero, icons=ICONS, email=site["contact"]["email"], url=url)
+            html = POSTER.render(accent=p.get("poster_accent", "#ff8a9a"), bgpos=p.get("poster_position", "center"), p=p, fonts=fonts, hero=hero, icons=ICONS, email=site["contact"]["email"], url=url)
             page.set_content(html, wait_until="load")
             page.wait_for_timeout(300)
             dest = OUT / f"{p['id']}.png"

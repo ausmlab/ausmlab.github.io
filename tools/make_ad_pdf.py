@@ -59,18 +59,19 @@ ul { padding-left: 14pt; } li { margin: 1pt 0; }
   <p class="status">{{ po.status }}{% if po.start %} · Start: {{ po.start }}{% endif %}</p>
   {% if po.intro %}<p class="intro">{{ po.intro }}</p>{% endif %}
   <h2>About the lab</h2>
-  {% for p in join.positions %}<p style="margin-bottom:5pt">{{ p }}</p>{% endfor %}
+  {% for p in po.about or join.positions %}<p style="margin-bottom:5pt">{{ p }}</p>{% endfor %}
   <div class="cols">
     <div>
-      <h2>Research focus</h2>
+      <h2>{{ po.focus_heading or "Research focus" }}</h2>
       <ul class="focus">{% for f in focus %}<li><strong>{{ f[0] }}</strong>{{ f[1] }}</li>{% endfor %}</ul>
 
       <h2>We offer</h2>
       <ul>{% for o in po.offer %}<li>{{ o }}</li>{% endfor %}</ul>
     </div>
     <div>
-      <h2>Research areas</h2>
-      <ul>{% for a in join.areas %}<li>{{ a }}</li>{% endfor %}</ul>
+      {% if po.role %}<h2>Your role</h2>
+      <ul>{% for a in po.role %}<li>{{ a }}</li>{% endfor %}</ul>{% else %}<h2>Research areas</h2>
+      <ul>{% for a in join.areas %}<li>{{ a }}</li>{% endfor %}</ul>{% endif %}
       <h2>Who we look for</h2>
       <ul>{% for r in po.requirements or join.requirements %}<li>{{ r }}</li>{% endfor %}</ul>
     </div>
