@@ -783,3 +783,8 @@ img.ph-tall { object-fit: cover; }
 .home-research-head h2 { font-size: clamp(32px, 3.4vw, 46px); line-height: 1.15; margin: 0 0 16px; }
 .home-research .thrusts { margin-top: 36px; }
 .home-research .btn { margin-top: 28px; }
+
+/* Home sections use the full page width, same as the header and group photo */
+.home-research, .home-videos, .home-news { max-width: 1440px; }
+.pub-covers { max-width: none; }
+.home-research-head { max-width: 860px; }
