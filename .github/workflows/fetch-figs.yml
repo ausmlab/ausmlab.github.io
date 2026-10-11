@@ -11,28 +11,19 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          mkdir -p figs
-          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
-          get() { name=$1; url=$2
-            curl -sSL -A "$UA" -o figs/$name.html "$url"
-            echo "== $name $(wc -c < figs/$name.html)" >> figs/log.txt
-            grep -o -i -E '<meta[^>]+(og:image|twitter:image)[^>]*>' figs/$name.html | head -3 >> figs/log.txt
-            img=$(grep -o -i -E '<meta[^>]+property="og:image"[^>]*>' figs/$name.html | head -1 | sed -E 's/.*content="([^"]+)".*/\1/')
-            [ -z "$img" ] && img=$(grep -o -i -E '<meta[^>]+name="twitter:image"[^>]*>' figs/$name.html | head -1 | sed -E 's/.*content="([^"]+)".*/\1/')
-            echo "img=$img" >> figs/log.txt
-            [ -n "$img" ] && curl -sSL -A "$UA" -o "figs/$name.img" "$img"
-            grep -o -E 'https://media\.springernature\.com/[^"]+/MediaObjects/[^"]+Fig1_HTML\.png' figs/$name.html | head -2 >> figs/log.txt
-            f1=$(grep -o -E 'https://media\.springernature\.com/[^"]+/MediaObjects/[^"]+Fig[12]_HTML\.png' figs/$name.html | sed 's|/lw[0-9]*/|/full/|' | head -1)
-            [ -n "$f1" ] && curl -sSL -A "$UA" -o "figs/$name-fig1.png" "$f1"
-          }
-          rm -f figs/gmd.pdf figs/gmd.img figs/gmd-avatar.png figs/scidata-fig1.png
-          curl -sSL -A "$UA" -o figs/scidata.pdf https://www.nature.com/articles/s41597-026-07736-9.pdf
-          curl -sSL -A "$UA" -o figs/aerospace.pdf https://www.mdpi.com/2226-4310/13/3/287/pdf
-          curl -sSL -A "$UA" -o figs/aerospace.html https://www.mdpi.com/2226-4310/13/3/287
-          grep -o -E 'https://www\.mdpi\.com/aerospace/aerospace-13-00287/article_deploy/html/images/[^"]+' figs/aerospace.html | sort -u | head -5 >> figs/log.txt
-          echo
-          file figs/* >> figs/log.txt; ls -la figs >> figs/log.txt
+          rm -rf figs; mkdir -p yi
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
+          { echo "== dig"; dig +short yorkuindoor.ausmlab.com CNAME; dig +short yorkuindoor.ausmlab.com A;
+            echo "== curl"; curl -sSIL -m 20 https://yorkuindoor.ausmlab.com | head -20;
+            echo "== wayback cdx"; curl -s -m 60 "https://web.archive.org/cdx/search/cdx?url=yorkuindoor.ausmlab.com*&output=txt&limit=60";
+            echo "== gh repos"; curl -s -m 30 "https://api.github.com/search/repositories?q=yorkuindoor" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(i['full_name'],i['html_url'],i.get('homepage')) for i in d.get('items',[])]";
+            curl -s -m 30 "https://api.github.com/search/repositories?q=yorku+indoor+in:name,description" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(i['full_name'],i.get('homepage')) for i in d.get('items',[])][:10]";
+            echo "== vercel guess"; for h in yorkuindoor.vercel.app yorku-indoor.vercel.app yorkuindoor-dataset.vercel.app; do echo $h $(curl -s -o /dev/null -w "%{http_code}" -m 15 https://$h); done
+          } > yi/log.txt 2>&1
+          snap=$(curl -s -m 60 "https://web.archive.org/cdx/search/cdx?url=yorkuindoor.ausmlab.com&output=json&filter=statuscode:200&limit=1&fl=timestamp" | python3 -c "import json,sys;d=json.load(sys.stdin);print(d[1][0] if len(d)>1 else '')")
+          echo "snap=$snap" >> yi/log.txt
+          [ -n "$snap" ] && curl -sL -m 60 "https://web.archive.org/web/${snap}id_/https://yorkuindoor.ausmlab.com/" -o yi/index.html
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A figs; git commit -m "Fetched figures
+          git add -A yi figs; git commit -m "yorkuindoor check
 
           Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
