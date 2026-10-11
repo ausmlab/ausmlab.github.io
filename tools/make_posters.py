@@ -74,7 +74,7 @@ h1 { margin-top: 18px; font-size: 96px; line-height: 1.0; font-weight: 700; lett
     <div><small>Start</small><b>{{ p.start }}</b></div>
     <div><small>Applications</small><b>{{ p.status | replace("Applications reviewed", "Reviewed") }}</b></div>
   </div>
-  <p class="apply">Email your <b>CV, transcripts and research statement</b> to <b>{{ email }}</b><br>Subject: <em>{{ p.subject }}</em></p>
+  <p class="apply">Email your {{ p.poster_apply or "<b>CV, transcripts and research statement</b>" }} to <b>{{ email }}</b><br>Subject: <em>{{ p.subject }}</em></p>
   <p class="url">{{ url }}</p>
 </section>
 </body></html>""")

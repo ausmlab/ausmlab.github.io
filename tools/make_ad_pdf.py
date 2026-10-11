@@ -72,19 +72,19 @@ ul { padding-left: 14pt; } li { margin: 1pt 0; }
       <h2>Research areas</h2>
       <ul>{% for a in join.areas %}<li>{{ a }}</li>{% endfor %}</ul>
       <h2>Who we look for</h2>
-      <ul>{% for r in join.requirements %}<li>{{ r }}</li>{% endfor %}</ul>
+      <ul>{% for r in po.requirements or join.requirements %}<li>{{ r }}</li>{% endfor %}</ul>
     </div>
   </div>
   <div class="apply">
     <div>
       <h2 style="margin-top:0">How to apply</h2>
       <p>Email <strong>Prof. Gunho Sohn, gsohn@yorku.ca</strong> with:</p>
-      <ul>{% for s in join.steps[:-1] %}<li>{{ s }}</li>{% endfor %}</ul>
+      <ul>{% for s in po.steps or join.steps[:-1] %}<li>{{ s }}</li>{% endfor %}</ul>
       {% if po.subject %}<p>Subject line: <strong>{{ po.subject }}</strong></p>{% endif %}
     </div>
     <div>
-      <h2 style="margin-top:0">Admission &amp; funding</h2>
-      <p>{{ join.create_smart }}</p>
+      <h2 style="margin-top:0">{{ "Funding" if po.funding_note else "Admission &amp; funding" }}</h2>
+      <p>{{ po.funding_note or join.create_smart }}</p>
     </div>
   </div>
 </div>

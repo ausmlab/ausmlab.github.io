@@ -33,3 +33,34 @@
     - A GPU computing cluster and real-world data from industry partners
   apply: Email your CV, transcripts, a short research statement and representative publications to gsohn@yorku.ca.
   subject: "[Ph.D. or M.Sc.] Your Name"
+
+- id: postdoc-2027
+  poster_image: hero-powerline-lidar.jpg
+  poster_position: center 50%
+  kicker: POSTDOCTORAL OPPORTUNITIES
+  title: Postdoctoral fellows
+  status: Applications reviewed on a rolling basis
+  start: Flexible (2026–2027)
+  intro: Lead research on structured spatial world models, mentor graduate students, and work directly with our industry partners on real-world sensing and mapping problems.
+  focus:
+    - "Sensing · Autonomy | Drones, image–LiDAR fusion, tiny-object detection in orbit"
+    - "3D World Models | LoD2 buildings, BIM digital twins, Gaussian splatting"
+    - "Prediction · Action | Mapping agents, LLM and vision-language-action models"
+  offer:
+    - Funding through NSERC Discovery, NSERC CREATE SMART and industry partners
+    - Support to apply for the Canada Postdoctoral Research Award (CPRA) and Mitacs Accelerate fellowships
+    - Experience leading industry projects and mentoring graduate students
+    - A GPU computing cluster and real-world data from industry partners
+  requirements:
+    - "A Ph.D. (completed or near completion) in computer vision, machine learning, robotics, photogrammetry and remote sensing, geomatics, or a related field."
+    - "A strong publication record in leading venues (e.g., CVPR, ICCV, ECCV, ISPRS, IEEE TGRS)."
+    - "Hands-on experience with deep learning (Python, PyTorch) and 3D or spatial data."
+  steps:
+    - Your CV with a full publication list
+    - A research statement (up to two pages)
+    - Two or three representative publications
+    - Names and contact details of three referees
+  poster_apply: "<b>CV, research statement and 2–3 papers</b>"
+  funding_note: "Positions are funded through the lab's research grants and industry partners. We also encourage strong candidates to apply with us for external fellowships, such as the Canada Postdoctoral Research Award (CPRA) and Mitacs Accelerate, and we support the application."
+  apply: Email your CV with publication list, a research statement of up to two pages, two or three representative publications and the names of three referees to gsohn@yorku.ca.
+  subject: "[Postdoc] Your Name"
