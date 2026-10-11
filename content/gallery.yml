@@ -9,6 +9,14 @@
 # Videos: paste the YouTube link.
 
 photos:
+  - { file: "ocn-2026-group.jpg", title: "SMART CREATE team with the delivery robot at Opaskwayak Cree Nation", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026", featured: true }
+  - { file: "ocn-2026-talk.jpg", title: "Sharing research with the community", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
+  - { file: "ocn-2026-audience.jpg", title: "Meeting with community members", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
+  - { file: "ocn-2026-robot-room.jpg", title: "The delivery robot joins the meeting", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
+  - { file: "ocn-2026-smartfarm.jpg", title: "Touring the OCN indoor smart farm", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
+  - { file: "ocn-2026-water.jpg", title: "The smart farm's water and nutrient control system", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
+  - { file: "ocn-2026-circle.jpg", title: "Gathering outdoors at OCN", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
+  - { file: "ocn-2026-robot-field.jpg", title: "The delivery robot at a community event", date: "Aug 2026", category: Research Activities, event: "SMART CREATE visit to Opaskwayak Cree Nation 2026" }
   - { file: "korny-msc-defence-2026-selfie.jpg", title: "Lab members cheering after Youssef Korny's M.Sc. defence", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026", featured: true }
   - { file: "news/korny-msc-defence-2026.jpg", title: "Youssef Korny with Prof. Sohn and the examining committee", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
   - { file: "korny-msc-defence-2026-title.jpg", title: "Youssef Korny presents his M.Sc. thesis", date: "Jun 2026", category: Lab Life, event: "Youssef Korny M.Sc. defence 2026" }
