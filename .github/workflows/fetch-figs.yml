@@ -12,11 +12,12 @@ jobs:
       - run: |
           set +e
           rm -rf yi figs sd ot nyc; mkdir -p nyc
-          curl -sL -m 300 -o /tmp/out.mp4 "https://uc607da6806d130f554c7aab8670.dl.dropboxusercontent.com/cd/0/get/DJxRGo2VYvYY2Rcpyh96glkRxTGdDTzp-1YJDbYb4zhsm9vZE2kyB2eR8yDnnKWn_BtUro22Kn4qP_UqhhuJ5RTG2U6DGyUMVZasqb6BcSG8HiO5BEKbTCFQoEYqwisEoOyBRyejLnGTBKP29ugg124-xMmlwQPqFFqlP6O-TXyOJg/file?c_luid=bfdddea5"
+          curl -sL -m 300 -o /tmp/out.mp4 "https://ucf105498ebe4ac61c81541331f5.dl.dropboxusercontent.com/cd/0/get/DJz5qUni-0Sn3ELZ1n-HabA0gF10T170fGhZe8nL95cEWNjQYBppqAawT0JlgYtqPhu8E9C7mDaMC0uFKYuf-GmsEcDj5Psx3jNjzFXfa9nm2Q28Ydhnkl6hwBBjLQtx0hsbRYNr1lAlCKv9Rh-8K1nslIYRvMFSmY8TAYcLHD9sqw/file?c_luid=bfdddea5"
           ls -la /tmp/out.mp4 > nyc/log.txt
-          ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,r_frame_rate -of compact /tmp/out.mp4 >> nyc/log.txt 2>&1
-          ffmpeg -y -v error -i /tmp/out.mp4 -an -vf "scale='min(1280,iw)':-2,fps=25" -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart nyc/nyct-track-extraction.mp4 >> nyc/log.txt 2>&1
-          for t in 2 8 15 25; do ffmpeg -y -v error -ss $t -i /tmp/out.mp4 -frames:v 1 -vf "scale='min(1280,iw)':-2" -q:v 3 nyc/frame-$t.jpg; done
+          pip install -q imageio-ffmpeg >/dev/null 2>&1; FF=$(python3 -c "import imageio_ffmpeg;print(imageio_ffmpeg.get_ffmpeg_exe())"); echo "ff=$FF" >> nyc/log.txt
+          $FF -hide_banner -i /tmp/out.mp4 2>&1 | grep -E "Duration|Stream" >> nyc/log.txt; true ffprobe -v error -show_entries format=duration:stream=codec_name,width,height,r_frame_rate -of compact /tmp/out.mp4 >> nyc/log.txt 2>&1
+          $FF -y -v error -i /tmp/out.mp4 -an -vf "scale='min(1280,iw)':-2,fps=25" -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart nyc/nyct-track-extraction.mp4 >> nyc/log.txt 2>&1
+          for t in 2 8 15 25; do $FF -y -v error -ss $t -i /tmp/out.mp4 -frames:v 1 -vf "scale='min(1280,iw)':-2" -q:v 3 nyc/frame-$t.jpg; done
           ls -la nyc >> nyc/log.txt
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "fetch sci data figs
