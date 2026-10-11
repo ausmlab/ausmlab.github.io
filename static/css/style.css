@@ -734,3 +734,7 @@ img.ph-tall { object-fit: cover; }
 .news-logo img { max-width:62%; max-height:62%; width:auto !important; height:auto !important; object-fit:contain !important; }
 .news-card .news-logo { width:100%; aspect-ratio:4 / 3; border-radius:4px; }
 .news-logo img { aspect-ratio:auto !important; border-radius:0 !important; box-shadow:none !important; transform:none !important; }
+
+/* Home: Publications row lines up with the News & Events row */
+.pub-covers { max-width: calc(1200px - 2 * var(--gutter)); gap: 24px; }
+.pub-cover img { object-fit: cover; padding: 0; background: none; }
