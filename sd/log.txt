@@ -1,1 +1,19 @@
 html size: 212544
+fig1.png 404
+fig1.jpg 404
+fig2.png 404
+fig2.jpg 404
+fig3.png 404
+fig3.jpg 404
+fig4.png 404
+fig4.jpg 404
+fig5.png 404
+fig5.jpg 404
+fig6.png 404
+fig6.jpg 404
+fig7.png 404
+fig7.jpg 404
+fig8.png 404
+fig8.jpg 404
+Fig1_HTML.jpg
+Fig1_HTML.png
