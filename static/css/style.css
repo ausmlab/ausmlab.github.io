@@ -749,3 +749,4 @@ img.ph-tall { object-fit: cover; }
 .thrust-1 { --th: #0e6b63; } .thrust-2 { --th: #5148b0; } .thrust-3 { --th: var(--accent); } .thrust-4 { --th: #b06a12; } .thrust-5 { --th: #1f5fa8; }
 @media (max-width: 1100px) { .thrust-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .thrust-row { grid-template-columns: minmax(0, 1fr); } }
+.thrust-art { display: block; width: 84px; height: 64px; color: var(--ink); margin-bottom: 8px; }
