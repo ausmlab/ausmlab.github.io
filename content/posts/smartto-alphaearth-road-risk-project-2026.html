@@ -1,0 +1,20 @@
+---
+title: "New SmartTO Project with AlphaEarth Connect: AI for Road Crash Risk"
+date: "2026-03-15"
+categories: ["Research"]
+image: ""
+logo: "partners/smartto.png"
+summary: "The AUSM Lab has started a SmartTO project with AlphaEarth Connect (AEC). The team uses graph neural networks and satellite image embeddings to predict which road segments have a high crash risk."
+---
+<p>The AUSM Lab has started a new <strong>SmartTO</strong> project with the industry partner <strong>AlphaEarth Connect (AEC)</strong>. The project began on March 15, 2026. It is led by Prof. Gunho Sohn and Prof. Manos Papagelis (Electrical Engineering and Computer Science, York University).</p>
+<p>The goal is to predict crash risk for each segment of a road network. Some roads are much more dangerous than others. If we can find them early, we can make them safer.</p>
+<p>The team uses a <strong>graph neural network (GNN)</strong>. A GNN treats the road network as a graph: each road segment is a node, and segments that meet at an intersection are linked. This lets the model learn from a road's neighbours, not just the road itself.</p>
+<p>Each road segment is described by three kinds of features:</p>
+<ul>
+<li><strong>AlphaEarth satellite embeddings:</strong> compact summaries of what the land around the road looks like from space.</li>
+<li><strong>Terrain features:</strong> slope, curvature and elevation from digital elevation models.</li>
+<li><strong>Road attributes:</strong> road class, number of lanes, speed limit and segment length.</li>
+</ul>
+<p>The project first reproduces a published GraphSAGE road-safety model (Gao et al., 2025). It then adapts the model to AEC's large crash and road datasets, using York's high-performance computing resources. The team will also test whether the model works across the whole continental U.S. highway network.</p>
+<p>Ph.D. student Mohammad Moein Sheikholeslami leads the model work. Undergraduate student Arpan Sandhu builds the data pipeline. AEC engineers give weekly technical mentoring. The results will be prepared for a joint publication.</p>
+<p>SmartTO is a York University hub, run with Centennial College, that helps startups and small businesses develop and test smart mobility technologies. <a href="https://www.yorku.ca/research/project/smartto/">Learn more about SmartTO</a>.</p>
