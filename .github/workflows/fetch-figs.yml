@@ -11,18 +11,14 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf yi figs; mkdir -p sd
-          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
-          curl -sL -m 60 -A "$UA" https://www.nature.com/articles/s41597-026-07736-9 -o sd/article.html
-          grep -o -i 'img[^>]*src="[^"]*"' sd/article.html | head -30 > sd/allimg.txt
-          echo "html size: $(wc -c < sd/article.html)" > sd/log.txt
-          grep -o 'media.springernature.com/lw685/[^" ?]*' sd/article.html | sort -u | sed 's|^|https://|' > sd/imgs.txt
-          cat sd/imgs.txt >> sd/log.txt
-          for n in 1 2 3 4 5 6 7 8; do for ext in png jpg; do u="https://media.springernature.com/lw1200/springer-static/image/art%3A10.1038%2Fs41597-026-07736-9/MediaObjects/41597_2026_7736_Fig${n}_HTML.$ext"; c=$(curl -sL -m 60 -A "$UA" -o sd/fig$n.$ext -w "%{http_code}" "$u"); echo "fig$n.$ext $c" >> sd/log.txt; [ "$c" = 200 ] || rm -f sd/fig$n.$ext; done; done
-          grep -o 'Fig[0-9]_HTML[^"]*' sd/article.html | sort -u | head >> sd/log.txt
-          python3 -c "import re,html;t=open('sd/article.html',encoding='utf8',errors='ignore').read();[print('CAP:',re.sub('<[^>]+>','',html.unescape(m.group(1)))[:300]) for m in re.finditer(r'<figcaption[^>]*>(.*?)</figcaption>',t,re.S)]" >> sd/log.txt
-          curl -s -m 60 https://zenodo.org/api/records/20255672 -o sd/zenodo.json
-          rm -f sd/article.html; rm -f sd/zenodo.json
+          rm -rf yi figs sd; mkdir -p ot
+          curl -sL -m 120 -o /tmp/ot.pdf "https://uc98e53d36edcc5b7f852598e828.dl.dropboxusercontent.com/cd/0/get/DJw9Z2MkHEXDQ_llWFUIXhRwv6MsbJKAg3gtsEDXShTE64PkB8xF-I1o4AqNWslWQJmH_YGe0MvXQ-jFB36qU6iIMLv5zbY7ddxLa1vxjGdGb29D8_6vQLt6jUI1bwgAPpqovZHROb1XXwMv0q6CBiW2vR78pojN4_PjC9Y7zvm3aw/file?c_luid=bfdddea5"
+          ls -la /tmp/ot.pdf > ot/log.txt
+          sudo apt-get -qq install -y poppler-utils >/dev/null 2>&1
+          pdftoppm -r 110 -jpeg -jpegopt quality=80 /tmp/ot.pdf ot/p
+          pdfimages -list /tmp/ot.pdf >> ot/log.txt
+          mkdir -p ot/img; pdfimages -png -p /tmp/ot.pdf ot/img/i
+          find ot/img -size -40k -delete
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "fetch sci data figs
 
