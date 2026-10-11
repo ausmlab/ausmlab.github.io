@@ -750,3 +750,14 @@ img.ph-tall { object-fit: cover; }
 @media (max-width: 1100px) { .thrust-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 640px) { .thrust-row { grid-template-columns: minmax(0, 1fr); } }
 .thrust-art { display: block; width: 84px; height: 64px; color: var(--ink); margin-bottom: 8px; }
+
+/* Header fit: active link stays the same width (no bold jump); hide the York logo before it can overflow */
+.mainnav a[aria-current="page"] { font-weight: inherit; text-shadow: 0 0 .5px currentColor, 0 0 .5px currentColor; }
+@media (max-width: 1500px) { .affil-logo { display: none; } }
+/* Tablets and small laptops: the full menu no longer fits, so use the menu button */
+@media (max-width: 1120px) and (min-width: 761px) {
+  .menu-btn { display: inline-flex; }
+  .mainnav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 8px var(--gutter) 16px; }
+  .mainnav.open { display: flex; }
+  .mainnav a { padding: 12px 0; border-top: 1px solid var(--line); font-size: 16px; }
+}
