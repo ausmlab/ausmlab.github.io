@@ -12,13 +12,19 @@ jobs:
       - run: |
           set +e
           rm -rf yi figs sd; mkdir -p ot
-          curl -sL -m 120 -o /tmp/ot.pdf "https://uc98e53d36edcc5b7f852598e828.dl.dropboxusercontent.com/cd/0/get/DJw9Z2MkHEXDQ_llWFUIXhRwv6MsbJKAg3gtsEDXShTE64PkB8xF-I1o4AqNWslWQJmH_YGe0MvXQ-jFB36qU6iIMLv5zbY7ddxLa1vxjGdGb29D8_6vQLt6jUI1bwgAPpqovZHROb1XXwMv0q6CBiW2vR78pojN4_PjC9Y7zvm3aw/file?c_luid=bfdddea5"
+          curl -sL -m 120 -o /tmp/ot.pdf "https://uc99daa0c83eaee5439be2bb7d51.dl.dropboxusercontent.com/cd/0/get/DJzKh6BPi-8-jJOKPT1Fmvn7oJjHb6VoTQdPUsCL78nmHL272Bzi1Xuqyg3tl6QSzzoTxEfcmcgDuIduu7XVRwSFcYPjGIBbAL9tg1qYAb2sQSaY4I1e8tWKmyvpLW-TnqESj07WZ4b5HWjyT-adwMRbvboCkHmo1zsCV3BoU-mC6Q/file?c_luid=bfdddea5"
           ls -la /tmp/ot.pdf > ot/log.txt
-          sudo apt-get -qq install -y poppler-utils >/dev/null 2>&1
-          pdftoppm -r 110 -jpeg -jpegopt quality=80 /tmp/ot.pdf ot/p
-          pdfimages -list /tmp/ot.pdf >> ot/log.txt
-          mkdir -p ot/img; pdfimages -png -p /tmp/ot.pdf ot/img/i
-          find ot/img -size -40k -delete
+          pip install -q pymupdf >> ot/log.txt 2>&1
+          python3 -c "
+          import fitz,os
+          d=fitz.open('/tmp/ot.pdf'); os.makedirs('ot/img',exist_ok=True)
+          for i,pg in enumerate(d):
+              pg.get_pixmap(dpi=100).save(f'ot/p{i+1:02d}.jpg')
+              for j,im in enumerate(pg.get_images(full=True)):
+                  x=fitz.Pixmap(d,im[0])
+                  if x.n-x.alpha>=4: x=fitz.Pixmap(fitz.csRGB,x)
+                  if x.width*x.height>150000: x.save(f'ot/img/p{i+1:02d}_{j}.png')
+          " >> ot/log.txt 2>&1
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "fetch sci data figs
 
