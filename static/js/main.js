@@ -95,6 +95,13 @@
 // Home "Research in Motion": swap the thumbnail for the YouTube player on click
 document.querySelectorAll('.hv-play').forEach(function (b) {
   b.addEventListener('click', function () {
+    if (b.dataset.src) {
+      var v = document.createElement('video');
+      v.src = b.dataset.src; v.controls = true; v.autoplay = true; v.muted = true; v.loop = true; v.playsInline = true;
+      v.className = 'hv-frame';
+      b.replaceWith(v); v.play && v.play();
+      return;
+    }
     var f = document.createElement('iframe');
     f.src = 'https://www.youtube-nocookie.com/embed/' + b.dataset.yt + '?autoplay=1&rel=0';
     f.title = b.getAttribute('aria-label');

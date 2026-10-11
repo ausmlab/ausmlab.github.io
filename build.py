@@ -337,6 +337,8 @@ def build():
         p["path"] = p["file"] if "/" in p["file"] else ("gallery/" + p["file"] if p["file"] else "")
     videos = gallery.get("videos", []) or []
     for v in videos:
+        for k in ("url", "file", "poster", "story", "topic", "home"):
+            v.setdefault(k, "")
         m = re.search(r"(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{11})", v.get("url", ""))
         v["yt"] = m.group(1) if m else ""
     video_topics = list(dict.fromkeys(v["topic"] for v in videos if v.get("topic")))
@@ -385,7 +387,7 @@ def build():
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
         datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
-        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, home_videos=[v for v in videos if v.get("home") and v.get("yt")][:4], youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
+        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, home_videos=sorted([v for v in videos if v.get("home") and (v.get("yt") or v.get("file"))], key=lambda v: [t.split(" | ")[0] for t in research.get("thrusts", [])].index(v["home"]) if v["home"] in [t.split(" | ")[0] for t in research.get("thrusts", [])] else 9)[:4], youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
         join=join, positions=positions, year=dt.date.today().year,
         all_pubs=archive.get("publications"),
         posts=posts, projects=projects, research_posts=research_posts,
