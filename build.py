@@ -283,7 +283,7 @@ def build():
         except ValueError: return 0
     _with_img = [p for p in papers if p.get("image")]
     # Home page: the newest papers that have a picture; within the same year, featured ones first
-    home_papers = sorted(_with_img, key=lambda p: (_py(p), bool(p.get("featured"))), reverse=True)[:3]
+    home_papers = sorted(_with_img, key=lambda p: (_py(p), bool(p.get("featured"))), reverse=True)[:4]
     pub_types = [t for t in ("Journal", "Conference", "Preprint", "Dataset") if any(p["type"] == t for p in papers)]
 
     # Research

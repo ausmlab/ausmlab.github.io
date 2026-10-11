@@ -16,6 +16,16 @@
 
 papers:
   - year: 2026
+    type: Conference
+    authors: Yoo, S., Sohn, G.
+    title: "YUPU: An Airborne LiDAR Point Cloud Upsampling Benchmark"
+    venue: European Conference on Computer Vision (ECCV) Workshops, 2026
+    featured: true
+    short: YUPU
+    image: dataset-yutosemantic.jpg
+    venue_short: ECCV Workshops
+
+  - year: 2026
     type: Journal
     authors: Axelrod, K. M., Gordon, M., Koushafar, M., Hao, J., Makar, P., Fathi, S., Sohn, G.
     title: Evaluation of plume rise parameterizations in GEM-MACHv2 with analysis of image data using a deep convolutional neural network
