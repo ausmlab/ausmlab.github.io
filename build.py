@@ -218,8 +218,10 @@ def build():
         n.setdefault("link", "")
     news.sort(key=lambda n: n["sort"], reverse=True)
     featured_news = next((n for n in news if n.get("featured")), news[0] if news else None)
-    home_news = [n for n in news if n.get("featured")][:2]
-    home_news += [n for n in news if n not in home_news][: 4 - len(home_news)]
+    # Home page News & Events: no paper stories (papers have their own section below)
+    _hn = [n for n in news if n.get("category") != "Publication"]
+    home_news = [n for n in _hn if n.get("featured")][:2]
+    home_news += [n for n in _hn if n not in home_news][: 4 - len(home_news)]
     news_years = {}
     for n in news:
         news_years.setdefault(n["year"], []).append(n)
