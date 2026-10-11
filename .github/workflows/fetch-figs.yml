@@ -14,13 +14,14 @@ jobs:
           rm -rf yi figs; mkdir -p sd
           UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
           curl -sL -m 60 -A "$UA" https://www.nature.com/articles/s41597-026-07736-9 -o sd/article.html
+          grep -o -i 'img[^>]*src="[^"]*"' sd/article.html | head -30 > sd/allimg.txt
           echo "html size: $(wc -c < sd/article.html)" > sd/log.txt
-          grep -o 'https://media.springernature.com/[^" ]*' sd/article.html | grep -i -E 'lw685|full' | sort -u > sd/imgs.txt
+          grep -o 'media.springernature.com/lw685/[^" ?]*' sd/article.html | sort -u | sed 's|^|https://|' > sd/imgs.txt
           cat sd/imgs.txt >> sd/log.txt
           i=0; while read u; do i=$((i+1)); curl -sL -m 60 -A "$UA" "$u" -o sd/fig$i.png; done < <(grep -i 'lw685' sd/imgs.txt | head -12)
           python3 -c "import re,html;t=open('sd/article.html',encoding='utf8',errors='ignore').read();[print('CAP:',re.sub('<[^>]+>','',html.unescape(m.group(1)))[:300]) for m in re.finditer(r'<figcaption[^>]*>(.*?)</figcaption>',t,re.S)]" >> sd/log.txt
           curl -s -m 60 https://zenodo.org/api/records/20255672 -o sd/zenodo.json
-          rm -f sd/article.html
+          rm -f sd/article.html; rm -f sd/zenodo.json
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add -A .; git commit -m "fetch sci data figs
 
