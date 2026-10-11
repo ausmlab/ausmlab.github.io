@@ -57,7 +57,7 @@
   focus:
     - "Urban World Models | City-scale robot–mobility interaction; graph models that understand and predict the city"
     - "Scan-to-Model | Infrastructure-knowledge-compatible 3D models from scans"
-    - "Embodied Autonomy | Robots, drones and self-driving vehicles that sense, map and act on their own"
+    - "Embodied Autonomy | Robots, drones and self-driving vehicles that sense, map and act in real time"
     - "Physics-Informed Earth AI | Physics-informed AI for Earth emulation"
     - "Space Situational Awareness | Space-in-the-loop sensing, detection and tracking"
   offer:

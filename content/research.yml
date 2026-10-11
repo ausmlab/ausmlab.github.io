@@ -18,7 +18,7 @@ vision:
 thrusts:
   - "Urban World Models | City-scale interaction between robots and mobility, and graph models that understand and predict the city"
   - "Scan-to-Model | 3D models of infrastructure that carry engineering knowledge, built from scans"
-  - "Embodied Autonomy | Robots, drones and self-driving vehicles that sense, map and act on their own, including agentic mapping"
+  - "Embodied Autonomy | Robots, drones and self-driving vehicles that sense, map and act on their own in real time, including agentic mapping"
   - "Physics-Informed Earth AI | AI that emulates Earth systems, guided by physics"
   - "Space Situational Awareness | Space in the loop: detecting and tracking objects in orbit"
 
