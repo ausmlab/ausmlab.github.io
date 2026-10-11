@@ -16,19 +16,14 @@
   {% if slides | length > 1 %}<div class="hero-slide-dots" role="group" aria-label="Choose photo">{% for sl in slides %}<button type="button" aria-label="Photo {{ loop.index }}"{% if loop.first %} aria-pressed="true"{% endif %}></button>{% endfor %}</div>{% endif %}
 </section>
 
-<section class="wrap section">
-  <div class="research-feature">
-    <a class="research-feature-img" href="{{ url(site.home_research_link or '/research/') }}"><img src="{{ url('/images/' ~ site.home_research_image) }}" alt="{{ site.home_research_caption }}" loading="lazy"></a>
-    <div class="research-feature-text">
-      <p class="kicker-accent">RESEARCH</p>
-      <h2>{{ vision.title }}</h2>
-      <p class="lead">{{ vision.lead }}</p>
-      <p>{{ site.intro[1] if site.intro | length > 1 else site.intro[0] }}</p>
-      {% if site.home_research_caption %}<p class="muted small">Pictured: {{ site.home_research_caption }}</p>{% endif %}
-      <a class="btn btn-accent" href="{{ url('/research/') }}">Read More</a>
-    </div>
+<section class="wrap section home-research">
+  <div class="home-research-head">
+    <p class="kicker-accent">RESEARCH</p>
+    <h2>{{ vision.title }}</h2>
+    <p class="lead">{{ vision.lead }}</p>
   </div>
-  {% if thrusts %}{{ thrust_cards(thrusts) }}{% endif %}
+  {% if thrusts %}{{ thrust_cards(thrusts, heading=false) }}{% endif %}
+  <p class="center"><a class="btn btn-accent" href="{{ url('/research/') }}">Our research</a></p>
 </section>
 
 {% if home_videos %}

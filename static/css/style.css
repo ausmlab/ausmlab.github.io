@@ -776,3 +776,10 @@ img.ph-tall { object-fit: cover; }
 .home-videos .btn { margin-top: 28px; }
 @media (max-width: 1000px) { .hv-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .hv-row { grid-template-columns: minmax(0, 1fr); } }
+
+/* Home research: one compact section (headline, lead, five thrusts) */
+.home-research { max-width: 1200px; }
+.home-research-head { max-width: 780px; margin: 0 auto; text-align: center; }
+.home-research-head h2 { font-size: clamp(32px, 3.4vw, 46px); line-height: 1.15; margin: 0 0 16px; }
+.home-research .thrusts { margin-top: 36px; }
+.home-research .btn { margin-top: 28px; }
