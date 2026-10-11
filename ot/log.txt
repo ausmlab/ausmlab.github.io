@@ -1,2 +1,0 @@
--rw-r--r-- 1 runner runner 2152562 Oct 11 13:27 /tmp/ot.pdf
-warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.

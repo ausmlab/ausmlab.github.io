@@ -1,0 +1,7 @@
+-rw-r--r-- 1 runner runner 28908541 Oct 11 17:35 /tmp/out.mp4
+/home/runner/work/_temp/6b9cd02b-7984-4ee4-a291-4e500ce0f0da.sh: line 5: ffprobe: command not found
+/home/runner/work/_temp/6b9cd02b-7984-4ee4-a291-4e500ce0f0da.sh: line 6: ffmpeg: command not found
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 11 17:35 .
+drwxr-xr-x 9 runner runner 4096 Oct 11 17:35 ..
+-rw-r--r-- 1 runner runner  261 Oct 11 17:35 log.txt
