@@ -22,6 +22,6 @@ jobs:
           curl -s -m 60 https://zenodo.org/api/records/20255672 -o sd/zenodo.json
           rm -f sd/article.html
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A sd yi figs; git commit -m "fetch sci data figs
+          git add -A .; git commit -m "fetch sci data figs
 
           Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
