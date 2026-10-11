@@ -54,12 +54,13 @@
   status: Applications reviewed on a rolling basis
   start: Flexible (2026–2027)
   intro: Build AI world models that understand and predict cities, infrastructure, the Earth and near-Earth space. Lead a research thrust, mentor graduate students and work directly with industry and government partners.
+  poster_art: true
   focus:
-    - "Urban World Models | City-scale robot–mobility interaction; graph models that understand and predict the city"
-    - "Scan-to-Model | Infrastructure-knowledge-compatible 3D models from scans"
-    - "Embodied Autonomy | Robots, drones and self-driving vehicles that sense, map and act in real time"
-    - "Physics-Informed Earth AI | Physics-informed AI for Earth emulation"
-    - "Space Situational Awareness | Space-in-the-loop sensing, detection and tracking"
+    - "Urban World Models | Graph models that understand and predict robots and mobility in cities"
+    - "Scan-to-Model | Infrastructure models with engineering knowledge, built from scans"
+    - "Embodied Autonomy | Robots, drones and cars that sense, map and act in real time"
+    - "Physics-Informed Earth AI | AI guided by physics that emulates Earth systems"
+    - "Space Situational Awareness | Space in the loop: detecting and tracking objects in orbit"
   offer:
     - Funding through NSERC Discovery, NSERC CREATE SMART and industry partners
     - Support to apply for the Canada Postdoctoral Research Award (CPRA) and Mitacs Accelerate fellowships

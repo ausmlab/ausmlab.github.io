@@ -374,6 +374,8 @@ def build():
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), undefined=StrictUndefined, autoescape=True,
                       trim_blocks=True, lstrip_blocks=True)
     env.filters["replace_imgs"] = replace_imgs
+    from thrust_art import ART as THRUST_ART
+    env.globals["thrust_art"] = THRUST_ART
     ctx = dict(
         site=site, nav=NAV, news=news, home_news=home_news, news_years=news_years, featured_news=featured_news,
         members=members, alumni_groups=alumni_groups, alumni_total=alumni_total,

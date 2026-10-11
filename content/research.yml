@@ -16,10 +16,10 @@ vision:
 # thrusts: where the world-model work is applied. Shown on the home page and the
 #          Research page as five icon cards. Each line is "Title | one short line".
 thrusts:
-  - "Urban World Models | City-scale interaction between robots and mobility, and graph models that understand and predict the city"
-  - "Scan-to-Model | 3D models of infrastructure that carry engineering knowledge, built from scans"
-  - "Embodied Autonomy | Robots, drones and self-driving vehicles that sense, map and act on their own in real time, including agentic mapping"
-  - "Physics-Informed Earth AI | AI that emulates Earth systems, guided by physics"
+  - "Urban World Models | Graph models that understand and predict robots and mobility in cities"
+  - "Scan-to-Model | Infrastructure models with engineering knowledge, built from scans"
+  - "Embodied Autonomy | Robots, drones and cars that sense, map and act in real time"
+  - "Physics-Informed Earth AI | AI guided by physics that emulates Earth systems"
   - "Space Situational Awareness | Space in the loop: detecting and tracking objects in orbit"
 
 pillars:

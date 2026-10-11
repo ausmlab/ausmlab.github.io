@@ -11,6 +11,9 @@ import sys
 from pathlib import Path
 
 import yaml
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from thrust_art import ART
 from jinja2 import Template
 from playwright.sync_api import sync_playwright
 
@@ -61,6 +64,8 @@ body.many .icon { width: 66px; height: 66px; } body.many .icon svg { width: 36px
 body.many .f strong { font-size: 23px; } body.many .f span { font-size: 16.5px; line-height: 1.3; }
 body.many .bottom { padding-top: 30px; gap: 20px; }
 .f:nth-child(4) .icon { background: #b06a12; } .f:nth-child(5) .icon { background: #1f5fa8; }
+.art { width: 126px; height: 96px; color: #141824; }
+body.many .art { width: 104px; height: 80px; }
 .url { font-family: PlexMono; font-size: 26px; text-align: center; color: #e3e6ec; letter-spacing: 1px; }
 </style></head><body class="{{ 'many' if p.focus|length > 3 else '' }}">
 <section class="top">
@@ -72,7 +77,7 @@ body.many .bottom { padding-top: 30px; gap: 20px; }
 <section class="focus">
   {% for f in p.focus %}
   <div class="f">
-    <div class="icon">{{ icons[loop.index0] | safe }}</div>
+    {% if p.poster_art %}<svg class="art" viewBox="0 0 84 64" style="--th: {{ th[loop.index0] }}">{{ art[loop.index0] | safe }}</svg>{% else %}<div class="icon">{{ icons[loop.index0] | safe }}</div>{% endif %}
     <strong>{{ f.title }}</strong><span>{{ f.text }}</span>
   </div>
   {% endfor %}
@@ -110,7 +115,7 @@ def main():
             p["focus"] = [dict(zip(("title", "text"), [x.strip() for x in f.split("|", 1)])) for f in p.get("focus", [])][:6]
             img = p.get("poster_image") or site["hero"]["image"]
             hero = data_uri(ROOT / "static" / "images" / img, "image/jpeg")
-            html = POSTER.render(accent=p.get("poster_accent", "#ff8a9a"), bgpos=p.get("poster_position", "center"), p=p, fonts=fonts, hero=hero, icons=ICONS, email=site["contact"]["email"], url=url)
+            html = POSTER.render(art=ART, th=["#0e6b63", "#5148b0", "#a3122a", "#b06a12", "#1f5fa8"], accent=p.get("poster_accent", "#ff8a9a"), bgpos=p.get("poster_position", "center"), p=p, fonts=fonts, hero=hero, icons=ICONS, email=site["contact"]["email"], url=url)
             page.set_content(html, wait_until="load")
             page.wait_for_timeout(300)
             dest = OUT / f"{p['id']}.png"
