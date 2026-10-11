@@ -788,3 +788,15 @@ img.ph-tall { object-fit: cover; }
 .home-research, .home-videos, .home-news { max-width: 1440px; }
 .pub-covers { max-width: none; }
 .home-research-head { max-width: 860px; }
+
+/* One page width for everything that is a grid, list or photo.
+   Only running text (paragraphs) keeps a narrower reading width. */
+.people.cards { grid-template-columns: repeat(4, minmax(0, 1fr)); justify-content: stretch; gap: 28px; }
+.people.cards .person { width: auto; }
+@media (max-width: 1100px) { .people.cards { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .people.cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; } }
+.pub-list.narrow { max-width: 1440px; }
+.people.cards { display: grid; }
+/* Header must fit inside the same page width as the content below it. */
+@media (min-width: 1121px) { .mainnav { gap: 18px; } .topbar-in { gap: 16px; } }
+@media (min-width: 1501px) { .affil-logo img { height: 30px; } }
