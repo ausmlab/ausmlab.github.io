@@ -800,3 +800,5 @@ img.ph-tall { object-fit: cover; }
 /* Header must fit inside the same page width as the content below it. */
 @media (min-width: 1121px) { .mainnav { gap: 18px; } .topbar-in { gap: 16px; } }
 @media (min-width: 1501px) { .affil-logo img { height: 30px; } }
+/* Hero photos use the same page width as everything else. */
+.hero, .band-hero { width: calc(min(1440px, 100%) - 2 * var(--gutter)); margin: 24px auto 0; border-radius: 6px; }
