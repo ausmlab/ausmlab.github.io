@@ -124,7 +124,7 @@
       github: https://github.com/youssef-shaban
       projects:
         - "GeoPriorPC: building point clouds from nadir views (CVPR Workshops 2026)"
-        - "Annotation tool for space situational awareness (K-SSA)"
+        - "Annotation tool for space situational awareness"
       photo: youssef-korny.jpg
     - name: Md. Ehsan Shahmi Chowdhury
       role: Ph.D. student
@@ -147,21 +147,21 @@
       role: M.Sc. student
       since: 2026
       bio:
-        - "Youssef joined the lab as an M.Sc. student in 2026. He works on detecting and tracking resident space objects for space situational awareness (K-SSA), with Prof. Regina Lee's lab."
+        - "Youssef joined the lab as an M.Sc. student in 2026. He works on detecting and tracking resident space objects for space situational awareness, in collaboration with Prof. Regina Lee's lab."
       history:
         - "2026–  M.Sc., Earth and Space Science, York University"
       interests: Resident space object (RSO) detection and tracking for Space Situational Awareness
       projects:
-        - "Tiny-object detection of resident space objects (K-SSA), with Prof. Regina Lee's lab"
+        - "Tiny-object detection of resident space objects, in collaboration with Prof. Regina Lee's lab"
       photo: youssef-beshir.jpg
     - name: Merna Tamer Youssef
       role: M.Sc. student
       since: 2026
       bio:
-        - "Merna joined the lab as an M.Sc. student in September 2026, moving from the University of Manitoba. She works on diffusion models for space imagery (K-SSA), with Prof. Regina Lee's lab."
+        - "Merna joined the lab as an M.Sc. student in September 2026, moving from the University of Manitoba. She works on diffusion models for space imagery, in collaboration with Prof. Regina Lee's lab."
       history:
         - "2026–  M.Sc., Earth and Space Science, York University"
         - "Graduate studies, University of Manitoba"
       interests: Diffusion models for space situational awareness
       projects:
-        - "Diffusion models for space imagery (K-SSA), with Prof. Regina Lee's lab"
+        - "Diffusion models for space imagery, in collaboration with Prof. Regina Lee's lab"
