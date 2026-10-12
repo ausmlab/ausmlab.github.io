@@ -10,7 +10,7 @@
     {% for pr in projects %}
     <a class="card-link" href="{{ url(pr.url) }}">
       {% if pr.image %}<img class="ph ph-proj" src="{{ url('/images/wp/' ~ pr.image) }}" alt="{{ pr.title }}" loading="lazy">{% else %}<div class="ph ph-proj ph-empty"><span>{{ pr.title }}</span></div>{% endif %}
-      <span class="card-title">{{ pr.title }}</span>
+      <span class="card-title">{{ pr.title }}{% if pr.status == "current" %} <span class="open-tag">Current</span>{% endif %}</span>
       <span class="body small">{{ pr.summary }}</span>
     </a>
     {% endfor %}

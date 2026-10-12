@@ -31,7 +31,7 @@
 <section id="projects" class="wrap section">
   <div class="section-head"><h2>Projects</h2><a class="more" href="{{ url('/research/projects/') }}">All {{ projects | length }} projects →</a></div>
   <div class="grid-5 proj-grid">
-    {% for pr in projects %}
+    {% for pr in projects[:5] %}
     <a class="card-link" href="{{ url(pr.url) }}">
       {% if pr.image %}<img class="ph ph-proj" src="{{ url('/images/wp/' ~ pr.image) }}" alt="{{ pr.title }}" loading="lazy">{% else %}<div class="ph ph-proj ph-empty"><span>{{ pr.title }}</span></div>{% endif %}
       <span class="card-title">{{ pr.title }}</span>

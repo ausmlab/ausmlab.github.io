@@ -215,6 +215,10 @@ def build():
         p["date_label"] = parse_date(p["date"])[2]
     for pr in projects:
         pr["url"] = f"/research/{pr['slug']}/"
+        pr.setdefault("year", 0)
+        pr.setdefault("status", "")
+    # Newest projects first (front matter "year: 2026"); projects without a year keep their order at the end.
+    projects.sort(key=lambda pr: -int(pr["year"] or 0))
     profile_by_name = {name_key(p["title"]): f"/members/{p['slug']}/" for p in profiles}
 
     def find_profile(name):
