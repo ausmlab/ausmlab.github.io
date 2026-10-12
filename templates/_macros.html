@@ -47,7 +47,7 @@
 {% macro video_card(v, url) %}
 <article class="hv" data-type="{{ v.area }}">
   <button type="button" class="hv-play"{% if v.get("file") %} data-src="{{ url('/' ~ v.file) }}"{% else %} data-yt="{{ v.yt }}"{% endif %} aria-label="Play video: {{ v.title }}">
-    <img src="{% if v.get('file') %}{{ url('/images/' ~ v.poster) }}{% else %}https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg{% endif %}" alt="" loading="lazy">
+    <img src="{% if v.thumb %}{{ url('/images/' ~ v.thumb) }}{% else %}https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg{% endif %}" alt="" loading="lazy">
     <span class="play" aria-hidden="true"><svg width="56" height="56" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.55)" stroke="#fff" stroke-width="2"/><path d="M26 21l19 11-19 11z" fill="#fff"/></svg></span>
   </button>
   {% if v.area %}<span class="hv-tag">{{ v.area }}</span>{% endif %}

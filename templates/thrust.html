@@ -47,7 +47,7 @@
   <div class="grid-3">
     {% for v in t_videos %}
     <a class="video-card plain" href="{{ v.url or url('/' ~ v.file) }}" target="_blank" rel="noopener">
-      {% if v.yt %}<img class="ph ph-video-img" src="https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg" alt="" loading="lazy">{% elif v.poster %}<img class="ph ph-video-img" src="{{ url('/images/' ~ v.poster) }}" alt="" loading="lazy">{% endif %}
+      {% if v.thumb %}<img class="ph ph-video-img" src="{{ url('/images/' ~ v.thumb) }}" alt="" loading="lazy">{% elif v.yt %}<img class="ph ph-video-img" src="https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg" alt="" loading="lazy">{% endif %}
       <span class="card-title small">▶ {{ v.title }}</span>
       <span class="mono muted small">{{ v.date }}</span>
     </a>

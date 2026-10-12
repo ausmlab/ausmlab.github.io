@@ -356,6 +356,11 @@ def build():
             v.setdefault(k, "")
         m = re.search(r"(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{11})", v.get("url", ""))
         v["yt"] = m.group(1) if m else ""
+        # Thumbnail: our own copy in static/images/videos/<id>.jpg (fast, no black boxes), else YouTube's
+        if v["yt"] and (ROOT / "static" / "images" / "videos" / f"{v['yt']}.jpg").exists():
+            v["thumb"] = f"videos/{v['yt']}.jpg"
+        else:
+            v["thumb"] = v["poster"] or ""
     # Each video belongs to one research area: its "home" field, or else a guess from its topic.
     _topic_area = {"Smart Mobility": "Urban World Models", "SLAM & Positioning": "Embodied Autonomy",
                    "Digital Twins": "Scan-to-Model", "Point Clouds": "Scan-to-Model"}
