@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% from "_macros.html" import picture, page_hero, filters, thrust_cards %}
-{% from "_worldmodel.html" import worldmodel with context %}
 {% block main %}
 {{ page_hero("Research", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
 
@@ -8,25 +7,23 @@
   <p class="mono accent">RESEARCH DIRECTION</p>
   <h2 class="vision-title">{{ vision.title }}</h2>
   <p class="lead">{{ vision.lead }}</p>
-  <nav class="chips" aria-label="On this page">
-    {% for t in pillars %}<a class="chip" href="#{{ t.id }}">{{ t.short }}</a>{% endfor %}
-    <a class="chip" href="#projects">Projects</a>
-    <a class="chip" href="{{ url('/datasets/') }}">Datasets &amp; Code</a>
-    <a class="chip" href="#videos">Videos</a>
-    <a class="chip" href="#partners">Research Collaborators</a>
-  </nav>
 </section>
 
 <section class="wrap section-tight">
-  {{ worldmodel(url) }}
-  {% if thrusts %}{{ thrust_cards(thrusts) }}{% endif %}
+  <ul class="thrust-row thrust-nav">
+    {% for t in thrusts %}
+    <li class="thrust thrust-{{ loop.index }}"><a class="plain" href="#{{ pillars[loop.index0].id }}">
+      <svg class="thrust-art" viewBox="0 0 84 64" width="84" height="64" aria-hidden="true">{{ thrust_art[loop.index0 % 5] | safe }}</svg>
+      <strong>{{ t.title }}</strong><span>{{ t.text }}</span></a></li>
+    {% endfor %}
+  </ul>
 </section>
 
 {% for t in pillars %}
-<section id="{{ t.id }}" class="wrap theme{% if loop.index is even %} theme-flip{% endif %}">
+<section id="{{ t.id }}" class="wrap theme thrust-sec thrust-{{ loop.index }}{% if loop.index is even %} theme-flip{% endif %}">
   {{ picture(url, t.image, t.image_note, "ph ph-theme") }}
   <div class="stack">
-    <p class="mono accent">{{ t.question | upper }}</p>
+    <p class="mono th-kicker">{{ t.no }} · {{ t.question | upper }}</p>
     <h2>{{ t.title }}</h2>
     <p class="body">{{ t.body }}</p>
     <div class="projects">
@@ -62,32 +59,6 @@
       <span class="card-title">{{ pr.title }}</span>
       <span class="body small">{{ pr.summary }}</span>
     </a>
-    {% endfor %}
-  </div>
-</section>
-
-<section id="highlights" class="wrap section">
-  <div class="section-head"><h2>Research highlights</h2><a class="more" href="{{ url('/news/') }}">All news →</a></div>
-  <ul class="highlights">
-    {% for p in research_posts[:6] %}
-    <li><span class="mono muted">{{ p.date[:4] }}</span><a class="plain" href="{{ url(p.url) }}">{{ p.title }}</a></li>
-    {% endfor %}
-  </ul>
-</section>
-
-
-<section class="wrap section" id="videos">
-  <div class="section-head"><h2>Videos</h2><a class="more" href="{{ url('/gallery/#videos') }}">All {{ videos | length }} videos →</a></div>
-  <div class="grid-3 videos">
-    {% for v in videos[:3] %}
-    <article class="video-card">
-      <a class="video-thumb" href="{{ v.url }}" target="_blank" rel="noopener" aria-label="Watch on YouTube: {{ v.title }}">
-        {% if v.yt %}<img class="ph ph-video-img" src="https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg" alt="" loading="lazy">{% else %}<div class="ph ph-dark ph-video"></div>{% endif %}
-        <span class="play" aria-hidden="true"><svg width="56" height="56" viewBox="0 0 64 64"><circle cx="32" cy="32" r="30" fill="rgba(0,0,0,.55)" stroke="#fff" stroke-width="2"/><path d="M26 21l19 11-19 11z" fill="#fff"/></svg></span>
-      </a>
-      <a class="card-title small" href="{{ v.url }}" target="_blank" rel="noopener">{{ v.title }}</a>
-      <span class="mono muted small">{{ v.date }}{% if v.topic %} · {{ v.topic }}{% endif %}</span>
-    </article>
     {% endfor %}
   </div>
 </section>

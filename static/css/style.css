@@ -809,3 +809,13 @@ img.ph-tall { object-fit: cover; }
 .band-article .narrow, article.wrap.narrow { max-width: 1440px; }
 article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, article.wrap.prose > h2, article.wrap.prose > h3 { max-width: none; }
 .profile-head { padding-bottom: 0; } .profile-head + .profile { margin-top: 40px; }
+/* Research page: five thrusts, one short section each */
+.thrust-nav a { display: flex; flex-direction: column; gap: 6px; height: 100%; color: inherit; }
+.thrust-nav a:hover strong { text-decoration: underline; }
+.thrust-sec .th-kicker { color: var(--th); letter-spacing: .12em; }
+.thrust-sec h2 { border-left: 4px solid var(--th); padding-left: 12px; }
+.thrust-sec.thrust-1 { --th: #0e6b63; } .thrust-sec.thrust-2 { --th: #5148b0; } .thrust-sec.thrust-3 { --th: var(--accent); }
+.thrust-sec.thrust-4 { --th: #b06a12; } .thrust-sec.thrust-5 { --th: #1f5fa8; }
+.thrust-sec { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(40px, 5vw, 72px); }
+.thrust-sec .ph-theme { aspect-ratio: 4 / 3; object-fit: cover; }
+.thrust-sec { align-items: start; } .thrust-sec .ph-theme { margin-top: 8px; }
