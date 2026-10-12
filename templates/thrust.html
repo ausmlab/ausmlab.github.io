@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap th-hero thrust-{{ t.no | int }}" style="background-image:url('{{ url('/images/' ~ t.image) }}')">
+  <div class="th-hero-in">
+    <p class="mono"><a class="plain" href="{{ url('/research/') }}">Research</a> / {{ t.no }}</p>
+    <h1>{{ t.title }}</h1>
+    <p class="th-sum">{{ t.summary }}</p>
+  </div>
+</section>
+
+<section class="wrap section th-main thrust-{{ t.no | int }}">
+  <div class="th-text">
+    <p class="mono th-kicker">{{ t.question | upper }}</p>
+    <p class="lead">{{ t.body }}</p>
+
+    <h2>Topics</h2>
+    <ul class="th-topics">
+      {% for p in t.topics %}
+      <li><strong>{{ p.name }}</strong>
+        {% if p.open %}<a class="open-tag" href="{{ url('/join/') }}">Looking for students</a>{% endif %}
+        {% if p.people %}<span>{{ p.people }}</span>{% endif %}
+        {% if p.partner %}<span class="muted small">{{ p.partner }}</span>{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+
+    {% if t.key_papers %}
+    <h2>Key papers</h2>
+    <ul class="th-papers">
+      {% for kp in t.key_papers %}
+      <li>{% if kp.link %}<a href="{{ kp.link }}">{{ kp.title }}</a>{% else %}<strong>{{ kp.title }}</strong>{% endif %}
+        <span class="muted small">{{ kp.authors }} · <em>{{ kp.venue_short or kp.venue }}</em>{% if kp.year %}, {{ kp.year }}{% endif %}</span></li>
+      {% endfor %}
+    </ul>
+    <p><a class="more" href="{{ url('/publications/') }}">All publications →</a></p>
+    {% endif %}
+  </div>
+
+  <aside class="th-side">
+    {% for ph in t.photos %}<img class="th-photo" src="{{ url('/images/' ~ ph) }}" alt="" loading="lazy">{% endfor %}
+  </aside>
+</section>
+
+{% if t_videos %}
+<section class="wrap section th-videos">
+  <h2>Videos</h2>
+  <div class="grid-3">
+    {% for v in t_videos %}
+    <a class="video-card plain" href="{{ v.url or url('/' ~ v.file) }}" target="_blank" rel="noopener">
+      {% if v.yt %}<img class="ph ph-video-img" src="https://i.ytimg.com/vi/{{ v.yt }}/hqdefault.jpg" alt="" loading="lazy">{% elif v.poster %}<img class="ph ph-video-img" src="{{ url('/images/' ~ v.poster) }}" alt="" loading="lazy">{% endif %}
+      <span class="card-title small">▶ {{ v.title }}</span>
+      <span class="mono muted small">{{ v.date }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<nav class="wrap section th-nav" aria-label="Other research thrusts">
+  <a class="plain" href="{{ url('/research/' ~ t_prev.id ~ '/') }}"><span class="mono muted small">← PREVIOUS</span><strong>{{ t_prev.title }}</strong></a>
+  <a class="plain" href="{{ url('/research/') }}"><span class="mono muted small">ALL RESEARCH</span><strong>Overview</strong></a>
+  <a class="plain th-next" href="{{ url('/research/' ~ t_next.id ~ '/') }}"><span class="mono muted small">NEXT →</span><strong>{{ t_next.title }}</strong></a>
+</nav>
+{% endblock %}

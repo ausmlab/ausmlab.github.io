@@ -29,7 +29,9 @@ pillars:
     short: Urban World Models
     title: Urban World Models
     question: Understand and predict cities
-    image: wp/4230-Screenshots.jpg
+    image: hero-york-digital-twin.jpg
+    photos: [wp/4230-Screenshots.jpg, gallery/neubility-visit-2026.jpg]
+    video_topics: [Smart Mobility]
     body: We build graph models of cities that link streets, buildings, people, robots and vehicles. They let us predict how people and machines move and test changes before they are made.
     topics:
       - Spatial knowledge graph + LLM agents | Md. Ehsan Shahmi Chowdhury | ORF-RE
@@ -41,7 +43,9 @@ pillars:
     short: Scan-to-Model
     title: Scan-to-Model
     question: From scans to engineering models
-    image: wp/2889-Multi-scale-Layout-CRF-Chao-Luo.jpg
+    image: hero-powerline-lidar.jpg
+    photos: [wp/2889-Multi-scale-Layout-CRF-Chao-Luo.jpg, theme-perception-eyenet.jpg]
+    video_topics: [Point Clouds, Digital Twins]
     body: We turn LiDAR and images into clean 3D models of buildings and infrastructure that carry engineering knowledge, from LoD1 to LoD3 and BIM.
     topics:
       - LoD1 to LoD2 building reconstruction | Mohammad Moein Sheikholeslami |
@@ -58,6 +62,8 @@ pillars:
     title: Embodied Autonomy
     question: Sense, map and act in real time
     image: gallery/nyct-track-extraction.jpg
+    photos: [gallery/lab-research-2014-a.jpg, theme-mapping-qdrone.jpg]
+    video_topics: [SLAM & Positioning]
     body: Robots, drones, trains and cars need to see, map and decide in real time. We build the perception and mapping that lets them act safely on their own.
     topics:
       - Vision-language models for autonomous trains | Mohammadjavad Ghorbanalivakili, Ashley Varghese |
@@ -72,6 +78,8 @@ pillars:
     title: Physics-Informed Earth AI
     question: AI that respects physics
     image: dataset-plume.jpg
+    photos: []
+    video_topics: []
     body: We combine deep learning with physical models to emulate Earth systems, from smokestack plumes and air quality to airflow around people in cities.
     topics:
       - Plume rise from images for air-quality models |  |  | open
@@ -83,6 +91,8 @@ pillars:
     title: Space Situational Awareness
     question: Space in the loop
     image: dataset-dust.jpg
+    photos: []
+    video_topics: []
     body: We detect and track objects in orbit from space-based images and predict where they will go next.
     topics:
       - Tiny resident space object (RSO) detection | Youssef Beshir | with Prof. Regina Lee's lab

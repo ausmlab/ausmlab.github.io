@@ -3,42 +3,29 @@
 {% block main %}
 {{ page_hero("Research", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
 
-<section class="wrap narrow center section">
+<section class="wrap section rs-intro">
   <p class="mono accent">RESEARCH DIRECTION</p>
   <h2 class="vision-title">{{ vision.title }}</h2>
   <p class="lead">{{ vision.lead }}</p>
 </section>
 
-<section class="wrap section-tight">
-  <ul class="thrust-row thrust-nav">
-    {% for t in thrusts %}
-    <li class="thrust thrust-{{ loop.index }}"><a class="plain" href="#{{ pillars[loop.index0].id }}">
-      <svg class="thrust-art" viewBox="0 0 84 64" width="84" height="64" aria-hidden="true">{{ thrust_art[loop.index0 % 5] | safe }}</svg>
-      <strong>{{ t.title }}</strong><span>{{ t.text }}</span></a></li>
+<section class="wrap bento-wrap" aria-label="Research thrusts">
+  <ul class="bento">
+    {% for t in pillars %}
+    <li class="bento-tile thrust-{{ loop.index }}">
+      <a href="{{ url('/research/' ~ t.id ~ '/') }}">
+        <img src="{{ url('/images/' ~ t.image) }}" alt="" loading="{{ 'eager' if loop.first else 'lazy' }}">
+        <span class="bento-text">
+          <span class="bento-no mono">{{ t.no }}</span>
+          <strong>{{ t.title }}</strong>
+          <span class="bento-sum">{{ t.summary }}</span>
+          <span class="bento-more">Explore →</span>
+        </span>
+      </a>
+    </li>
     {% endfor %}
   </ul>
 </section>
-
-{% for t in pillars %}
-<section id="{{ t.id }}" class="wrap tr-row thrust-sec thrust-{{ loop.index }}">
-  <div class="tr-img">{{ picture(url, t.image, t.image_note, "ph") }}</div>
-  <div class="tr-body">
-    <p class="mono th-kicker">{{ t.no }} · {{ t.question | upper }}</p>
-    <h2>{{ t.title }}</h2>
-    <p class="body">{{ t.body }}</p>
-    <ul class="tr-topics">
-      {% for p in t.topics %}
-      <li><span class="tr-name">{{ p.name }}</span>{% if p.open %}<a class="open-tag" href="{{ url('/join/') }}">Looking for students</a>{% elif p.people %}<span class="muted small">{{ p.people }}</span>{% endif %}</li>
-      {% endfor %}
-    </ul>
-    {% if t.key_papers %}
-    <p class="tr-papers"><span class="label">KEY PAPERS</span>
-      {% for kp in t.key_papers[:2] %}{% if kp.link %}<a href="{{ kp.link }}">{{ kp.get("short") or kp.title }}</a>{% else %}<span>{{ kp.get("short") or kp.title }}</span>{% endif %} <span class="muted small">({{ kp.venue_short or kp.venue }}{% if kp.year %}, {{ kp.year }}{% endif %})</span>{% if not loop.last %}<br>{% endif %}{% endfor %}
-    </p>
-    {% endif %}
-  </div>
-</section>
-{% endfor %}
 
 <section id="projects" class="wrap section">
   <div class="section-head"><h2>Projects</h2><p class="muted">Funded projects, current and past</p></div>

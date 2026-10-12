@@ -309,6 +309,11 @@ def build():
                 raise SystemExit(f"research.yml: no publication matches {q!r}")
             kp.append(m)
         t["key_papers"] = kp
+    _thr = [dict(zip(("title", "text"), split_pipe(x, 2))) for x in research.get("thrusts", [])]
+    for i, t in enumerate(pillars):
+        t["summary"] = _thr[i]["text"] if i < len(_thr) else ""
+        t.setdefault("photos", [])
+        t.setdefault("video_topics", [])
     vision = research.get("vision", {})
     for k in ("title", "lead", "flagship"):
         vision.setdefault(k, "")
@@ -404,6 +409,10 @@ def build():
         pages.append(("post.html", f"news/{p['slug']}/index.html", "news", p["title"], {"item": p}))
     for pr in projects:
         pages.append(("project.html", f"research/{pr['slug']}/index.html", "research", pr["title"], {"item": pr}))
+    for i, t in enumerate(pillars):
+        vids = [v for v in videos if v.get("home") == t["title"]] + [v for v in videos if v.get("topic") in t["video_topics"] and not v.get("home")]
+        pages.append(("thrust.html", f"research/{t['id']}/index.html", "research", t["title"],
+                      {"t": t, "t_videos": vids[:3], "t_prev": pillars[i - 1], "t_next": pillars[(i + 1) % len(pillars)]}))
     # Papers by author, from the complete publication list (h3 = year, li = paper)
     paper_rows = []
     if "publications" in archive:
