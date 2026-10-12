@@ -808,3 +808,4 @@ img.ph-tall { object-fit: cover; }
 /* News posts and project pages also use the full page width. */
 .band-article .narrow, article.wrap.narrow { max-width: 1440px; }
 article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, article.wrap.prose > h2, article.wrap.prose > h3 { max-width: none; }
+.profile-head { padding-bottom: 0; } .profile-head + .profile { margin-top: 40px; }
