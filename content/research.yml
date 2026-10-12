@@ -96,7 +96,7 @@ pillars:
     body: We detect and track objects in orbit from space-based images and predict where they will go next.
     topics:
       - Tiny resident space object (RSO) detection | Youssef Beshir | in collaboration with Prof. Regina Lee's lab
-      - Diffusion models for RSO imagery | Merna Tamer Youssef | in collaboration with Prof. Regina Lee's lab
+      - Diffusion models for RSO imagery | Merna Tamer Youssef |
       - Orbit determination and propagation |  |  | open
     papers:
       - On-Orbit Star Tracker Benchmark

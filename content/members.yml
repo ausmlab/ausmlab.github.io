@@ -158,10 +158,10 @@
       role: M.Sc. student
       since: 2026
       bio:
-        - "Merna joined the lab as an M.Sc. student in September 2026, moving from the University of Manitoba. She works on diffusion models for space imagery, in collaboration with Prof. Regina Lee's lab."
+        - "Merna joined the lab as an M.Sc. student in September 2026, moving from the University of Manitoba. She works on diffusion models for space imagery."
       history:
         - "2026–  M.Sc., Earth and Space Science, York University"
         - "Graduate studies, University of Manitoba"
       interests: Diffusion models for space situational awareness
       projects:
-        - "Diffusion models for space imagery, in collaboration with Prof. Regina Lee's lab"
+        - "Diffusion models for space imagery"
