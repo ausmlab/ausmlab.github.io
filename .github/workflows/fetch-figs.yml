@@ -11,12 +11,14 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf yt; mkdir -p yt
-          for id in eMcufkp1TpA WrKYths3D0Q rqVrOgmqa-4 6lD_lo_TP5g TcIcC1tqbmk DQhIIWzXfKg ba8cHzugmBk kHAMGv80YVk A2UWZn3Jm0c Wv0nVAeNIn8 Cwe0FKRblP4 E4AAbt3bsGw T8v2WL--np4 0aCJ76I6dgU JCycMU6YBAs CcsygbCWygg 5vnkoDt-yrk MXYFAFunWwY; do
-            curl -sfL -m 30 "https://i.ytimg.com/vi/$id/maxresdefault.jpg" -o yt/$id.jpg || curl -sfL -m 30 "https://i.ytimg.com/vi/$id/hqdefault.jpg" -o yt/$id.jpg
-            echo "$id $(wc -c < yt/$id.jpg)" >> yt/log.txt
-          done
+          rm -rf yt astro; mkdir -p astro
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
+          curl -sL -m 60 -A "$UA" https://www.astrolabresearch.com/ -o astro/home.html
+          grep -o 'href="[^"]*"' astro/home.html | sort -u | head -120 > astro/links.txt
+          for w in 1440 390; do google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=$w,6000 --virtual-time-budget=20000 --screenshot=astro/home-$w.png https://www.astrolabresearch.com/ >> astro/log.txt 2>&1; done
+          for pg in research people publications team projects; do google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,5000 --virtual-time-budget=15000 --screenshot=astro/$pg.png https://www.astrolabresearch.com/$pg >> astro/log.txt 2>&1; done
+          google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,6000 --virtual-time-budget=15000 --screenshot=astro/ours-home.png https://ausmlab.com/ >> astro/log.txt 2>&1
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A .; git commit -m "fetch youtube thumbnails
+          git add -A .; git commit -m "screenshot astrolab
 
           Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
