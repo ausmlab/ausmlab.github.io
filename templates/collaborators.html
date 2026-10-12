@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap section">
+  <p class="mono"><a href="{{ url('/research/') }}">Research</a> / Collaborators</p>
+  <h1 class="page-title">Research Collaborators</h1>
+  <p class="lead">Funders, companies, universities and centres we work with, now and in the past.</p>
+</section>
+<section id="partners" class="wrap section-tight">
+  {% for group, items in partners.items() %}
+  <p class="mono muted small kicker-dark">{{ group | upper }} <span class="muted">({{ items | length }})</span></p>
+  <ul class="logos">{% for p in items %}{% set inner %}{% if p.logo %}<img src="{{ url('/images/partners/' ~ p.logo) }}" alt="{{ p.name }}" title="{{ p.name }}" loading="lazy">{% else %}{{ p.name }}{% endif %}{% endset %}<li class="{{ 'has-logo' if p.logo }}">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ inner }}</a>{% else %}<span>{{ inner }}</span>{% endif %}</li>{% endfor %}</ul>
+  {% endfor %}
+  <p class="back"><a href="{{ url('/research/') }}">← Research</a></p>
+</section>
+{% endblock %}

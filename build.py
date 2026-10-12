@@ -33,6 +33,7 @@ PAGES = [
     # (template, output file, nav key, page title)
     ("index.html", "index.html", "home", None),
     ("research.html", "research/index.html", "research", "Research"),
+    ("collaborators.html", "research/collaborators/index.html", "research", "Research Collaborators"),
     ("publications.html", "publications/index.html", "publications", "Publications"),
     ("members.html", "members/index.html", "members", "Members"),
     ("news.html", "news/index.html", "news", "News & Events"),

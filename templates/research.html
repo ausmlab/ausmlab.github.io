@@ -40,11 +40,12 @@
   </div>
 </section>
 
-<section id="partners" class="wrap section">
-  <div class="section-head"><h2>Research Collaborators</h2></div>
-  {% for group, items in partners.items() %}
-  <p class="mono muted small kicker-dark">{{ group | upper }}</p>
-  <ul class="logos">{% for p in items %}{% set inner %}{% if p.logo %}<img src="{{ url('/images/partners/' ~ p.logo) }}" alt="{{ p.name }}" title="{{ p.name }}" loading="lazy">{% else %}{{ p.name }}{% endif %}{% endset %}<li class="{{ 'has-logo' if p.logo }}">{% if p.url %}<a href="{{ p.url }}" target="_blank" rel="noopener">{{ inner }}</a>{% else %}<span>{{ inner }}</span>{% endif %}</li>{% endfor %}</ul>
-  {% endfor %}
+<section id="partners" class="wrap section partners-strip">
+  <div class="section-head"><h2>Research Collaborators</h2><a class="more" href="{{ url('/research/collaborators/') }}">All {{ partners.values() | map('length') | sum }} collaborators →</a></div>
+  <a class="marquee plain" href="{{ url('/research/collaborators/') }}" aria-label="See all research collaborators">
+    <span class="marquee-track">
+      {% for rep in range(2) %}{% for group, items in partners.items() %}{% for p in items %}{% if p.logo %}<img src="{{ url('/images/partners/' ~ p.logo) }}" alt="{{ p.name if rep == 0 else '' }}" loading="lazy">{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    </span>
+  </a>
 </section>
 {% endblock %}
