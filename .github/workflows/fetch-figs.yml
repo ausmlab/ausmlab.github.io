@@ -11,14 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf yt astro; mkdir -p astro
-          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 Chrome/124 Safari/537.36"
-          curl -sL -m 60 -A "$UA" https://www.astrolabresearch.com/ -o astro/home.html
-          grep -o 'href="[^"]*"' astro/home.html | sort -u | head -120 > astro/links.txt
-          for w in 1440 390; do google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=$w,6000 --virtual-time-budget=20000 --screenshot=astro/home-$w.png https://www.astrolabresearch.com/ >> astro/log.txt 2>&1; done
-          for pg in research people publications team projects; do google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,5000 --virtual-time-budget=15000 --screenshot=astro/$pg.png https://www.astrolabresearch.com/$pg >> astro/log.txt 2>&1; done
-          google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,6000 --virtual-time-budget=15000 --screenshot=astro/ours-home.png https://ausmlab.com/ >> astro/log.txt 2>&1
+          rm -rf astro dns; mkdir -p dns
+          for h in indoor.ausmlab.com benchmark.indoor.ausmlab.com dataset.ausmlab.com datasets.ausmlab.com yorkuindoor.ausmlab.com indoor-benchmark.ausmlab.com wifi.ausmlab.com benchmark.ausmlab.com data.ausmlab.com benchmark.qdrone.ausmlab.com yuto.ausmlab.com; do
+            echo "== $h $(dig +short $h | tr '\n' ' ')" >> dns/log.txt
+            curl -sL -m 20 -o dns/$h.html -w "  http %{http_code} final %{url_effective}\n" https://$h/ >> dns/log.txt
+            python3 -c "import re,sys;t=open('dns/$h.html',errors='ignore').read();m=re.search(r'<title>(.*?)</title>',t,re.S);print('  title:',m.group(1).strip()[:120] if m else '-')" >> dns/log.txt
+          done
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A .; git commit -m "screenshot astrolab
+          git add -A .; git commit -m "probe subdomains
 
           Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
