@@ -1,0 +1,6 @@
+token length: 50
+fetch_visitors: 36 visits from 4 countries
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 12 20:56 .
+drwxr-xr-x 8 runner runner 4096 Oct 12 20:56 ..
+-rw-r--r-- 1 runner runner  230 Oct 12 20:56 visitors.json
