@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YorkU Indoor Localization Dataset</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-pattern {
+            background-color: #0f172a;
+            background-image: radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.15), transparent 25%);
+        }
+
+        .card-hover {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-blue-200 selection:text-blue-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tight text-gray-900">
+                    YorkU <span class="text-blue-600">Indoor Dataset</span>
+                </div>
+                <div class="hidden md:flex space-x-8 text-sm font-medium">
+                    <a href="#overview" class="text-gray-600 hover:text-blue-600 transition-colors">Overview</a>
+                    <a href="#methodology" class="text-gray-600 hover:text-blue-600 transition-colors">Methodology</a>
+                    <a href="#testbed" class="text-gray-600 hover:text-blue-600 transition-colors">Testbed</a>
+                    <a href="#modalities" class="text-gray-600 hover:text-blue-600 transition-colors">Sensors</a>
+                    <a href="#longitudinal" class="text-gray-600 hover:text-blue-600 transition-colors">Longitudinal</a>
+                </div>
+                <div>
+                    <a href="#download"
+                        class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 transition-colors">
+                        <i class="fas fa-download mr-2"></i> Download Data
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-24 sm:py-32 relative overflow-hidden" id="overview">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight mb-6">
+                YorkU Indoor Localization Dataset
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-xl text-gray-300">
+                A longitudinal multi-building indoor localization dataset with AR-verified centimeter-accurate ground
+                truth.
+                Designed for evaluating WiFi fingerprinting, sensor fusion, and temporal robustness of indoor
+                positioning systems.
+            </p>
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#download"
+                    class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50 transition-colors shadow-lg">
+                    <i class="fas fa-database mr-2"></i> Get Dataset
+                </a>
+                <a href="#citation"
+                    class="inline-flex items-center px-6 py-3 border border-gray-600 text-base font-medium rounded-md text-white hover:bg-gray-800 transition-colors">
+                    <i class="fas fa-quote-right mr-2"></i> Cite Work
+                </a>
+            </div>
+            <!-- <p class="mt-6 text-sm text-gray-400">Accompanies a PhD Thesis at York University, Toronto, Canada.</p> -->
+        </div>
+    </section>
+
+    <!-- Key Stats -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 text-center">
+                <div class="text-3xl font-extrabold text-blue-600">4</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide mt-1">Buildings</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 text-center">
+                <div class="text-3xl font-extrabold text-blue-600">28,822</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide mt-1">Sq Meters</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 text-center">
+                <div class="text-3xl font-extrabold text-blue-600">9,659</div>
+                <div class="text-sm font-medium text-gray-500 uppercase tracking-wide mt-1">Fingerprints</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Collection Methodology -->
+    <section id="methodology" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Data Collection Methodology</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Centimeter-level accuracy achieved via Augmented
+                    Reality and Visual-Inertial SLAM.</p>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+                    <div class="p-8 lg:p-12 flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">AR-Based Ground Truth System</h3>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Hardware:</strong> Microsoft HoloLens 2 with depth sensing (1 MP TOF,
+                                    120°×120° FOV) and visual-inertial SLAM.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Persistence:</strong> Spatial anchors persisted via Azure Spatial Anchors
+                                    (cloud-based, cross-session).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Alignment:</strong> MRKit toolkit used for floor plan alignment with CAD
+                                    drawings.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Protocol:</strong> Two-operator systematic approach. HoloLens operator for
+                                    spatial guidance, Android operator (Galaxy S21) running GetSensorData app.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Sampling:</strong> 30-second stationary collection yielding 10-15 WiFi
+                                    scans per reference point.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 flex-shrink-0"></i>
+                                <span><strong>Validation:</strong> Anchor accuracy validated at mean 1.8 cm
+                                    (95th percentile: 3.7 cm, max: 6.2 cm) against a Leica TS15 total station at 80
+                                    points.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-800 p-8 flex items-center justify-center text-white relative overflow-hidden">
+                        <!-- Abstract Representation of AR Collection -->
+                        <div
+                            class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]">
+                        </div>
+                        <div class="relative z-10 text-center space-y-6">
+                            <div
+                                class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-blue-500/20 text-blue-400 mb-2 ring-1 ring-blue-400">
+                                <i class="fas fa-vr-cardboard text-3xl"></i>
+                            </div>
+                            <div class="h-8 border-l-2 border-dashed border-gray-500 mx-auto w-0"></div>
+                            <div
+                                class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-purple-500/20 text-purple-400 mb-2 ring-1 ring-purple-400">
+                                <i class="fas fa-cloud text-3xl"></i>
+                            </div>
+                            <div class="h-8 border-l-2 border-dashed border-gray-500 mx-auto w-0"></div>
+                            <div
+                                class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/20 text-green-400 ring-1 ring-green-400">
+                                <i class="fas fa-mobile-alt text-3xl"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four-Building Testbed -->
+    <section id="testbed" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Four-Building Testbed</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Diverse architectural styles, construction
+                    materials, and environmental challenges.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- PSE Card -->
+                <div
+                    class="bg-white rounded-xl shadow-md border-t-4 border-blue-500 p-6 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fas fa-flask text-8xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-gray-900">PSE</h3>
+                        <p class="text-sm text-blue-600 font-medium mb-4">Petrie Science & Engineering</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">12,544
+                                m²</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">89
+                                APs</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">312 Ref
+                                Points</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li>• 56×56 m symmetric square floor plan</li>
+                            <li>• Reinforced concrete construction</li>
+                            <li>• Square corridors, exterior vs interior labs</li>
+                        </ul>
+                        <div class="bg-red-50 text-red-800 p-3 rounded-md text-sm">
+                            <span class="font-bold">Key Challenge:</span> Perceptual aliasing from symmetry, magnetic
+                            anomalies near corner staircases (>20 µT).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BCE Card -->
+                <div
+                    class="bg-white rounded-xl shadow-md border-t-4 border-emerald-500 p-6 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fas fa-leaf text-8xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-gray-900">BCE</h3>
+                        <p class="text-sm text-emerald-600 font-medium mb-4">Bergeron Centre for Engineering</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">13,800
+                                m²</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">67
+                                APs</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">289 Ref
+                                Points</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li>• 46×60 m rectangular footprint, LEED Gold</li>
+                            <li>• Steel frame with glass curtain walls</li>
+                            <li>• Labs connected by irregular corridors/open areas</li>
+                        </ul>
+                        <div class="bg-red-50 text-red-800 p-3 rounded-md text-sm">
+                            <span class="font-bold">Key Challenge:</span> Severe RF multipath (path loss exponents
+                            2.8–4.2) and signal dead zones.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STC Card -->
+                <div
+                    class="bg-white rounded-xl shadow-md border-t-4 border-amber-500 p-6 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fas fa-walking text-8xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-gray-900">STC</h3>
+                        <p class="text-sm text-amber-600 font-medium mb-4">Student Teacher Centre</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">702
+                                m²</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">45
+                                APs</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">87 Ref
+                                Points</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li>• 78×9 m linear floor plan, open on one side</li>
+                            <li>• Mixed commercial construction</li>
+                            <li>• Primary pedestrian thoroughfare</li>
+                        </ul>
+                        <div class="bg-red-50 text-red-800 p-3 rounded-md text-sm">
+                            <span class="font-bold">Key Challenge:</span> Extreme occupancy variation (10x between
+                            quiet/peak), lighting changes (100–2000 lux).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LRC Card -->
+                <div
+                    class="bg-white rounded-xl shadow-md border-t-4 border-purple-500 p-6 card-hover group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                        <i class="fas fa-microchip text-8xl"></i>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-gray-900">LRC</h3>
+                        <p class="text-sm text-purple-600 font-medium mb-4">Lassonde Research Centre</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">1,776
+                                m²</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">38
+                                APs</span>
+                            <span class="px-2 py-1 bg-gray-100 text-xs font-semibold rounded text-gray-600">159 Ref
+                                Points</span>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-600 mb-6">
+                            <li>• 74×24 m rectangular footprint</li>
+                            <li>• Specialized research facility construction</li>
+                            <li>• Closed-off building, windows only at entrance</li>
+                        </ul>
+                        <div class="bg-red-50 text-red-800 p-3 rounded-md text-sm">
+                            <span class="font-bold">Key Challenge:</span> Dense research equipment creating strong
+                            magnetic signatures (>50 µT perturbations).
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sensor Modalities -->
+    <section id="modalities" class="py-20 bg-gray-50 border-y border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 tracking-tight">109-Dimensional Sensor Modalities</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Integrated multi-sensor fingerprints collected
+                    simultaneously.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- WiFi -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-wifi text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">WiFi RSSI</h3>
+                    <div class="text-sm font-semibold text-gray-500 mb-4">100 Dimensions</div>
+                    <ul class="text-sm text-gray-600 space-y-2 text-left">
+                        <li>• IEEE 802.11 (2.4 & 5 GHz)</li>
+                        <li>• 0.5 Hz scan rate</li>
+                        <li>• 8–40+ visible APs per location</li>
+                        <li>• Range: -85 to -35 dBm</li>
+                        <li>• EMA filtered (α=0.7)</li>
+                        <li>• Zero-padded normalization</li>
+                    </ul>
+                </div>
+
+                <!-- IMU -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-running text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Inertial (IMU)</h3>
+                    <div class="text-sm font-semibold text-gray-500 mb-4">6 Dimensions</div>
+                    <ul class="text-sm text-gray-600 space-y-2 text-left">
+                        <li>• 3-axis accelerometer</li>
+                        <li>• 3-axis gyroscope</li>
+                        <li>• 100 Hz sampling rate</li>
+                        <li>• Motion state detection</li>
+                        <li>• Capable of step counting</li>
+                    </ul>
+                </div>
+
+                <!-- Magnetometer -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto bg-amber-100 text-amber-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-magnet text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Magnetometer</h3>
+                    <div class="text-sm font-semibold text-gray-500 mb-4">3 Dimensions</div>
+                    <ul class="text-sm text-gray-600 space-y-2 text-left">
+                        <li>• 3-axis magnetic field sensor</li>
+                        <li>• 50 Hz sampling rate</li>
+                        <li>• Hard & soft iron calibrated</li>
+                        <li>• Toronto baseline: ~48 µT</li>
+                        <li>• Captures structural signatures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Longitudinal Changes -->
+    <section id="longitudinal" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="lg:w-1/2 pr-8">
+                    <h2 class="text-3xl font-bold text-gray-900 tracking-tight mb-6">Longitudinal Evolution<br><span
+                            class="text-blue-600">2021 → 2022</span></h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        A core value of this dataset is capturing how indoor environments degrade localization
+                        performance naturally over a full calendar year.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-network-wired text-blue-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Infrastructure Churn</h4>
+                                <p class="mt-1 text-gray-600"><strong>~59 new APs installed</strong> and <strong>12
+                                        decommissioned</strong> — a net gain of 47 (24.5%, 192 → 239). Only ~78% of
+                                    access points remained stable.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-tools text-amber-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Physical Alterations</h4>
+                                <p class="mt-1 text-gray-600">Partial drywall renovations in BCE, new electrical panels,
+                                    and ~23% of office areas underwent furniture rearrangements.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-wave-square text-purple-500 mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Magnetic Fingerprint Stability</h4>
+                                <p class="mt-1 text-gray-600">While WiFi correlation dropped (0.70–0.85), magnetic
+                                    fingerprints remained highly stable (>0.95 correlation YoY) except where new MRI
+                                    machines were installed in LRC.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-10 lg:mt-0 lg:w-1/2">
+                    <div class="bg-gray-900 rounded-2xl p-8 shadow-xl text-white">
+                        <h4 class="text-xl font-semibold mb-6">Data Distribution by Year</h4>
+
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Fall 2021 Campaign</span>
+                                <span class="font-mono text-blue-400">4,480 samples</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-blue-500 h-3 rounded-full" style="width: 46%"></div>
+                            </div>
+                        </div>
+
+                        <div class="mb-8">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>Fall 2022 Campaign</span>
+                                <span class="font-mono text-purple-400">5,179 samples</span>
+                            </div>
+                            <div class="w-full bg-gray-700 rounded-full h-3">
+                                <div class="bg-purple-500 h-3 rounded-full" style="width: 54%"></div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-gray-700 pt-6">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-gray-400">HoloLens Anchor Drift (Annual):</span>
+                                <span class="font-mono text-green-400 font-bold">&lt; 0.5% (mean 1.8 cm)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download & Citation -->
+    <section id="download" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+
+                <!-- Format & Download -->
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Dataset Format</h2>
+                    <p class="text-gray-600 mb-6">
+                        Data is provided in JSON format, organized by building (PSE, BCE, STC, LRC) and by year (2021,
+                        2022).
+                    </p>
+                    <ul class="space-y-3 text-sm text-gray-700 mb-8 border-l-4 border-blue-500 pl-4">
+                        <li><strong>Feature Vector:</strong> 109 dimensions (100 WiFi + 6 IMU + 3 Magnetometer)</li>
+                        <li><strong>Target:</strong> 2D coordinates (X, Y) in building-local frame</li>
+                        <li><strong>Metadata:</strong> Anchor IDs, timestamps, session IDs, building/floor identifiers
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="flex-1 justify-center inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition">
+                            <i class="fas fa-file-archive mr-2"></i> Download Full Dataset (.zip)
+                        </button>
+                    </div>
+                    <p class="mt-4 text-xs text-gray-500 text-center sm:text-left">
+                        Licensed under <a href="#" class="text-blue-600 hover:underline">CC BY 4.0</a>.
+                    </p>
+                </div>
+
+                <!-- Citation -->
+                <div id="citation">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Citation</h2>
+                    <p class="text-gray-600 mb-4">
+                        If you use this dataset in your research, please cite it as follows:
+                    </p>
+                    <div class="relative bg-gray-900 rounded-lg p-6 shadow-md border border-gray-800">
+                        <button class="absolute top-4 right-4 text-gray-400 hover:text-white transition"
+                            onclick="navigator.clipboard.writeText(document.getElementById('bibtex').innerText)">
+                            <i class="far fa-copy"></i>
+                        </button>
+                        <pre id="bibtex" class="text-sm text-gray-300 font-mono overflow-x-auto"><code>@misc{ahmad2026indoor,
+  author       = {Ahmad, Afnan and Sohn, Gunho},
+  title        = {YorkU Indoor Localization Dataset},
+  year         = {2026},
+  howpublished = {\url{https://yorkuindoor.ausmlab.com}},
+  note         = {AUSMLab, York University},
+}</code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-12 border-t border-gray-800">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-white">
+                <div class="font-bold text-xl tracking-tight mb-2">
+                    YorkU <span class="text-blue-500">Indoor Dataset</span>
+                </div>
+                <p class="text-gray-400 text-sm">© 2026 AUSMLab. All rights reserved.</p>
+            </div>
+
+            <div class="flex space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                    <span class="sr-only">Email</span>
+                    <i class="fas fa-envelope text-xl"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition">
+                    <span class="sr-only">Thesis</span>
+                    <i class="fas fa-book text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
