@@ -894,3 +894,11 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 .marquee:hover .marquee-track img { filter: none; opacity: 1; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; } }
+/* Bento on tablets and phones: equal tiles, equal text, clear gaps */
+@media (max-width: 900px) {
+  .bento { grid-template-rows: none; grid-auto-rows: 240px; gap: 12px; }
+  .bento-tile:first-child { grid-row: auto; height: auto; }
+  .bento-tile:first-child .bento-text strong, .bento-text strong { font-size: 22px; }
+  .bento-tile:first-child .bento-sum, .bento-sum { font-size: 14px; max-height: 4em; }
+}
+@media (max-width: 560px) { .bento-tile:first-child { grid-column: auto; } }
