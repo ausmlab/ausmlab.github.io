@@ -62,6 +62,7 @@ training:
 quote: "Our research lab is interested in science and engineering to solve a common problem of representing, describing and understanding our environments from visual and spatial data for advancing data-driven decision processes and thus addressing many challenges that our cities are facing."
 quote_by: Dr. Gunho Sohn, Principal Director
 
+visitor_map: false  # world map of visitors on the Contact page (set false to hide)
 contact:
   person: Prof. Gunho Sohn
   email: gsohn@yorku.ca

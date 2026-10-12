@@ -930,3 +930,13 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 #partners .logos li.has-logo > a, #partners .logos li.has-logo > span, #partners .logos li > a, #partners .logos li > span { min-height: 110px; padding: 14px 18px; }
 #partners .logos li.has-logo img { max-height: 72px; max-width: 100%; }
 @media (max-width: 560px) { .marquee-track img { height: 44px; } #partners .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); } #partners .logos li.has-logo img { max-height: 56px; } }
+/* Visitor map */
+.vm-wrap { position: relative; }
+.vm-svg { width: 100%; height: auto; display: block; }
+.vm-svg path { fill: #e7e9ee; stroke: #fff; stroke-width: .5; transition: fill .15s; }
+.vm-svg path.vm-on { fill: var(--accent); }
+.vm-svg path:hover { stroke: #333; stroke-width: 1; }
+.vm-tip { position: absolute; pointer-events: none; background: #141824; color: #fff; font-size: 13px; padding: 6px 10px; border-radius: 6px; white-space: nowrap; z-index: 2; }
+.vm-top { list-style: none; padding: 0; margin: 18px 0 8px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px 28px; }
+.vm-top li { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); padding: 6px 0; font-size: 15px; }
+@media (max-width: 760px) { .vm-top { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

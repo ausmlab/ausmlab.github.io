@@ -111,3 +111,37 @@ document.querySelectorAll('.hv-play').forEach(function (b) {
     b.replaceWith(f);
   });
 });
+
+// Visitor map (Contact page): colours each country by its number of visits.
+(function () {
+  var box = document.querySelector('[data-visitor-map]');
+  if (!box) return;
+  Promise.all([fetch(box.dataset.map).then(function (r) { return r.json(); }),
+               fetch(box.dataset.stats).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })])
+    .then(function (res) {
+      var map = res[0], st = res[1] || { countries: [], total: 0 };
+      var counts = {}, max = 1;
+      (st.countries || []).forEach(function (c) { counts[c.id] = c.count; if (c.count > max) max = c.count; });
+      var svg = box.querySelector('.vm-svg'), tip = box.querySelector('.vm-tip'), ns = 'http://www.w3.org/2000/svg';
+      svg.setAttribute('viewBox', map.viewBox);
+      map.countries.forEach(function (c) {
+        var p = document.createElementNS(ns, 'path'), n = counts[c.id] || 0;
+        p.setAttribute('d', c.d);
+        if (n) { p.setAttribute('class', 'vm-on'); p.style.fillOpacity = (0.25 + 0.75 * Math.log(1 + n) / Math.log(1 + max)).toFixed(2); }
+        p.addEventListener('mousemove', function (e) {
+          var r = box.querySelector('.vm-wrap').getBoundingClientRect();
+          tip.hidden = false; tip.textContent = c.name + (n ? ' · ' + n.toLocaleString() + (n === 1 ? ' visit' : ' visits') : '');
+          tip.style.left = (e.clientX - r.left + 12) + 'px'; tip.style.top = (e.clientY - r.top + 12) + 'px';
+        });
+        p.addEventListener('mouseleave', function () { tip.hidden = true; });
+        svg.appendChild(p);
+      });
+      var nC = (st.countries || []).length;
+      box.querySelector('.vm-summary').textContent = nC ? (st.total || 0).toLocaleString() + ' visits from ' + nC + (nC === 1 ? ' country' : ' countries') + ' since ' + (st.since || '') : 'Counting started recently.';
+      var top = box.querySelector('.vm-top');
+      (st.countries || []).slice().sort(function (a, b) { return b.count - a.count; }).slice(0, 8).forEach(function (c) {
+        var li = document.createElement('li'); li.innerHTML = '<span></span><strong></strong>';
+        li.firstChild.textContent = c.name; li.lastChild.textContent = c.count.toLocaleString(); top.appendChild(li);
+      });
+    });
+})();

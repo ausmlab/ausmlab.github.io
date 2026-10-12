@@ -1,0 +1,1 @@
+Source: @svg-maps/world 2.0.0 (CC BY 4.0), simplified.

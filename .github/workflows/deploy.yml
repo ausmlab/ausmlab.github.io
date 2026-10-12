@@ -5,6 +5,8 @@ on:
   push:
     branches: [master, main]
   workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * *"   # once a day, to refresh the visitor map
 
 permissions:
   contents: read
@@ -24,6 +26,9 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml jinja2
+      - run: python tools/fetch_visitors.py
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
       - run: python build.py
       - uses: actions/upload-pages-artifact@v3
         with:

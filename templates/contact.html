@@ -17,4 +17,12 @@
     <p class="links-inline">{% for l in site.links %}<a class="more" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
   </div>
 </section>
+{% if site.get("visitor_map") %}
+<section class="wrap section visitor-map" data-visitor-map data-map="{{ url('/data/world-map.json') }}" data-stats="{{ url('/data/visitors.json') }}">
+  <div class="section-head"><h2>Visitors around the world</h2><p class="muted vm-summary"></p></div>
+  <div class="vm-wrap"><svg class="vm-svg" role="img" aria-label="World map of visitors by country"></svg><div class="vm-tip" hidden></div></div>
+  <ol class="vm-top"></ol>
+  <p class="muted small">Country counts only; no personal data is collected. Updated daily.</p>
+</section>
+{% endif %}
 {% endblock %}
