@@ -13,7 +13,7 @@ jobs:
           set +e
           rm -rf chk; mkdir -p chk
           echo "token length: ${#GOATCOUNTER_TOKEN}" > chk/log.txt
-          python3 tools/fetch_visitors.py >> chk/log.txt 2>&1
+          curl -s -m 20 https://ausmlab.com/data/visitors.json >> chk/log.txt; echo >> chk/log.txt; curl -s -o /dev/null -w "map %{http_code}\n" https://ausmlab.com/data/world-map.json >> chk/log.txt
           ls -la static/data >> chk/log.txt 2>&1
           git config user.name Claude; git config user.email noreply@anthropic.com
           git add chk; git commit -m "debug visitors
