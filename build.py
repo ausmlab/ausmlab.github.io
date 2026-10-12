@@ -21,6 +21,8 @@ import sys
 from pathlib import Path
 
 import yaml
+sys.path.insert(0, str(Path(__file__).resolve().parent / "tools"))
+import legacy_profile
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 from markupsafe import Markup
 
@@ -436,6 +438,14 @@ def build():
             member_pages[slug] = (p, g["group"])
     for slug, (p, group) in member_pages.items():
         item = dict(by_slug.get(slug, {"title": p["name"], "body": "", "slug": slug}))
+        if item["body"]:
+            old = legacy_profile.parse(item["body"])
+            if not p.get("bio"):
+                p["bio"] = old["bio"]
+            if not p.get("history"):
+                p["history"] = old["education"]
+            p.setdefault("experience", old["experience"])
+            item["body"] = ""
         item["member"] = p
         item["group"] = group
         item["papers"] = [] if group == "Principal Investigator" else papers_for(p["name"])
@@ -444,11 +454,32 @@ def build():
         if pe["slug"] in member_pages:
             continue
         item = dict(pe)
-        item["member"] = None
         doctor_slugs = {a["profile"].strip("/").split("/")[-1] for g in alumni_groups if g["name"] in ("Postdocs", "Ph.D.") for a in g["people"] if a["profile"]}
         if pe["slug"] in doctor_slugs and not str(item["title"]).startswith("Dr"):
             item["title"] = "Dr. " + item["title"]
         item["papers"] = papers_for(pe["title"])
+        # Former members get the same layout as current members.
+        old = legacy_profile.parse(pe["body"])
+        stints = [(g["name"], a) for g in alumni_groups for a in g["people"]
+                  if a["profile"] and a["profile"].strip("/").split("/")[-1] == pe["slug"]]
+        grad = {g: a for g, a in stints}
+        if "Ph.D." in grad:
+            yr = re.search(r"Ph\.D\. (\d{4})", grad["Ph.D."]["role"])
+            if yr:
+                old["education"] = [re.sub(r"–Present:(\s*Doctorate)", f"–{yr.group(1)}:\\1", e) for e in old["education"]]
+                old["experience"] = [re.sub(r"–Present:", f"–{yr.group(1)}:", e) if "York" in e else e for e in old["experience"]]
+        now = next((a["note"] for g, a in stints if a["note"]), "")
+        item["member"] = {
+            "name": pe["title"], "display": item["title"],
+            "photo": "", "photo_src": f"/images/wp/{pe['image']}" if pe.get("image") else "",
+            "initials": "".join(w[0] for w in str(pe["title"]).split()[:2]),
+            "role": " · ".join(f"{a['role']}" for g, a in stints) if stints else "",
+            "now": now, "since": "", "interests": "", "email": "", "website": "",
+            "history": old["education"], "experience": old["experience"],
+            "bio": old["bio"], "legacy_pubs": old["legacy_pubs"],
+        }
+        item["group"] = "Alumni" if stints else "Member profile"
+        item["body"] = ""
         pages.append(("person.html", f"members/{pe['slug']}/index.html", "members", pe["title"], {"item": item}))
     # The full list is now on /publications/ itself; /publications/all/ forwards there.
 
