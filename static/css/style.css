@@ -908,3 +908,9 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 .area-row h2 { font-size: clamp(22px, 2.2vw, 30px); margin: 0 0 8px; }
 .area-row .body { margin: 0 0 10px; }
 @media (max-width: 760px) { .area-row { grid-template-columns: minmax(0, 1fr); } }
+.rv-row { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.rv-grid .hv[hidden] { display: none; }
+.hv-title { font-weight: 600; }
+@media (max-width: 1000px) { .rv-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .rv-row { grid-template-columns: minmax(0, 1fr); } }
+[data-filter-scope] > .filters + .rv-grid { margin-top: 24px; }

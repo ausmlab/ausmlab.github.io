@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% from "_macros.html" import filters, video_card %}
+{% block main %}
+<section class="wrap section">
+  <p class="mono"><a href="{{ url('/research/') }}">Research</a> / Videos</p>
+  <h1>Research Videos</h1>
+  <p class="lead">Demos, conference talks and thesis work from the lab. Click a video to play it here.</p>
+</section>
+<section class="wrap section-tight" data-filter-scope>
+  {% if video_areas %}{{ filters("area", video_areas, "Filter videos by research area") }}{% endif %}
+  <div class="hv-row rv-grid">
+    {% for v in videos %}{{ video_card(v, url) }}{% endfor %}
+  </div>
+  {% if youtube_channel %}<p class="center" style="margin-top:32px"><a class="btn btn-outline" href="{{ youtube_channel }}" target="_blank" rel="noopener">More on our YouTube channel</a></p>{% endif %}
+  <p class="back"><a href="{{ url('/research/') }}">← Research</a></p>
+</section>
+{% endblock %}

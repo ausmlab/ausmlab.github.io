@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% from "_macros.html" import picture, page_hero, filters, thrust_cards %}
+{% from "_macros.html" import picture, page_hero, filters, thrust_cards, video_card %}
 {% block main %}
 {{ page_hero("Research", "AI that perceives, reasons about and acts in physical space", "theme-mobility-rail.jpg", url) }}
 
@@ -38,6 +38,13 @@
       <span class="body small">{{ pr.summary }}</span>
     </a>
     {% endfor %}
+  </div>
+</section>
+
+<section id="videos" class="wrap section">
+  <div class="section-head"><h2>Videos</h2><a class="more" href="{{ url('/research/videos/') }}">All {{ videos | length }} videos →</a></div>
+  <div class="hv-row rv-row">
+    {% for v in videos[:4] %}{{ video_card(v, url) }}{% endfor %}
   </div>
 </section>
 

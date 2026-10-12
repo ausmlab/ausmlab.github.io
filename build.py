@@ -36,6 +36,7 @@ PAGES = [
     ("collaborators.html", "research/collaborators/index.html", "research", "Research Collaborators"),
     ("research_areas.html", "research/areas/index.html", "research", "Research Areas"),
     ("research_projects.html", "research/projects/index.html", "research", "Projects"),
+    ("research_videos.html", "research/videos/index.html", "research", "Research Videos"),
     ("publications.html", "publications/index.html", "publications", "Publications"),
     ("members.html", "members/index.html", "members", "Members"),
     ("news.html", "news/index.html", "news", "News & Events"),
@@ -355,6 +356,12 @@ def build():
             v.setdefault(k, "")
         m = re.search(r"(?:v=|youtu\.be/|embed/)([A-Za-z0-9_-]{11})", v.get("url", ""))
         v["yt"] = m.group(1) if m else ""
+    # Each video belongs to one research area: its "home" field, or else a guess from its topic.
+    _topic_area = {"Smart Mobility": "Urban World Models", "SLAM & Positioning": "Embodied Autonomy",
+                   "Digital Twins": "Scan-to-Model", "Point Clouds": "Scan-to-Model"}
+    for v in videos:
+        v["area"] = v.get("area") or v.get("home") or _topic_area.get(v.get("topic", ""), "")
+    video_areas = [t.split(" | ")[0] for t in research.get("thrusts", []) if any(v["area"] == t.split(" | ")[0] for v in videos)]
     video_topics = list(dict.fromkeys(v["topic"] for v in videos if v.get("topic")))
     research_posts = sorted((p for p in posts if "Research" in p["categories"]), key=lambda p: str(p["date"]), reverse=True)
     def _gal_key(ph):
@@ -401,7 +408,7 @@ def build():
         foundation=research.get("foundation", {}), loop_note=research.get("loop_note", ""),
         datasets=datasets, partners={g: [split_partner(x) for x in items] for g, items in research.get("partners", {}).items()},
         home_partners=[split_partner(x) for x in research.get("home_partners", [])], stats=stats,
-        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, home_videos=sorted([v for v in videos if v.get("home") and (v.get("yt") or v.get("file"))], key=lambda v: [t.split(" | ")[0] for t in research.get("thrusts", [])].index(v["home"]) if v["home"] in [t.split(" | ")[0] for t in research.get("thrusts", [])] else 9)[:4], youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, gal_cats=gal_cats,
+        photos=gallery.get("photos", []), albums=albums, gallery_highlights=gallery_highlights[:6], videos=videos, home_videos=sorted([v for v in videos if v.get("home") and (v.get("yt") or v.get("file"))], key=lambda v: [t.split(" | ")[0] for t in research.get("thrusts", [])].index(v["home"]) if v["home"] in [t.split(" | ")[0] for t in research.get("thrusts", [])] else 9)[:4], youtube_channel=gallery.get("youtube_channel", ""), video_topics=video_topics, video_areas=video_areas, gal_cats=gal_cats,
         join=join, positions=positions, year=dt.date.today().year,
         all_pubs=archive.get("publications"),
         posts=posts, projects=projects, research_posts=research_posts,

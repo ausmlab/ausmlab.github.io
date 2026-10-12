@@ -43,7 +43,7 @@
 
 {% if t_videos %}
 <section class="wrap section th-videos">
-  <h2>Videos</h2>
+  <div class="section-head"><h2>Videos</h2><a class="more" href="{{ url('/research/videos/') }}">All videos →</a></div>
   <div class="grid-3">
     {% for v in t_videos %}
     <a class="video-card plain" href="{{ v.url or url('/' ~ v.file) }}" target="_blank" rel="noopener">
