@@ -917,3 +917,8 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 /* Home hero: one look for every slide (same tone, same dark overlay) */
 .hero-slide { filter: saturate(.75) contrast(1.05) brightness(.95); }
 .band-hero .hero-kicker { margin: 0 0 10px; }
+/* Lighter photos: keep the picture visible, keep text readable with a soft shadow */
+.hero-slide { filter: saturate(.9); }
+.hero-photo::before { background: linear-gradient(180deg, rgba(12,16,26,.25) 0%, rgba(12,16,26,.38) 45%, rgba(12,16,26,.62) 100%); }
+.band-hero-photo::before { background: linear-gradient(180deg, rgba(20,24,34,.35), rgba(20,24,34,.6)); }
+.hero h1, .hero-sub, .hero-kicker, .band-hero h1, .band-hero p { text-shadow: 0 2px 14px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.5); }
