@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block main %}
+<section class="wrap section">
+  <p class="mono"><a href="{{ url('/research/') }}">Research</a> / Research areas</p>
+  <h1>Research Areas</h1>
+  <p class="lead">Our five research areas, with every topic and who works on it.</p>
+</section>
+<section class="wrap section-tight areas-list">
+  {% for t in pillars %}
+  <article class="area-row thrust-{{ loop.index }}">
+    <a class="area-img" href="{{ url('/research/' ~ t.id ~ '/') }}"><img src="{{ url('/images/' ~ t.image) }}" alt="" loading="lazy"></a>
+    <div>
+      <p class="mono th-kicker">{{ t.no }} · {{ t.question | upper }}</p>
+      <h2><a class="plain" href="{{ url('/research/' ~ t.id ~ '/') }}">{{ t.title }}</a></h2>
+      <p class="body">{{ t.body }}</p>
+      <ul class="tr-topics">
+        {% for p in t.topics %}<li><span class="tr-name">{{ p.name }}</span>{% if p.open %}<a class="open-tag" href="{{ url('/join/') }}">Looking for students</a>{% elif p.people %}<span class="muted small">{{ p.people }}</span>{% endif %}</li>{% endfor %}
+      </ul>
+      <a class="more" href="{{ url('/research/' ~ t.id ~ '/') }}">Explore {{ t.title }} →</a>
+    </div>
+  </article>
+  {% endfor %}
+  <p class="back"><a href="{{ url('/research/') }}">← Research</a></p>
+</section>
+{% endblock %}

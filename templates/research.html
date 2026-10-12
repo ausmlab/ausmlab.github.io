@@ -10,6 +10,7 @@
 </section>
 
 <section class="wrap bento-wrap" aria-label="Research thrusts">
+  <div class="section-head"><h2>Research Areas</h2><a class="more" href="{{ url('/research/areas/') }}">All {{ pillars | length }} research areas →</a></div>
   <ul class="bento">
     {% for t in pillars %}
     <li class="bento-tile thrust-{{ loop.index }}">
@@ -28,7 +29,7 @@
 </section>
 
 <section id="projects" class="wrap section">
-  <div class="section-head"><h2>Projects</h2><p class="muted">Funded projects, current and past</p></div>
+  <div class="section-head"><h2>Projects</h2><a class="more" href="{{ url('/research/projects/') }}">All {{ projects | length }} projects →</a></div>
   <div class="grid-5 proj-grid">
     {% for pr in projects %}
     <a class="card-link" href="{{ url(pr.url) }}">

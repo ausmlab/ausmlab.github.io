@@ -34,6 +34,8 @@ PAGES = [
     ("index.html", "index.html", "home", None),
     ("research.html", "research/index.html", "research", "Research"),
     ("collaborators.html", "research/collaborators/index.html", "research", "Research Collaborators"),
+    ("research_areas.html", "research/areas/index.html", "research", "Research Areas"),
+    ("research_projects.html", "research/projects/index.html", "research", "Projects"),
     ("publications.html", "publications/index.html", "publications", "Publications"),
     ("members.html", "members/index.html", "members", "Members"),
     ("news.html", "news/index.html", "news", "News & Events"),
