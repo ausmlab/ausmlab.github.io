@@ -922,3 +922,11 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 .hero-photo::before { background: linear-gradient(180deg, rgba(12,16,26,.25) 0%, rgba(12,16,26,.38) 45%, rgba(12,16,26,.62) 100%); }
 .band-hero-photo::before { background: linear-gradient(180deg, rgba(20,24,34,.35), rgba(20,24,34,.6)); }
 .hero h1, .hero-sub, .hero-kicker, .band-hero h1, .band-hero p { text-shadow: 0 2px 14px rgba(0,0,0,.55), 0 1px 3px rgba(0,0,0,.5); }
+/* Bigger partner logos: moving row on Research, and the full Collaborators page */
+.marquee { padding: 26px 0; }
+.marquee-track { gap: 64px; }
+.marquee-track img { height: 60px; max-width: 220px; }
+#partners .logos { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+#partners .logos li.has-logo > a, #partners .logos li.has-logo > span, #partners .logos li > a, #partners .logos li > span { min-height: 110px; padding: 14px 18px; }
+#partners .logos li.has-logo img { max-height: 72px; max-width: 100%; }
+@media (max-width: 560px) { .marquee-track img { height: 44px; } #partners .logos { grid-template-columns: repeat(2, minmax(0, 1fr)); } #partners .logos li.has-logo img { max-height: 56px; } }
