@@ -153,6 +153,7 @@ datasets:
     text: "Multi-year indoor positioning dataset from four York University buildings (2021 and 2022): Wi-Fi signal strength, inertial and magnetometer data from Android phones, with HoloLens 2 augmented-reality ground truth. By Afnan Ahmad."
     year: ISPRS IJGI (submitted), 2026
     link: https://yorkuindoor.ausmlab.com/
+    image: dataset-yorkuindoor.jpg
   - name: YUTO Tree5000
     text: A large-scale airborne LiDAR dataset for single tree detection with 5,000 annotated trees.
     year: ICPR Workshops, 2022
