@@ -819,3 +819,24 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 .thrust-sec { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(40px, 5vw, 72px); }
 .thrust-sec .ph-theme { aspect-ratio: 4 / 3; object-fit: cover; }
 .thrust-sec { align-items: start; } .thrust-sec .ph-theme { margin-top: 8px; }
+/* Research thrust rows: picture and text always the same height */
+.tr-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(24px, 3.5vw, 48px); align-items: stretch; padding-top: 0; padding-bottom: 0; margin-top: clamp(28px, 3.5vw, 44px); scroll-margin-top: 90px; }
+.tr-img { position: relative; min-height: 260px; border-top: 4px solid var(--th); }
+.tr-img img, .tr-img .ph { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; background: #f3f3f3; aspect-ratio: auto; }
+.tr-body { display: flex; flex-direction: column; gap: 10px; }
+.tr-body h2 { font-size: clamp(24px, 2.4vw, 32px); margin: 0; border-left: 0; padding-left: 0; }
+.tr-body .body { margin: 0; }
+.tr-topics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 24px; margin: 4px 0 0; padding: 0; list-style: none; }
+.tr-topics li { display: flex; flex-direction: column; gap: 2px; padding: 8px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.tr-topics .open-tag { align-self: flex-start; }
+.tr-papers { margin: 4px 0 0; font-size: 14px; line-height: 1.5; }
+.tr-papers .label { display: block; margin-bottom: 2px; }
+.grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.proj-grid .card-title { font-size: 15px; }
+.proj-grid .body.small { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+@media (max-width: 900px) { .tr-row { grid-template-columns: minmax(0, 1fr); } .tr-img { min-height: 0; aspect-ratio: 16 / 9; } .grid-5 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .tr-topics { grid-template-columns: minmax(0, 1fr); } }
+#partners .logos { grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 10px; }
+#partners .logos li.has-logo > a, #partners .logos li.has-logo > span, #partners .logos li > a, #partners .logos li > span { min-height: 60px; padding: 8px; }
+#partners .logos li.has-logo img { max-height: 36px; }
+#partners .kicker-dark { margin-top: 18px; }

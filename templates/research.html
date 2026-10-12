@@ -20,31 +20,21 @@
 </section>
 
 {% for t in pillars %}
-<section id="{{ t.id }}" class="wrap theme thrust-sec thrust-{{ loop.index }}{% if loop.index is even %} theme-flip{% endif %}">
-  {{ picture(url, t.image, t.image_note, "ph ph-theme") }}
-  <div class="stack">
+<section id="{{ t.id }}" class="wrap tr-row thrust-sec thrust-{{ loop.index }}">
+  <div class="tr-img">{{ picture(url, t.image, t.image_note, "ph") }}</div>
+  <div class="tr-body">
     <p class="mono th-kicker">{{ t.no }} · {{ t.question | upper }}</p>
     <h2>{{ t.title }}</h2>
     <p class="body">{{ t.body }}</p>
-    <div class="projects">
-      <p class="label">TOPICS</p>
+    <ul class="tr-topics">
       {% for p in t.topics %}
-      <div class="project">
-        <span>{{ p.name }}{% if p.partner %}<br><span class="muted small">{{ p.partner }}</span>{% endif %}</span>
-        {% if p.open %}<a class="open-tag" href="{{ url('/join/') }}">Looking for students</a>{% else %}<span class="muted">{{ p.people }}</span>{% endif %}
-      </div>
+      <li><span class="tr-name">{{ p.name }}</span>{% if p.open %}<a class="open-tag" href="{{ url('/join/') }}">Looking for students</a>{% elif p.people %}<span class="muted small">{{ p.people }}</span>{% endif %}</li>
       {% endfor %}
-    </div>
+    </ul>
     {% if t.key_papers %}
-    <div class="key-papers">
-      <p class="label">KEY PAPERS</p>
-      <ul>
-        {% for kp in t.key_papers %}
-        <li>{% if kp.link %}<a href="{{ kp.link }}">{{ kp.title }}</a>{% else %}{{ kp.title }}{% endif %}<br><span class="muted small">{{ kp.authors }} · <em>{{ kp.venue_short or kp.venue }}</em>{% if kp.venue_short %}, {{ kp.year }}{% endif %}</span></li>
-        {% endfor %}
-      </ul>
-      <a class="more" href="{{ url('/publications/') }}">All publications →</a>
-    </div>
+    <p class="tr-papers"><span class="label">KEY PAPERS</span>
+      {% for kp in t.key_papers[:2] %}{% if kp.link %}<a href="{{ kp.link }}">{{ kp.get("short") or kp.title }}</a>{% else %}<span>{{ kp.get("short") or kp.title }}</span>{% endif %} <span class="muted small">({{ kp.venue_short or kp.venue }}{% if kp.year %}, {{ kp.year }}{% endif %})</span>{% if not loop.last %}<br>{% endif %}{% endfor %}
+    </p>
     {% endif %}
   </div>
 </section>
@@ -52,7 +42,7 @@
 
 <section id="projects" class="wrap section">
   <div class="section-head"><h2>Projects</h2><p class="muted">Funded projects, current and past</p></div>
-  <div class="grid-3">
+  <div class="grid-5 proj-grid">
     {% for pr in projects %}
     <a class="card-link" href="{{ url(pr.url) }}">
       {% if pr.image %}<img class="ph ph-proj" src="{{ url('/images/wp/' ~ pr.image) }}" alt="{{ pr.title }}" loading="lazy">{% else %}<div class="ph ph-proj ph-empty"><span>{{ pr.title }}</span></div>{% endif %}
