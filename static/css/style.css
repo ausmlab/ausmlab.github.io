@@ -914,3 +914,6 @@ article.wrap.prose > p, article.wrap.prose > ul, article.wrap.prose > ol, articl
 @media (max-width: 1000px) { .rv-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .rv-row { grid-template-columns: minmax(0, 1fr); } }
 [data-filter-scope] > .filters + .rv-grid { margin-top: 24px; }
+/* Home hero: one look for every slide (same tone, same dark overlay) */
+.hero-slide { filter: saturate(.75) contrast(1.05) brightness(.95); }
+.band-hero .hero-kicker { margin: 0 0 10px; }

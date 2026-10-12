@@ -4,9 +4,10 @@
 {% endif %}
 {% endmacro %}
 
-{% macro page_hero(title, subtitle="", image="", url=None, pos="") %}
+{% macro page_hero(title, subtitle="", image="", url=None, pos="", kicker="") %}
 <section class="band band-hero{% if image %} band-hero-photo{% endif %}"{% if image and url %} style="background-image:url('{{ url('/images/' ~ image) }}'){% if pos %};background-position:{{ pos }}{% endif %}"{% endif %}>
   <div class="wrap">
+    {% if kicker %}<p class="hero-kicker">{{ kicker }}</p>{% endif %}
     <h1>{{ title }}</h1>
     {% if subtitle %}<p>{{ subtitle }}</p>{% endif %}
   </div>

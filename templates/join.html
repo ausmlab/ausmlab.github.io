@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% from "_macros.html" import page_hero %}
 {% block main %}
-{{ page_hero("Join Us", join.headline, "lab-group-2026.jpg", url) }}
+{{ page_hero("Join Us", join.headline, "lab-group-2026.jpg", url, kicker="FOR PROSPECTIVE STUDENTS AND POSTDOCS") }}
 
 {% for po in positions %}
 <section class="wrap section" id="{{ po.id }}">
