@@ -11,9 +11,13 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf yi chk; mkdir -p chk
-          curl -s -m 20 -w "\nhttp %{http_code}\n" https://ausmlab.com/data/visitors.json > chk/visitors.txt
+          rm -rf chk; mkdir -p chk
+          echo "token length: ${#GOATCOUNTER_TOKEN}" > chk/log.txt
+          python3 tools/fetch_visitors.py >> chk/log.txt 2>&1
+          ls -la static/data >> chk/log.txt 2>&1
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A .; git commit -m "check visitors json
+          git add chk; git commit -m "debug visitors
 
           Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
+        env:
+          GOATCOUNTER_TOKEN: ${{ secrets.GOATCOUNTER_TOKEN }}
