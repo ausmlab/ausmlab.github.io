@@ -11,13 +11,14 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           set +e
-          rm -rf astro dns; mkdir -p dns
-          for h in indoor.ausmlab.com benchmark.indoor.ausmlab.com dataset.ausmlab.com datasets.ausmlab.com yorkuindoor.ausmlab.com indoor-benchmark.ausmlab.com wifi.ausmlab.com benchmark.ausmlab.com data.ausmlab.com benchmark.qdrone.ausmlab.com yuto.ausmlab.com; do
-            echo "== $h $(dig +short $h | tr '\n' ' ')" >> dns/log.txt
-            curl -sL -m 20 -o dns/$h.html -w "  http %{http_code} final %{url_effective}\n" https://$h/ >> dns/log.txt
-            python3 -c "import re,sys;t=open('dns/$h.html',errors='ignore').read();m=re.search(r'<title>(.*?)</title>',t,re.S);print('  title:',m.group(1).strip()[:120] if m else '-')" >> dns/log.txt
+          rm -rf dns yi; mkdir -p yi
+          google-chrome --headless=new --no-sandbox --hide-scrollbars --window-size=1440,7000 --virtual-time-budget=20000 --screenshot=yi/full.png https://yorkuindoor.ausmlab.com/ > yi/log.txt 2>&1
+          curl -sL -m 30 https://yorkuindoor.ausmlab.com/ -o yi/index.html
+          for u in $(grep -oE '(src|href)="[^"]+"' yi/index.html | sed -E 's/^(src|href)="//; s/"$//' | grep -Ei '\.(png|jpe?g|webp|gif|js)$' | sort -u); do
+            case "$u" in http*) url="$u";; /*) url="https://yorkuindoor.ausmlab.com$u";; *) url="https://yorkuindoor.ausmlab.com/$u";; esac
+            f=yi/$(basename "$u"); curl -sL -m 30 "$url" -o "$f"; echo "$url $(wc -c < $f)" >> yi/log.txt
           done
           git config user.name Claude; git config user.email noreply@anthropic.com
-          git add -A .; git commit -m "probe subdomains
+          git add -A .; git commit -m "yorku indoor site
 
           Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>"; git push
