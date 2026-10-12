@@ -71,6 +71,7 @@
   <div class="wrap footer-copy">© {{ year }} AUSM Lab, York University</div>
 </footer>
 <script src="{{ asset(url('/js/main.js')) }}" defer></script>
+{% if not is_preview %}<script data-goatcounter="https://ausmlab.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>{% endif %}
 {% if switcher %}
 <div class="theme-switcher" role="group" aria-label="Try a design">
   <span>Design:</span>

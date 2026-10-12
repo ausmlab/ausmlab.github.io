@@ -543,7 +543,7 @@ def build():
             """Make the site links inside ported page text work from this page."""
             return Markup(re.sub(r'(src|href)="(/[^"]*)"', lambda m: f'{m.group(1)}="{url(m.group(2))}"', body))
 
-        html = env.get_template(tpl).render(active=key, title=title, url=url, asset=asset, fix=fix, **ctx, **extra)
+        html = env.get_template(tpl).render(active=key, title=title, url=url, asset=asset, fix=fix, is_preview=preview, **ctx, **extra)
         path = OUT / out
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(html, encoding="utf-8")
