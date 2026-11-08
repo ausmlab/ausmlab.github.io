@@ -1,15 +1,46 @@
 ---
-title: "York wins KASI contract to build AI for space-based object detection and tracking"
+title: "York wins KASI contract to build AI that watches the sky from orbit"
 date: "2026-11-07"
 categories: ["Funding"]
 image: "wp/01_spaceowl_survey_tracking_modes.png"
 featured: true
-summary: "MOVE and CRESS have jointly won a contract with the Korea Astronomy and Space Science Institute (KASI) to develop AI that detects and tracks satellites and space debris for the SpaceOWL mission. We're hiring."
+summary: "MOVE and CRESS have jointly won a four-year contract with the Korea Astronomy and Space Science Institute (KASI) to build the AI that finds and tracks satellites and space debris in images from Korea’s SpaceOWL satellites. We’re hiring."
 ---
-<figure><img src="/images/wp/01_spaceowl_survey_tracking_modes.png" alt="Illustration of two SpaceOWL satellites in orbit, one surveying the sky and one tracking a target object" loading="lazy"></figure>
-<p>MOVE and CRESS at York University have jointly won a research contract with the Korea Astronomy and Space Science Institute (KASI).</p>
-<p>The project is part of Korea’s Space Situational Awareness (K-SSA) Program. York will develop AI that detects and tracks resident space objects — satellites and debris — in images from KASI’s SpaceOWL satellite.</p>
-<p>The project runs to October 2030. Prof. Gunho Sohn is Principal Investigator. Prof. Regina Lee is Co-Principal Investigator.</p>
-<p>The project builds on more than 15 years of collaboration under an MOU between York University and KASI.</p>
-<p>We are recruiting several postdoctoral fellows, Ph.D. students and undergraduate research assistants.</p>
+<p>York University has won a four-year research contract with the <strong>Korea Astronomy and Space Science Institute (KASI)</strong> to build artificial intelligence for Korea’s new space-watching satellites. The project is led jointly by York’s <strong>MOVE</strong> (Mobility Innovation Centre) and <strong>CRESS</strong> (Centre for Research in Earth and Space Science), with Prof. Gunho Sohn as Principal Investigator and Prof. Regina Lee as Co-Principal Investigator. It runs from November 2026 to October 2030.</p>
+
+<figure><img src="/images/wp/01_spaceowl_survey_tracking_modes.png" alt="Illustration of two SpaceOWL satellites in orbit, one surveying the sky and one tracking a target object" loading="lazy"><figcaption>KASI’s two SpaceOWL satellites will watch near-Earth space in two modes: surveying the sky, and tracking a known object.</figcaption></figure>
+
+<h2>Keeping orbits safe</h2>
+
+<p>Thousands of satellites and pieces of debris now circle the Earth, and the number keeps growing. A single collision can break two objects into thousands of fragments, each one a new danger to working satellites. Operators need to know where these objects are, and where they are heading, early enough to move out of the way.</p>
+
+<p>Korea’s Space Situational Awareness (K-SSA) Program will add a new set of eyes in orbit. KASI plans to launch two small satellites, <strong>SpaceOWL-1</strong> in late 2029 and <strong>SpaceOWL-2</strong> in early 2030. Each carries a camera that looks out into space. York’s task is to build the AI that turns those images into reliable information: which objects are in view, and how each one is moving. Those tracks then feed the steps that follow — computing orbits, assessing collision risk and planning avoidance.</p>
+
+<h2>Finding a faint dot among thousands of stars</h2>
+
+<p>The problem is harder than it sounds. Seen from orbit, a satellite is often only one to three pixels wide, a faint dot surrounded by thousands of stars. The York team teaches AI to tell them apart by how they move. Stars drift together across the frame; an object in orbit follows its own path. By looking at several frames at once, the network can pick out objects that are almost invisible in any single image, and follow each one from frame to frame.</p>
+
+<figure><img src="/images/wp/04_faint_rso_dop_maps.png" alt="A faint space object across three frames, with raw crops and likelihood maps" loading="lazy"><figcaption>A faint space object over three frames. Top: the raw images, where it is barely visible. Bottom: the network’s maps, where it stands out clearly.</figcaption></figure>
+
+<h2>Learning before launch</h2>
+
+<p>There is one more challenge: SpaceOWL has not flown yet, so there are no real images to learn from. The team is solving this with a physics-based simulator that renders realistic star-tracker images from real star catalogues and satellite orbits. Because the simulator knows exactly where every object is, each image comes with perfect labels at no cost. These synthetic images are combined with real images from earlier missions, including the DUST benchmark recorded by the Fast Auroral Imager on the CASSIOPE satellite, and star-tracker cameras flown to the stratosphere on Canadian Space Agency balloons.</p>
+
+<figure><img src="/images/wp/02_real_vs_synthetic.png" alt="A real star-tracker image next to a simulated one with labelled objects" loading="lazy"><figcaption>A real star-tracker image (left) and one of the team’s simulated images (right). Real image: DUST benchmark (Suthakar et al., <em>Scientific Data</em>, 2026), from the Fast Auroral Imager on CASSIOPE.</figcaption></figure>
+
+<p>The project follows three stages. From 2026 to 2028 the team will <strong>build</strong> the simulator, data and models. In 2029 the models will be frozen and prepared to <strong>fly</strong> with SpaceOWL-1. In 2030 they will <strong>adapt</strong>, learning from the first real images sent down from orbit.</p>
+
+<figure><img src="/images/wp/03_rso_detection_animation.gif" alt="Animated simulated star-tracker sequence with boxes around moving space objects" loading="lazy"><figcaption>A simulated star-tracker sequence. Boxes mark objects in orbit as they move against the stars.</figcaption></figure>
+
+<h2>A team across Canada and Korea</h2>
+
+<p>The York team brings together expertise in computer vision, space engineering and orbital mechanics. Alongside Prof. Sohn and Prof. Lee, it includes Prof. Shweta Mahajan (EECS) and Prof. Michael C. F. Bazzocchi (ESSE, Space Engineering). The team will work closely with KASI and with Hanwha Systems, the system integrator for the SpaceOWL ground system.</p>
+
+<p>The contract builds on more than 15 years of collaboration between York University and KASI under a memorandum of understanding, and on the team’s published work on detecting and tracking objects in orbit.</p>
+
+
+<h2>Join us</h2>
+
+<p>We are hiring several <strong>postdoctoral fellows</strong>, <strong>Ph.D. students</strong> and <strong>undergraduate research assistants</strong> to work on the project. You will help build AI for a real space mission, with a team in Canada and Korea.</p>
+
 <p><a href="/research/k-ssa/">Read more about the project →</a> &nbsp; <a href="/join/#k-ssa-2026">See open positions →</a></p>
