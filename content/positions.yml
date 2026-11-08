@@ -15,6 +15,24 @@
 #   poster_position: which part of the photo to show, e.g. center 40%
 #   subject:   what to write in the email subject line
 
+- id: k-ssa-2026
+  kicker: "K-SSA PROGRAM · FUNDED BY KASI (2026–2030)"
+  title: Build AI for a real space mission
+  status: Several positions open · reviewed on a rolling basis until filled
+  start: Flexible
+  intro: "We are hiring several postdoctoral fellows, Ph.D. students and undergraduate research assistants. We are building AI that finds satellites and space debris in images taken from orbit. The project is funded by the Korea Astronomy and Space Science Institute (KASI) and runs to 2030. You will work on a real mission, SpaceOWL, with a team in Canada and Korea. See the project page: ausmlab.com/research/k-ssa"
+  focus:
+    - "Postdoctoral Fellow | Lead one research stream (simulation and datasets, or detection and tracking). PhD in computer vision, machine learning, remote sensing or space engineering."
+    - "PhD student | Develop and test neural networks and publish papers. Strong Master's (or exceptional BEng), Python and PyTorch."
+    - "Undergraduate Research Assistant | Label images, test software, help with documentation. York engineering or science students curious about AI and space."
+  offer:
+    - A funded position on a multi-year international project
+    - Work with KASI researchers, and the chance to present at venues such as the AMOS Conference
+    - GPU computing for training deep learning models
+    - Co-supervision across AI and space engineering
+  apply: "Email gsohn@yorku.ca with (1) your CV, (2) transcripts (unofficial is fine), (3) a half-page note: why this project, and one past project you are proud of, and (4) postdocs only: two publications and the names of two references. PhD applicants must also apply to the ESSE graduate program at York University and name Prof. Gunho Sohn as their intended supervisor. York University is committed to equity, diversity and inclusion, and welcomes applications from all qualified people."
+  subject: "K-SSA Application — [Role]"
+
 - id: graduate-2027
   poster_image: gallery/lab-research-2014-a.jpg
   poster_position: center 40%
