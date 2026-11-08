@@ -8,6 +8,7 @@
   <div class="hero-slide{% if loop.first %} is-on{% endif %}" style="background-image:url('{{ url('/images/' ~ parts[0]) }}');background-position:{{ parts[1] if parts|length > 1 else 'center' }}" aria-hidden="true"></div>
   {% endfor %}
   <div class="wrap hero-in">
+    {% if featured_news %}<a class="hero-news" href="{{ url(featured_news.link) if featured_news.link else url('/news/') }}"><span class="hero-news-tag">NEW</span><span class="hero-news-text">{{ featured_news.title }}</span><span aria-hidden="true">→</span></a>{% endif %}
     {% if site.hero.kicker %}<p class="hero-kicker">{{ site.hero.kicker }}</p>{% endif %}
     <h1>{{ site.hero.title }}</h1>
     <p class="hero-sub">{{ site.hero.subtitle }}</p>
@@ -15,6 +16,33 @@
   </div>
   {% if slides | length > 1 %}<div class="hero-slide-dots" role="group" aria-label="Choose photo">{% for sl in slides %}<button type="button" aria-label="Photo {{ loop.index }}"{% if loop.first %} aria-pressed="true"{% endif %}></button>{% endfor %}</div>{% endif %}
 </section>
+
+{% if featured_news %}
+{% set latest = news | reject("equalto", featured_news) | list %}
+<section class="home-latest" aria-labelledby="latest-h">
+  <div class="wrap home-latest-in">
+    <a class="latest-feature" href="{{ url(featured_news.link) if featured_news.link else url('/news/') }}">
+      {% if featured_news.image %}<img src="{{ url('/images/' ~ featured_news.image) }}" alt="" loading="eager">{% endif %}
+      <span class="latest-feature-body">
+        <span class="latest-kicker">FEATURED · {{ featured_news.category | upper }} · {{ featured_news.date_label | upper }}</span>
+        <span class="latest-feature-title">{{ featured_news.title }}</span>
+        {% if featured_news.text %}<span class="latest-feature-text">{{ featured_news.text }}</span>{% endif %}
+        <span class="latest-more">Read the story →</span>
+      </span>
+    </a>
+    <div class="latest-list">
+      <h2 id="latest-h" class="latest-h">Latest news</h2>
+      <ul>
+        {% for n in latest[:4] %}
+        <li><a href="{{ url(n.link) if n.link else url('/news/') }}"{% if n.link and n.link.startswith('http') %} target="_blank" rel="noopener"{% endif %}><span class="latest-date">{{ n.date_label }} · {{ n.category }}</span><span class="latest-title">{{ n.title }}</span></a></li>
+        {% endfor %}
+      </ul>
+      <a class="latest-all" href="{{ url('/news/') }}">All news →</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
 
 <section class="wrap section home-research">
   <div class="home-research-head">
