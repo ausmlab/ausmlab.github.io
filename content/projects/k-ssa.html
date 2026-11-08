@@ -5,108 +5,43 @@ status: current
 image: "01_spaceowl_survey_tracking_modes.png"
 summary: "We teach AI to spot and follow small objects in orbit — satellites and debris — from a camera in space. Funded by KASI under the Korea Space Situational Awareness (K-SSA) Program, 2026–2030."
 ---
-<p><strong>In one line:</strong> We teach AI to spot and follow small objects in orbit — satellites and debris — from a camera in space.</p>
+<p>Thousands of satellites and pieces of debris now circle the Earth, and the number grows every year. A single collision can create thousands of new fragments, each one a new hazard. To keep orbits safe, operators need to know where these objects are and where they are going. That is the goal of space situational awareness.</p>
 
-<p>This project is part of the Korea Space Situational Awareness (K-SSA) Program, funded by the Korea Astronomy and Space Science Institute (KASI). KASI will launch two small satellites, <strong>SpaceOWL-1</strong> and <strong>SpaceOWL-2</strong>, that watch the sky for objects in orbit. York University builds the AI that finds those objects in the SpaceOWL images and follows them from frame to frame. The project runs for 48 months, from November 2026 to October 2030.</p>
+<p>The Korea Space Situational Awareness (K-SSA) Program, funded by the Korea Astronomy and Space Science Institute (KASI), will watch near-Earth space from orbit. KASI will launch two small satellites, <strong>SpaceOWL-1</strong> and <strong>SpaceOWL-2</strong>, each carrying a camera that looks out into space. In this project, York University builds the artificial intelligence that turns their images into reliable information: which objects are in view, and how each one is moving. The project runs from November 2026 to October 2030.</p>
 
-<h2>Why it matters</h2>
-<p>Orbits are getting crowded. A single collision can create thousands of new pieces of debris. Seeing objects early gives satellite operators time to move out of the way.</p>
-<p>Space situational awareness works like a chain:</p>
-<ol>
-<li><strong>Detect</strong> an object in an image.</li>
-<li><strong>Track</strong> it across frames.</li>
-<li><strong>Determine its orbit.</strong></li>
-<li><strong>Assess the collision risk.</strong></li>
-<li><strong>Avoid</strong> the collision.</li>
-</ol>
-<p>York is responsible for the first two links: detection and tracking. Every later step depends on them. A missed detection is a missed warning. A false detection is a false alarm.</p>
 <figure><img src="/images/wp/01_spaceowl_survey_tracking_modes.png" alt="Two SpaceOWL satellites in orbit, one surveying the sky and one tracking a target object" loading="lazy"><figcaption>The two SpaceOWL satellites work in two modes. In survey mode they scan the sky. In tracking mode they follow a known object.</figcaption></figure>
 
-<h2>Why this needs AI</h2>
-<p>Finding objects in space images is hard for four reasons. Each one shapes part of our work.</p>
-<table>
-<thead><tr><th>Challenge</th><th>What it means</th><th>Our approach</th></tr></thead>
-<tbody>
-<tr><td><strong>Tiny targets</strong></td><td>A satellite is often only 1–3 pixels wide, among thousands of stars.</td><td>Networks that look at several frames together. Stars move together; objects in orbit move differently.</td></tr>
-<tr><td><strong>No real images before launch</strong></td><td>SpaceOWL has not flown yet, so there are no real images to train on.</td><td>A physics-based simulator, plus real images from earlier missions.</td></tr>
-<tr><td><strong>Little data after launch</strong></td><td>A satellite can send only a small part of its images to the ground.</td><td>Methods that learn from a few real examples without forgetting what they already know.</td></tr>
-<tr><td><strong>Speed</strong></td><td>Images must be processed in near real time.</td><td>One shared network for detection and tracking, inside an automated pipeline.</td></tr>
-</tbody>
-</table>
+<h2>The challenge</h2>
 
-<h2>The plan: Build, Fly, Adapt</h2>
-<p>The project runs in three stages:</p>
-<ul>
-<li><strong>Build (2026–2028):</strong> develop the data and AI models, up to a flight-ready version 1.0.</li>
-<li><strong>Fly (2029):</strong> freeze the models, test them with the ground system, and support the SpaceOWL-1 launch.</li>
-<li><strong>Adapt (2030):</strong> improve the models with real flight images. SpaceOWL-2 follows in early 2030.</li>
-</ul>
-<p>The core idea is a <strong>closed sim-to-real loop</strong>. Real images make the simulator more realistic. A better simulator trains better models. The models are then checked on real images again. Before launch the loop runs on real images from earlier missions. After launch it runs on SpaceOWL’s own images.</p>
+<p>Space situational awareness works like a chain. First an object is detected in an image. Then it is tracked across frames. From the track, its orbit is computed, the risk of collision is assessed, and, if needed, a manoeuvre is planned. Our work is the first two links of that chain, and every later step depends on them. A missed detection is a missed warning; a false one is a false alarm.</p>
 
-<h2>Build (2026–2028)</h2>
+<p>These first links are hard. Seen from orbit, a satellite is often only one to three pixels wide, a faint dot among thousands of stars. Before launch, there are no real SpaceOWL images to learn from. After launch, a satellite can send only a small share of its images to the ground. And the images must be processed quickly, close to real time.</p>
 
-<h3>Work-A: AI-ready data</h3>
-<p>Led by Prof. Regina Lee. The goal is enough good data for the AI to learn before launch.</p>
-<ul>
-<li><strong>A-1 Physics-based simulator.</strong> We render synthetic star-tracker images step by step: real star catalogues (Gaia) and satellite orbits, viewing geometry, sunlight on each object, camera optics, and detector noise. The simulator knows where every object is, so every image comes with exact labels for free. We generate large numbers of synthetic frames in both survey and tracking modes.</li>
-<li><strong>A-2 Image enhancement.</strong> Cleaning images without erasing the faint 1–3 pixel targets.</li>
-<li><strong>A-3 Sim-to-real adaptation.</strong> Making what the AI learns on synthetic images work on real ones.</li>
-<li><strong>A-4 Benchmark and labels.</strong> A real-image test set. An AI agent proposes labels and flags objects that may have been missed; a person confirms them.</li>
-</ul>
-<p>We already have three kinds of images to start with:</p>
-<ul>
-<li><strong>From orbit.</strong> The DUST benchmark: 1,378 star-tracker frames with 4,237 labelled objects from 22 observation sessions, taken by the Fast Auroral Imager on the CASSIOPE satellite. We also use wide-field image sequences from the same camera.</li>
-<li><strong>From the stratosphere.</strong> Star-tracker cameras flown on high-altitude balloons (RSONAR 1 and 2) through the Canadian Space Agency’s Strato-Science campaigns. In August 2023, four cameras flew at about 37 km and recorded objects in orbit.</li>
-<li><strong>Synthetic.</strong> Our DUST-like generator, which copies the look of real DUST images, and a star-tracker simulator from Universidad Politécnica de Madrid (IDR/UPM).</li>
-</ul>
+<h2>Our approach</h2>
+
+<p>We teach AI to tell objects in orbit apart from stars by watching how they move. Stars drift together across the frame as the camera moves. A satellite or piece of debris follows its own path. Our networks look at several frames at once, so even very faint objects stand out by their motion. A shared network then links each object from frame to frame into a single track, keeps the track going when the object briefly passes behind a bright star, and checks that the path makes physical sense.</p>
+
+<p>Because the AI has to learn before SpaceOWL flies, we build its training data ourselves. A physics-based simulator renders realistic star-tracker images from real star catalogues and satellite orbits, adding sunlight, camera optics and sensor noise. The simulator knows exactly where every object is, so each image comes with perfect labels at no cost. We combine these synthetic images with real images from earlier missions: the DUST benchmark taken by the Fast Auroral Imager on the CASSIOPE satellite, and star-tracker cameras flown to the stratosphere on Canadian Space Agency balloons.</p>
+
 <figure><img src="/images/wp/02_real_vs_synthetic.png" alt="A real star-tracker image next to a simulated one with labelled objects" loading="lazy"><figcaption>Left: a real star-tracker image. Right: one of our simulated images. The simulator knows where every object is, so each box is a free, exact label for training the AI. Real image: DUST benchmark (Suthakar et al., <em>Scientific Data</em>, 2026), from the Fast Auroral Imager on CASSIOPE.</figcaption></figure>
 
-<h3>Work-B: Detection and tracking</h3>
-<p>Led by Prof. Gunho Sohn.</p>
-<ul>
-<li><strong>B-1 Detection.</strong> Find each object and measure its position to a fraction of a pixel, then convert it to sky coordinates.</li>
-<li><strong>B-2 Tracking.</strong> Link detections across frames into one track per object during a single pass. The tracker predicts where the object should be next, keeps a track alive when the object briefly disappears (for example, behind a bright star), and checks that each track follows a physically sensible path.</li>
-<li><strong>B-3 SpaceOWL vision network.</strong> One shared network for detection and tracking on both satellites. New tasks can be added later with small add-on modules.</li>
-</ul>
-<p>Each finished track is handed to the Korean orbit-determination team in an agreed format. It includes time, position, uncertainty, which satellite took the image, and quality flags. We are designing this format together with that team.</p>
+<p>The heart of the project is a closed loop between simulation and reality. Real images make the simulator more realistic. A better simulator trains better models. The models are then tested on real images again. Before launch, this loop runs on data from earlier missions. After launch, it runs on SpaceOWL’s own images.</p>
+
 <figure><img src="/images/wp/03_rso_detection_animation.gif" alt="Animated simulated star-tracker sequence with boxes around moving space objects" loading="lazy"><figcaption>A simulated star-tracker sequence. Boxes mark objects in orbit as they move against the stars.</figcaption></figure>
 
-<h3>Progress so far</h3>
-<p>We have already tested our detection and tracking methods on real images taken in orbit. We have also found that training first on synthetic video helps: the network then finds more faint objects in real images.</p>
-<p>The hardest cases remain objects of 4 pixels or less, slow movers, and objects near bright stars. These are our focus for Years 2 and 3.</p>
+<h2>Build, Fly, Adapt</h2>
+
+<p>The project unfolds in three stages. From 2026 to 2028 we <strong>build</strong>: the simulator, the training data and the detection and tracking models, up to a flight-ready version. In 2029 we <strong>fly</strong>: the models are frozen, tested inside the ground system and made ready for the launch of SpaceOWL-1. In 2030 we <strong>adapt</strong>: as the first real images arrive, we recalibrate the simulator and fine-tune the models on a small number of real examples, without losing what they learned before launch. The adapted models then carry over to SpaceOWL-2.</p>
+
+<p>Our early tests on real images taken in orbit are encouraging. Training first on synthetic video helps the network find more faint objects. The hardest cases remain very small objects, slow movers and objects close to bright stars, and these are the focus of the coming years.</p>
+
 <figure><img src="/images/wp/04_faint_rso_dop_maps.png" alt="A faint object across three frames, with raw crops and likelihood maps" loading="lazy"><figcaption>A faint space object across three consecutive frames. Top: raw image crops. Bottom: the network’s object-likelihood maps, which keep the faint object visible.</figcaption></figure>
 
-<h2>Fly (2029)</h2>
-<p>In 2029 we tune the models on the latest camera data, test them inside the ground system, and release a flight-frozen version. We then rehearse full passes end to end. SpaceOWL-1 is planned to launch in late 2029. When the first real images come down, we compare them with our synthetic images to measure the gap.</p>
-<p>York hands over the flight-frozen models, documented software interfaces, ready-to-run software containers, test suites, and model documentation.</p>
+<h2>Team and partners</h2>
 
-<h2>Adapt (2030)</h2>
-<p>Led by Prof. Shweta Mahajan. After launch, only a small set of real images reaches the ground. We use it to:</p>
-<ul>
-<li><strong>C-1</strong> compare real and synthetic images, and recalibrate the simulator;</li>
-<li><strong>C-2</strong> fine-tune the models on a few real examples, while keeping what they learned before launch;</li>
-<li><strong>C-3</strong> validate the adapted models on orbit, and transfer them to SpaceOWL-2.</li>
-</ul>
-<p>The loop repeats each time new flight data arrives.</p>
+<p>The project is led by <strong>Prof. Gunho Sohn</strong> (ESSE; Director, MOVE), Principal Investigator, who leads the detection and tracking work. <strong>Prof. Regina S. K. Lee</strong> (ESSE, Space Engineering), Co-Principal Investigator, leads the data and simulation work. <strong>Prof. Shweta Mahajan</strong> (EECS) leads the adaptation of the models after launch. <strong>Prof. Michael C. F. Bazzocchi</strong> (ESSE, Space Engineering) brings expertise in orbital mechanics to every part of the project. Postdoctoral fellows, Ph.D. researchers and undergraduate research assistants complete the team.</p>
 
-<h2>Team</h2>
-<ul>
-<li><strong>Prof. Gunho Sohn</strong> — Principal Investigator (ESSE; Director, MOVE). Project manager and Work-B lead.</li>
-<li><strong>Prof. Regina S. K. Lee</strong> — Co-Principal Investigator (ESSE, Space Engineering). Work-A lead: sensor model, real data and benchmark.</li>
-<li><strong>Prof. Shweta Mahajan</strong> (EECS) — Work-C lead: post-launch adaptation.</li>
-<li><strong>Prof. Michael C. F. Bazzocchi</strong> (ESSE, Space Engineering) — Astrodynamics lead across all work packages: orbit geometry, motion models and the hand-over to orbit determination.</li>
-</ul>
-<p>The research team also includes postdoctoral fellows, Ph.D. researchers and undergraduate research assistants. We are hiring — see below.</p>
-
-<h2>Partners</h2>
-<ul>
-<li><strong>Korea Astronomy and Space Science Institute (KASI)</strong> — funder and mission owner.</li>
-<li><strong>Hanwha Systems</strong> — system integrator; runs our models in the SpaceOWL ground system.</li>
-</ul>
-<p>York University and KASI have worked together for more than 15 years under an MOU.</p>
-
-<h2>Computing</h2>
-<p>National high-performance computing, a 56-GPU NVIDIA L40S cluster, and dedicated project GPUs.</p>
+<p>We work with the <strong>Korea Astronomy and Space Science Institute (KASI)</strong>, which funds the project and owns the mission, and with <strong>Hanwha Systems</strong>, the system integrator that will run our models in the SpaceOWL ground system. The project builds on more than 15 years of collaboration between York University and KASI under an MOU. It is hosted jointly by MOVE (Mobility Innovation Centre) and CRESS (Centre for Research in Earth and Space Science) at York University.</p>
 
 <h2>Related publications</h2>
 <ul>
@@ -120,9 +55,6 @@ summary: "We teach AI to spot and follow small objects in orbit — satellites a
 
 <h2>Period</h2>
 <p>November 2026 – October 2030</p>
-
-<h2>Hosted by</h2>
-<p>MOVE (Mobility Innovation Centre) and CRESS (Centre for Research in Earth and Space Science), York University.</p>
 
 <h2>Join us</h2>
 <p>We are hiring several postdoctoral fellows, Ph.D. students and undergraduate research assistants. <a href="/join/#k-ssa-2026">See open positions →</a></p>
