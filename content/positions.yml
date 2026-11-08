@@ -18,9 +18,9 @@
 - id: k-ssa-2026
   kicker: "K-SSA PROGRAM · FUNDED BY KASI (2026–2030)"
   title: Build AI for a real space mission
-  status: Applications reviewed on a rolling basis until positions are filled
+  status: Several positions open · reviewed on a rolling basis until filled
   start: Flexible
-  intro: "We are building AI that finds satellites and space debris in images taken from orbit. The project is funded by the Korea Astronomy and Space Science Institute (KASI) and runs to 2030. You will work on a real mission, SpaceOWL, with a team in Canada and Korea. See the project page: ausmlab.com/research/k-ssa"
+  intro: "We are hiring several postdoctoral fellows, Ph.D. students and undergraduate research assistants. We are building AI that finds satellites and space debris in images taken from orbit. The project is funded by the Korea Astronomy and Space Science Institute (KASI) and runs to 2030. You will work on a real mission, SpaceOWL, with a team in Canada and Korea. See the project page: ausmlab.com/research/k-ssa"
   focus:
     - "Postdoctoral Fellow | Lead one research stream (simulation and datasets, or detection and tracking). PhD in computer vision, machine learning, remote sensing or space engineering."
     - "PhD student | Develop and test neural networks and publish papers. Strong Master's (or exceptional BEng), Python and PyTorch."
