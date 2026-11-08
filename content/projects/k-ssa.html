@@ -1,0 +1,51 @@
+---
+title: "K-SSA: AI for Space-Based Space Situational Awareness"
+year: 2026
+status: current
+image: "kssa-spaceowl-modes.png"
+summary: "We teach AI to spot and follow small objects in orbit — satellites and debris — from a camera in space. Funded by KASI under the Korea Space Situational Awareness (K-SSA) Program, 2026–2030."
+---
+<p><strong>In one line:</strong> We teach AI to spot and follow small objects in orbit — satellites and debris — from a camera in space.</p>
+
+<h2>Why it matters</h2>
+<p>Orbits are getting crowded. A single collision can create thousands of new pieces of debris. Seeing objects early, from space, gives satellite operators time to act.</p>
+<p>From a camera in orbit, a satellite can look like one faint dot among hundreds of stars. Our AI learns to tell the two apart and to follow each object from frame to frame.</p>
+<figure><img src="/images/wp/kssa-spaceowl-modes.png" alt="Two SpaceOWL satellites in orbit, one surveying the sky and one tracking a target object" loading="lazy"><figcaption>SpaceOWL satellites in survey mode (scanning the sky) and tracking mode (following a known object).</figcaption></figure>
+
+<h2>What we are building</h2>
+<p>The project runs in three stages: <strong>Build</strong> (2026–2028), <strong>Fly</strong> (2029), <strong>Adapt</strong> (2030).</p>
+<table>
+<thead><tr><th>Work package</th><th>What it does</th></tr></thead>
+<tbody>
+<tr><td><strong>Work-A: AI-ready data</strong></td><td>A physics-based image simulator, image enhancement, sim-to-real adaptation, and a labelled benchmark dataset — so the AI can learn before launch.</td></tr>
+<tr><td><strong>Work-B: Detection and tracking</strong></td><td>Neural networks that find faint objects among stars and link them across frames, plus a vision model adapted for space imagery.</td></tr>
+<tr><td><strong>Work-C: Post-launch adaptation</strong></td><td>After launch, update the AI with a small amount of real flight data.</td></tr>
+</tbody>
+</table>
+<figure><img src="/images/wp/kssa-real-vs-synthetic.png" alt="A real star-tracker image next to a simulated one with labelled objects" loading="lazy"><figcaption>Left: a real star-tracker image. Right: one of our simulated images. The simulator knows where every object is, so each box is a free, exact label for training the AI. Real image: DUST benchmark (Suthakar et al., <em>Scientific Data</em>, 2026), from the Fast Auroral Imager on CASSIOPE.</figcaption></figure>
+<figure><img src="/images/wp/kssa-faint-rso-maps.png" alt="A faint object across three frames, with raw crops and likelihood maps" loading="lazy"><figcaption>A faint space object across three consecutive frames. Top: raw image crops. Bottom: the network’s object-likelihood maps, which keep the faint object visible.</figcaption></figure>
+<figure><img src="/images/wp/kssa-timeline.png" alt="Project timeline: Build 2026–2028, Fly 2029, Adapt 2030" loading="lazy"><figcaption>Project timeline: Build (2026–2028), Fly (2029), Adapt (2030).</figcaption></figure>
+
+<h2>Funder</h2>
+<p>Korea Astronomy and Space Science Institute (KASI), Daejeon, Republic of Korea, under the Korea Space Situational Awareness (K-SSA) Program, space-based segment (SpaceOWL).</p>
+<p><strong>Project title:</strong> Development of AI-Enabled Data Infrastructure on Space-Based RSO Detection &amp; Tracking and Post-Launch Adaptation</p>
+
+<h2>Period</h2>
+<p>2026–2030 (ends October 2030)</p>
+
+<h2>Team</h2>
+<ul>
+<li>Prof. Gunho Sohn — Principal Investigator (ESSE; Director, MOVE)</li>
+<li>Prof. Regina S. K. Lee — Co-Principal Investigator (ESSE, Space Engineering)</li>
+<li>Prof. Shweta Mahajan</li>
+<li>Prof. Michael C. F. Bazzocchi</li>
+<li>Prof. Michael Daly — Director, CRESS</li>
+</ul>
+
+<h2>Hosted by</h2>
+<p>MOVE (Mobility Innovation Centre) and CRESS (Centre for Research in Earth and Space Science), York University.</p>
+
+<h2>Join us</h2>
+<figure><img src="/images/wp/kssa-rso-detection.gif" alt="Animated simulated star-tracker sequence with boxes around moving space objects" loading="lazy"></figure>
+<p>We are hiring postdoctoral fellows, Ph.D. students and undergraduate research assistants. <a href="/join/#k-ssa-2026">See open positions →</a></p>
+<p>Contact: <a href="mailto:gsohn@yorku.ca">gsohn@yorku.ca</a></p>
